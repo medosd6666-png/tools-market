@@ -1,0 +1,391 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حذف النصوص من الصور - سوق الأدوات</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fa;
+    color: #243447;
+    text-align: center;
+    padding: 15px;
+}
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #00000012;
+}
+h1, h2 { color: #1769aa; }
+p { line-height: 1.8; }
+input { display: block; width: 100%; margin: 20px 0; }
+button, .download {
+    display: inline-block;
+    background: #1769aa;
+    color: white;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px;
+}
+button:disabled { background: #999; cursor: not-allowed; }
+.photo {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+.preview {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 12px auto;
+}
+#status { line-height: 1.8; margin: 18px 0; overflow-wrap: anywhere; }
+#resultArea { display: none; }
+.home { display: block; margin-top: 25px; }
+footer { margin-top: 25px; color: #667788; }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1 data-ar="حذف النصوص من الصور"
+    data-en="Remove Text from Images">حذف النصوص من الصور</h1>
+
+<p data-ar="اختر صورة صغيرة تحتوي على كتابة واضحة، ثم اضغط على زر المعالجة."
+   data-en="Choose a small image with clear text, then click the processing button.">
+اختر صورة صغيرة تحتوي على كتابة واضحة، ثم اضغط على زر المعالجة.
+</p>
+
+<input type="file" id="imageInput" accept="image/*">
+
+<button id="processBtn"
+        data-ar="اكتشاف النصوص وحذفها"
+        data-en="Detect and Remove Text">
+اكتشاف النصوص وحذفها
+</button>
+
+<div id="status" aria-live="polite"></div>
+
+<div class="photo" id="originalArea" hidden>
+    <h2 data-ar="الصورة الأصلية" data-en="Original Image">الصورة الأصلية</h2>
+    <img id="originalPreview" class="preview" alt="الصورة الأصلية">
+</div>
+
+<div class="photo" id="resultArea">
+    <h2 data-ar="الصورة بعد محاولة حذف النصوص"
+        data-en="Image After Text Removal">
+        الصورة بعد محاولة حذف النصوص
+    </h2>
+
+    <canvas id="resultCanvas" class="preview"></canvas>
+
+    <a id="downloadLink" class="download"
+       download="image-without-text.png"
+       data-ar="تنزيل الصورة"
+       data-en="Download Image">تنزيل الصورة</a>
+</div>
+
+<a class="home" id="homeLink" href="index.html"
+   data-ar="العودة إلى الصفحة الرئيسية"
+   data-en="Back to Home">العودة إلى الصفحة الرئيسية</a>
+
+<footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+        data-en="Tools Market | Free and Easy Tools for Everyone">
+سوق الأدوات | أدوات مجانية وسهلة للجميع
+</footer>
+
+</div>
+
+<script src="language.js"></script>
+
+<script>
+/* تحديد اللغة المختارة من الصفحة الرئيسية */
+const params = new URLSearchParams(window.location.search);
+const savedLanguage = localStorage.getItem("toolsMarketLanguage");
+
+let lang = params.get("lang");
+
+if (lang !== "ar" && lang !== "en") {
+    lang = savedLanguage;
+}
+if (lang !== "ar" && lang !== "en") {
+    lang = "ar";
+}
+
+/* ضبط اتجاه الصفحة ولغتها */
+document.documentElement.lang = lang;
+document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+/* تحديث النصوص */
+document.querySelectorAll("[data-ar][data-en]").forEach(function (el) {
+    el.textContent = el.getAttribute("data-" + lang);
+});
+
+document.getElementById("originalPreview").alt =
+    lang === "ar" ? "الصورة الأصلية" : "Original image";
+
+document.getElementById("homeLink").href =
+    "index.html?lang=" + lang;
+
+const input = document.getElementById("imageInput");
+const button = document.getElementById("processBtn");
+const statusBox = document.getElementById("status");
+const originalArea = document.getElementById("originalArea");
+const originalPreview = document.getElementById("originalPreview");
+const resultArea = document.getElementById("resultArea");
+const canvas = document.getElementById("resultCanvas");
+const downloadLink = document.getElementById("downloadLink");
+
+let imageFile = null;
+let downloadUrl = null;
+
+function msg(ar, en) {
+    statusBox.textContent = lang === "ar" ? ar : en;
+}
+
+msg("اختر صورة للبدء.", "Choose an image to begin.");
+
+input.addEventListener("change", function () {
+    imageFile = input.files[0] || null;
+    resultArea.style.display = "none";
+
+    if (downloadUrl) {
+        URL.revokeObjectURL(downloadUrl);
+        downloadUrl = null;
+    }
+
+    if (!imageFile) {
+        originalArea.hidden = true;
+        msg("اختر صورة للبدء.", "Choose an image to begin.");
+        return;
+    }
+
+    if (!imageFile.type.startsWith("image/")) {
+        msg("من فضلك اختر صورة صحيحة.", "Please choose a valid image.");
+        imageFile = null;
+        originalArea.hidden = true;
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function () {
+        originalPreview.src = reader.result;
+        originalArea.hidden = false;
+        msg("تم اختيار الصورة.", "Image selected.");
+    };
+
+    reader.onerror = function () {
+        msg("تعذرت قراءة الصورة.", "Could not read the image.");
+    };
+
+    reader.readAsDataURL(imageFile);
+});
+
+function loadScript(url) {
+    return new Promise(function (resolve, reject) {
+        const script = document.createElement("script");
+        script.src = url;
+        script.onload = resolve;
+        script.onerror = function () {
+            reject(new Error(
+                lang === "ar"
+                ? "تعذر تحميل مكتبة المعالجة. تحقق من الإنترنت."
+                : "Could not load the processing library. Check your internet connection."
+            ));
+        };
+        document.head.appendChild(script);
+    });
+}
+
+async function getOpenCV() {
+    if (window.cv && window.cv.Mat) return window.cv;
+
+    if (!window.cvLoading) {
+        window.cvLoading = loadScript(
+            "https://docs.opencv.org/4.x/opencv.js"
+        );
+    }
+
+    await window.cvLoading;
+
+    for (let i = 0; i < 120; i++) {
+        if (window.cv && window.cv.Mat) return window.cv;
+        await new Promise(resolve => setTimeout(resolve, 500));
+    }
+
+    throw new Error(
+        lang === "ar"
+        ? "تأخر تشغيل مكتبة معالجة الصور. أعد المحاولة."
+        : "Image processing library timed out. Please try again."
+    );
+}
+
+button.addEventListener("click", async function () {
+    if (!imageFile) {
+        msg("اختار صورة الأول.", "Please choose an image first.");
+        return;
+    }
+
+    button.disabled = true;
+    input.disabled = true;
+
+    let worker = null;
+    let src = null;
+    let mask = null;
+    let dst = null;
+
+    try {
+        msg(
+            "جاري تجهيز صورة صغيرة لتخفيف الحمل...",
+            "Preparing a smaller image to reduce processing load..."
+        );
+
+        const bitmap = await createImageBitmap(imageFile);
+        const scale = Math.min(
+            1,
+            900 / Math.max(bitmap.width, bitmap.height)
+        );
+
+        const width = Math.max(1, Math.round(bitmap.width * scale));
+        const height = Math.max(1, Math.round(bitmap.height * scale));
+
+        canvas.width = width;
+        canvas.height = height;
+
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(bitmap, 0, 0, width, height);
+        bitmap.close();
+
+        msg(
+            "جاري تحميل أداة اكتشاف النصوص لأول مرة...",
+            "Loading the text recognition tool for the first time..."
+        );
+
+        if (!window.Tesseract) {
+            await loadScript(
+                "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"
+            );
+        }
+
+        worker = await Tesseract.createWorker("ara+eng");
+
+        msg(
+            "جاري اكتشاف النصوص. قد يستغرق التحميل الأول وقتًا...",
+            "Detecting text. The first run may take some time..."
+        );
+
+        const result = await worker.recognize(canvas);
+        const words = (result.data.words || []).filter(w =>
+            w.text && w.text.trim() && w.confidence >= 25 && w.bbox
+        );
+
+        await worker.terminate();
+        worker = null;
+
+        if (!words.length) {
+            throw new Error(
+                lang === "ar"
+                ? "لم أستطع اكتشاف نص واضح في الصورة."
+                : "No clear text could be detected in the image."
+            );
+        }
+
+        msg(
+            "جاري ترميم الخلفية مكان الكتابة...",
+            "Repairing the background where the text was..."
+        );
+
+        const cv = await getOpenCV();
+
+        src = cv.matFromImageData(
+            ctx.getImageData(0, 0, width, height)
+        );
+
+        mask = cv.Mat.zeros(height, width, cv.CV_8UC1);
+        dst = new cv.Mat();
+
+        const padding = 3;
+
+        words.forEach(w => {
+            const b = w.bbox;
+
+            cv.rectangle(
+                mask,
+                new cv.Point(
+                    Math.max(0, b.x0 - padding),
+                    Math.max(0, b.y0 - padding)
+                ),
+                new cv.Point(
+                    Math.min(width - 1, b.x1 + padding),
+                    Math.min(height - 1, b.y1 + padding)
+                ),
+                new cv.Scalar(255),
+                cv.FILLED
+            );
+        });
+
+        cv.inpaint(src, mask, dst, 3, cv.INPAINT_TELEA);
+        cv.imshow(canvas, dst);
+
+        if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+
+        downloadUrl = await new Promise(resolve => {
+            canvas.toBlob(blob => resolve(
+                blob ? URL.createObjectURL(blob) : null
+            ), "image/png");
+        });
+
+        if (!downloadUrl) {
+            throw new Error(
+                lang === "ar"
+                ? "تعذر تجهيز الصورة للتنزيل."
+                : "Could not prepare the image for download."
+            );
+        }
+
+        downloadLink.href = downloadUrl;
+        resultArea.style.display = "block";
+
+        msg(
+            "انتهت المعالجة. راجع النتيجة؛ قد تبقى آثار للكتابة.",
+            "Processing finished. Check the result; some text traces may remain."
+        );
+
+    } catch (error) {
+        console.error(error);
+
+        statusBox.textContent =
+            (lang === "ar" ? "حصلت مشكلة: " : "An error occurred: ") +
+            (error.message || (
+                lang === "ar" ? "خطأ غير معروف" : "Unknown error"
+            ));
+
+    } finally {
+        if (worker) {
+            try { await worker.terminate(); } catch (e) {}
+        }
+
+        if (src) src.delete();
+        if (mask) mask.delete();
+        if (dst) dst.delete();
+
+        button.disabled = false;
+        input.disabled = false;
+    }
+});
+</script>
+</body>
+</html>
+```

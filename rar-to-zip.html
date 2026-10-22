@@ -1,0 +1,206 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحويل RAR إلى ZIP</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fa;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #243447;
+}
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #00000012;
+}
+h1 { color: #1769aa; }
+p { line-height: 1.8; }
+input {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+}
+button {
+    background: #1769aa;
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+#status {
+    margin: 20px 0;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+a {
+    display: inline-block;
+    margin-top: 18px;
+    color: #1769aa;
+}
+footer {
+    margin-top: 30px;
+    color: #667788;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1 data-ar="تحويل RAR إلى ZIP"
+        data-en="Convert RAR to ZIP">تحويل RAR إلى ZIP</h1>
+
+    <p data-ar="اختر ملف RAR من جهازك لتحويل الملفات الموجودة بداخله إلى ملف ZIP جديد."
+       data-en="Choose a RAR file from your device to convert its contents into a new ZIP file.">
+       اختر ملف RAR من جهازك لتحويل الملفات الموجودة بداخله إلى ملف ZIP جديد.
+    </p>
+
+    <input type="file" id="rarFile" accept=".rar">
+
+    <button id="convertBtn"
+        data-ar="تحويل إلى ZIP"
+        data-en="Convert to ZIP">تحويل إلى ZIP</button>
+
+    <div id="status" aria-live="polite"></div>
+
+    <a id="homeLink" href="index.html"
+       data-ar="العودة إلى الصفحة الرئيسية"
+       data-en="Back to Home">العودة إلى الصفحة الرئيسية</a>
+
+    <footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+            data-en="Tools Market | Free and Easy Tools for Everyone">
+        سوق الأدوات | أدوات مجانية وسهلة للجميع
+    </footer>
+</div>
+
+<script src="language.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+
+<script type="module">
+import * as unrarit from
+    "https://unpkg.com/unrarit@0.0.5/dist/unrarit.module.js";
+
+const fileInput = document.getElementById("rarFile");
+const convertBtn = document.getElementById("convertBtn");
+const status = document.getElementById("status");
+const homeLink = document.getElementById("homeLink");
+
+const params = new URLSearchParams(window.location.search);
+let lang = params.get("lang");
+
+if (lang !== "ar" && lang !== "en") {
+    lang = localStorage.getItem("toolsMarketLanguage") || "ar";
+}
+if (lang !== "ar" && lang !== "en") lang = "ar";
+
+document.documentElement.lang = lang;
+document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+homeLink.href = "index.html?lang=" + lang;
+
+document.querySelectorAll("[data-ar][data-en]").forEach(element => {
+    element.textContent = element.dataset[lang];
+});
+
+function message(ar, en) {
+    status.textContent = lang === "ar" ? ar : en;
+}
+
+convertBtn.addEventListener("click", async function () {
+    const file = fileInput.files[0];
+
+    if (!file) {
+        message("من فضلك اختر ملف RAR أولًا.",
+                "Please choose a RAR file first.");
+        return;
+    }
+
+    if (!window.JSZip) {
+        message("تعذر تحميل مكتبة ZIP. تأكد من اتصال الإنترنت ثم أعد المحاولة.",
+                "Could not load the ZIP library. Check your internet connection and try again.");
+        return;
+    }
+
+    convertBtn.disabled = true;
+    status.replaceChildren();
+
+    try {
+        message("جاري قراءة ملف RAR...",
+                "Reading the RAR file...");
+
+        const result = await unrarit.unrar(file);
+        const entries = result.entries;
+        const zip = new JSZip();
+        let count = 0;
+
+        for (const [name, entry] of Object.entries(entries)) {
+            if (!entry || name.endsWith("/")) continue;
+
+            status.textContent = (lang === "ar" ? "جاري استخراج: " : "Extracting: ") + name;
+
+            const data = await entry.arrayBuffer();
+            zip.file(name, data);
+            count++;
+        }
+
+        if (count === 0) {
+            throw new Error(
+                lang === "ar"
+                ? "لم يتم العثور على ملفات قابلة للاستخراج."
+                : "No extractable files were found."
+            );
+        }
+
+        message("جاري إنشاء ملف ZIP جديد...",
+                "Creating a new ZIP file...");
+
+        const blob = await zip.generateAsync({
+            type: "blob",
+            compression: "DEFLATE",
+            compressionOptions: { level: 6 }
+        });
+
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+
+        link.href = url;
+        link.download = file.name.replace(/\.rar$/i, "") + ".zip";
+        link.textContent = lang === "ar" ? "تنزيل ملف ZIP" : "Download ZIP file";
+        link.style.display = "block";
+        link.style.margin = "20px auto";
+
+        status.textContent = lang === "ar"
+            ? "تم تجهيز ملف ZIP. عدد الملفات: " + count + " — "
+            : "ZIP file is ready. Number of files: " + count + " — ";
+
+        status.appendChild(link);
+
+    } catch (error) {
+        console.error(error);
+        status.textContent =
+            (lang === "ar"
+                ? "تعذر تحويل الملف. قد يكون غير مدعوم أو محميًا بكلمة مرور، أو تعذر تحميل مكتبة التحويل. التفاصيل: "
+                : "Conversion failed. The file may be unsupported or password-protected, or the conversion library could not load. Details: ")
+            + (error.message || (lang === "ar" ? "خطأ غير معروف" : "Unknown error"));
+    } finally {
+        convertBtn.disabled = false;
+    }
+});
+</script>
+</body>
+</html>
+```

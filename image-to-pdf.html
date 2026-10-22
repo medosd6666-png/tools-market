@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title data-ar="تحويل الصور إلى PDF | سوق الأدوات"
+         data-en="Convert Images to PDF | Tools Market">
+    تحويل الصور إلى PDF | سوق الأدوات
+  </title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      color: #263238;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 18px #00000010;
+    }
+
+    h1 {
+      color: #176b57;
+      font-size: 27px;
+    }
+
+    .description {
+      line-height: 1.9;
+      color: #555;
+    }
+
+    .choose {
+      display: block;
+      margin: 25px auto 12px;
+      padding: 13px;
+      max-width: 100%;
+      border: 2px dashed #176b57;
+      border-radius: 10px;
+      background: #f8fffc;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 13px 22px;
+      margin: 8px 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #convertBtn {
+      background: #176b57;
+      color: white;
+    }
+
+    #convertBtn:disabled {
+      background: #999;
+      cursor: not-allowed;
+    }
+
+    .home {
+      display: inline-block;
+      margin-top: 20px;
+      color: #176b57;
+      text-decoration: none;
+    }
+
+    #status {
+      margin: 18px 0;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    #preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .photo {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 130px;
+      object-fit: contain;
+    }
+
+    .photo p {
+      margin: 8px 0 0;
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    #downloadLink {
+      display: none;
+      margin: 15px auto;
+      padding: 13px 22px;
+      width: fit-content;
+      background: #176b57;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .note {
+      color: #666;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 16px;
+        margin: 12px auto;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <h1 data-ar="تحويل الصور إلى PDF"
+        data-en="Convert Images to PDF">
+      تحويل الصور إلى PDF
+    </h1>
+
+    <p class="description"
+       data-ar="اختر صورة واحدة أو عدة صور، وحوّلها إلى ملف PDF واحد يمكنك تنزيله على جهازك."
+       data-en="Choose one or more images and convert them into a single PDF file you can download.">
+      اختر صورة واحدة أو عدة صور، وحوّلها إلى ملف PDF واحد يمكنك تنزيله على جهازك.
+    </p>
+
+    <input
+      class="choose"
+      type="file"
+      id="imageInput"
+      accept="image/*"
+      multiple
+      aria-label="اختيار الصور"
+    >
+
+    <p class="note"
+       data-ar="يمكنك اختيار عدة صور معًا. ترتيب الصفحات سيكون حسب ترتيب الصور المختارة."
+       data-en="You can select multiple images. Pages will follow the order of the selected images.">
+      يمكنك اختيار عدة صور معًا. ترتيب الصفحات سيكون حسب ترتيب الصور المختارة.
+    </p>
+
+    <button id="convertBtn" disabled
+            data-ar="تحويل الصور إلى PDF"
+            data-en="Convert Images to PDF">
+      تحويل الصور إلى PDF
+    </button>
+
+    <p id="status" aria-live="polite"
+       data-ar="اختر الصور للبدء."
+       data-en="Choose images to get started.">
+      اختر الصور للبدء.
+    </p>
+
+    <div id="preview"></div>
+
+    <a id="downloadLink" href="#" download="images-to-pdf.pdf"
+       data-ar="تنزيل ملف PDF"
+       data-en="Download PDF">
+      تنزيل ملف PDF
+    </a>
+
+    <a class="home" id="homeLink" href="index.html"
+       data-ar="العودة إلى الصفحة الرئيسية"
+       data-en="Back to Homepage">
+      العودة إلى الصفحة الرئيسية
+    </a>
+
+  </main>
+
+  <script src="language.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    const imageInput = document.getElementById("imageInput");
+    const convertBtn = document.getElementById("convertBtn");
+    const status = document.getElementById("status");
+    const preview = document.getElementById("preview");
+    const downloadLink = document.getElementById("downloadLink");
+    const homeLink = document.getElementById("homeLink");
+
+    function getLanguage() {
+      const params = new URLSearchParams(window.location.search);
+      const pageLanguage = params.get("lang");
+
+      if (pageLanguage === "en" || pageLanguage === "ar") {
+        return pageLanguage;
+      }
+
+      try {
+        return localStorage.getItem("toolsMarketLanguage") === "en"
+          ? "en"
+          : "ar";
+      } catch (error) {
+        return "ar";
+      }
+    }
+
+    function t(ar, en) {
+      return getLanguage() === "en" ? en : ar;
+    }
+
+    function setStatus(ar, en) {
+      status.textContent = t(ar, en);
+    }
+
+    if (typeof applyPageLanguage === "function") {
+      applyPageLanguage();
+    } else {
+      const language = getLanguage();
+
+      document.documentElement.lang = language;
+      document.documentElement.dir =
+        language === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-ar][data-en]").forEach(function(element) {
+        element.textContent = element.getAttribute(
+          language === "en" ? "data-en" : "data-ar"
+        );
+      });
+    }
+
+    homeLink.href = "index.html?lang=" + getLanguage();
+
+    let selectedImages = [];
+    let downloadUrl = null;
+    let previewUrls = [];
+
+    imageInput.addEventListener("change", function() {
+      selectedImages = Array.from(imageInput.files || []).filter(function(file) {
+        return file.type.startsWith("image/");
+      });
+
+      previewUrls.forEach(function(url) {
+        URL.revokeObjectURL(url);
+      });
+
+      previewUrls = [];
+      preview.innerHTML = "";
+      downloadLink.style.display = "none";
+
+      if (downloadUrl) {
+        URL.revokeObjectURL(downloadUrl);
+        downloadUrl = null;
+      }
+
+      if (selectedImages.length === 0) {
+        setStatus(
+          "لم يتم اختيار صور. اختر صورة أو أكثر.",
+          "No images selected. Choose one or more images."
+        );
+
+        convertBtn.disabled = true;
+        return;
+      }
+
+      selectedImages.forEach(function(file) {
+        const card = document.createElement("div");
+        card.className = "photo";
+
+        const img = document.createElement("img");
+        const objectUrl = URL.createObjectURL(file);
+
+        previewUrls.push(objectUrl);
+        img.src = objectUrl;
+        img.alt = file.name;
+
+        const name = document.createElement("p");
+        name.textContent = file.name;
+
+        card.appendChild(img);
+        card.appendChild(name);
+        preview.appendChild(card);
+      });
+
+      setStatus(
+        "تم اختيار " + selectedImages.length + " صورة. جاهز للتحويل.",
+        selectedImages.length + " image(s) selected. Ready to convert."
+      );
+
+      convertBtn.disabled = false;
+    });
+
+    function loadImage(file) {
+      return new Promise(function(resolve, reject) {
+        const url = URL.createObjectURL(file);
+        const img = new Image();
+
+        img.onload = function() {
+          URL.revokeObjectURL(url);
+
+          try {
+            const canvas = document.createElement("canvas");
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+
+            const context = canvas.getContext("2d");
+            context.fillStyle = "#ffffff";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(img, 0, 0);
+
+            const data = canvas.toDataURL("image/jpeg", 0.92);
+
+            resolve({
+              data: data,
+              width: img.naturalWidth,
+              height: img.naturalHeight
+            });
+          } catch (error) {
+            reject(error);
+          }
+        };
+
+        img.onerror = function() {
+          URL.revokeObjectURL(url);
+          reject(new Error("Could not open image: " + file.name));
+        };
+
+        img.src = url;
+      });
+    }
+
+    convertBtn.addEventListener("click", async function() {
+      if (selectedImages.length === 0) {
+        setStatus(
+          "اختر الصور أولًا.",
+          "Please choose images first."
+        );
+        return;
+      }
+
+      if (!window.jspdf || !window.jspdf.jsPDF) {
+        setStatus(
+          "تعذر تحميل مكتبة PDF. تأكد من اتصال الإنترنت ثم أعد فتح الصفحة.",
+          "Could not load the PDF library. Check your internet connection and reopen the page."
+        );
+        return;
+      }
+
+      convertBtn.disabled = true;
+      imageInput.disabled = true;
+      downloadLink.style.display = "none";
+
+      try {
+        setStatus(
+          "جاري تجهيز الصور...",
+          "Preparing images..."
+        );
+
+        const preparedImages = [];
+
+        for (let i = 0; i < selectedImages.length; i++) {
+          setStatus(
+            "جاري تجهيز الصورة " + (i + 1) + " من " + selectedImages.length + "...",
+            "Preparing image " + (i + 1) + " of " + selectedImages.length + "..."
+          );
+
+          const image = await loadImage(selectedImages[i]);
+          preparedImages.push(image);
+        }
+
+        const jsPDF = window.jspdf.jsPDF;
+
+        function getOrientation(image) {
+          return image.width > image.height ? "landscape" : "portrait";
+        }
+
+        const firstOrientation = getOrientation(preparedImages[0]);
+
+        const pdf = new jsPDF({
+          orientation: firstOrientation,
+          unit: "mm",
+          format: "a4",
+          compress: true
+        });
+
+        for (let i = 0; i < preparedImages.length; i++) {
+          const image = preparedImages[i];
+          const orientation = getOrientation(image);
+
+          if (i > 0) {
+            pdf.addPage("a4", orientation);
+          }
+
+          const pageWidth = pdf.internal.pageSize.getWidth();
+          const pageHeight = pdf.internal.pageSize.getHeight();
+
+          const margin = 10;
+          const maxWidth = pageWidth - margin * 2;
+          const maxHeight = pageHeight - margin * 2;
+
+          const ratio = Math.min(
+            maxWidth / image.width,
+            maxHeight / image.height
+          );
+
+          const width = image.width * ratio;
+          const height = image.height * ratio;
+          const x = (pageWidth - width) / 2;
+          const y = (pageHeight - height) / 2;
+
+          pdf.addImage(
+            image.data,
+            "JPEG",
+            x,
+            y,
+            width,
+            height,
+            undefined,
+            "FAST"
+          );
+
+          setStatus(
+            "جاري إنشاء ملف PDF: الصفحة " + (i + 1) + " من " + preparedImages.length + "...",
+            "Creating PDF: page " + (i + 1) + " of " + preparedImages.length + "..."
+          );
+        }
+
+        const blob = pdf.output("blob");
+
+        if (downloadUrl) {
+          URL.revokeObjectURL(downloadUrl);
+        }
+
+        downloadUrl = URL.createObjectURL(blob);
+        downloadLink.href = downloadUrl;
+        downloadLink.style.display = "block";
+
+        setStatus(
+          "تم تحويل الصور بنجاح! عدد الصفحات: " +
+          preparedImages.length +
+          " — حجم الملف: " +
+          (blob.size / 1024).toFixed(2) + " كيلوبايت.",
+          "Images converted successfully! Pages: " +
+          preparedImages.length +
+          " — File size: " +
+          (blob.size / 1024).toFixed(2) + " KB."
+        );
+
+      } catch (error) {
+        console.error(error);
+
+        setStatus(
+          "لم يكتمل التحويل. جرّب صورة أخرى أو صورًا أقل حجمًا.",
+          "Conversion failed. Try another image or use fewer or smaller images."
+        );
+      } finally {
+        convertBtn.disabled = selectedImages.length === 0;
+        imageInput.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

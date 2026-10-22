@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ضغط الصور - سوق الأدوات</title>
+
+<style>
+* { box-sizing: border-box; }
+
+html {
+    min-height: 100%;
+    background: linear-gradient(135deg, #eaf4ff, #f4f0ff);
+}
+
+body {
+    width: 92%;
+    max-width: 700px;
+    margin: 45px auto;
+    padding: 34px;
+    background: #ffffff;
+    border: 1px solid #dbe7f3;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(30, 64, 100, 0.12);
+    font-family: Tahoma, Arial, sans-serif;
+    color: #1f2937;
+    text-align: center;
+    line-height: 1.8;
+}
+
+h1 {
+    margin: 0 0 10px;
+    color: #1454a3;
+    font-size: 32px;
+}
+
+p {
+    font-size: 17px;
+    color: #4b5563;
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 24px auto;
+    padding: 14px;
+    background: #f8fafc;
+    border: 1px dashed #94a3b8;
+    border-radius: 12px;
+    font: inherit;
+}
+
+button {
+    border: 0;
+    border-radius: 12px;
+    padding: 13px 30px;
+    background: #1769d2;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0f4fa8;
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+#result {
+    margin-top: 22px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+#result a {
+    display: inline-block;
+    margin: 12px 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: #e0f2fe;
+    color: #075985;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#result a:hover {
+    background: #bae6fd;
+}
+
+.home {
+    display: inline-block;
+    margin-top: 24px;
+    color: #1769aa;
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 18px auto;
+        padding: 22px 16px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1 data-ar="أداة ضغط الصور" data-en="Image Compressor">
+أداة ضغط الصور
+</h1>
+
+<p data-ar="قلل حجم صورك بسهولة." data-en="Reduce your image file sizes easily.">
+قلل حجم صورك بسهولة.
+</p>
+
+<input type="file" id="fileInput" accept="image/*">
+
+<button id="compressButton"
+        data-ar="ضغط الصور"
+        data-en="Compress Images">
+ضغط الصور
+</button>
+
+<p id="result" aria-live="polite"></p>
+
+<a class="home" id="homeLink" href="index.html"
+   data-ar="العودة إلى الصفحة الرئيسية"
+   data-en="Back to Home">
+العودة إلى الصفحة الرئيسية
+</a>
+
+<script src="language.js"></script>
+
+<script>
+const fileInput = document.getElementById("fileInput");
+const compressButton = document.getElementById("compressButton");
+const result = document.getElementById("result");
+const homeLink = document.getElementById("homeLink");
+
+function getToolLanguage() {
+    const params = new URLSearchParams(window.location.search);
+    const pageLanguage = params.get("lang");
+
+    if (pageLanguage === "en" || pageLanguage === "ar") {
+        return pageLanguage;
+    }
+
+    try {
+        return localStorage.getItem("toolsMarketLanguage") === "en"
+            ? "en"
+            : "ar";
+    } catch (error) {
+        return "ar";
+    }
+}
+
+function t(ar, en) {
+    return getToolLanguage() === "en" ? en : ar;
+}
+
+function setResult(message) {
+    result.textContent = message;
+}
+
+applyPageLanguage();
+
+homeLink.href = "index.html?lang=" + getToolLanguage();
+
+compressButton.addEventListener("click", function() {
+    const file = fileInput.files[0];
+
+    result.replaceChildren();
+
+    if (!file) {
+        setResult(t(
+            "من فضلك اختر صورة أولًا.",
+            "Please select an image first."
+        ));
+        return;
+    }
+
+    compressButton.disabled = true;
+
+    setResult(t(
+        "جاري تجهيز الصورة...",
+        "Preparing the image..."
+    ));
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const image = new Image();
+    const imageURL = URL.createObjectURL(file);
+
+    image.onload = function() {
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx.drawImage(image, 0, 0);
+
+        canvas.toBlob(function(blob) {
+            URL.revokeObjectURL(imageURL);
+            compressButton.disabled = false;
+
+            if (!blob) {
+                setResult(t(
+                    "فشل ضغط الصورة.",
+                    "Image compression failed."
+                ));
+                return;
+            }
+
+            const link = document.createElement("a");
+            const downloadURL = URL.createObjectURL(blob);
+
+            link.href = downloadURL;
+            link.download = "compressed-image.jpg";
+            link.textContent = t(
+                "تنزيل الصورة المضغوطة",
+                "Download Compressed Image"
+            );
+
+            setResult(t(
+                "تم ضغط الصورة بنجاح.",
+                "Image compressed successfully."
+            ));
+
+            result.appendChild(document.createElement("br"));
+            result.appendChild(link);
+
+            link.addEventListener("click", function() {
+                setTimeout(function() {
+                    URL.revokeObjectURL(downloadURL);
+                }, 60000);
+            }, { once: true });
+
+        }, "image/jpeg", 0.6);
+    };
+
+    image.onerror = function() {
+        URL.revokeObjectURL(imageURL);
+        compressButton.disabled = false;
+
+        setResult(t(
+            "تعذر فتح الصورة.",
+            "Could not open the image."
+        ));
+    };
+
+    image.src = imageURL;
+});
+</script>
+
+</body>
+</html>

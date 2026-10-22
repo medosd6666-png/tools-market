@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إصلاح الملفات المضغوطة - سوق الأدوات</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 25px 15px;
+      font-family: Arial, sans-serif;
+      background: #f2f6fa;
+      color: #243447;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: 30px auto;
+      padding: 30px 22px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 18px #00000012;
+    }
+
+    h1 { color: #1769aa; font-size: 27px; }
+    p { line-height: 1.9; }
+    .description { color: #526273; }
+
+    input[type="file"] {
+      display: block;
+      width: 100%;
+      margin: 25px 0;
+      padding: 12px;
+      border: 1px solid #ccd6e0;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    button, .download {
+      display: inline-block;
+      padding: 13px 22px;
+      border: none;
+      border-radius: 8px;
+      background: #1769aa;
+      color: white;
+      font-size: 17px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #9ba8b5;
+      cursor: not-allowed;
+    }
+
+    .download {
+      background: #198754;
+      margin-top: 15px;
+    }
+
+    #status {
+      margin-top: 22px;
+      padding: 16px;
+      border-radius: 8px;
+      background: #f4f6f8;
+      overflow-wrap: anywhere;
+      line-height: 1.9;
+    }
+
+    #status.success {
+      background: #e8f7ee;
+      color: #176b39;
+    }
+
+    #status.error {
+      background: #fff0f0;
+      color: #a12626;
+    }
+
+    .success-title {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .home {
+      display: inline-block;
+      margin-top: 25px;
+      color: #1769aa;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 25px;
+      color: #718096;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1 data-ar="إصلاح الملفات المضغوطة"
+        data-en="Repair Archive Files">إصلاح الملفات المضغوطة</h1>
+
+    <p class="description"
+       data-ar="اختر ملف ZIP لمحاولة قراءة الملفات الموجودة بداخله واستعادة الملفات التي يمكن استخراجها."
+       data-en="Choose a ZIP file to read its contents and recover files that can be extracted.">
+      اختر ملف ZIP لمحاولة قراءة الملفات الموجودة بداخله واستعادة الملفات التي يمكن استخراجها.
+    </p>
+
+    <input type="file" id="zipFile" accept=".zip">
+
+    <button id="recoverButton" type="button"
+            data-ar="فحص ومحاولة الاستعادة"
+            data-en="Scan and Attempt Recovery">
+      فحص ومحاولة الاستعادة
+    </button>
+
+    <div id="status" role="status" aria-live="polite">
+      اختر ملف ZIP للبدء.
+    </div>
+
+    <a id="downloadLink" class="download" hidden
+       download="recovered-files.zip"
+       data-ar="تنزيل الملف المستعاد"
+       data-en="Download Recovered File">
+      تنزيل الملف المستعاد
+    </a>
+
+    <a id="homeLink" class="home" href="index.html"
+       data-ar="العودة إلى الصفحة الرئيسية"
+       data-en="Back to Home">
+      العودة إلى الصفحة الرئيسية
+    </a>
+
+    <footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+            data-en="Tools Market | Free and Easy Tools for Everyone">
+      سوق الأدوات | أدوات مجانية وسهلة للجميع
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="language.js"></script>
+
+  <script>
+    const zipFile = document.getElementById("zipFile");
+    const recoverButton = document.getElementById("recoverButton");
+    const status = document.getElementById("status");
+    const downloadLink = document.getElementById("downloadLink");
+    const homeLink = document.getElementById("homeLink");
+
+    let currentUrl = null;
+
+    function getToolLanguage() {
+      const params = new URLSearchParams(window.location.search);
+      const pageLanguage = params.get("lang");
+
+      if (pageLanguage === "en" || pageLanguage === "ar") {
+        return pageLanguage;
+      }
+
+      try {
+        return localStorage.getItem("toolsMarketLanguage") === "en"
+          ? "en"
+          : "ar";
+      } catch (error) {
+        return "ar";
+      }
+    }
+
+    function t(ar, en) {
+      return getToolLanguage() === "en" ? en : ar;
+    }
+
+    function showStatus(message, type) {
+      status.textContent = message;
+      status.className = type || "";
+    }
+
+    function updateHomeLink() {
+      homeLink.href = "index.html?lang=" + getToolLanguage();
+    }
+
+    applyPageLanguage();
+    updateHomeLink();
+
+    // إعادة ضبط رسالة البداية باللغة المختارة بعد تحميل الصفحة
+    showStatus(
+      t("اختر ملف ZIP للبدء.", "Choose a ZIP file to begin.")
+    );
+
+    recoverButton.addEventListener("click", async function () {
+      const file = zipFile.files[0];
+
+      downloadLink.hidden = true;
+      showStatus("", "");
+
+      if (currentUrl) {
+        URL.revokeObjectURL(currentUrl);
+        currentUrl = null;
+      }
+
+      if (!file) {
+        showStatus(
+          t(
+            "من فضلك اختر ملف ZIP أولًا.",
+            "Please choose a ZIP file first."
+          ),
+          "error"
+        );
+        return;
+      }
+
+      if (!file.name.toLowerCase().endsWith(".zip")) {
+        showStatus(
+          t(
+            "من فضلك اختر ملفًا بامتداد ZIP.",
+            "Please choose a file with the .zip extension."
+          ),
+          "error"
+        );
+        return;
+      }
+
+      if (typeof JSZip === "undefined") {
+        showStatus(
+          t(
+            "تعذر تحميل الأداة. تأكد من اتصال الإنترنت ثم أعد المحاولة.",
+            "Could not load the tool. Check your internet connection and try again."
+          ),
+          "error"
+        );
+        return;
+      }
+
+      recoverButton.disabled = true;
+      showStatus(
+        t(
+          "جاري فحص الملف ومحاولة استخراج محتوياته...",
+          "Scanning the file and attempting to extract its contents..."
+        )
+      );
+
+      try {
+        const originalZip = await JSZip.loadAsync(file, {
+          checkCRC32: false
+        });
+
+        const recoveredZip = new JSZip();
+        const entries = Object.values(originalZip.files);
+
+        let recoveredCount = 0;
+        let failedCount = 0;
+
+        for (const entry of entries) {
+          if (entry.dir) {
+            recoveredZip.folder(entry.name);
+            continue;
+          }
+
+          try {
+            const content = await entry.async("uint8array");
+            recoveredZip.file(entry.name, content);
+            recoveredCount++;
+          } catch (error) {
+            failedCount++;
+          }
+        }
+
+        if (recoveredCount === 0) {
+          showStatus(
+            t(
+              "لم نتمكن من استخراج ملفات قابلة للاستعادة.",
+              "No recoverable files could be extracted."
+            ),
+            "error"
+          );
+          return;
+        }
+
+        showStatus(
+          t(
+            "جاري تجهيز ملف ZIP الجديد...",
+            "Preparing the new ZIP file..."
+          )
+        );
+
+        const outputBlob = await recoveredZip.generateAsync({
+          type: "blob",
+          compression: "DEFLATE",
+          compressionOptions: { level: 6 }
+        });
+
+        currentUrl = URL.createObjectURL(outputBlob);
+        downloadLink.href = currentUrl;
+        downloadLink.download = "recovered-files.zip";
+        downloadLink.hidden = false;
+
+        status.className = "success";
+        status.textContent = "";
+
+        const title = document.createElement("div");
+        title.className = "success-title";
+        title.textContent = t(
+          "✓ تمت العملية بنجاح!",
+          "✓ Operation completed successfully!"
+        );
+        status.appendChild(title);
+
+        const message = document.createElement("div");
+        message.textContent = t(
+          "تم تجهيز ملف ZIP جديد للتنزيل.",
+          "A new ZIP file is ready to download."
+        );
+        status.appendChild(message);
+
+        const recovered = document.createElement("div");
+        recovered.textContent =
+          t("عدد الملفات المستخرجة: ", "Files recovered: ") +
+          recoveredCount;
+        status.appendChild(recovered);
+
+        const failed = document.createElement("div");
+        failed.textContent =
+          t("الملفات التي تعذرت قراءتها: ", "Files that could not be read: ") +
+          failedCount;
+        status.appendChild(failed);
+
+      } catch (error) {
+        showStatus(
+          t(
+            "تعذرت قراءة الملف. لم نتمكن من استعادة محتوياته.",
+            "The file could not be read. Its contents could not be recovered."
+          ),
+          "error"
+        );
+      } finally {
+        recoverButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

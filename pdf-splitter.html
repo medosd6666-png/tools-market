@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تقسيم ملفات PDF | سوق الأدوات</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0; padding: 24px;
+    font-family: Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #eaf4ff, #f4f0ff);
+    color: #1f2937; line-height: 1.8;
+}
+.container {
+    width: 100%; max-width: 800px; margin: 20px auto;
+    padding: 30px; background: #fff;
+    border: 1px solid #dbe7f3; border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(30,64,100,0.12);
+}
+header { text-align: center; margin-bottom: 28px; }
+.back {
+    display: inline-block; margin-bottom: 14px;
+    color: #1454a3; text-decoration: none; font-weight: bold;
+}
+h1 { margin: 0 0 8px; color: #1454a3; font-size: 30px; }
+h2 { color: #1454a3; font-size: 22px; }
+.intro { margin: 0; color: #64748b; }
+.panel {
+    padding: 22px; margin-bottom: 22px;
+    border: 1px solid #dbe7f3; border-radius: 16px;
+    background: #fff;
+}
+.field-label { display: block; margin-bottom: 8px; font-weight: bold; }
+input[type="file"], input[type="text"], select {
+    display: block; width: 100%; padding: 13px;
+    border: 1px solid #cbd5e1; border-radius: 12px;
+    background: #f8fafc; font: inherit;
+}
+input[type="file"] { border-style: dashed; }
+.hint { color: #64748b; font-size: 14px; overflow-wrap: anywhere; }
+.field { margin: 20px 0; }
+#options[hidden], #resultPanel[hidden], [hidden] { display: none; }
+button, .download-link {
+    display: inline-block; padding: 12px 24px;
+    border: 0; border-radius: 11px; background: #1769d2;
+    color: #fff; font: inherit; font-weight: bold;
+    text-align: center; text-decoration: none; cursor: pointer;
+}
+button:hover, .download-link:hover { background: #0f4fa8; }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+.secondary-button { background: #64748b; }
+.secondary-button:hover { background: #475569; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+#splitButton { flex: 1; min-width: 190px; }
+#message { margin-top: 15px; color: #475569; overflow-wrap: anywhere; }
+.download-item {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px; margin: 12px 0; padding: 14px;
+    border: 1px solid #dbe7f3; border-radius: 12px;
+    background: #f8fafc;
+}
+.download-info { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.download-info strong { display: block; }
+.download-link { white-space: nowrap; }
+.result-info { color: #475569; overflow-wrap: anywhere; }
+footer { text-align: center; color: #64748b; font-size: 13px; }
+@media (max-width: 520px) {
+    body { padding: 12px; }
+    .container { padding: 18px; margin: 8px auto; }
+    .panel { padding: 16px; }
+    h1 { font-size: 25px; }
+    .actions { flex-direction: column; }
+    .actions button { width: 100%; }
+    .download-item { align-items: stretch; flex-direction: column; }
+    .download-link { width: 100%; white-space: normal; }
+}
+</style>
+</head>
+<body>
+<main class="container">
+<header>
+<a class="back" id="backLink" href="index.html">العودة إلى سوق الأدوات ←</a>
+<h1 data-ar="تقسيم ملفات PDF" data-en="Split PDF Files">تقسيم ملفات PDF</h1>
+<p class="intro" data-ar="قسّم ملف PDF إلى ملفات أصغر حسب الصفحات التي تحتاجها."
+data-en="Split a PDF into smaller files based on the pages you need.">قسّم ملف PDF إلى ملفات أصغر حسب الصفحات التي تحتاجها.</p>
+</header>
+
+<section class="panel">
+<label class="field-label" for="pdfInput" data-ar="اختار ملف PDF من جهازك"
+data-en="Choose a PDF file from your device">اختار ملف PDF من جهازك</label>
+<input id="pdfInput" type="file" accept=".pdf,application/pdf">
+<p id="fileInfo" class="hint">لم يتم اختيار ملف PDF بعد.</p>
+
+<div id="options" hidden>
+<div class="field">
+<label class="field-label" for="splitMode" data-ar="طريقة التقسيم" data-en="Splitting method">طريقة التقسيم</label>
+<select id="splitMode">
+<option value="ranges" data-ar="تقسيم حسب نطاقات الصفحات" data-en="Split by page ranges">تقسيم حسب نطاقات الصفحات</option>
+<option value="each" data-ar="كل صفحة في ملف PDF مستقل" data-en="Each page in a separate PDF">كل صفحة في ملف PDF مستقل</option>
+</select>
+</div>
+
+<div id="rangeField" class="field">
+<label class="field-label" for="rangesInput" data-ar="أرقام الصفحات أو نطاقاتها"
+data-en="Page numbers or ranges">أرقام الصفحات أو نطاقاتها</label>
+<input id="rangesInput" type="text" placeholder="مثال: 1-3, 4-6, 7">
+<p class="hint" data-ar="كل نطاق ينتج ملفًا مستقلًا. مثال 1-3, 4-6 ينتج ملفين. ويمكن كتابة رقم منفرد مثل 7."
+data-en="Each range creates a separate file. For example, 1-3, 4-6 creates two files. You can also enter a single page, such as 7.">كل نطاق ينتج ملفًا مستقلًا. مثال 1-3, 4-6 ينتج ملفين. ويمكن كتابة رقم منفرد مثل 7.</p>
+</div>
+
+<div class="actions">
+<button id="splitButton" type="button" disabled data-ar="تقسيم ملف PDF" data-en="Split PDF">تقسيم ملف PDF</button>
+<button id="clearButton" class="secondary-button" type="button" data-ar="اختيار ملف آخر" data-en="Choose Another File">اختيار ملف آخر</button>
+</div>
+</div>
+
+<p id="message" role="status" aria-live="polite">اختار ملف PDF للبدء.</p>
+</section>
+
+<section id="resultPanel" class="panel" hidden>
+<h2 data-ar="تم تقسيم الملف بنجاح" data-en="PDF Split Successfully">تم تقسيم الملف بنجاح</h2>
+<p id="resultInfo" class="result-info"></p>
+<div id="downloadList"></div>
+</section>
+
+<footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+data-en="Tools Market | Free and Easy Tools for Everyone">سوق الأدوات | أدوات مجانية وسهلة للجميع</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="language.js"></script>
+<script>
+const pdfInput = document.getElementById('pdfInput');
+const fileInfo = document.getElementById('fileInfo');
+const options = document.getElementById('options');
+const splitMode = document.getElementById('splitMode');
+const rangeField = document.getElementById('rangeField');
+const rangesInput = document.getElementById('rangesInput');
+const splitButton = document.getElementById('splitButton');
+const clearButton = document.getElementById('clearButton');
+const message = document.getElementById('message');
+const resultPanel = document.getElementById('resultPanel');
+const resultInfo = document.getElementById('resultInfo');
+const downloadList = document.getElementById('downloadList');
+
+let currentFile = null;
+let totalPages = 0;
+let outputUrls = [];
+let isSplitting = false;
+let language = 'ar';
+
+function t(ar, en) {
+    return language === 'en' ? en : ar;
+}
+
+function setPageLanguage() {
+    const params = new URLSearchParams(window.location.search);
+    let selected = params.get('lang');
+
+    if (selected !== 'ar' && selected !== 'en') {
+        try {
+            selected = localStorage.getItem('toolsMarketLanguage');
+        } catch (error) {}
+    }
+
+    language = selected === 'en' ? 'en' : 'ar';
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === 'en' ? 'ltr' : 'rtl';
+
+    document.querySelectorAll('[data-ar][data-en]').forEach(function(el) {
+        el.textContent = el.getAttribute('data-' + language);
+    });
+
+    rangesInput.placeholder = t('مثال: 1-3, 4-6, 7', 'Example: 1-3, 4-6, 7');
+    document.getElementById('backLink').href = 'index.html?lang=' + language;
+}
+
+function formatBytes(bytes) {
+    if (language === 'en') {
+        if (bytes < 1024) return bytes + ' bytes';
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+        return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+    }
+    if (bytes < 1024) return bytes + ' بايت';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' كيلوبايت';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' ميجابايت';
+}
+
+function clearResults() {
+    outputUrls.forEach(function(url) { URL.revokeObjectURL(url); });
+    outputUrls = [];
+    downloadList.replaceChildren();
+    resultInfo.textContent = '';
+    resultPanel.hidden = true;
+}
+
+function updateMode() {
+    rangeField.hidden = splitMode.value === 'each';
+    clearResults();
+
+    if (currentFile) {
+        message.textContent = splitMode.value === 'each'
+            ? t('سيتم إنشاء ملف PDF مستقل لكل صفحة.', 'A separate PDF will be created for each page.')
+            : t('اكتب نطاقات الصفحات التي تريد فصلها.', 'Enter the page ranges you want to split.');
+    }
+}
+
+function setBusy(busy) {
+    isSplitting = busy;
+    splitButton.disabled = busy || !currentFile;
+    clearButton.disabled = busy;
+    pdfInput.disabled = busy;
+    splitMode.disabled = busy;
+    rangesInput.disabled = busy;
+}
+
+function parseRanges(value, pageCount) {
+    if (!value.trim()) {
+        throw new Error(t('اكتب أرقام الصفحات أو نطاقاتها أولًا.', 'Enter page numbers or ranges first.'));
+    }
+
+    const groups = [];
+    const usedPages = new Set();
+
+    for (const part of value.split(',')) {
+        const token = part.trim();
+        const match = token.match(/^(\d+)(?:\s*-\s*(\d+))?$/);
+
+        if (!match) {
+            throw new Error(t(
+                'صيغة الصفحات غير صحيحة. مثال: 1-3, 4-6, 7',
+                'Invalid page format. Example: 1-3, 4-6, 7'
+            ));
+        }
+
+        const start = Number(match[1]);
+        const end = match[2] ? Number(match[2]) : start;
+
+        if (start < 1 || end < start || end > pageCount) {
+            throw new Error(t(
+                'تأكد أن أرقام الصفحات بين 1 و' + pageCount + '، وأن البداية لا تتجاوز النهاية.',
+                'Page numbers must be between 1 and ' + pageCount + ', and the start must not exceed the end.'
+            ));
+        }
+
+        const pages = [];
+
+        for (let page = start; page <= end; page++) {
+            if (usedPages.has(page)) {
+                throw new Error(t(
+                    'هناك صفحات مكررة أو نطاقات متداخلة. راجع الأرقام.',
+                    'Duplicate pages or overlapping ranges found. Check the page numbers.'
+                ));
+            }
+            usedPages.add(page);
+            pages.push(page - 1);
+        }
+
+        groups.push({ pages: pages, start: start, end: end });
+    }
+
+    return groups;
+}
+
+function getBaseName(name) {
+    const dot = name.lastIndexOf('.');
+    return dot > 0 ? name.substring(0, dot) : name;
+}
+
+function addDownload(blob, filename, label) {
+    const url = URL.createObjectURL(blob);
+    outputUrls.push(url);
+
+    const item = document.createElement('div');
+    item.className = 'download-item';
+
+    const info = document.createElement('div');
+    info.className = 'download-info';
+
+    const title = document.createElement('strong');
+    title.textContent = label;
+
+    const size = document.createElement('span');
+    size.className = 'hint';
+    size.textContent = t('حجم الملف: ', 'File size: ') + formatBytes(blob.size);
+
+    const link = document.createElement('a');
+    link.className = 'download-link';
+    link.href = url;
+    link.download = filename;
+    link.textContent = t('تنزيل ملف PDF', 'Download PDF');
+
+    info.appendChild(title);
+    info.appendChild(size);
+    item.appendChild(info);
+    item.appendChild(link);
+    downloadList.appendChild(item);
+}
+
+pdfInput.addEventListener('change', async function() {
+    if (isSplitting) return;
+
+    clearResults();
+    currentFile = null;
+    totalPages = 0;
+    options.hidden = true;
+    splitButton.disabled = true;
+
+    const file = pdfInput.files[0];
+
+    if (!file) {
+        fileInfo.textContent = t('لم يتم اختيار ملف PDF بعد.', 'No PDF file selected yet.');
+        return;
+    }
+
+    const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+
+    if (!isPdf) {
+        fileInfo.textContent = t('من فضلك اختار ملفًا بصيغة PDF.', 'Please choose a PDF file.');
+        pdfInput.value = '';
+        return;
+    }
+
+    if (typeof PDFLib === 'undefined' || !PDFLib.PDFDocument) {
+        fileInfo.textContent = t(
+            'تعذّر تحميل مكتبة PDF. تأكد من اتصال الإنترنت وحدّث الصفحة.',
+            'Could not load the PDF library. Check your internet connection and refresh the page.'
+        );
+        return;
+    }
+
+    fileInfo.textContent = t('جاري قراءة ملف PDF...', 'Reading PDF file...');
+    message.textContent = t('جاري التحقق من الملف...', 'Checking the file...');
+
+    try {
+        const bytes = await file.arrayBuffer();
+        const pdf = await PDFLib.PDFDocument.load(bytes);
+        const pages = pdf.getPageCount();
+
+        if (pages < 1) throw new Error('empty');
+
+        currentFile = file;
+        totalPages = pages;
+        fileInfo.textContent = t(
+            'الملف: ' + file.name + ' | عدد الصفحات: ' + totalPages + ' | الحجم: ' + formatBytes(file.size),
+            'File: ' + file.name + ' | Pages: ' + totalPages + ' | Size: ' + formatBytes(file.size)
+        );
+
+        options.hidden = false;
+        splitButton.disabled = false;
+        updateMode();
+        message.textContent = t(
+            'اختار طريقة التقسيم، ثم اكتب أرقام الصفحات إذا لزم الأمر.',
+            'Choose a splitting method, then enter page numbers if needed.'
+        );
+    } catch (error) {
+        console.error(error);
+        fileInfo.textContent = t(
+            'تعذّر قراءة الملف. تأكد أنه PDF سليم وغير محمي بكلمة مرور.',
+            'Could not read the file. Make sure it is a valid PDF and is not password-protected.'
+        );
+        message.textContent = t('اختار ملف PDF آخر وجرب مرة ثانية.', 'Choose another PDF file and try again.');
+        pdfInput.value = '';
+        currentFile = null;
+        totalPages = 0;
+        options.hidden = true;
+    }
+});
+
+splitMode.addEventListener('change', updateMode);
+
+clearButton.addEventListener('click', function() {
+    if (isSplitting) return;
+
+    clearResults();
+    currentFile = null;
+    totalPages = 0;
+    pdfInput.value = '';
+    rangesInput.value = '';
+    fileInfo.textContent = t('لم يتم اختيار ملف PDF بعد.', 'No PDF file selected yet.');
+    options.hidden = true;
+    splitButton.disabled = true;
+    message.textContent = t('اختار ملف PDF للبدء.', 'Choose a PDF file to begin.');
+});
+
+splitButton.addEventListener('click', async function() {
+    if (!currentFile || totalPages < 1) {
+        message.textContent = t('اختار ملف PDF صالحًا أولًا.', 'Choose a valid PDF file first.');
+        return;
+    }
+
+    if (typeof PDFLib === 'undefined' || !PDFLib.PDFDocument) {
+        message.textContent = t(
+            'تعذّر تحميل مكتبة PDF. تأكد من اتصال الإنترنت وحدّث الصفحة.',
+            'Could not load the PDF library. Check your internet connection and refresh the page.'
+        );
+        return;
+    }
+
+    let groups;
+
+    try {
+        if (splitMode.value === 'each') {
+            groups = Array.from({ length: totalPages }, function(_, index) {
+                return { pages: [index], start: index + 1, end: index + 1 };
+            });
+        } else {
+            groups = parseRanges(rangesInput.value, totalPages);
+        }
+    } catch (error) {
+        message.textContent = error.message;
+        return;
+    }
+
+    clearResults();
+    setBusy(true);
+
+    try {
+        const bytes = await currentFile.arrayBuffer();
+        const sourcePdf = await PDFLib.PDFDocument.load(bytes);
+        const baseName = getBaseName(currentFile.name);
+        let selectedPageCount = 0;
+
+        for (let i = 0; i < groups.length; i++) {
+            const group = groups[i];
+            message.textContent = t('جاري إنشاء الملف ', 'Creating file ') +
+                (i + 1) + t(' من ', ' of ') + groups.length + '...';
+
+            const newPdf = await PDFLib.PDFDocument.create();
+            const copiedPages = await newPdf.copyPages(sourcePdf, group.pages);
+
+            copiedPages.forEach(function(page) { newPdf.addPage(page); });
+
+            const outputBytes = await newPdf.save();
+            const blob = new Blob([outputBytes], { type: 'application/pdf' });
+
+            const rangeLabel = group.start === group.end
+                ? t('الصفحة ', 'Page ') + group.start
+                : t('الصفحات ', 'Pages ') + group.start + t(' إلى ', ' to ') + group.end;
+
+            const filename = splitMode.value === 'each'
+                ? baseName + '-page-' + group.start + '.pdf'
+                : baseName + '-pages-' + group.start + '-' + group.end + '.pdf';
+
+            addDownload(blob, filename, rangeLabel);
+            selectedPageCount += group.pages.length;
+        }
+
+        resultInfo.textContent = t(
+            'تم تقسيم الملف إلى ' + groups.length + ' ملف PDF، بمجموع ' + selectedPageCount + ' صفحة.',
+            'The PDF was split into ' + groups.length + ' PDF file(s), containing ' + selectedPageCount + ' pages in total.'
+        );
+
+        resultPanel.hidden = false;
+        message.textContent = t(
+            'تم التقسيم بنجاح. نزّل الملفات الناتجة من الروابط أدناه.',
+            'Splitting completed successfully. Download the files using the links below.'
+        );
+        resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (error) {
+        console.error(error);
+        clearResults();
+        message.textContent = t(
+            'تعذّر تقسيم الملف. تأكد أن ملف PDF سليم وغير محمي بكلمة مرور، ثم حاول مرة أخرى.',
+            'Could not split the PDF. Make sure it is valid and not password-protected, then try again.'
+        );
+    } finally {
+        setBusy(false);
+    }
+});
+
+window.addEventListener('beforeunload', function() {
+    outputUrls.forEach(function(url) { URL.revokeObjectURL(url); });
+});
+
+setPageLanguage();
+
+if (typeof PDFLib === 'undefined') {
+    message.textContent = t(
+        'إذا لم تعمل الأداة، تأكد من اتصال الإنترنت ثم حدّث الصفحة.',
+        'If the tool does not work, check your internet connection and refresh the page.'
+    );
+}
+</script>
+</body>
+</html>

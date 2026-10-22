@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دمج ملفات PDF | سوق الأدوات</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0; padding: 24px;
+    font-family: Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #eaf4ff, #f4f0ff);
+    color: #1f2937; line-height: 1.8;
+}
+.container {
+    width: 100%; max-width: 800px; margin: 20px auto;
+    padding: 30px; background: #fff;
+    border: 1px solid #dbe7f3; border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(30,64,100,0.12);
+}
+header { text-align: center; margin-bottom: 28px; }
+.back {
+    display: inline-block; margin-bottom: 14px;
+    color: #1454a3; text-decoration: none; font-weight: bold;
+}
+h1 { margin: 0 0 8px; color: #1454a3; font-size: 30px; }
+h2 { color: #1454a3; font-size: 22px; }
+.intro { margin: 0; color: #64748b; }
+.panel {
+    padding: 22px; margin-bottom: 22px;
+    border: 1px solid #dbe7f3; border-radius: 16px;
+    background: #fff;
+}
+.field-label { display: block; margin-bottom: 8px; font-weight: bold; }
+input[type="file"] {
+    display: block; width: 100%; padding: 13px;
+    border: 1px dashed #94a3b8; border-radius: 12px;
+    background: #f8fafc; font: inherit;
+}
+.hint { color: #64748b; font-size: 14px; overflow-wrap: anywhere; }
+.file-list { list-style: none; margin: 16px 0; padding: 0; }
+.file-item {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 13px; margin-bottom: 10px;
+    border: 1px solid #dbe7f3; border-radius: 12px;
+    background: #f8fafc;
+}
+.file-info { flex: 1; min-width: 0; }
+.file-name { display: block; font-weight: bold; overflow-wrap: anywhere; }
+.file-size { color: #64748b; font-size: 13px; }
+.file-controls { display: flex; flex-wrap: wrap; gap: 5px; }
+button, .download-link, .open-link {
+    display: inline-block; padding: 12px 20px;
+    border: 0; border-radius: 11px; background: #1769d2;
+    color: #fff; font: inherit; font-weight: bold;
+    text-align: center; text-decoration: none; cursor: pointer;
+}
+button:hover, .download-link:hover { background: #0f4fa8; }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+.file-controls button { padding: 6px 10px; border-radius: 8px; font-size: 13px; }
+.file-controls .remove-button { background: #b42318; }
+.file-controls .remove-button:hover { background: #8f1d14; }
+.secondary-button { background: #64748b; }
+.secondary-button:hover { background: #475569; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+#mergeButton { flex: 1; min-width: 190px; }
+#message { margin-top: 15px; color: #475569; overflow-wrap: anywhere; }
+#resultPanel[hidden] { display: none; }
+.result-info { color: #475569; overflow-wrap: anywhere; }
+.open-link { background: #475569; margin-inline-start: 8px; }
+.open-link:hover { background: #334155; }
+.language-buttons { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; }
+.language-buttons button { padding: 6px 14px; font-size: 14px; }
+.language-buttons button.active { background: #0f4fa8; }
+footer { text-align: center; color: #64748b; font-size: 13px; }
+@media (max-width: 520px) {
+    body { padding: 12px; }
+    .container { padding: 18px; margin: 8px auto; }
+    .panel { padding: 16px; }
+    h1 { font-size: 25px; }
+    .file-item { align-items: flex-start; flex-direction: column; }
+    .actions { flex-direction: column; }
+    .actions button, .download-link, .open-link { width: 100%; margin: 0; }
+}
+</style>
+</head>
+<body>
+<main class="container">
+<header>
+<div class="language-buttons">
+<button type="button" id="arabicButton">العربية</button>
+<button type="button" id="englishButton">English</button>
+</div>
+<a class="back" id="backLink" href="index.html">العودة إلى سوق الأدوات ←</a>
+<h1 data-ar="دمج ملفات PDF" data-en="Merge PDF Files">دمج ملفات PDF</h1>
+<p class="intro" data-ar="اجمع ملفات PDF في ملف واحد بسهولة ومجانًا."
+data-en="Combine PDF files into one file easily and for free.">اجمع ملفات PDF في ملف واحد بسهولة ومجانًا.</p>
+</header>
+
+<section class="panel">
+<label class="field-label" for="pdfInput"
+data-ar="اختار ملفات PDF من جهازك"
+data-en="Choose PDF files from your device">اختار ملفات PDF من جهازك</label>
+<input id="pdfInput" type="file" accept=".pdf,application/pdf" multiple>
+<p class="hint" data-ar="اختار ملفين PDF أو أكثر. تقدر ترتّب الملفات قبل الدمج باستخدام الأسهم."
+data-en="Choose two or more PDF files. Use the arrows to arrange them before merging.">اختار ملفين PDF أو أكثر. تقدر ترتّب الملفات قبل الدمج باستخدام الأسهم.</p>
+
+<p id="fileCount" class="hint">لم يتم اختيار ملفات بعد.</p>
+<ol id="fileList" class="file-list"></ol>
+
+<div class="actions">
+<button id="mergeButton" type="button" disabled
+data-ar="دمج ملفات PDF" data-en="Merge PDF Files">دمج ملفات PDF</button>
+<button id="clearButton" class="secondary-button" type="button" disabled
+data-ar="مسح الملفات" data-en="Clear Files">مسح الملفات</button>
+</div>
+<p id="message" role="status" aria-live="polite">اختار ملفات PDF للبدء.</p>
+</section>
+
+<section id="resultPanel" class="panel" hidden>
+<h2 data-ar="تم دمج الملفات بنجاح" data-en="PDF Files Merged Successfully">تم دمج الملفات بنجاح</h2>
+<p id="resultInfo" class="result-info"></p>
+<a id="downloadLink" class="download-link" href="#" download="merged-files.pdf"
+data-ar="تنزيل ملف PDF المدمج" data-en="Download Merged PDF">تنزيل ملف PDF المدمج</a>
+<a id="openLink" class="open-link" href="#" target="_blank" rel="noopener"
+data-ar="فتح لمعاينة الملف" data-en="Open PDF Preview">فتح لمعاينة الملف</a>
+</section>
+
+<footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+data-en="Tools Market | Free and Easy Tools for Everyone">سوق الأدوات | أدوات مجانية وسهلة للجميع</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script>
+const pdfInput = document.getElementById('pdfInput');
+const fileCount = document.getElementById('fileCount');
+const fileList = document.getElementById('fileList');
+const mergeButton = document.getElementById('mergeButton');
+const clearButton = document.getElementById('clearButton');
+const message = document.getElementById('message');
+const resultPanel = document.getElementById('resultPanel');
+const resultInfo = document.getElementById('resultInfo');
+const downloadLink = document.getElementById('downloadLink');
+const openLink = document.getElementById('openLink');
+
+let selectedFiles = [];
+let mergedUrl = '';
+let isMerging = false;
+let language = 'ar';
+
+function t(ar, en) {
+    return language === 'ar' ? ar : en;
+}
+
+function setLanguage(lang) {
+    language = lang === 'en' ? 'en' : 'ar';
+
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-ar][data-en]').forEach(function(el) {
+        el.textContent = el.getAttribute('data-' + language);
+    });
+
+    document.getElementById('arabicButton').classList.toggle('active', language === 'ar');
+    document.getElementById('englishButton').classList.toggle('active', language === 'en');
+
+    try {
+        localStorage.setItem('toolsMarketLanguage', language);
+    } catch (error) {}
+
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', language);
+    history.replaceState(null, '', url);
+
+    document.getElementById('backLink').href = 'index.html?lang=' + language;
+    renderFiles();
+
+    if (typeof PDFLib === 'undefined') {
+        message.textContent = t(
+            'تعذّر تحميل مكتبة الدمج. تأكد من اتصال الإنترنت.',
+            'Could not load the PDF library. Check your internet connection.'
+        );
+    }
+}
+
+document.getElementById('arabicButton').addEventListener('click', function() {
+    setLanguage('ar');
+});
+document.getElementById('englishButton').addEventListener('click', function() {
+    setLanguage('en');
+});
+
+function formatBytes(bytes) {
+    if (language === 'en') {
+        if (bytes < 1024) return bytes + ' bytes';
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+        return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+    }
+    if (bytes < 1024) return bytes + ' بايت';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' كيلوبايت';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' ميجابايت';
+}
+
+function clearResult() {
+    if (mergedUrl) URL.revokeObjectURL(mergedUrl);
+    mergedUrl = '';
+    downloadLink.removeAttribute('href');
+    openLink.removeAttribute('href');
+    resultPanel.hidden = true;
+}
+
+function updateButtons() {
+    mergeButton.disabled = isMerging || selectedFiles.length < 2;
+    clearButton.disabled = isMerging || selectedFiles.length === 0;
+    pdfInput.disabled = isMerging;
+    fileList.querySelectorAll('button').forEach(function(button) {
+        button.disabled = isMerging;
+    });
+}
+
+function renderFiles() {
+    fileList.replaceChildren();
+
+    selectedFiles.forEach(function(file, index) {
+        const item = document.createElement('li');
+        item.className = 'file-item';
+
+        const info = document.createElement('div');
+        info.className = 'file-info';
+
+        const name = document.createElement('span');
+        name.className = 'file-name';
+        name.textContent = (index + 1) + '. ' + file.name;
+
+        const size = document.createElement('span');
+        size.className = 'file-size';
+        size.textContent = formatBytes(file.size);
+
+        info.appendChild(name);
+        info.appendChild(size);
+
+        const controls = document.createElement('div');
+        controls.className = 'file-controls';
+
+        const upButton = document.createElement('button');
+        upButton.type = 'button';
+        upButton.textContent = '↑';
+        upButton.title = t('تحريك الملف لأعلى', 'Move file up');
+        upButton.setAttribute('aria-label', t('تحريك الملف لأعلى', 'Move file up'));
+        upButton.disabled = isMerging || index === 0;
+        upButton.addEventListener('click', function() { moveFile(index, -1); });
+
+        const downButton = document.createElement('button');
+        downButton.type = 'button';
+        downButton.textContent = '↓';
+        downButton.title = t('تحريك الملف لأسفل', 'Move file down');
+        downButton.setAttribute('aria-label', t('تحريك الملف لأسفل', 'Move file down'));
+        downButton.disabled = isMerging || index === selectedFiles.length - 1;
+        downButton.addEventListener('click', function() { moveFile(index, 1); });
+
+        const removeButton = document.createElement('button');
+        removeButton.type = 'button';
+        removeButton.textContent = t('حذف', 'Remove');
+        removeButton.className = 'remove-button';
+        removeButton.addEventListener('click', function() { removeFile(index); });
+
+        controls.appendChild(upButton);
+        controls.appendChild(downButton);
+        controls.appendChild(removeButton);
+        item.appendChild(info);
+        item.appendChild(controls);
+        fileList.appendChild(item);
+    });
+
+    if (selectedFiles.length === 0) {
+        fileCount.textContent = t('لم يتم اختيار ملفات بعد.', 'No files selected yet.');
+    } else {
+        fileCount.textContent = t(
+            'عدد الملفات: ' + selectedFiles.length + '. سيتم دمجها حسب الترتيب الظاهر أعلاه.',
+            'Files selected: ' + selectedFiles.length + '. They will be merged in the order shown above.'
+        );
+    }
+
+    updateButtons();
+}
+
+function moveFile(index, direction) {
+    const newIndex = index + direction;
+    if (newIndex < 0 || newIndex >= selectedFiles.length || isMerging) return;
+
+    const temp = selectedFiles[index];
+    selectedFiles[index] = selectedFiles[newIndex];
+    selectedFiles[newIndex] = temp;
+
+    clearResult();
+    renderFiles();
+    message.textContent = t(
+        'تم تحديث ترتيب الملفات. سيتم الدمج حسب الترتيب الظاهر.',
+        'File order updated. Files will be merged in the displayed order.'
+    );
+}
+
+function removeFile(index) {
+    if (isMerging) return;
+    selectedFiles.splice(index, 1);
+    clearResult();
+    renderFiles();
+    message.textContent = t(
+        'تم حذف الملف من القائمة.',
+        'The file was removed from the list.'
+    );
+}
+
+pdfInput.addEventListener('change', function() {
+    if (isMerging) return;
+
+    clearResult();
+    let added = 0;
+    let rejected = 0;
+    let duplicates = 0;
+
+    Array.from(pdfInput.files || []).forEach(function(file) {
+        const isPdf = file.type === 'application/pdf' ||
+            file.name.toLowerCase().endsWith('.pdf');
+
+        if (!isPdf) {
+            rejected++;
+            return;
+        }
+
+        const alreadyAdded = selectedFiles.some(function(existing) {
+            return existing.name === file.name &&
+                existing.size === file.size &&
+                existing.lastModified === file.lastModified;
+        });
+
+        if (alreadyAdded) {
+            duplicates++;
+            return;
+        }
+
+        selectedFiles.push(file);
+        added++;
+    });
+
+    pdfInput.value = '';
+    renderFiles();
+
+    if (rejected > 0) {
+        message.textContent = t(
+            'تم تجاهل ' + rejected + ' ملف غير PDF. أضف ملفات PDF فقط.',
+            rejected + ' non-PDF file(s) ignored. Please add PDF files only.'
+        );
+    } else if (added > 0) {
+        message.textContent = t(
+            'تمت إضافة ' + added + ' ملف. راجع ترتيب الملفات قبل الدمج.',
+            added + ' file(s) added. Review the order before merging.'
+        );
+    } else if (duplicates > 0) {
+        message.textContent = t(
+            'هذه الملفات موجودة بالفعل في القائمة.',
+            'These files are already in the list.'
+        );
+    }
+
+    if (typeof PDFLib === 'undefined' && selectedFiles.length > 0) {
+        message.textContent += t(
+            ' تعذّر تحميل مكتبة الدمج؛ تأكد من اتصال الإنترنت ثم حدّث الصفحة.',
+            ' The PDF library could not load. Check your internet connection and refresh the page.'
+        );
+    }
+});
+
+clearButton.addEventListener('click', function() {
+    if (isMerging) return;
+    selectedFiles = [];
+    clearResult();
+    renderFiles();
+    message.textContent = t('تم مسح قائمة الملفات.', 'The file list has been cleared.');
+});
+
+mergeButton.addEventListener('click', async function() {
+    if (selectedFiles.length < 2) {
+        message.textContent = t(
+            'اختار ملفين PDF على الأقل لإجراء الدمج.',
+            'Choose at least two PDF files to merge.'
+        );
+        return;
+    }
+
+    if (typeof PDFLib === 'undefined' || !PDFLib.PDFDocument) {
+        message.textContent = t(
+            'تعذّر تحميل مكتبة الدمج. تأكد من اتصال الإنترنت ثم حدّث الصفحة وحاول مرة أخرى.',
+            'Could not load the PDF library. Check your internet connection, refresh the page, and try again.'
+        );
+        return;
+    }
+
+    clearResult();
+    isMerging = true;
+    updateButtons();
+
+    try {
+        const mergedPdf = await PDFLib.PDFDocument.create();
+        let totalPages = 0;
+
+        for (let i = 0; i < selectedFiles.length; i++) {
+            const file = selectedFiles[i];
+            message.textContent = t(
+                'جاري تجهيز الملف ',
+                'Processing file '
+            ) + (i + 1) + t(' من ', ' of ') + selectedFiles.length + ': ' + file.name;
+
+            const fileBytes = await file.arrayBuffer();
+            const sourcePdf = await PDFLib.PDFDocument.load(fileBytes);
+            const pageIndices = sourcePdf.getPageIndices();
+            const copiedPages = await mergedPdf.copyPages(sourcePdf, pageIndices);
+
+            copiedPages.forEach(function(page) {
+                mergedPdf.addPage(page);
+            });
+
+            totalPages += copiedPages.length;
+        }
+
+        if (totalPages === 0) throw new Error('empty-pdf');
+
+        message.textContent = t(
+            'جاري إنشاء ملف PDF المدمج...',
+            'Creating the merged PDF...'
+        );
+
+        const mergedBytes = await mergedPdf.save();
+        const blob = new Blob([mergedBytes], { type: 'application/pdf' });
+
+        mergedUrl = URL.createObjectURL(blob);
+        downloadLink.href = mergedUrl;
+        openLink.href = mergedUrl;
+
+        resultInfo.textContent = t(
+            'تم دمج ' + selectedFiles.length + ' ملفات في ملف واحد يحتوي على ' +
+            totalPages + ' صفحة. حجم الملف الناتج: ' + formatBytes(blob.size) + '.',
+            selectedFiles.length + ' files were merged into one PDF containing ' +
+            totalPages + ' pages. Output file size: ' + formatBytes(blob.size) + '.'
+        );
+
+        resultPanel.hidden = false;
+        message.textContent = t(
+            'تم الدمج بنجاح. تقدر تفتح الملف لمعاينته أو تنزّله.',
+            'Merge completed successfully. You can preview or download the file.'
+        );
+        resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (error) {
+        console.error(error);
+        message.textContent = t(
+            'تعذّر دمج الملفات. تأكد أن ملفات PDF سليمة وغير محمية بكلمة مرور، ثم جرّب مرة أخرى.',
+            'Could not merge the files. Make sure the PDFs are valid and not password-protected, then try again.'
+        );
+    } finally {
+        isMerging = false;
+        updateButtons();
+    }
+});
+
+window.addEventListener('beforeunload', function() {
+    if (mergedUrl) URL.revokeObjectURL(mergedUrl);
+});
+
+let initialLanguage = 'ar';
+try {
+    const params = new URLSearchParams(window.location.search);
+    const requestedLanguage = params.get('lang');
+    initialLanguage = requestedLanguage === 'en' || requestedLanguage === 'ar'
+        ? requestedLanguage
+        : (localStorage.getItem('toolsMarketLanguage') === 'en' ? 'en' : 'ar');
+} catch (error) {}
+
+setLanguage(initialLanguage);
+renderFiles();
+
+if (typeof PDFLib === 'undefined') {
+    message.textContent = t(
+        'إذا لم يعمل الدمج، تأكد من اتصال الإنترنت ثم حدّث الصفحة.',
+        'If merging does not work, check your internet connection and refresh the page.'
+    );
+}
+</script>
+</body>
+</html>

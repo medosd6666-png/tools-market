@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحويل الصور إلى أبيض وأسود | سوق الأدوات</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 24px;
+    font-family: Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #eaf4ff, #f4f0ff);
+    color: #1f2937;
+    line-height: 1.8;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #dbe7f3;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(30,64,100,0.12);
+}
+
+header { text-align: center; margin-bottom: 28px; }
+
+.back {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #1454a3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h1 { margin: 0 0 8px; color: #1454a3; font-size: 30px; }
+h2 { color: #1454a3; font-size: 22px; }
+.intro { margin: 0; color: #64748b; }
+
+.panel {
+    padding: 22px;
+    margin-bottom: 22px;
+    border: 1px solid #dbe7f3;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.field-label { display: block; margin-bottom: 8px; font-weight: bold; }
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: 1px dashed #94a3b8;
+    border-radius: 12px;
+    background: #f8fafc;
+    font: inherit;
+}
+
+.hint { color: #64748b; font-size: 14px; overflow-wrap: anywhere; }
+
+button, .download-link {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 11px;
+    background: #1769d2;
+    color: #fff;
+    font: inherit;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover, .download-link:hover { background: #0f4fa8; }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+#message { margin-top: 15px; color: #475569; overflow-wrap: anywhere; }
+
+#resultPanel[hidden], #editor[hidden] { display: none; }
+
+.preview {
+    display: block;
+    max-width: 100%;
+    max-height: 420px;
+    margin: 18px auto;
+    border-radius: 12px;
+    object-fit: contain;
+    background: #f1f5f9;
+}
+
+.result-info { color: #475569; overflow-wrap: anywhere; }
+footer { text-align: center; color: #64748b; font-size: 13px; }
+
+@media (max-width: 520px) {
+    body { padding: 12px; }
+    .container { padding: 18px; margin: 8px auto; }
+    .panel { padding: 16px; }
+    h1 { font-size: 25px; }
+    button, .download-link { width: 100%; }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+<header>
+<a class="back" href="index.html"
+data-ar="العودة إلى سوق الأدوات ←"
+data-en="← Back to Tools Market">العودة إلى سوق الأدوات ←</a>
+
+<h1 data-ar="تحويل الصور إلى أبيض وأسود"
+data-en="Convert Images to Black and White">
+تحويل الصور إلى أبيض وأسود
+</h1>
+
+<p class="intro"
+data-ar="حوّل صورك الملونة إلى أبيض وأسود بسهولة ومجانًا."
+data-en="Convert your color photos to black and white easily and for free.">
+حوّل صورك الملونة إلى أبيض وأسود بسهولة ومجانًا.
+</p>
+</header>
+
+<section class="panel">
+
+<label class="field-label" for="imageInput"
+data-ar="اختار صورة من جهازك"
+data-en="Choose an image from your device">
+اختار صورة من جهازك
+</label>
+
+<input id="imageInput" type="file"
+accept="image/jpeg,image/png,image/webp">
+
+<p id="fileInfo" class="hint"></p>
+
+<div id="editor" hidden>
+<button id="convertButton" type="button"
+data-ar="تحويل الصورة إلى أبيض وأسود"
+data-en="Convert to Black and White">
+تحويل الصورة إلى أبيض وأسود
+</button>
+
+<p id="message" role="status" aria-live="polite"></p>
+</div>
+</section>
+
+<section id="resultPanel" class="panel" hidden>
+
+<h2 data-ar="الصورة بعد التحويل"
+data-en="Converted Image">
+الصورة بعد التحويل
+</h2>
+
+<img id="previewImage" class="preview"
+alt="معاينة الصورة بعد تحويلها إلى أبيض وأسود">
+
+<p id="resultInfo" class="result-info"></p>
+
+<a id="downloadLink" class="download-link" href="#" download
+data-ar="تنزيل الصورة الجديدة"
+data-en="Download New Image">
+تنزيل الصورة الجديدة
+</a>
+</section>
+
+<footer
+data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+data-en="Tools Market | Free and Easy Tools for Everyone">
+سوق الأدوات | أدوات مجانية وسهلة للجميع
+</footer>
+
+</main>
+
+<script src="language.js"></script>
+
+<script>
+const imageInput = document.getElementById('imageInput');
+const fileInfo = document.getElementById('fileInfo');
+const editor = document.getElementById('editor');
+const convertButton = document.getElementById('convertButton');
+const message = document.getElementById('message');
+const resultPanel = document.getElementById('resultPanel');
+const previewImage = document.getElementById('previewImage');
+const resultInfo = document.getElementById('resultInfo');
+const downloadLink = document.getElementById('downloadLink');
+
+let sourceImage = null;
+let originalFile = null;
+let sourceUrl = '';
+let outputUrl = '';
+
+function getLanguage() {
+    const params = new URLSearchParams(window.location.search);
+    const pageLanguage = params.get('lang');
+
+    if (pageLanguage === 'en' || pageLanguage === 'ar') {
+        return pageLanguage;
+    }
+
+    try {
+        return localStorage.getItem('toolsMarketLanguage') === 'en'
+            ? 'en' : 'ar';
+    } catch (error) {
+        return 'ar';
+    }
+}
+
+function t(ar, en) {
+    return getLanguage() === 'en' ? en : ar;
+}
+
+function updatePageLanguage() {
+    const language = getLanguage();
+    const isArabic = language === 'ar';
+
+    document.documentElement.lang = language;
+    document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-ar][data-en]').forEach(function(element) {
+        element.textContent = isArabic
+            ? element.getAttribute('data-ar')
+            : element.getAttribute('data-en');
+    });
+
+    previewImage.alt = t(
+        'معاينة الصورة بعد تحويلها إلى أبيض وأسود',
+        'Preview of the black and white image'
+    );
+}
+
+function formatBytes(bytes) {
+    if (bytes < 1024) return bytes + t(' بايت', ' bytes');
+
+    if (bytes < 1024 * 1024) {
+        return (bytes / 1024).toFixed(2) + t(' كيلوبايت', ' KB');
+    }
+
+    return (bytes / (1024 * 1024)).toFixed(2) + t(' ميجابايت', ' MB');
+}
+
+function clearOutput() {
+    if (outputUrl) URL.revokeObjectURL(outputUrl);
+
+    outputUrl = '';
+    previewImage.removeAttribute('src');
+    downloadLink.removeAttribute('href');
+    resultPanel.hidden = true;
+}
+
+imageInput.addEventListener('change', function() {
+    clearOutput();
+    editor.hidden = true;
+    convertButton.disabled = true;
+    sourceImage = null;
+    originalFile = null;
+
+    const file = imageInput.files[0];
+
+    if (!file) {
+        fileInfo.textContent = t(
+            'الصيغ المدعومة: JPG وPNG وWebP.',
+            'Supported formats: JPG, PNG, and WebP.'
+        );
+        return;
+    }
+
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+
+    if (!allowedTypes.includes(file.type)) {
+        fileInfo.textContent = t(
+            'من فضلك اختار صورة بصيغة JPG أو PNG أو WebP.',
+            'Please choose an image in JPG, PNG, or WebP format.'
+        );
+
+        imageInput.value = '';
+        return;
+    }
+
+    fileInfo.textContent = t(
+        'جاري فتح الصورة...',
+        'Loading image...'
+    );
+
+    if (sourceUrl) URL.revokeObjectURL(sourceUrl);
+
+    sourceUrl = URL.createObjectURL(file);
+
+    const img = new Image();
+
+    img.onload = function() {
+        sourceImage = img;
+        originalFile = file;
+
+        fileInfo.textContent =
+            t('الصورة الأصلية: ', 'Original image: ') +
+            img.naturalWidth + ' × ' + img.naturalHeight +
+            t(' بكسل، والحجم ', ' pixels, size ') +
+            formatBytes(file.size) + '.';
+
+        editor.hidden = false;
+        convertButton.disabled = false;
+
+        message.textContent = t(
+            'اضغط الزر لتحويل الصورة إلى أبيض وأسود.',
+            'Click the button to convert the image to black and white.'
+        );
+    };
+
+    img.onerror = function() {
+        fileInfo.textContent = t(
+            'تعذّر فتح الصورة. جرّب اختيار صورة أخرى.',
+            'Could not open the image. Try choosing another image.'
+        );
+
+        if (sourceUrl) URL.revokeObjectURL(sourceUrl);
+
+        sourceUrl = '';
+        imageInput.value = '';
+    };
+
+    img.src = sourceUrl;
+});
+
+convertButton.addEventListener('click', function() {
+    if (!sourceImage || !originalFile) {
+        message.textContent = t(
+            'اختار صورة أولًا.',
+            'Choose an image first.'
+        );
+        return;
+    }
+
+    convertButton.disabled = true;
+
+    message.textContent = t(
+        'جاري تحويل الصورة إلى أبيض وأسود...',
+        'Converting image to black and white...'
+    );
+
+    try {
+        const canvas = document.createElement('canvas');
+
+        canvas.width = sourceImage.naturalWidth;
+        canvas.height = sourceImage.naturalHeight;
+
+        const context = canvas.getContext('2d');
+
+        if (!context) throw new Error('canvas');
+
+        context.drawImage(sourceImage, 0, 0);
+
+        const imageData = context.getImageData(
+            0, 0, canvas.width, canvas.height
+        );
+
+        const pixels = imageData.data;
+
+        for (let i = 0; i < pixels.length; i += 4) {
+            const gray = Math.round(
+                0.299 * pixels[i] +
+                0.587 * pixels[i + 1] +
+                0.114 * pixels[i + 2]
+            );
+
+            pixels[i] = gray;
+            pixels[i + 1] = gray;
+            pixels[i + 2] = gray;
+        }
+
+        context.putImageData(imageData, 0, 0);
+
+        let outputType = originalFile.type;
+
+        if (!['image/jpeg', 'image/png', 'image/webp'].includes(outputType)) {
+            outputType = 'image/png';
+        }
+
+        canvas.toBlob(function(blob) {
+            convertButton.disabled = false;
+
+            if (!blob) {
+                message.textContent = t(
+                    'لم نتمكن من إنشاء الصورة. جرّب صورة أخرى.',
+                    'Could not create the image. Try another image.'
+                );
+                return;
+            }
+
+            let extension = 'jpg';
+
+            if (blob.type === 'image/png') extension = 'png';
+            if (blob.type === 'image/webp') extension = 'webp';
+
+            clearOutput();
+
+            outputUrl = URL.createObjectURL(blob);
+            previewImage.src = outputUrl;
+
+            let baseName = originalFile.name;
+            const dotPosition = baseName.lastIndexOf('.');
+
+            if (dotPosition > 0) {
+                baseName = baseName.substring(0, dotPosition);
+            }
+
+            downloadLink.href = outputUrl;
+            downloadLink.download = baseName + '-grayscale.' + extension;
+
+            resultInfo.textContent =
+                t('الأبعاد: ', 'Dimensions: ') +
+                sourceImage.naturalWidth + ' × ' +
+                sourceImage.naturalHeight +
+                t(' بكسل. حجم الصورة الأصلية: ', ' pixels. Original image size: ') +
+                formatBytes(originalFile.size) +
+                t('. حجم الصورة الجديدة: ', '. New image size: ') +
+                formatBytes(blob.size) + '.';
+
+            resultPanel.hidden = false;
+
+            message.textContent = t(
+                'تم تحويل الصورة بنجاح. تقدر تشوف النتيجة وتنزّلها.',
+                'Image converted successfully. You can preview and download it.'
+            );
+
+            resultPanel.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+        }, outputType, 0.92);
+
+    } catch (error) {
+        convertButton.disabled = false;
+
+        message.textContent = t(
+            'تعذّر تحويل الصورة. جرّب صورة أخرى أو مقاسًا أصغر.',
+            'Could not convert the image. Try another image or a smaller one.'
+        );
+    }
+});
+
+updatePageLanguage();
+
+fileInfo.textContent = t(
+    'الصيغ المدعومة: JPG وPNG وWebP.',
+    'Supported formats: JPG, PNG, and WebP.'
+);
+
+message.textContent = t(
+    'اضغط الزر لتحويل الصورة إلى أبيض وأسود.',
+    'Click the button to convert the image to black and white.'
+);
+
+window.addEventListener('beforeunload', function() {
+    if (sourceUrl) URL.revokeObjectURL(sourceUrl);
+    if (outputUrl) URL.revokeObjectURL(outputUrl);
+});
+</script>
+</body>
+</html>

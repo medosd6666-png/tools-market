@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title data-ar="استخراج النصوص من الصور | سوق الأدوات"
+       data-en="Extract Text from Images | Tools Market">
+استخراج النصوص من الصور | سوق الأدوات
+</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fa;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #243447;
+}
+
+.container {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #00000012;
+}
+
+h1 {
+    color: #1769aa;
+}
+
+p {
+    line-height: 1.8;
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+}
+
+button {
+    background: #1769aa;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+#preview {
+    display: none;
+    max-width: 100%;
+    max-height: 300px;
+    margin: 15px auto;
+    border-radius: 8px;
+}
+
+#status {
+    margin: 18px 0;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+textarea {
+    width: 100%;
+    min-height: 220px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 17px;
+    line-height: 1.8;
+    resize: vertical;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1769aa;
+}
+
+footer {
+    margin-top: 25px;
+    color: #667788;
+    line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 16px;
+        margin: 12px auto;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1 data-ar="استخراج النصوص من الصور"
+    data-en="Extract Text from Images">
+استخراج النصوص من الصور
+</h1>
+
+<p data-ar="اختر صورة تحتوي على كتابة، وسيحاول الموقع استخراج النص العربي والإنجليزي منها لتتمكن من نسخه."
+   data-en="Choose an image containing text. The tool will try to recognize Arabic and English text so you can copy it.">
+اختر صورة تحتوي على كتابة، وسيحاول الموقع استخراج النص العربي والإنجليزي منها لتتمكن من نسخه.
+</p>
+
+<input type="file" id="imageFile" accept="image/*">
+
+<img id="preview" alt="معاينة الصورة المختارة">
+
+<br>
+
+<button id="extractBtn"
+        data-ar="استخراج النص"
+        data-en="Extract Text">
+استخراج النص
+</button>
+
+<div id="status" aria-live="polite"></div>
+
+<textarea id="result"
+          placeholder="النص المستخرج سيظهر هنا..."
+          dir="auto"></textarea>
+
+<br>
+
+<button id="copyBtn" disabled
+        data-ar="نسخ النص"
+        data-en="Copy Text">
+نسخ النص
+</button>
+
+<br>
+
+<a href="index.html" id="homeLink"
+   data-ar="العودة إلى الصفحة الرئيسية"
+   data-en="Back to Homepage">
+العودة إلى الصفحة الرئيسية
+</a>
+
+<footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+        data-en="Tools Market | Free and Easy Tools for Everyone">
+سوق الأدوات | أدوات مجانية وسهلة للجميع
+</footer>
+
+</div>
+
+<script src="language.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+<script>
+const imageFile = document.getElementById("imageFile");
+const preview = document.getElementById("preview");
+const extractBtn = document.getElementById("extractBtn");
+const copyBtn = document.getElementById("copyBtn");
+const status = document.getElementById("status");
+const result = document.getElementById("result");
+const homeLink = document.getElementById("homeLink");
+
+function getLanguage() {
+    const params = new URLSearchParams(window.location.search);
+    const pageLanguage = params.get("lang");
+
+    if (pageLanguage === "en" || pageLanguage === "ar") {
+        return pageLanguage;
+    }
+
+    try {
+        return localStorage.getItem("toolsMarketLanguage") === "en"
+            ? "en"
+            : "ar";
+    } catch (error) {
+        return "ar";
+    }
+}
+
+function t(ar, en) {
+    return getLanguage() === "en" ? en : ar;
+}
+
+function setStatus(ar, en) {
+    status.textContent = t(ar, en);
+}
+
+if (typeof applyPageLanguage === "function") {
+    applyPageLanguage();
+} else {
+    const language = getLanguage();
+
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-ar][data-en]").forEach(function(element) {
+        element.textContent = element.getAttribute(
+            language === "en" ? "data-en" : "data-ar"
+        );
+    });
+}
+
+homeLink.href = "index.html?lang=" + getLanguage();
+
+result.placeholder = t(
+    "النص المستخرج سيظهر هنا...",
+    "Extracted text will appear here..."
+);
+
+preview.alt = t(
+    "معاينة الصورة المختارة",
+    "Preview of the selected image"
+);
+
+let imageUrl = null;
+let worker = null;
+let isExtracting = false;
+
+imageFile.addEventListener("change", function() {
+    result.value = "";
+    copyBtn.disabled = true;
+    status.textContent = "";
+
+    if (imageUrl) {
+        URL.revokeObjectURL(imageUrl);
+        imageUrl = null;
+    }
+
+    const file = imageFile.files[0];
+
+    if (!file) {
+        preview.style.display = "none";
+        return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+        setStatus(
+            "من فضلك اختر ملف صورة صحيحًا.",
+            "Please choose a valid image file."
+        );
+
+        imageFile.value = "";
+        preview.style.display = "none";
+        return;
+    }
+
+    imageUrl = URL.createObjectURL(file);
+    preview.src = imageUrl;
+    preview.style.display = "block";
+
+    setStatus(
+        "تم اختيار الصورة. اضغط استخراج النص.",
+        "Image selected. Click Extract Text."
+    );
+});
+
+extractBtn.addEventListener("click", async function() {
+    const file = imageFile.files[0];
+
+    if (!file) {
+        setStatus(
+            "من فضلك اختر صورة أولًا.",
+            "Please select an image first."
+        );
+        return;
+    }
+
+    if (!window.Tesseract) {
+        setStatus(
+            "تعذر تحميل مكتبة استخراج النصوص. تأكد من اتصال الإنترنت.",
+            "Could not load the text recognition library. Check your internet connection."
+        );
+        return;
+    }
+
+    if (isExtracting) {
+        return;
+    }
+
+    isExtracting = true;
+    extractBtn.disabled = true;
+    copyBtn.disabled = true;
+    imageFile.disabled = true;
+    result.value = "";
+
+    try {
+        setStatus(
+            "جاري تجهيز محرك قراءة النصوص. قد يستغرق أول تشغيل بعض الوقت...",
+            "Preparing the text recognition engine. The first run may take some time..."
+        );
+
+        worker = await Tesseract.createWorker(
+            "ara+eng",
+            1,
+            {
+                langPath: "https://tessdata.projectnaptha.com/4.0.0",
+                logger: function(message) {
+                    if (!message.status) {
+                        return;
+                    }
+
+                    const percent =
+                        typeof message.progress === "number"
+                            ? " " + Math.round(message.progress * 100) + "%"
+                            : "";
+
+                    const messages = {
+                        "loading tesseract core": [
+                            "جاري تحميل محرك قراءة النصوص...",
+                            "Loading text recognition engine..."
+                        ],
+                        "initializing tesseract": [
+                            "جاري تشغيل محرك قراءة النصوص...",
+                            "Initializing text recognition engine..."
+                        ],
+                        "loading language traineddata": [
+                            "جاري تحميل ملفات اللغة...",
+                            "Loading language data..."
+                        ],
+                        "initializing api": [
+                            "جاري تجهيز الأداة...",
+                            "Preparing the tool..."
+                        ],
+                        "recognizing text": [
+                            "جاري قراءة النصوص من الصورة...",
+                            "Recognizing text in the image..."
+                        ]
+                    };
+
+                    const translated = messages[message.status];
+
+                    if (translated) {
+                        status.textContent =
+                            t(translated[0], translated[1]) + percent;
+                    } else {
+                        status.textContent =
+                            t("جاري تجهيز الأداة...", "Preparing the tool...") +
+                            percent;
+                    }
+                }
+            }
+        );
+
+        setStatus(
+            "جاري قراءة النصوص من الصورة...",
+            "Recognizing text in the image..."
+        );
+
+        const response = await worker.recognize(file);
+        const text = response.data.text.trim();
+
+        result.value = text;
+
+        if (text) {
+            setStatus(
+                "تم استخراج النص بنجاح!",
+                "Text extracted successfully!"
+            );
+            copyBtn.disabled = false;
+        } else {
+            setStatus(
+                "لم يتم العثور على نص واضح. جرّب صورة أوضح.",
+                "No clear text was found. Try a clearer image."
+            );
+        }
+
+    } catch (error) {
+        console.error(error);
+
+        setStatus(
+            "تعذر استخراج النص. تأكد من اتصال الإنترنت وجرب صورة أخرى.",
+            "Text extraction failed. Check your internet connection and try another image."
+        );
+
+    } finally {
+        if (worker) {
+            try {
+                await worker.terminate();
+            } catch (error) {
+                console.error(error);
+            }
+
+            worker = null;
+        }
+
+        isExtracting = false;
+        extractBtn.disabled = false;
+        imageFile.disabled = false;
+    }
+});
+
+copyBtn.addEventListener("click", async function() {
+    if (!result.value.trim()) {
+        setStatus(
+            "لا يوجد نص لنسخه.",
+            "There is no text to copy."
+        );
+        return;
+    }
+
+    result.focus();
+    result.select();
+
+    try {
+        await navigator.clipboard.writeText(result.value);
+
+        setStatus(
+            "تم نسخ النص بنجاح!",
+            "Text copied successfully!"
+        );
+
+    } catch (error) {
+        const copied = document.execCommand("copy");
+
+        setStatus(
+            copied
+                ? "تم نسخ النص بنجاح!"
+                : "حدد النص وانسخه باستخدام Ctrl+C.",
+            copied
+                ? "Text copied successfully!"
+                : "Select the text and copy it using Ctrl+C."
+        );
+    }
+});
+</script>
+</body>
+</html>
