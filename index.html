@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -6,130 +5,310 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>سوق الأدوات | أدوات مجانية للصور وPDF أونلاين</title>
-<meta name="description" content="سوق الأدوات يقدم أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويل صيغها، وتحويل الصور إلى أبيض وأسود وPDF، ودمج ملفات PDF وتقسيمها وضغطها، واستخراج النصوص من الصور والتعامل مع الملفات المضغوطة.">
+<meta name="description" content="سوق الأدوات يقدم أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويل صيغها، ودمج الصور، ودمج ملفات PDF وتقسيمها وضغطها، وصانع QR Code.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://medosd6666-png.github.io/tools-market/">
 <meta property="og:title" content="سوق الأدوات | أدوات مجانية للصور وPDF أونلاين">
-<meta property="og:description" content="سوق الأدوات يقدم أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويل صيغها، وتحويل الصور إلى أبيض وأسود وPDF، ودمج ملفات PDF وتقسيمها وضغطها، واستخراج النصوص من الصور والتعامل مع الملفات المضغوطة.">
+<meta property="og:description" content="سوق الأدوات يقدم أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويل صيغها، ودمج الصور، ودمج ملفات PDF وتقسيمها وضغطها، وصانع QR Code.">
 <meta property="og:url" content="https://medosd6666-png.github.io/tools-market/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="سوق الأدوات | أدوات مجانية للصور وPDF أونلاين">
-<meta name="twitter:description" content="أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويلها، والتعامل مع ملفات PDF واستخراج النصوص من الصور.">
-
-<link rel="stylesheet" href="style.css">
-
 <style>
-.feedback-section {
-    max-width: 760px;
-    margin: 40px auto 30px;
-    padding: 24px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
+* {
     box-sizing: border-box;
 }
 
-.feedback-section h2 {
-    margin-top: 0;
+body {
+    background-color: #f0f7ff;
+    color: #1e293b;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    text-align: center;
+    padding: 24px;
+    margin: 0;
+    line-height: 1.6;
 }
 
-.feedback-section p {
-    line-height: 1.8;
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* ترتيب خانات التعليقات */
+/* الشريط العلوي */
+.site-header {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    direction: ltr;
+    background: #ffffff;
+    padding: 14px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* الشعار واسم الموقع */
+.brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+    direction: rtl;
+    color: #0f172a;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.brand-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.4;
+}
+
+.brand-text strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.brand-text span {
+    font-size: 11px;
+    color: #0284c7;
+    font-weight: 600;
+    direction: ltr;
+}
+
+/* أزرار اختيار اللغة (أزرق هادي ومريح) */
+.language {
+    text-align: left;
+    margin: 0;
+    max-width: none;
+    flex-shrink: 0;
+}
+
+.language button {
+    background: #e0f2fe;
+    color: #0369a1 !important;
+    border: 1px solid #bae6fd;
+    border-radius: 10px;
+    padding: 8px 14px;
+    margin: 4px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+}
+
+.language button:hover {
+    background: #bae6fd;
+    color: #0c4a6e !important;
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+}
+
+/* أعلام اللغات */
+.language-flag {
+    width: 20px;
+    height: auto;
+    max-height: 14px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-inline-end: 6px;
+    border-radius: 2px;
+}
+
+/* عنوان الموقع الرئيسي */
+.site-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.site-intro h1 {
+    color: #0f172a;
+    font-size: 26px;
+    margin: 20px 0 8px;
+    font-weight: 800;
+}
+.site-intro p {
+    max-width: 750px;
+    margin: 8px auto 28px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* عناوين الأقسام */
+.section-title {
+    background: #ffffff;
+    color: #334155;
+    padding: 14px 18px;
+    margin: 35px auto 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    max-width: 1000px;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: right;
+    border-right: 5px solid #64748b;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+/* كروت ولون أزرار الأدوات (رصاصي أنيق ومريح للنظر) */
+.tool-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #1e293b !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    border-color: #64748b;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+}
+
+.tool-card .tool-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 18px;
+    line-height: 1;
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.tool-card:hover .tool-icon {
+    background: #475569;
+    color: #ffffff;
+    border-color: #475569;
+}
+
+.tool-card span:not(.tool-icon) {
+    font-weight: 700;
+    font-size: 14px;
+    color: #1e293b !important;
+}
+
+/* قسم التعليقات */
+.feedback-section {
+    max-width: 100%;
+    margin: 40px auto 20px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    text-align: right;
+}
+.feedback-section h2 { margin-top: 0; color: #0f172a; font-size: 19px; }
+.feedback-section p { line-height: 1.7; color: #475569; font-size: 14px; }
 .feedback-form {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     gap: 12px;
     align-items: start;
+    margin-top: 16px;
 }
-
-/* إخفاء عناوين الخانات حتى لا تزاحمها */
-.feedback-form label {
-    display: none;
-}
-
-/* مربع الاسم */
-.feedback-form input[type="text"] {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-/* مربع التعليق بجانب الاسم */
+.feedback-form label { display: none; }
+.feedback-form input[type="text"] { grid-column: 1; grid-row: 1; }
 .feedback-form textarea {
     grid-column: 2;
     grid-row: 1;
     min-height: 130px;
     resize: vertical;
 }
-
 .feedback-form input,
 .feedback-form textarea {
     width: 100%;
-    min-width: 0;
     padding: 12px;
-    border: 1px solid #bbb;
-    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
     box-sizing: border-box;
     font: inherit;
+    outline: none;
+    background: #f8fafc;
 }
-
-.feedback-form input[type="hidden"] {
-    display: none;
+.feedback-form input:focus, .feedback-form textarea:focus {
+    border-color: #64748b;
+    background: #ffffff;
 }
-
-/* زر الإرسال والرسالة أسفل الخانتين */
+.feedback-form input[type="hidden"] { display: none; }
 .feedback-form button,
-#feedbackStatus {
-    grid-column: 1 / -1;
-}
-
+#feedbackStatus { grid-column: 1 / -1; }
 .feedback-form button {
     padding: 12px;
     border: none;
-    border-radius: 8px;
-    background: #176b55;
+    border-radius: 10px;
+    background: #475569;
     color: white;
     font: inherit;
+    font-weight: 700;
     cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 4px 12px rgba(71, 85, 105, 0.25);
 }
+.feedback-form button:hover { background: #334155; }
+.feedback-form button:disabled { opacity: 0.6; cursor: wait; }
+#feedbackStatus { font-weight: bold; color: #334155; }
 
-.feedback-form button:disabled {
-    opacity: 0.6;
-    cursor: wait;
-}
-
-#feedbackStatus {
-    font-weight: bold;
-}
-
-/* على الموبايل تظهر الخانتان تحت بعض */
 @media (max-width: 600px) {
-    .feedback-form {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
+    body { padding: 10px; }
+    .feedback-form { grid-template-columns: minmax(0, 1fr); }
     .feedback-form input[type="text"],
-    .feedback-form textarea {
-        grid-column: 1;
-        grid-row: auto;
-    }
+    .feedback-form textarea { grid-column: 1; grid-row: auto; }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 }
 </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NZ00TSPTWC');
-    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NZ00TSPTWC');
+</script>
 </head>
 
 <body>
+
+<div class="main-container">
 
 <header class="site-header">
     <div class="brand" aria-label="سوق الأدوات - Tools Market">
@@ -153,109 +332,63 @@
     </div>
 </header>
 
-<h1 data-ar="سوق الأدوات" data-en="Tools Market">سوق الأدوات</h1>
+<div class="site-intro">
+    <h1 data-ar="سوق الأدوات" data-en="Tools Market">سوق الأدوات</h1>
+    <p data-ar="استخدم أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويل صيغها، ودمج الصور، ودمج ملفات PDF وتقسيمها وضغطها، واستخراج النصوص وصانع QR Code." data-en="Use free online tools to compress, resize, and convert images, merge images, merge and compress PDF files, extract text and generate QR codes.">استخدم أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويل صيغها، ودمج الصور، ودمج ملفات PDF وتقسيمها وضغطها، واستخراج النصوص وصانع QR Code.</p>
+</div>
 
-<p data-ar="أدوات مجانية وسهلة للجميع" data-en="Free and easy tools for everyone">أدوات مجانية وسهلة للجميع</p>
+<!-- أدوات الصور -->
+<h2 class="section-title" data-ar="أدوات الصور" data-en="Image Tools">أدوات الصور</h2>
+<div class="tools-grid">
+    <a href="image-compressor.html" class="tool-card"><span class="tool-icon">🗜️</span><span data-ar="ضغط الصور" data-en="Image Compressor">ضغط الصور</span></a>
+    <a href="image-resizer.html" class="tool-card"><span class="tool-icon">📐</span><span data-ar="تغيير حجم الصور" data-en="Resize Images">تغيير حجم الصور</span></a>
+    <a href="image-converter.html" class="tool-card"><span class="tool-icon">🎨</span><span data-ar="تحويل صيغ الصور" data-en="Convert Image Formats">تحويل صيغ الصور</span></a>
+    <a href="image-grayscale.html" class="tool-card"><span class="tool-icon">🌗</span><span data-ar="تحويل الصور إلى أبيض وأسود" data-en="Convert Images to B&W">تحويل الصور إلى أبيض وأسود</span></a>
+    <a href="image-merger.html" class="tool-card"><span class="tool-icon">🔗</span><span data-ar="دمج الصور" data-en="Merge Images">دمج الصور</span></a>
+</div>
 
-<p data-ar="استخدم أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويل صيغها، ودمج ملفات PDF وتقسيمها وضغطها، واستخراج النصوص من الصور." data-en="Use free online tools to compress, resize, and convert images, merge, split, and compress PDF files, and extract text from images.">استخدم أدوات مجانية أونلاين لضغط الصور وتغيير حجمها وتحويل صيغها، ودمج ملفات PDF وتقسيمها وضغطها، واستخراج النصوص من الصور.</p>
+<!-- أدوات PDF -->
+<h2 class="section-title" data-ar="أدوات PDF" data-en="PDF Tools">أدوات PDF</h2>
+<div class="tools-grid">
+    <a href="pdf-merger.html" class="tool-card"><span class="tool-icon">📑</span><span data-ar="دمج ملفات PDF" data-en="Merge PDF Files">دمج ملفات PDF</span></a>
+    <a href="pdf-splitter.html" class="tool-card"><span class="tool-icon">✂️</span><span data-ar="تقسيم ملفات PDF" data-en="Split PDF Files">تقسيم ملفات PDF</span></a>
+    <a href="pdf-compressor.html" class="tool-card"><span class="tool-icon">🗜️</span><span data-ar="ضغط ملفات PDF" data-en="Compress PDF Files">ضغط ملفات PDF</span></a>
+    <a href="image-to-pdf.html" class="tool-card"><span class="tool-icon">🖼️</span><span data-ar="تحويل الصور إلى PDF" data-en="Convert Images to PDF">تحويل الصور إلى PDF</span></a>
+</div>
 
-<h2 data-ar="أدواتنا" data-en="Our Tools">أدواتنا</h2>
+<!-- أدوات الملفات المضغوطة -->
+<h2 class="section-title" data-ar="أدوات الملفات المضغوطة" data-en="Archive Tools">أدوات الملفات المضغوطة</h2>
+<div class="tools-grid">
+    <a href="archive-repair.html" class="tool-card"><span class="tool-icon">🛠️</span><span data-ar="إصلاح الملفات المضغوطة" data-en="Repair Archives">إصلاح الملفات المضغوطة</span></a>
+    <a href="rar-to-zip.html" class="tool-card"><span class="tool-icon">📦</span><span data-ar="تحويل RAR إلى ZIP" data-en="Convert RAR to ZIP">تحويل RAR إلى ZIP</span></a>
+</div>
 
-<h3 data-ar="أدوات الصور" data-en="Image Tools">أدوات الصور</h3>
+<!-- أدوات متنوعة -->
+<h2 class="section-title" data-ar="أدوات متنوعة" data-en="Other Tools">أدوات متنوعة</h2>
+<div class="tools-grid">
+    <a href="image-to-text.html" class="tool-card"><span class="tool-icon">🔎</span><span data-ar="استخراج النصوص من الصور" data-en="Extract Text">استخراج النصوص من الصور</span></a>
+    <a href="qr-generator.html" class="tool-card"><span class="tool-icon">📱</span><span data-ar="صانع QR Code للروابط" data-en="QR Code Generator">صانع QR Code للروابط</span></a>
+</div>
 
-<p class="tool"><a href="image-compressor.html"><span class="tool-icon" aria-hidden="true">🗜️</span> <span data-ar="ضغط الصور" data-en="Image Compressor">ضغط الصور</span></a></p>
-
-<p class="tool"><a href="image-resizer.html"><span class="tool-icon" aria-hidden="true">📐</span> <span data-ar="تغيير حجم الصور" data-en="Resize Images">تغيير حجم الصور</span></a></p>
-
-<p class="tool"><a href="image-converter.html"><span class="tool-icon" aria-hidden="true">🎨</span> <span data-ar="تحويل صيغ الصور" data-en="Convert Image Formats">تحويل صيغ الصور</span></a></p>
-
-<p class="tool"><a href="image-grayscale.html"><span class="tool-icon" aria-hidden="true">🌗</span> <span data-ar="تحويل الصور إلى أبيض وأسود" data-en="Convert Images to Black and White">تحويل الصور إلى أبيض وأسود</span></a></p>
-
-<h3 data-ar="أدوات PDF" data-en="PDF Tools">أدوات PDF</h3>
-
-<p class="tool"><a href="pdf-merger.html"><span class="tool-icon" aria-hidden="true">📑</span> <span data-ar="دمج ملفات PDF" data-en="Merge PDF Files">دمج ملفات PDF</span></a></p>
-
-<p class="tool"><a href="pdf-splitter.html"><span class="tool-icon" aria-hidden="true">✂️</span> <span data-ar="تقسيم ملفات PDF" data-en="Split PDF Files">تقسيم ملفات PDF</span></a></p>
-
-<p class="tool"><a href="pdf-compressor.html"><span class="tool-icon" aria-hidden="true">🗜️</span> <span data-ar="ضغط ملفات PDF" data-en="Compress PDF Files">ضغط ملفات PDF</span></a></p>
-
-<p class="tool"><a href="image-to-pdf.html"><span class="tool-icon" aria-hidden="true">🖼️</span> <span data-ar="تحويل الصور إلى PDF" data-en="Convert Images to PDF">تحويل الصور إلى PDF</span></a></p>
-
-<h3 data-ar="أدوات الملفات المضغوطة" data-en="Archive Tools">أدوات الملفات المضغوطة</h3>
-
-<p class="tool"><a href="archive-repair.html"><span class="tool-icon" aria-hidden="true">🛠️</span> <span data-ar="إصلاح الملفات المضغوطة" data-en="Repair Archive Files">إصلاح الملفات المضغوطة</span></a></p>
-
-<p class="tool"><a href="rar-to-zip.html"><span class="tool-icon" aria-hidden="true">📦</span> <span data-ar="تحويل RAR إلى ZIP" data-en="Convert RAR to ZIP">تحويل RAR إلى ZIP</span></a></p>
-
-<h3 data-ar="أدوات متنوعة" data-en="Other Tools">أدوات متنوعة</h3>
-
-<p class="tool"><a href="image-to-text.html"><span class="tool-icon" aria-hidden="true">🔎</span> <span data-ar="استخراج النصوص من الصور" data-en="Extract Text from Images">استخراج النصوص من الصور</span></a></p>
-
-<p class="tool"><a href="remove-text-from-image.html"><span class="tool-icon" aria-hidden="true">🧹</span> <span data-ar="حذف النصوص من الصور" data-en="Remove Text from Images">حذف النصوص من الصور</span></a></p>
-
-<!-- قسم تعليقات الزوار -->
 <section class="feedback-section" aria-labelledby="feedbackTitle">
-
-    <h2 id="feedbackTitle"
-        data-ar="رأيك يهمنا"
-        data-en="Your Opinion Matters">رأيك يهمنا</h2>
-
-    <p
-        data-ar="رأيك يهمنا، شاركنا تجربتك وملاحظاتك حول الموقع وساعدنا على تحسين خدماتنا."
-        data-en="Share your experience and feedback to help us improve our services.">
-        رأيك يهمنا، شاركنا تجربتك وملاحظاتك حول الموقع وساعدنا على تحسين خدماتنا.
-    </p>
-
-    <p
-        data-ar="كل تعليق منك يهمنا ويساعدنا نطوّر «سوق الأدوات»."
-        data-en="Every comment helps us improve Tools Market.">
-        كل تعليق منك يهمنا ويساعدنا نطوّر «سوق الأدوات».
-    </p>
+    <h2 id="feedbackTitle" data-ar="رأيك يهمنا" data-en="Your Opinion Matters">رأيك يهمنا</h2>
+    <p data-ar="رأيك يهمنا، شاركنا تجربتك وملاحظاتك حول الموقع وساعدنا على تحسين خدماتنا." data-en="Share your experience and feedback to help us improve our services.">رأيك يهمنا، شاركنا تجربتك وملاحظاتك حول الموقع وساعدنا على تحسين خدماتنا.</p>
 
     <form id="feedbackForm" class="feedback-form">
+        <label for="visitorName" data-ar="الاسم (اختياري)" data-en="Name (optional)">الاسم (اختياري)</label>
+        <input type="text" id="visitorName" name="name" maxlength="80" autocomplete="name" placeholder="اكتب اسمك" data-ar-placeholder="اكتب اسمك" data-en-placeholder="Enter your name">
 
-        <label for="visitorName"
-            data-ar="الاسم (اختياري)"
-            data-en="Name (optional)">الاسم (اختياري)</label>
+        <label for="visitorComment" data-ar="اكتب تعليقك" data-en="Your comment">اكتب تعليقك</label>
+        <textarea id="visitorComment" name="comment" maxlength="3000" required placeholder="اكتب رأيك أو ملاحظاتك هنا" data-ar-placeholder="اكتب رأيك أو ملاحظاتك هنا" data-en-placeholder="Write your feedback here"></textarea>
 
-        <input
-            type="text"
-            id="visitorName"
-            name="name"
-            maxlength="80"
-            autocomplete="name"
-            placeholder="اكتب اسمك"
-            data-ar-placeholder="اكتب اسمك"
-            data-en-placeholder="Enter your name">
+        <input type="hidden" name="_subject" value="تعليق جديد من موقع سوق الأدوات">
 
-        <label for="visitorComment"
-            data-ar="اكتب تعليقك"
-            data-en="Your comment">اكتب تعليقك</label>
-
-        <textarea
-            id="visitorComment"
-            name="comment"
-            maxlength="3000"
-            required
-            placeholder="اكتب رأيك أو ملاحظاتك هنا"
-            data-ar-placeholder="اكتب رأيك أو ملاحظاتك هنا"
-            data-en-placeholder="Write your feedback here"></textarea>
-
-        <input
-            type="hidden"
-            name="_subject"
-            value="تعليق جديد من موقع سوق الأدوات">
-
-        <button type="submit"
-            data-ar="إرسال التعليق"
-            data-en="Send Comment">إرسال التعليق</button>
-
+        <button type="submit" data-ar="إرسال التعليق" data-en="Send Comment">إرسال التعليق</button>
         <p id="feedbackStatus" role="status" aria-live="polite"></p>
-
     </form>
 </section>
 
-<script src="language.js"></script>
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -288,33 +421,24 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {}
     }
 
-    arabicButton.addEventListener("click", function () {
-        applyLanguage("ar");
-    });
-
-    englishButton.addEventListener("click", function () {
-        applyLanguage("en");
-    });
+    if (arabicButton) arabicButton.addEventListener("click", () => applyLanguage("ar"));
+    if (englishButton) englishButton.addEventListener("click", () => applyLanguage("en"));
 
     try {
-        currentLanguage =
-            localStorage.getItem("toolsMarketLanguage") === "en" ? "en" : "ar";
-    } catch (error) {
+        currentLanguage = localStorage.getItem("toolsMarketLanguage") === "en" ? "en" : "ar";
+    } catch (e) {
         currentLanguage = "ar";
     }
 
-    document.querySelectorAll('a[href$=".html"]').forEach(function (link) {
-        if (link.getAttribute("href") !== "index.html") {
-            link.addEventListener("click", function (event) {
-                event.preventDefault();
-
-                const href = link.getAttribute("href").split("?")[0];
-                window.location.href = href + "?lang=" + currentLanguage;
-            });
-        }
-    });
-
     applyLanguage(currentLanguage);
+
+    document.querySelectorAll('.tools-grid a').forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const href = link.getAttribute("href");
+            window.location.href = href + "?lang=" + currentLanguage;
+        });
+    });
 
     const feedbackForm = document.getElementById("feedbackForm");
     const feedbackStatus = document.getElementById("feedbackStatus");
@@ -322,13 +446,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     feedbackForm.addEventListener("submit", async function (event) {
         event.preventDefault();
-
         if (!feedbackForm.reportValidity()) return;
 
-        feedbackStatus.textContent = currentLanguage === "ar"
-            ? "جاري إرسال التعليق..."
-            : "Sending your comment...";
-
+        feedbackStatus.textContent = currentLanguage === "ar" ? "جاري إرسال التعليق..." : "Sending your comment...";
         submitButton.disabled = true;
 
         try {
@@ -336,9 +456,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "https://formsubmit.co/ajax/medosd6666@gmail.com",
                 {
                     method: "POST",
-                    headers: {
-                        "Accept": "application/json"
-                    },
+                    headers: { "Accept": "application/json" },
                     body: new FormData(feedbackForm)
                 }
             );
@@ -346,22 +464,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const result = await response.json();
 
             if (response.ok && result.success) {
-                feedbackStatus.textContent = currentLanguage === "ar"
-                    ? "تم إرسال التعليق بنجاح، شكرًا لمشاركتك!"
-                    : "Comment sent successfully. Thank you!";
-
+                feedbackStatus.textContent = currentLanguage === "ar" ? "تم إرسال التعليق بنجاح، شكرًا لمشاركتك!" : "Comment sent successfully. Thank you!";
                 feedbackForm.reset();
-
                 applyLanguage(currentLanguage);
             } else {
-                feedbackStatus.textContent = currentLanguage === "ar"
-                    ? "لم نتمكن من تأكيد الإرسال. حاول مرة أخرى لاحقًا."
-                    : "We couldn't confirm the submission. Please try again later.";
+                feedbackStatus.textContent = currentLanguage === "ar" ? "لم نتمكن من تأكيد الإرسال. حاول مرة أخرى لاحقًا." : "We couldn't confirm the submission. Please try again later.";
             }
         } catch (error) {
-            feedbackStatus.textContent = currentLanguage === "ar"
-                ? "تعذر الاتصال بخدمة الإرسال. تأكد من اتصال الإنترنت وحاول مرة أخرى."
-                : "Could not connect to the submission service. Check your internet and try again.";
+            feedbackStatus.textContent = currentLanguage === "ar" ? "تعذر الاتصال بخدمة الإرسال. تأكد من اتصال الإنترنت وحاول مرة أخرى." : "Could not connect to the submission service. Check your internet and try again.";
         } finally {
             submitButton.disabled = false;
         }
@@ -371,5 +481,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-
-

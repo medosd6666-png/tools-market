@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دمج الصور | سوق الأدوات</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-NZ00TSPTWC');
+</script>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:16px;font-family:Arial,Tahoma,sans-serif;background:#f4f7fb;color:#202938}
+.container{max-width:900px;margin:auto}
+
+/* هيدر الموقع الموحد */
+.site-header{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:15px 20px;margin-bottom:16px;box-shadow:0 4px 16px #14284608}
+.site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:20px;font-weight:bold;color:#1769d2}
+.site-logo span{font-size:24px}
+
+.panel{background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:20px;margin-bottom:16px;box-shadow:0 4px 16px #14284608}
+h1{font-size:25px;margin:0 0 10px}
+h2{font-size:21px}
+p{line-height:1.7;color:#64748b}
+.pick{display:block;text-align:center;padding:25px 12px;border:2px dashed #9bb7d8;border-radius:12px;background:#f8fbff;cursor:pointer;transition:background 0.2s}
+.pick:hover{background:#f1f6ff}
+.pick strong{display:block;font-size:18px;margin-bottom:8px;color:#1769d2}
+input[type=file]{display:none}
+.settings{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px}
+.setting{flex:1 1 220px;min-width:0}
+.setting-title{display:block;font-weight:bold;margin-bottom:10px;color:#243449}
+.choices{display:flex;flex-wrap:wrap;gap:10px}
+.choice{padding:10px 15px;border:1px solid #d6deea;border-radius:10px;cursor:pointer;background:#fff;display:flex;align-items:center;gap:6px}
+input[type=radio]{accent-color:#1769d2}
+input[type=range]{width:100%;accent-color:#1769d2}
+.image-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:12px;margin-top:16px}
+.image-card{border:1px solid #e2e8f0;border-radius:12px;padding:8px;min-width:0;background:#fff}
+.image-card img{display:block;width:100%;height:105px;object-fit:contain;background:#f1f5f9;border-radius:8px}
+.image-name{font-size:12px;overflow-wrap:anywhere;margin:8px 0;min-height:28px;color:#475569}
+button{border:0;border-radius:10px;padding:12px 17px;font:inherit;font-weight:bold;cursor:pointer;transition:opacity 0.2s}
+button:hover{opacity:0.9}
+button:disabled{opacity:.45;cursor:not-allowed}
+.remove{background:#fee2e2;color:#b91c1c;width:100%;padding:8px;font-size:13px;border-radius:8px}
+.primary{background:#1769d2;color:white}
+.secondary{background:#e8eef6;color:#243449}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.status{line-height:1.7;color:#475569;margin-top:12px;font-weight:500}
+.preview{overflow:auto;background:#f1f5f9;border-radius:12px;padding:12px;margin-top:14px;text-align:center}
+#resultPreview{display:block;max-width:100%;height:auto;margin:auto;border-radius:8px}
+.hidden{display:none!important}
+@media(max-width:600px){body{padding:10px}.panel{padding:15px}h1{font-size:22px}.actions button{flex:1 1 100%}}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+<!-- هيدر الموقع -->
+<header class="site-header">
+<a href="../" class="site-logo">
+<span>🧰</span>
+<span>سوق الأدوات</span>
+</a>
+<a href="../" class="secondary" style="text-decoration:none;padding:8px 14px;border-radius:8px;font-size:14px;">الرئيسية</a>
+</header>
+
+<section class="panel">
+<h1 data-t="title">دمج الصور في صورة واحدة</h1>
+<p data-t="intro">اختار صورتين أو أكثر، وحدد اتجاه الدمج، ثم حمّل الصورة النهائية. تتم المعالجة داخل المتصفح دون رفع صورك إلى أي موقع.</p>
+
+<label class="pick" for="imageInput">
+<strong data-t="pick">＋ اختار الصور من جهازك</strong>
+<span data-t="pickHint">يمكنك اختيار أكثر من صورة</span>
+</label>
+<input id="imageInput" type="file" accept="image/*" multiple>
+
+<div class="settings">
+<div class="setting">
+<span class="setting-title" data-t="direction">اتجاه الدمج</span>
+<div class="choices">
+<label class="choice"><input type="radio" name="direction" value="horizontal" checked> <span data-t="horizontal">جنب بعض</span></label>
+<label class="choice"><input type="radio" name="direction" value="vertical"> <span data-t="vertical">فوق بعض</span></label>
+</div>
+</div>
+<div class="setting">
+<label class="setting-title" for="spacing"><span data-t="spacing">المسافة بين الصور:</span> <span id="spacingValue">10</span> <span data-t="pixels">بكسل</span></label>
+<input id="spacing" type="range" min="0" max="100" value="10">
+</div>
+</div>
+
+<div id="imageList" class="image-list"></div>
+<p id="status" class="status">لم يتم اختيار صور بعد.</p>
+<div class="actions">
+<button id="mergeButton" class="primary" disabled data-t="merge">دمج الصور</button>
+<button id="clearButton" class="secondary" disabled data-t="clear">مسح الصور المختارة</button>
+</div>
+</section>
+
+<section id="resultPanel" class="panel hidden">
+<h2 data-t="resultTitle">الصورة الناتجة</h2>
+<p id="resultInfo"></p>
+<div class="preview"><img id="resultPreview" alt="معاينة الصورة المدمجة"></div>
+<div class="actions">
+<button id="downloadButton" class="primary" data-t="download">تحميل الصورة بصيغة PNG</button>
+</div>
+</section>
+</main>
+
+<script>
+(function(){
+const text={
+ar:{
+title:'دمج الصور في صورة واحدة',
+intro:'اختار صورتين أو أكثر، وحدد اتجاه الدمج، ثم حمّل الصورة النهائية. تتم المعالجة داخل المتصفح دون رفع صورك إلى أي موقع.',
+pick:'＋ اختار الصور من جهازك',pickHint:'يمكنك اختيار أكثر من صورة',
+direction:'اتجاه الدمج',horizontal:'جنب بعض',vertical:'فوق بعض',
+spacing:'المسافة بين الصور:',pixels:'بكسل',merge:'دمج الصور',clear:'مسح الصور المختارة',
+resultTitle:'الصورة الناتجة',download:'تحميل الصورة بصيغة PNG',
+remove:'حذف الصورة',none:'لم يتم اختيار صور بعد.',
+chosen:n=>`تم اختيار ${n} صورة. تحتاج إلى صورتين على الأقل للدمج.`,
+notImages:'الملفات المختارة ليست صورًا.',cleared:'تم مسح الصور المختارة.',
+processing:'جاري تجهيز الصور ودمجها...',imageError:'تعذر فتح إحدى الصور. جرّب صورة أخرى.',
+canvasError:'المتصفح لم يتمكن من تجهيز الصورة.',outputError:'تعذر إنشاء الصورة الناتجة.',
+success:(n,w,h)=>`تم دمج ${n} صور بنجاح. الأبعاد: ${w} × ${h} بكسل.`,
+ready:'تم الدمج بنجاح. يمكنك تحميل الصورة الناتجة.',
+fail:'حدث خطأ أثناء الدمج. جرّب صورًا أخرى.',preview:'معاينة الصورة المدمجة'
+},
+en:{
+title:'Merge Images into One',
+intro:'Choose two or more images, select the layout, then download the result. Processing happens in your browser; your images are not uploaded.',
+pick:'＋ Choose images from your device',pickHint:'You can select multiple images',
+direction:'Merge direction',horizontal:'Side by side',vertical:'Top to bottom',
+spacing:'Spacing between images:',pixels:'px',merge:'Merge images',clear:'Clear selected images',
+resultTitle:'Merged image',download:'Download PNG image',
+remove:'Remove image',none:'No images selected yet.',
+chosen:n=>`${n} image(s) selected. At least two images are needed.`,
+notImages:'The selected files are not images.',cleared:'Selected images cleared.',
+processing:'Preparing and merging images...',imageError:'Could not open one of the images. Try another.',
+canvasError:'Your browser could not prepare the image.',outputError:'Could not create the resulting image.',
+success:(n,w,h)=>`Successfully merged ${n} images. Dimensions: ${w} × ${h} pixels.`,
+ready:'Merge completed. You can download the resulting image.',
+fail:'An error occurred while merging. Try different images.',preview:'Merged image preview'
+}
+};
+
+let lang='ar';
+try{
+const saved=localStorage.getItem('toolsMarketLanguage');
+const query=new URLSearchParams(location.search).get('lang');
+if(query==='en'||query==='ar')lang=query;
+else if(saved==='en'||saved==='ar')lang=saved;
+}catch(e){}
+
+const t=text[lang];
+document.documentElement.lang=lang;
+document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+document.title=t.title+' | Tools Market';
+document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t[el.dataset.t]);
+
+const input=document.getElementById('imageInput');
+const list=document.getElementById('imageList');
+const status=document.getElementById('status');
+const merge=document.getElementById('mergeButton');
+const clear=document.getElementById('clearButton');
+const spacing=document.getElementById('spacing');
+const spacingValue=document.getElementById('spacingValue');
+const resultPanel=document.getElementById('resultPanel');
+const resultPreview=document.getElementById('resultPreview');
+const resultInfo=document.getElementById('resultInfo');
+const download=document.getElementById('downloadButton');
+let images=[];
+let resultUrl=null;
+
+function updateStatus(message){
+status.textContent=message;
+merge.disabled=images.length<2;
+clear.disabled=images.length===0;
+}
+
+function render(){
+list.replaceChildren();
+images.forEach((item,index)=>{
+const card=document.createElement('div');
+card.className='image-card';
+const img=document.createElement('img');
+img.src=item.url;
+img.alt=item.file.name;
+const name=document.createElement('div');
+name.className='image-name';
+name.textContent=item.file.name;
+const remove=document.createElement('button');
+remove.className='remove';
+remove.type='button';
+remove.textContent=t.remove;
+remove.addEventListener('click',()=>{
+URL.revokeObjectURL(item.url);
+images.splice(index,1);
+render();
+if(images.length<2)resultPanel.classList.add('hidden');
+});
+card.append(img,name,remove);
+list.append(card);
+});
+updateStatus(images.length?t.chosen(images.length):t.none);
+}
+
+input.addEventListener('change',()=>{
+const files=Array.from(input.files||[]);
+let added=0;
+for(const file of files){
+if(file.type.startsWith('image/')){
+images.push({file,url:URL.createObjectURL(file)});
+added++;
+}
+}
+input.value='';
+resultPanel.classList.add('hidden');
+render();
+if(!added&&files.length)updateStatus(t.notImages);
+});
+
+spacing.addEventListener('input',()=>spacingValue.textContent=spacing.value);
+
+clear.addEventListener('click',()=>{
+images.forEach(item=>URL.revokeObjectURL(item.url));
+images=[];
+render();
+resultPanel.classList.add('hidden');
+updateStatus(t.cleared);
+});
+
+merge.addEventListener('click',async()=>{
+if(images.length<2)return;
+merge.disabled=true;
+status.textContent=t.processing;
+try{
+const loaded=await Promise.all(images.map(item=>new Promise((resolve,reject)=>{
+const img=new Image();
+img.onload=()=>resolve({img,file:item.file});
+img.onerror=()=>reject(new Error(t.imageError));
+img.src=item.url;
+})));
+
+const horizontal=document.querySelector('input[name="direction"]:checked').value==='horizontal';
+const gap=Number(spacing.value);
+
+const targetHeight=loaded[0].img.naturalHeight;
+const targetWidth=loaded[0].img.naturalWidth;
+
+const resizedImages=loaded.map(item=>{
+if(horizontal){
+const ratio=item.img.naturalWidth/item.img.naturalHeight;
+return {img:item.img,width:targetHeight*ratio,height:targetHeight};
+}else{
+const ratio=item.img.naturalWidth/item.img.naturalHeight;
+return {img:item.img,width:targetWidth,height:targetWidth/ratio};
+}
+});
+
+const gapTotal=gap*(resizedImages.length-1);
+const totalWidth=horizontal
+?resizedImages.reduce((sum,x)=>sum+x.width,0)+gapTotal
+:Math.max(...resizedImages.map(x=>x.width));
+
+const totalHeight=horizontal
+?targetHeight
+:resizedImages.reduce((sum,x)=>sum+x.height,0)+gapTotal;
+
+const maxDimension=12000;
+const scale=Math.min(1,maxDimension/totalWidth,maxDimension/totalHeight);
+const canvas=document.createElement('canvas');
+canvas.width=Math.max(1,Math.round(totalWidth*scale));
+canvas.height=Math.max(1,Math.round(totalHeight*scale));
+const ctx=canvas.getContext('2d');
+if(!ctx)throw new Error(t.canvasError);
+
+ctx.fillStyle='#fff';
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+let cursor=0;
+for(const item of resizedImages){
+const w=item.width*scale;
+const h=item.height*scale;
+if(horizontal){
+ctx.drawImage(item.img,cursor,0,w,h);
+cursor+=w+gap*scale;
+}else{
+ctx.drawImage(item.img,(canvas.width-w)/2,cursor,w,h);
+cursor+=h+gap*scale;
+}
+}
+
+const blob=await new Promise((resolve,reject)=>{
+canvas.toBlob(b=>b?resolve(b):reject(new Error(t.outputError)),'image/png');
+});
+if(resultUrl)URL.revokeObjectURL(resultUrl);
+resultUrl=URL.createObjectURL(blob);
+resultPreview.src=resultUrl;
+resultPreview.alt=t.preview;
+resultInfo.textContent=t.success(loaded.length,canvas.width,canvas.height);
+resultPanel.classList.remove('hidden');
+status.textContent=t.ready;
+}catch(error){
+status.textContent=error.message||t.fail;
+}finally{
+merge.disabled=images.length<2;
+}
+});
+
+download.addEventListener('click',()=>{
+if(!resultUrl)return;
+const link=document.createElement('a');
+link.href=resultUrl;
+link.download='merged-image.png';
+document.body.append(link);
+link.click();
+link.remove();
+});
+
+window.addEventListener('beforeunload',()=>{
+images.forEach(item=>URL.revokeObjectURL(item.url));
+if(resultUrl)URL.revokeObjectURL(resultUrl);
+});
+})();
+</script>
+</body>
+</html>
