@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -31,6 +32,7 @@ body {
 
 .main-container {
     max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -90,11 +92,15 @@ body {
     direction: ltr;
 }
 
-/* أزرار اختيار اللغة (أزرق هادي ومريح) */
+/* أزرار اختيار اللغة */
 .language {
-    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    text-align: center;
     margin: 0;
-    max-width: none;
+    max-width: 100%;
     flex-shrink: 0;
 }
 
@@ -111,6 +117,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+    white-space: nowrap;
 }
 
 .language button:hover {
@@ -137,12 +144,14 @@ body {
     text-align: center;
     margin-bottom: 30px;
 }
+
 .site-intro h1 {
     color: #0f172a;
     font-size: 26px;
     margin: 20px 0 8px;
     font-weight: 800;
 }
+
 .site-intro p {
     max-width: 750px;
     margin: 8px auto 28px;
@@ -167,6 +176,7 @@ body {
     border-right: 5px solid #64748b;
 }
 
+/* شبكة الأدوات */
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -174,7 +184,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* كروت ولون أزرار الأدوات (رصاصي أنيق ومريح للنظر) */
+/* كروت الأدوات */
 .tool-card {
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     border: 1px solid #cbd5e1;
@@ -236,8 +246,19 @@ body {
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     text-align: right;
 }
-.feedback-section h2 { margin-top: 0; color: #0f172a; font-size: 19px; }
-.feedback-section p { line-height: 1.7; color: #475569; font-size: 14px; }
+
+.feedback-section h2 {
+    margin-top: 0;
+    color: #0f172a;
+    font-size: 19px;
+}
+
+.feedback-section p {
+    line-height: 1.7;
+    color: #475569;
+    font-size: 14px;
+}
+
 .feedback-form {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
@@ -245,14 +266,23 @@ body {
     align-items: start;
     margin-top: 16px;
 }
-.feedback-form label { display: none; }
-.feedback-form input[type="text"] { grid-column: 1; grid-row: 1; }
+
+.feedback-form label {
+    display: none;
+}
+
+.feedback-form input[type="text"] {
+    grid-column: 1;
+    grid-row: 1;
+}
+
 .feedback-form textarea {
     grid-column: 2;
     grid-row: 1;
     min-height: 130px;
     resize: vertical;
 }
+
 .feedback-form input,
 .feedback-form textarea {
     width: 100%;
@@ -264,13 +294,22 @@ body {
     outline: none;
     background: #f8fafc;
 }
-.feedback-form input:focus, .feedback-form textarea:focus {
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
     border-color: #64748b;
     background: #ffffff;
 }
-.feedback-form input[type="hidden"] { display: none; }
+
+.feedback-form input[type="hidden"] {
+    display: none;
+}
+
 .feedback-form button,
-#feedbackStatus { grid-column: 1 / -1; }
+#feedbackStatus {
+    grid-column: 1 / -1;
+}
+
 .feedback-form button {
     padding: 12px;
     border: none;
@@ -283,26 +322,88 @@ body {
     transition: background 0.2s;
     box-shadow: 0 4px 12px rgba(71, 85, 105, 0.25);
 }
-.feedback-form button:hover { background: #334155; }
-.feedback-form button:disabled { opacity: 0.6; cursor: wait; }
-#feedbackStatus { font-weight: bold; color: #334155; }
 
+.feedback-form button:hover {
+    background: #334155;
+}
+
+.feedback-form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+#feedbackStatus {
+    font-weight: bold;
+    color: #334155;
+    overflow-wrap: anywhere;
+}
+
+/* تنسيق الموبايل */
 @media (max-width: 600px) {
-    body { padding: 10px; }
-    .feedback-form { grid-template-columns: minmax(0, 1fr); }
+    body {
+        padding: 10px;
+    }
+
+    .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 8px;
+    }
+
+    .brand {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .language {
+        width: 100%;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .language button {
+        margin: 2px;
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+
+    .feedback-section {
+        padding: 16px;
+    }
+
+    .feedback-form {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .feedback-form input[type="text"],
-    .feedback-form textarea { grid-column: 1; grid-row: auto; }
-    .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .feedback-form textarea {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .tool-card {
+        padding: 15px 8px;
+    }
+
+    .site-intro h1 {
+        font-size: 23px;
+    }
 }
 </style>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-NZ00TSPTWC');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
 </script>
 </head>
 
@@ -370,20 +471,41 @@ body {
     <a href="qr-generator.html" class="tool-card"><span class="tool-icon">📱</span><span data-ar="صانع QR Code للروابط" data-en="QR Code Generator">صانع QR Code للروابط</span></a>
 </div>
 
+<!-- التعليقات -->
 <section class="feedback-section" aria-labelledby="feedbackTitle">
     <h2 id="feedbackTitle" data-ar="رأيك يهمنا" data-en="Your Opinion Matters">رأيك يهمنا</h2>
     <p data-ar="رأيك يهمنا، شاركنا تجربتك وملاحظاتك حول الموقع وساعدنا على تحسين خدماتنا." data-en="Share your experience and feedback to help us improve our services.">رأيك يهمنا، شاركنا تجربتك وملاحظاتك حول الموقع وساعدنا على تحسين خدماتنا.</p>
 
     <form id="feedbackForm" class="feedback-form">
         <label for="visitorName" data-ar="الاسم (اختياري)" data-en="Name (optional)">الاسم (اختياري)</label>
-        <input type="text" id="visitorName" name="name" maxlength="80" autocomplete="name" placeholder="اكتب اسمك" data-ar-placeholder="اكتب اسمك" data-en-placeholder="Enter your name">
+
+        <input
+            type="text"
+            id="visitorName"
+            name="name"
+            maxlength="80"
+            autocomplete="name"
+            placeholder="اكتب اسمك"
+            data-ar-placeholder="اكتب اسمك"
+            data-en-placeholder="Enter your name"
+        >
 
         <label for="visitorComment" data-ar="اكتب تعليقك" data-en="Your comment">اكتب تعليقك</label>
-        <textarea id="visitorComment" name="comment" maxlength="3000" required placeholder="اكتب رأيك أو ملاحظاتك هنا" data-ar-placeholder="اكتب رأيك أو ملاحظاتك هنا" data-en-placeholder="Write your feedback here"></textarea>
+
+        <textarea
+            id="visitorComment"
+            name="comment"
+            maxlength="3000"
+            required
+            placeholder="اكتب رأيك أو ملاحظاتك هنا"
+            data-ar-placeholder="اكتب رأيك أو ملاحظاتك هنا"
+            data-en-placeholder="Write your feedback here"
+        ></textarea>
 
         <input type="hidden" name="_subject" value="تعليق جديد من موقع سوق الأدوات">
 
         <button type="submit" data-ar="إرسال التعليق" data-en="Send Comment">إرسال التعليق</button>
+
         <p id="feedbackStatus" role="status" aria-live="polite"></p>
     </form>
 </section>
@@ -392,13 +514,16 @@ body {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
     const arabicButton = document.getElementById("arabicButton");
     const englishButton = document.getElementById("englishButton");
 
     let currentLanguage = "ar";
 
+    /* تغيير اللغة وحفظ الاختيار */
     function applyLanguage(language) {
         currentLanguage = language === "en" ? "en" : "ar";
+
         const isArabic = currentLanguage === "ar";
 
         document.documentElement.lang = currentLanguage;
@@ -421,61 +546,128 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {}
     }
 
-    if (arabicButton) arabicButton.addEventListener("click", () => applyLanguage("ar"));
-    if (englishButton) englishButton.addEventListener("click", () => applyLanguage("en"));
+    if (arabicButton) {
+        arabicButton.addEventListener("click", function () {
+            applyLanguage("ar");
+        });
+    }
 
+    if (englishButton) {
+        englishButton.addEventListener("click", function () {
+            applyLanguage("en");
+        });
+    }
+
+    /* استرجاع اللغة المحفوظة */
     try {
-        currentLanguage = localStorage.getItem("toolsMarketLanguage") === "en" ? "en" : "ar";
-    } catch (e) {
+        currentLanguage =
+            localStorage.getItem("toolsMarketLanguage") === "en" ? "en" : "ar";
+    } catch (error) {
         currentLanguage = "ar";
     }
 
     applyLanguage(currentLanguage);
 
-    document.querySelectorAll('.tools-grid a').forEach(function (link) {
+    /* تمرير اللغة إلى صفحات الأدوات */
+    document.querySelectorAll(".tools-grid a").forEach(function (link) {
         link.addEventListener("click", function (event) {
             event.preventDefault();
+
             const href = link.getAttribute("href");
+
             window.location.href = href + "?lang=" + currentLanguage;
         });
     });
 
+    /* إرسال التعليقات */
     const feedbackForm = document.getElementById("feedbackForm");
     const feedbackStatus = document.getElementById("feedbackStatus");
     const submitButton = feedbackForm.querySelector('button[type="submit"]');
 
     feedbackForm.addEventListener("submit", async function (event) {
         event.preventDefault();
-        if (!feedbackForm.reportValidity()) return;
 
-        feedbackStatus.textContent = currentLanguage === "ar" ? "جاري إرسال التعليق..." : "Sending your comment...";
+        if (!feedbackForm.reportValidity()) {
+            return;
+        }
+
+        const isArabic = currentLanguage === "ar";
+
+        feedbackStatus.textContent = isArabic
+            ? "جاري إرسال التعليق..."
+            : "Sending your comment...";
+
         submitButton.disabled = true;
 
         try {
+            /* تحويل بيانات النموذج إلى JSON */
+            const formData = new FormData(feedbackForm);
+            const data = Object.fromEntries(formData.entries());
+
             const response = await fetch(
                 "https://formsubmit.co/ajax/medosd6666@gmail.com",
                 {
                     method: "POST",
-                    headers: { "Accept": "application/json" },
-                    body: new FormData(feedbackForm)
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(data)
                 }
             );
 
-            const result = await response.json();
+            /* قراءة الرد بطريقة آمنة */
+            const responseText = await response.text();
 
-            if (response.ok && result.success) {
-                feedbackStatus.textContent = currentLanguage === "ar" ? "تم إرسال التعليق بنجاح، شكرًا لمشاركتك!" : "Comment sent successfully. Thank you!";
-                feedbackForm.reset();
-                applyLanguage(currentLanguage);
-            } else {
-                feedbackStatus.textContent = currentLanguage === "ar" ? "لم نتمكن من تأكيد الإرسال. حاول مرة أخرى لاحقًا." : "We couldn't confirm the submission. Please try again later.";
+            let result = {};
+
+            try {
+                result = JSON.parse(responseText);
+            } catch (parseError) {
+                result = {};
             }
+
+            if (!response.ok) {
+                throw new Error(
+                    result.message ||
+                    result.error ||
+                    "HTTP " + response.status
+                );
+            }
+
+            const success =
+                result.success === true ||
+                result.success === "true" ||
+                result.success === "success";
+
+            if (success) {
+                feedbackStatus.textContent = isArabic
+                    ? "تم إرسال التعليق بنجاح، شكرًا لمشاركتك!"
+                    : "Comment sent successfully. Thank you!";
+
+                feedbackForm.reset();
+
+                /* إعادة ضبط اتجاه اللغة والنصوص بعد تفريغ النموذج */
+                applyLanguage(currentLanguage);
+
+            } else {
+                feedbackStatus.textContent = isArabic
+                    ? "لم يتم تأكيد إرسال التعليق. حاول مرة أخرى لاحقًا."
+                    : "The comment submission could not be confirmed. Please try again later.";
+            }
+
         } catch (error) {
-            feedbackStatus.textContent = currentLanguage === "ar" ? "تعذر الاتصال بخدمة الإرسال. تأكد من اتصال الإنترنت وحاول مرة أخرى." : "Could not connect to the submission service. Check your internet and try again.";
+            console.error("Feedback submission error:", error);
+
+            feedbackStatus.textContent = isArabic
+                ? "حدثت مشكلة أثناء إرسال التعليق. حاول مرة أخرى بعد قليل."
+                : "There was a problem sending your comment. Please try again shortly.";
+
         } finally {
             submitButton.disabled = false;
         }
     });
+
 });
 </script>
 
