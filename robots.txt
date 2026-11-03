@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://medosd6666-png.github.io/tools-market/sitemap.xml
