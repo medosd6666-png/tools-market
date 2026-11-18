@@ -39,7 +39,7 @@ body {
 .site-header {
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto 24px;
+    margin: 0 auto 18px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,22 +91,38 @@ body {
     direction: ltr;
 }
 
-/* رابط مملكة الإيموش */
+/* رابط مملكة الإيموش أسفل الهيدر */
+.emojiland-promo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 auto 22px;
+    padding: 13px 16px;
+    background: #ffffff;
+    border: 1px solid #e9d5ff;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .emojiland-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 9px 13px;
+    padding: 7px 12px;
     border: 1px solid #e9d5ff;
-    border-radius: 10px;
+    border-radius: 9px;
     background: #faf5ff;
     color: #7655c5;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
-    flex-shrink: 0;
     transition: all 0.2s ease;
 }
 
@@ -380,11 +396,6 @@ body {
         justify-content: center;
     }
 
-    .emojiland-link {
-        width: 100%;
-        max-width: 220px;
-    }
-
     .language {
         width: 100%;
         justify-content: center;
@@ -394,6 +405,16 @@ body {
     .language button {
         margin: 2px;
         padding: 7px 12px;
+        font-size: 13px;
+    }
+
+    .emojiland-promo {
+        padding: 12px 8px;
+        gap: 6px;
+        font-size: 13px;
+    }
+
+    .emojiland-link {
         font-size: 13px;
     }
 
@@ -449,14 +470,6 @@ gtag('config', 'G-NZ00TSPTWC');
         </div>
     </div>
 
-    <a class="emojiland-link"
-       href="https://emojiland.pages.dev/"
-       target="_blank"
-       rel="noopener"
-       aria-label="مملكة الإيموش">
-        👑 <span data-ar="مملكة الإيموش" data-en="Emojiland">مملكة الإيموش</span>
-    </a>
-
     <div class="language">
         <button type="button" id="arabicButton">
             <img src="https://flagcdn.com/w40/sa.png" alt="علم السعودية" class="language-flag">
@@ -469,6 +482,19 @@ gtag('config', 'G-NZ00TSPTWC');
         </button>
     </div>
 </header>
+
+<!-- رابط مملكة الإيموش أسفل الهيدر -->
+<div class="emojiland-promo">
+    <span data-ar="اطّلع على موقعنا" data-en="Visit our website">اطّلع على موقعنا</span>
+
+    <a class="emojiland-link"
+       href="https://emojiland.pages.dev/"
+       target="_blank"
+       rel="noopener"
+       aria-label="مملكة الإيموش">
+        👑 <span data-ar="مملكة الإيموش" data-en="Emojiland">مملكة الإيموش</span>
+    </a>
+</div>
 
 <div class="site-intro">
     <h1 data-ar="سوق الأدوات" data-en="Tools Market">سوق الأدوات</h1>
