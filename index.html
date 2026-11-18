@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -90,6 +89,31 @@ body {
     color: #0284c7;
     font-weight: 600;
     direction: ltr;
+}
+
+/* رابط مملكة الإيموش */
+.emojiland-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 13px;
+    border: 1px solid #e9d5ff;
+    border-radius: 10px;
+    background: #faf5ff;
+    color: #7655c5;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.emojiland-link:hover {
+    background: #f3e8ff;
+    border-color: #c084fc;
+    transform: translateY(-1px);
 }
 
 /* أزرار اختيار اللغة */
@@ -356,6 +380,11 @@ body {
         justify-content: center;
     }
 
+    .emojiland-link {
+        width: 100%;
+        max-width: 220px;
+    }
+
     .language {
         width: 100%;
         justify-content: center;
@@ -419,6 +448,14 @@ gtag('config', 'G-NZ00TSPTWC');
             <span>Tools Market</span>
         </div>
     </div>
+
+    <a class="emojiland-link"
+       href="https://emojiland.pages.dev/"
+       target="_blank"
+       rel="noopener"
+       aria-label="مملكة الإيموش">
+        👑 <span data-ar="مملكة الإيموش" data-en="Emojiland">مملكة الإيموش</span>
+    </a>
 
     <div class="language">
         <button type="button" id="arabicButton">
