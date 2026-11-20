@@ -1,21 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title data-ar="استخراج النصوص من الصور OCR | سوق الأدوات"
-       data-en="Extract Text from Images OCR | Tools Market">استخراج النصوص من الصور OCR | سوق الأدوات</title>
-<meta name="description" content="استخرج النصوص المكتوبة داخل الصور باستخدام أداة OCR المجانية أونلاين من سوق الأدوات، ثم انسخ النص الناتج لاستخدامه.">
+<title>استخراج النصوص من الصور OCR | سوق الأدوات</title>
+<meta name="description" content="استخرج النصوص العربية والإنجليزية من الصور أونلاين مجانًا باستخدام تقنية OCR. ارفع صورتك وانسخ النص المستخرج بسهولة عبر سوق الأدوات.">
+<meta name="keywords" content="استخراج النص من الصور, تحويل الصور إلى نص, OCR عربي, OCR English, image to text, extract text from image, أدوات مجانية">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1769aa">
 <link rel="canonical" href="https://medosd6666-png.github.io/tools-market/image-to-text.html">
-<meta property="og:title" content="استخراج النصوص من الصور OCR | سوق الأدوات">
-<meta property="og:description" content="استخرج النصوص المكتوبة داخل الصور باستخدام أداة OCR المجانية أونلاين من سوق الأدوات، ثم انسخ النص الناتج لاستخدامه.">
-<meta property="og:url" content="https://medosd6666-png.github.io/tools-market/image-to-text.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ar_AR">
 
+<meta property="og:type" content="website">
+<meta property="og:title" content="استخراج النصوص من الصور OCR | سوق الأدوات">
+<meta property="og:description" content="حوّل الكتابة الموجودة داخل الصور إلى نص قابل للنسخ باستخدام أداة OCR المجانية.">
+<meta property="og:url" content="https://medosd6666-png.github.io/tools-market/image-to-text.html">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="استخراج النصوص من الصور OCR | سوق الأدوات">
+<meta name="twitter:description" content="استخرج النصوص من الصور باللغة العربية والإنجليزية مجانًا.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image to Text OCR - Tools Market",
+  "url": "https://medosd6666-png.github.io/tools-market/image-to-text.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web",
+  "description": "Free online OCR tool for extracting Arabic and English text from images.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 
 <style>
 * {
@@ -32,7 +54,7 @@ body {
 }
 
 .container {
-    max-width: 650px;
+    max-width: 760px;
     margin: 30px auto;
     padding: 25px;
     background: white;
@@ -40,18 +62,46 @@ body {
     box-shadow: 0 4px 15px #00000012;
 }
 
-h1 {
+h1, h2, h3 {
     color: #1769aa;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 29px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 28px;
 }
 
 p {
-    line-height: 1.8;
+    line-height: 1.9;
+}
+
+.intro {
+    color: #526477;
+    margin-bottom: 22px;
+}
+
+.tool-panel {
+    background: #f7faff;
+    border: 1px solid #e1eaf4;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
 }
 
 input[type="file"] {
     display: block;
     width: 100%;
     margin: 20px 0;
+    padding: 12px;
+    background: white;
+    border: 1px solid #d5dfeb;
+    border-radius: 8px;
 }
 
 button {
@@ -63,6 +113,11 @@ button {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #10558d;
 }
 
 button:disabled {
@@ -76,12 +131,15 @@ button:disabled {
     max-height: 300px;
     margin: 15px auto;
     border-radius: 8px;
+    object-fit: contain;
 }
 
 #status {
     margin: 18px 0;
     line-height: 1.8;
     overflow-wrap: anywhere;
+    color: #31516f;
+    min-height: 25px;
 }
 
 textarea {
@@ -93,18 +151,85 @@ textarea {
     font-size: 17px;
     line-height: 1.8;
     resize: vertical;
+    font-family: Arial, sans-serif;
+    background: #fff;
 }
 
-a {
+.content-section {
+    text-align: start;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #edf0f4;
+}
+
+.content-section ul,
+.content-section ol {
+    line-height: 2;
+    padding-inline-start: 25px;
+}
+
+.faq-item {
+    margin: 18px 0;
+}
+
+.faq-item h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.related-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.related-tools a {
     display: inline-block;
-    margin-top: 20px;
+    background: #eef5fc;
     color: #1769aa;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.related-tools a:hover {
+    background: #dcecfb;
+}
+
+.home-promotion {
+    margin-top: 32px;
+    padding: 22px 16px;
+    background: #edf5fd;
+    border: 1px solid #d7e8f8;
+    border-radius: 12px;
+}
+
+.home-promotion h2 {
+    margin-top: 0;
+}
+
+.home-button {
+    display: inline-block;
+    background: #1769aa;
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.home-button:hover {
+    background: #10558d;
 }
 
 footer {
     margin-top: 25px;
     color: #667788;
     line-height: 1.8;
+    font-size: 14px;
 }
 
 @media (max-width: 480px) {
@@ -120,68 +245,255 @@ footer {
     h1 {
         font-size: 23px;
     }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .tool-panel {
+        padding: 14px;
+    }
+
+    button {
+        max-width: 100%;
+    }
 }
 </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NZ00TSPTWC');
-    </script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
+</script>
 </head>
 
 <body>
+
 <div class="container">
 
-<h1 data-ar="استخراج النصوص من الصور"
-    data-en="Extract Text from Images">
-استخراج النصوص من الصور
-</h1>
+<header>
+    <h1 data-ar="استخراج النصوص من الصور" data-en="Extract Text from Images">
+        استخراج النصوص من الصور
+    </h1>
 
-<p data-ar="اختر صورة تحتوي على كتابة، وسيحاول الموقع استخراج النص العربي والإنجليزي منها لتتمكن من نسخه."
-   data-en="Choose an image containing text. The tool will try to recognize Arabic and English text so you can copy it.">
-اختر صورة تحتوي على كتابة، وسيحاول الموقع استخراج النص العربي والإنجليزي منها لتتمكن من نسخه.
-</p>
+    <p class="intro"
+       data-ar="حوّل الكتابة الموجودة داخل الصور إلى نص قابل للنسخ بسهولة. اختر صورة تحتوي على نص عربي أو إنجليزي، وستحاول أداة OCR التعرف على الكلمات واستخراجها."
+       data-en="Convert writing inside images into copyable text. Choose an image containing Arabic or English text, and this OCR tool will try to recognize and extract the words.">
+        حوّل الكتابة الموجودة داخل الصور إلى نص قابل للنسخ بسهولة. اختر صورة تحتوي على نص عربي أو إنجليزي، وستحاول أداة OCR التعرف على الكلمات واستخراجها.
+    </p>
+</header>
 
-<input type="file" id="imageFile" accept="image/*">
+<section class="tool-panel" aria-label="Image to text tool">
 
-<img id="preview" alt="معاينة الصورة المختارة">
+    <label for="imageFile"
+           data-ar="اختر صورة من جهازك"
+           data-en="Choose an image from your device">
+        اختر صورة من جهازك
+    </label>
 
-<br>
+    <input type="file" id="imageFile" accept="image/*">
 
-<button id="extractBtn"
-        data-ar="استخراج النص"
-        data-en="Extract Text">
-استخراج النص
-</button>
+    <img id="preview" alt="معاينة الصورة المختارة">
 
-<div id="status" aria-live="polite"></div>
+    <button id="extractBtn"
+            data-ar="استخراج النص"
+            data-en="Extract Text">
+        استخراج النص
+    </button>
 
-<textarea id="result"
-          placeholder="النص المستخرج سيظهر هنا..."
-          dir="auto"></textarea>
+    <div id="status" aria-live="polite" role="status"></div>
 
-<br>
+    <label for="result"
+           data-ar="النص المستخرج"
+           data-en="Extracted text">
+        النص المستخرج
+    </label>
 
-<button id="copyBtn" disabled
-        data-ar="نسخ النص"
-        data-en="Copy Text">
-نسخ النص
-</button>
+    <textarea id="result"
+              placeholder="النص المستخرج سيظهر هنا..."
+              dir="auto"
+              aria-label="Extracted text"></textarea>
 
-<br>
+    <button id="copyBtn" disabled
+            data-ar="نسخ النص"
+            data-en="Copy Text">
+        نسخ النص
+    </button>
 
-<a href="index.html" id="homeLink"
-   data-ar="العودة إلى الصفحة الرئيسية"
-   data-en="Back to Homepage">
-العودة إلى الصفحة الرئيسية
-</a>
+</section>
+
+<section class="content-section">
+
+    <h2 data-ar="ما هي أداة استخراج النصوص من الصور؟"
+        data-en="What Is an Image to Text OCR Tool?">
+        ما هي أداة استخراج النصوص من الصور؟
+    </h2>
+
+    <p data-ar="أداة استخراج النصوص من الصور، المعروفة باسم OCR، تساعدك على تحويل الكلمات المكتوبة داخل الصور إلى نص رقمي يمكنك نسخه واستخدامه. يمكن أن تكون الصورة لقطة شاشة أو مستندًا مصورًا أو ورقة تحتوي على كتابة واضحة."
+       data-en="An image to text OCR tool recognizes printed words inside an image and converts them into digital text that you can copy and use. Your image may be a screenshot, a photographed document, or a page containing readable writing.">
+        أداة استخراج النصوص من الصور، المعروفة باسم OCR، تساعدك على تحويل الكلمات المكتوبة داخل الصور إلى نص رقمي يمكنك نسخه واستخدامه. يمكن أن تكون الصورة لقطة شاشة أو مستندًا مصورًا أو ورقة تحتوي على كتابة واضحة.
+    </p>
+
+    <h2 data-ar="مميزات أداة OCR"
+        data-en="Image to Text Tool Features">
+        مميزات أداة OCR
+    </h2>
+
+    <ul>
+        <li data-ar="استخراج النصوص من الصور مباشرة عبر المتصفح."
+            data-en="Extract text from images directly in your browser.">
+            استخراج النصوص من الصور مباشرة عبر المتصفح.
+        </li>
+        <li data-ar="دعم التعرف على النصوص العربية والإنجليزية."
+            data-en="Support for Arabic and English text recognition.">
+            دعم التعرف على النصوص العربية والإنجليزية.
+        </li>
+        <li data-ar="نسخ النص المستخرج بضغطة واحدة."
+            data-en="Copy the extracted text with one click.">
+            نسخ النص المستخرج بضغطة واحدة.
+        </li>
+        <li data-ar="استخدام مجاني دون الحاجة إلى إنشاء حساب."
+            data-en="Free to use without creating an account.">
+            استخدام مجاني دون الحاجة إلى إنشاء حساب.
+        </li>
+        <li data-ar="لا تحتاج إلى تثبيت برنامج على جهازك."
+            data-en="No software installation is required.">
+            لا تحتاج إلى تثبيت برنامج على جهازك.
+        </li>
+    </ul>
+
+    <h2 data-ar="كيفية استخراج النص من الصورة"
+        data-en="How to Extract Text from an Image">
+        كيفية استخراج النص من الصورة
+    </h2>
+
+    <ol>
+        <li data-ar="اضغط على اختيار صورة وحدد الصورة التي تريد استخراج النص منها."
+            data-en="Click Choose Image and select the image you want to process.">
+            اضغط على اختيار صورة وحدد الصورة التي تريد استخراج النص منها.
+        </li>
+        <li data-ar="انتظر حتى تظهر معاينة الصورة المختارة."
+            data-en="Wait until the selected image preview appears.">
+            انتظر حتى تظهر معاينة الصورة المختارة.
+        </li>
+        <li data-ar="اضغط على زر استخراج النص وانتظر انتهاء عملية التعرف."
+            data-en="Click Extract Text and wait for recognition to finish.">
+            اضغط على زر استخراج النص وانتظر انتهاء عملية التعرف.
+        </li>
+        <li data-ar="راجع النص الناتج ثم اضغط على نسخ النص."
+            data-en="Review the result and click Copy Text.">
+            راجع النص الناتج ثم اضغط على نسخ النص.
+        </li>
+    </ol>
+
+    <h2 data-ar="الصور التي تعطي أفضل نتيجة"
+        data-en="Images That Give Better Results">
+        الصور التي تعطي أفضل نتيجة
+    </h2>
+
+    <p data-ar="للحصول على نتيجة أفضل، استخدم صورة واضحة وعالية الدقة، واجعل النص ظاهرًا وغير مائل قدر الإمكان. تجنب الصور الضبابية أو شديدة الظلام أو التي تحتوي على كتابة صغيرة جدًا. قد تحتاج إلى مراجعة النص المستخرج وتصحيح بعض الأخطاء، خاصة في الصور ذات الجودة المنخفضة."
+       data-en="For better results, use a clear, high-resolution image with readable, straight text. Avoid blurry, very dark images or images with extremely small writing. You may need to review and correct the extracted text, especially when the image quality is low.">
+        للحصول على نتيجة أفضل، استخدم صورة واضحة وعالية الدقة، واجعل النص ظاهرًا وغير مائل قدر الإمكان. تجنب الصور الضبابية أو شديدة الظلام أو التي تحتوي على كتابة صغيرة جدًا. قد تحتاج إلى مراجعة النص المستخرج وتصحيح بعض الأخطاء، خاصة في الصور ذات الجودة المنخفضة.
+    </p>
+
+    <h2 data-ar="الأسئلة الشائعة"
+        data-en="Frequently Asked Questions">
+        الأسئلة الشائعة
+    </h2>
+
+    <div class="faq-item">
+        <h3 data-ar="هل يمكن استخراج النص العربي من الصور؟"
+            data-en="Can I extract Arabic text from images?">
+            هل يمكن استخراج النص العربي من الصور؟
+        </h3>
+        <p data-ar="نعم، الأداة تدعم التعرف على النصوص العربية والإنجليزية، لكن دقة النتيجة تعتمد على وضوح الصورة وجودة الكتابة."
+           data-en="Yes. The tool supports Arabic and English recognition, but accuracy depends on image clarity and text quality.">
+            نعم، الأداة تدعم التعرف على النصوص العربية والإنجليزية، لكن دقة النتيجة تعتمد على وضوح الصورة وجودة الكتابة.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="هل يمكنني نسخ النص بعد استخراجه؟"
+            data-en="Can I copy the extracted text?">
+            هل يمكنني نسخ النص بعد استخراجه؟
+        </h3>
+        <p data-ar="نعم، بعد انتهاء عملية الاستخراج اضغط على زر نسخ النص، وسيتم نسخ النتيجة لتستخدمها في أي مكان."
+           data-en="Yes. Once extraction is complete, click Copy Text to copy the result for use anywhere.">
+            نعم، بعد انتهاء عملية الاستخراج اضغط على زر نسخ النص، وسيتم نسخ النتيجة لتستخدمها في أي مكان.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="هل الأداة مجانية؟"
+            data-en="Is this tool free?">
+            هل الأداة مجانية؟
+        </h3>
+        <p data-ar="نعم، يمكنك استخدام أداة استخراج النصوص من الصور مجانًا دون إنشاء حساب."
+           data-en="Yes. You can use this image to text tool for free without creating an account.">
+            نعم، يمكنك استخدام أداة استخراج النصوص من الصور مجانًا دون إنشاء حساب.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="لماذا لا يتعرف البرنامج على بعض الكلمات؟"
+            data-en="Why does the tool fail to recognize some words?">
+            لماذا لا يتعرف البرنامج على بعض الكلمات؟
+        </h3>
+        <p data-ar="قد يحدث ذلك بسبب ضعف جودة الصورة أو صغر حجم الخط أو تداخل الكتابة مع الخلفية. جرّب صورة أوضح وراجع النص بعد استخراجه."
+           data-en="This may happen because of low image quality, small fonts, or text blending into the background. Try a clearer image and review the result.">
+            قد يحدث ذلك بسبب ضعف جودة الصورة أو صغر حجم الخط أو تداخل الكتابة مع الخلفية. جرّب صورة أوضح وراجع النص بعد استخراجه.
+        </p>
+    </div>
+
+    <h2 data-ar="أدوات أخرى قد تحتاج إليها"
+        data-en="Other Tools You May Need">
+        أدوات أخرى قد تحتاج إليها
+    </h2>
+
+    <div class="related-tools">
+        <a href="image-compressor.html"
+           data-ar="ضغط الصور"
+           data-en="Image Compressor">ضغط الصور</a>
+
+        <a href="image-resizer.html"
+           data-ar="تغيير حجم الصور"
+           data-en="Image Resizer">تغيير حجم الصور</a>
+
+        <a href="image-converter.html"
+           data-ar="تحويل صيغ الصور"
+           data-en="Image Converter">تحويل صيغ الصور</a>
+
+        <a href="image-to-pdf.html"
+           data-ar="تحويل الصور إلى PDF"
+           data-en="Image to PDF">تحويل الصور إلى PDF</a>
+    </div>
+
+</section>
+
+<section class="home-promotion">
+    <h2 data-ar="اكتشف المزيد من الأدوات على سوق الأدوات"
+        data-en="Discover More Tools on Tools Market">
+        اكتشف المزيد من الأدوات على سوق الأدوات
+    </h2>
+
+    <p data-ar="يمكنك زيارة سوق الأدوات الرئيسي لاكتشاف المزيد من الأدوات المجانية التي تساعدك على إنجاز مهامك بسهولة."
+       data-en="Visit the main Tools Market website to discover more free tools that help you complete everyday tasks easily.">
+        يمكنك زيارة سوق الأدوات الرئيسي لاكتشاف المزيد من الأدوات المجانية التي تساعدك على إنجاز مهامك بسهولة.
+    </p>
+
+    <a href="index.html" id="homeLink" class="home-button"
+       data-ar="العودة إلى سوق الأدوات الرئيسي"
+       data-en="Back to Tools Market Homepage">
+        العودة إلى سوق الأدوات الرئيسي
+    </a>
+</section>
 
 <footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
         data-en="Tools Market | Free and Easy Tools for Everyone">
-سوق الأدوات | أدوات مجانية وسهلة للجميع
+    سوق الأدوات | أدوات مجانية وسهلة للجميع
 </footer>
 
 </div>
@@ -223,32 +535,62 @@ function setStatus(ar, en) {
     status.textContent = t(ar, en);
 }
 
-if (typeof applyPageLanguage === "function") {
-    applyPageLanguage();
-} else {
+function updatePageLanguage() {
     const language = getLanguage();
 
     document.documentElement.lang = language;
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
-    document.querySelectorAll("[data-ar][data-en]").forEach(function(element) {
-        element.textContent = element.getAttribute(
-            language === "en" ? "data-en" : "data-ar"
-        );
-    });
+    if (typeof applyPageLanguage === "function") {
+        applyPageLanguage();
+    } else {
+        document.querySelectorAll("[data-ar][data-en]").forEach(function(element) {
+            element.textContent = element.getAttribute(
+                language === "en" ? "data-en" : "data-ar"
+            );
+        });
+    }
+
+    document.title = t(
+        "استخراج النصوص من الصور OCR | سوق الأدوات",
+        "Extract Text from Images OCR | Tools Market"
+    );
+
+    document.querySelector('meta[name="description"]').content = t(
+        "استخرج النصوص العربية والإنجليزية من الصور أونلاين مجانًا باستخدام تقنية OCR. ارفع صورتك وانسخ النص المستخرج بسهولة عبر سوق الأدوات.",
+        "Extract Arabic and English text from images online for free using OCR technology. Upload an image and easily copy the recognized text with Tools Market."
+    );
+
+    document.querySelector('meta[property="og:title"]').content = document.title;
+    document.querySelector('meta[property="og:description"]').content =
+        document.querySelector('meta[name="description"]').content;
+
+    document.querySelector('meta[name="twitter:title"]').content = document.title;
+    document.querySelector('meta[name="twitter:description"]').content =
+        document.querySelector('meta[name="description"]').content;
+
+    document.querySelector('meta[property="og:locale"]').content =
+        language === "ar" ? "ar_AR" : "en_US";
+
+    homeLink.href = "index.html?lang=" + language;
+
+    result.placeholder = t(
+        "النص المستخرج سيظهر هنا...",
+        "Extracted text will appear here..."
+    );
+
+    result.setAttribute("aria-label", t(
+        "النص المستخرج",
+        "Extracted text"
+    ));
+
+    preview.alt = t(
+        "معاينة الصورة المختارة",
+        "Preview of the selected image"
+    );
 }
 
-homeLink.href = "index.html?lang=" + getLanguage();
-
-result.placeholder = t(
-    "النص المستخرج سيظهر هنا...",
-    "Extracted text will appear here..."
-);
-
-preview.alt = t(
-    "معاينة الصورة المختارة",
-    "Preview of the selected image"
-);
+updatePageLanguage();
 
 let imageUrl = null;
 let worker = null;
@@ -267,6 +609,7 @@ imageFile.addEventListener("change", function() {
     const file = imageFile.files[0];
 
     if (!file) {
+        preview.removeAttribute("src");
         preview.style.display = "none";
         return;
     }
@@ -278,6 +621,7 @@ imageFile.addEventListener("change", function() {
         );
 
         imageFile.value = "";
+        preview.removeAttribute("src");
         preview.style.display = "none";
         return;
     }
@@ -385,11 +729,11 @@ extractBtn.addEventListener("click", async function() {
         );
 
         const response = await worker.recognize(file);
-        const text = response.data.text.trim();
+        const extractedText = response.data.text.trim();
 
-        result.value = text;
+        result.value = extractedText;
 
-        if (text) {
+        if (extractedText) {
             setStatus(
                 "تم استخراج النص بنجاح!",
                 "Text extracted successfully!"
@@ -403,7 +747,7 @@ extractBtn.addEventListener("click", async function() {
         }
 
     } catch (error) {
-        console.error(error);
+        console.error("OCR error:", error);
 
         setStatus(
             "تعذر استخراج النص. تأكد من اتصال الإنترنت وجرب صورة أخرى.",
@@ -415,7 +759,7 @@ extractBtn.addEventListener("click", async function() {
             try {
                 await worker.terminate();
             } catch (error) {
-                console.error(error);
+                console.error("Worker termination error:", error);
             }
 
             worker = null;
@@ -440,6 +784,10 @@ copyBtn.addEventListener("click", async function() {
     result.select();
 
     try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) {
+            throw new Error("Clipboard API unavailable");
+        }
+
         await navigator.clipboard.writeText(result.value);
 
         setStatus(
@@ -448,7 +796,13 @@ copyBtn.addEventListener("click", async function() {
         );
 
     } catch (error) {
-        const copied = document.execCommand("copy");
+        let copied = false;
+
+        try {
+            copied = document.execCommand("copy");
+        } catch (copyError) {
+            console.error(copyError);
+        }
 
         setStatus(
             copied
@@ -460,6 +814,17 @@ copyBtn.addEventListener("click", async function() {
         );
     }
 });
+
+window.addEventListener("beforeunload", function() {
+    if (imageUrl) {
+        URL.revokeObjectURL(imageUrl);
+    }
+
+    if (worker) {
+        worker.terminate();
+    }
+});
 </script>
+
 </body>
 </html>
