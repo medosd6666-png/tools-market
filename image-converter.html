@@ -1,22 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تحويل صيغ الصور أونلاين | سوق الأدوات</title>
-<meta name="description" content="حوّل صيغ الصور أونلاين بين JPG وPNG وWebP بسهولة باستخدام أداة تحويل صيغ الصور المجانية من سوق الأدوات.">
+
+<title>تحويل صيغ الصور أونلاين مجانًا JPG وPNG وWebP | سوق الأدوات</title>
+
+<meta name="description" content="حوّل الصور أونلاين بين JPG وPNG وWebP مجانًا. اختر الصيغة المناسبة، واضبط جودة الصورة، وشاهد معاينة النتيجة قبل تنزيلها بسهولة.">
+
+<meta name="keywords" content="تحويل صيغ الصور, تحويل الصور إلى JPG, تحويل PNG إلى JPG, تحويل JPG إلى PNG, تحويل الصور إلى WebP, image converter, JPG converter, PNG converter, WebP converter">
+
+<meta name="author" content="سوق الأدوات">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1769d2">
+
 <link rel="canonical" href="https://medosd6666-png.github.io/tools-market/image-converter.html">
-<meta property="og:title" content="تحويل صيغ الصور أونلاين | سوق الأدوات">
-<meta property="og:description" content="حوّل صيغ الصور أونلاين بين JPG وPNG وWebP بسهولة باستخدام أداة تحويل صيغ الصور المجانية من سوق الأدوات.">
+
+<meta property="og:title" content="تحويل صيغ الصور أونلاين مجانًا | سوق الأدوات">
+<meta property="og:description" content="حوّل صورك بين JPG وPNG وWebP بسهولة، واضبط الجودة وشاهد النتيجة قبل التنزيل.">
 <meta property="og:url" content="https://medosd6666-png.github.io/tools-market/image-converter.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="سوق الأدوات">
 
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="تحويل صيغ الصور أونلاين | سوق الأدوات">
+<meta name="twitter:description" content="حوّل الصور بين JPG وPNG وWebP مجانًا وبسهولة.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "أداة تحويل صيغ الصور - سوق الأدوات",
+  "alternateName": "Image Format Converter",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires a modern web browser with HTML5 Canvas support",
+  "url": "https://medosd6666-png.github.io/tools-market/image-converter.html",
+  "description": "أداة مجانية لتحويل الصور بين صيغ JPG وPNG وWebP مع إمكانية ضبط جودة الصورة ومعاينة النتيجة قبل التنزيل.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "inLanguage": ["ar", "en"]
+}
+</script>
 
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -24,12 +63,12 @@ body {
     font-family: Tahoma, Arial, sans-serif;
     background: linear-gradient(135deg, #eaf4ff, #f4f0ff);
     color: #1f2937;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto;
     padding: 30px;
     background: #fff;
@@ -38,7 +77,10 @@ body {
     box-shadow: 0 12px 35px rgba(30,64,100,0.12);
 }
 
-header { text-align: center; margin-bottom: 28px; }
+header {
+    text-align: center;
+    margin-bottom: 28px;
+}
 
 .back {
     display: inline-block;
@@ -48,9 +90,36 @@ header { text-align: center; margin-bottom: 28px; }
     font-weight: bold;
 }
 
-h1 { margin: 0 0 8px; color: #1454a3; font-size: 30px; }
-h2 { color: #1454a3; font-size: 22px; }
-.intro { margin: 0; color: #64748b; }
+.back:hover,
+.content-section a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: #1454a3;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+h2 {
+    color: #1454a3;
+    font-size: 23px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+h3 {
+    color: #245b98;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.intro {
+    margin: 0;
+    color: #64748b;
+    font-size: 16px;
+}
 
 .panel {
     padding: 22px;
@@ -66,7 +135,8 @@ h2 { color: #1454a3; font-size: 22px; }
     font-weight: bold;
 }
 
-input[type="file"], select {
+input[type="file"],
+select {
     display: block;
     width: 100%;
     padding: 13px;
@@ -74,13 +144,31 @@ input[type="file"], select {
     border-radius: 12px;
     background: #f8fafc;
     font: inherit;
+    color: #1f2937;
 }
 
-input[type="file"] { border-style: dashed; }
-.hint { color: #64748b; font-size: 14px; overflow-wrap: anywhere; }
-.field { margin: 20px 0; }
+input[type="file"] {
+    border-style: dashed;
+}
 
-button, .download-link {
+input[type="range"] {
+    width: 100%;
+    accent-color: #1769d2;
+    cursor: pointer;
+}
+
+.hint {
+    color: #64748b;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.field {
+    margin: 20px 0;
+}
+
+button,
+.download-link {
     display: inline-block;
     padding: 12px 24px;
     border: 0;
@@ -92,11 +180,32 @@ button, .download-link {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-button:hover, .download-link:hover { background: #0f4fa8; }
-button:disabled { background: #94a3b8; cursor: not-allowed; }
-#message { margin-top: 15px; color: #475569; overflow-wrap: anywhere; }
+button:hover,
+.download-link:hover {
+    background: #0f4fa8;
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+#message {
+    margin-top: 15px;
+    color: #475569;
+    overflow-wrap: anywhere;
+}
 
 #resultPanel[hidden],
 #editor[hidden],
@@ -114,68 +223,194 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
     background: #f1f5f9;
 }
 
-.result-info { color: #475569; overflow-wrap: anywhere; }
-footer { text-align: center; color: #64748b; font-size: 13px; }
+.result-info {
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+
+.content-section {
+    margin-top: 28px;
+    padding: 24px;
+    border: 1px solid #e2eaf3;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.content-section p {
+    margin: 10px 0;
+}
+
+.content-section ul,
+.content-section ol {
+    padding-inline-start: 25px;
+}
+
+.content-section li {
+    margin-bottom: 8px;
+}
+
+.format-card {
+    padding: 16px;
+    margin: 14px 0;
+    border: 1px solid #e2eaf3;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.format-card h3 {
+    margin-top: 0;
+}
+
+.faq-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-item:last-child {
+    border-bottom: 0;
+}
+
+.faq-item h3 {
+    margin-top: 0;
+}
+
+.content-section a {
+    color: #1769d2;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.related-links a {
+    display: inline-block;
+    padding: 9px 14px;
+    border: 1px solid #cbdcf0;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 28px;
+}
 
 @media (max-width: 520px) {
-    body { padding: 12px; }
-    .container { padding: 18px; margin: 8px auto; }
-    .panel { padding: 16px; }
-    h1 { font-size: 25px; }
-    button, .download-link { width: 100%; }
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 18px;
+        margin: 8px auto;
+    }
+
+    .panel,
+    .content-section {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    button,
+    .download-link {
+        width: 100%;
+    }
+
+    .related-links {
+        flex-direction: column;
+    }
+
+    .related-links a {
+        text-align: center;
+    }
 }
 </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NZ00TSPTWC');
-    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
+</script>
+
 </head>
 
 <body>
+
 <main class="container">
 
 <header>
+
 <a class="back" href="index.html"
 data-ar="العودة إلى سوق الأدوات ←"
-data-en="← Back to Tools Market">العودة إلى سوق الأدوات ←</a>
+data-en="← Back to Tools Market">
+العودة إلى سوق الأدوات ←
+</a>
 
-<h1 data-ar="تحويل صيغ الصور"
-data-en="Image Format Converter">تحويل صيغ الصور</h1>
+<h1
+data-ar="تحويل صيغ الصور أونلاين"
+data-en="Online Image Format Converter">
+تحويل صيغ الصور أونلاين
+</h1>
 
 <p class="intro"
-data-ar="حوّل صورك إلى الصيغة المناسبة لك بسهولة ومجانًا."
-data-en="Convert your images to the format you need, easily and for free.">
-حوّل صورك إلى الصيغة المناسبة لك بسهولة ومجانًا.
+data-ar="حوّل صورك بين JPG وPNG وWebP بسهولة ومجانًا، واختر الجودة والصيغة المناسبة لاحتياجاتك."
+data-en="Convert your images between JPG, PNG, and WebP easily and for free. Choose the format and quality you need.">
+حوّل صورك بين JPG وPNG وWebP بسهولة ومجانًا، واختر الجودة والصيغة المناسبة لاحتياجاتك.
 </p>
+
 </header>
 
-<section class="panel">
+<!-- أداة التحويل -->
+
+<section class="panel" aria-label="Image converter">
 
 <label class="field-label" for="imageInput"
-data-ar="اختار صورة من جهازك"
+data-ar="اختر صورة من جهازك"
 data-en="Choose an image from your device">
-اختار صورة من جهازك
+اختر صورة من جهازك
 </label>
 
-<input id="imageInput" type="file"
-accept="image/jpeg,image/png,image/webp">
+<input
+id="imageInput"
+type="file"
+accept="image/jpeg,image/png,image/webp"
+aria-describedby="fileInfo">
 
-<p id="fileInfo" class="hint"></p>
+<p id="fileInfo" class="hint"
+data-ar="الصيغ المدعومة: JPG وPNG وWebP."
+data-en="Supported formats: JPG, PNG, and WebP.">
+الصيغ المدعومة: JPG وPNG وWebP.
+</p>
 
 <div id="editor" hidden>
 
 <div class="field">
+
 <label class="field-label" for="formatSelect"
-data-ar="اختار الصيغة الجديدة"
+data-ar="اختر الصيغة الجديدة"
 data-en="Choose the new format">
-اختار الصيغة الجديدة
+اختر الصيغة الجديدة
 </label>
 
 <select id="formatSelect">
+
 <option value="image/jpeg"
 data-ar="JPG - مناسبة للصور الفوتوغرافية"
 data-en="JPG - Best for photographs">
@@ -193,33 +428,51 @@ data-ar="WebP - صيغة حديثة للويب"
 data-en="WebP - Modern web format">
 WebP - صيغة حديثة للويب
 </option>
+
 </select>
+
 </div>
 
 <div class="field" id="qualityField">
+
 <label class="field-label" for="qualityInput">
-<span data-ar="جودة الصورة:" data-en="Image quality:">جودة الصورة:</span>
+
+<span data-ar="جودة الصورة:" data-en="Image quality:">
+جودة الصورة:
+</span>
+
 <span id="qualityValue">92%</span>
+
 </label>
 
-<input id="qualityInput" type="range" min="50" max="100" value="92">
+<input
+id="qualityInput"
+type="range"
+min="50"
+max="100"
+value="92">
 
 <p class="hint"
 data-ar="يؤثر هذا الاختيار على JPG وWebP فقط. صيغة PNG لا تستخدم نسبة الجودة هنا."
 data-en="This setting affects JPG and WebP only. PNG does not use this quality setting.">
 يؤثر هذا الاختيار على JPG وWebP فقط. صيغة PNG لا تستخدم نسبة الجودة هنا.
 </p>
+
 </div>
 
 <button id="convertButton" type="button"
-data-ar="تحويل الصورة" data-en="Convert image">
+data-ar="تحويل الصورة"
+data-en="Convert image">
 تحويل الصورة
 </button>
 
 <p id="message" role="status" aria-live="polite"></p>
 
 </div>
+
 </section>
+
+<!-- نتيجة التحويل -->
 
 <section id="resultPanel" class="panel" hidden>
 
@@ -227,12 +480,18 @@ data-ar="تحويل الصورة" data-en="Convert image">
 الصورة بعد التحويل
 </h2>
 
-<img id="previewImage" class="preview"
+<img
+id="previewImage"
+class="preview"
 alt="معاينة الصورة بعد التحويل">
 
 <p id="resultInfo" class="result-info"></p>
 
-<a id="downloadLink" class="download-link" href="#" download
+<a
+id="downloadLink"
+class="download-link"
+href="#"
+download
 data-ar="تنزيل الصورة الجديدة"
 data-en="Download converted image">
 تنزيل الصورة الجديدة
@@ -240,7 +499,637 @@ data-en="Download converted image">
 
 </section>
 
-<footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+<!-- مقدمة عن الأداة -->
+
+<section class="content-section">
+
+<h2
+data-ar="ما هي أداة تحويل صيغ الصور؟"
+data-en="What Is an Image Format Converter?">
+ما هي أداة تحويل صيغ الصور؟
+</h2>
+
+<p
+data-ar="أداة تحويل صيغ الصور من سوق الأدوات هي أداة مجانية تساعدك على تغيير امتداد الصورة من صيغة إلى أخرى، دون الحاجة إلى تثبيت برامج إضافية على جهازك. يمكنك اختيار صورة بصيغة JPG أو PNG أو WebP، ثم تحديد الصيغة التي تريد الحصول عليها وتنزيل النسخة الجديدة."
+data-en="The Image Format Converter from Tools Market is a free online tool that helps you change an image from one format to another without installing additional software. Choose a JPG, PNG, or WebP image, select the output format, and download the converted file.">
+أداة تحويل صيغ الصور من سوق الأدوات هي أداة مجانية تساعدك على تغيير امتداد الصورة من صيغة إلى أخرى، دون الحاجة إلى تثبيت برامج إضافية على جهازك. يمكنك اختيار صورة بصيغة JPG أو PNG أو WebP، ثم تحديد الصيغة التي تريد الحصول عليها وتنزيل النسخة الجديدة.
+</p>
+
+<p
+data-ar="تعمل الأداة داخل متصفحك باستخدام تقنيات الويب، وتتيح لك معاينة الصورة الناتجة ومعرفة حجمها قبل تنزيلها. كما يمكنك التحكم في مستوى الجودة عند التحويل إلى JPG أو WebP."
+data-en="The tool works inside your browser using web technologies. You can preview the converted image and check its file size before downloading. You can also adjust the quality when converting to JPG or WebP.">
+تعمل الأداة داخل متصفحك باستخدام تقنيات الويب، وتتيح لك معاينة الصورة الناتجة ومعرفة حجمها قبل تنزيلها. كما يمكنك التحكم في مستوى الجودة عند التحويل إلى JPG أو WebP.
+</p>
+
+</section>
+
+<!-- مميزات الأداة -->
+
+<section class="content-section">
+
+<h2
+data-ar="مميزات أداة تحويل الصور"
+data-en="Image Converter Features">
+مميزات أداة تحويل الصور
+</h2>
+
+<ul>
+<li
+data-ar="مجانية وسهلة الاستخدام دون الحاجة إلى إنشاء حساب."
+data-en="Free and easy to use, with no account required.">
+مجانية وسهلة الاستخدام دون الحاجة إلى إنشاء حساب.
+</li>
+
+<li
+data-ar="تحويل الصور بين JPG وPNG وWebP."
+data-en="Convert images between JPG, PNG, and WebP.">
+تحويل الصور بين JPG وPNG وWebP.
+</li>
+
+<li
+data-ar="إمكانية اختيار جودة الصورة عند استخدام JPG أو WebP."
+data-en="Adjust image quality when using JPG or WebP.">
+إمكانية اختيار جودة الصورة عند استخدام JPG أو WebP.
+</li>
+
+<li
+data-ar="معاينة الصورة الناتجة قبل تنزيلها."
+data-en="Preview the converted image before downloading.">
+معاينة الصورة الناتجة قبل تنزيلها.
+</li>
+
+<li
+data-ar="عرض أبعاد الصورة وحجم الملف الأصلي والجديد."
+data-en="View image dimensions and original and converted file sizes.">
+عرض أبعاد الصورة وحجم الملف الأصلي والجديد.
+</li>
+
+<li
+data-ar="تعمل من خلال المتصفح على أجهزة الكمبيوتر والهواتف."
+data-en="Works in a browser on computers and mobile devices.">
+تعمل من خلال المتصفح على أجهزة الكمبيوتر والهواتف.
+</li>
+
+</ul>
+
+</section>
+
+<!-- الفرق بين الصيغ -->
+
+<section class="content-section">
+
+<h2
+data-ar="ما الفرق بين صيغ الصور JPG وPNG وWebP؟"
+data-en="What Is the Difference Between JPG, PNG, and WebP?">
+ما الفرق بين صيغ الصور JPG وPNG وWebP؟
+</h2>
+
+<p
+data-ar="اختيار صيغة الصورة المناسبة يساعدك في الحصول على التوازن الذي تحتاجه بين جودة الصورة وحجم الملف ودعم الشفافية. إليك أهم الفروق بين الصيغ الثلاث:"
+data-en="Choosing the right image format helps you balance image quality, file size, and transparency support. Here are the main differences between the three formats:">
+اختيار صيغة الصورة المناسبة يساعدك في الحصول على التوازن الذي تحتاجه بين جودة الصورة وحجم الملف ودعم الشفافية. إليك أهم الفروق بين الصيغ الثلاث:
+</p>
+
+<div class="format-card">
+
+<h3>JPG / JPEG</h3>
+
+<p
+data-ar="تُستخدم صيغة JPG على نطاق واسع في الصور الفوتوغرافية والصور التي تحتوي على ألوان وتفاصيل كثيرة. تعتمد على ضغط يقلل حجم الملف، وقد يؤدي تقليل الجودة إلى فقدان بعض التفاصيل. لا تدعم الخلفيات الشفافة."
+data-en="JPG is widely used for photographs and images with many colors and details. It uses compression to reduce file size, and lower quality settings may remove some details. It does not support transparency.">
+تُستخدم صيغة JPG على نطاق واسع في الصور الفوتوغرافية والصور التي تحتوي على ألوان وتفاصيل كثيرة. تعتمد على ضغط يقلل حجم الملف، وقد يؤدي تقليل الجودة إلى فقدان بعض التفاصيل. لا تدعم الخلفيات الشفافة.
+</p>
+
+</div>
+
+<div class="format-card">
+
+<h3>PNG</h3>
+
+<p
+data-ar="تتميز صيغة PNG بالحفاظ على جودة الصورة دون فقدان التفاصيل بسبب الضغط، كما تدعم الخلفيات الشفافة. تكون مناسبة للشعارات والأيقونات والرسومات، لكن حجم ملفاتها قد يكون أكبر من JPG أو WebP."
+data-en="PNG preserves image details without lossy compression and supports transparent backgrounds. It is useful for logos, icons, and graphics, but its files may be larger than JPG or WebP.">
+تتميز صيغة PNG بالحفاظ على جودة الصورة دون فقدان التفاصيل بسبب الضغط، كما تدعم الخلفيات الشفافة. تكون مناسبة للشعارات والأيقونات والرسومات، لكن حجم ملفاتها قد يكون أكبر من JPG أو WebP.
+</p>
+
+</div>
+
+<div class="format-card">
+
+<h3>WebP</h3>
+
+<p
+data-ar="WebP صيغة حديثة للصور على الإنترنت، وتوفر ضغطًا جيدًا مع دعم الشفافية. يمكن أن تساعد في تقليل حجم الصور المستخدمة في المواقع مع الحفاظ على جودة مناسبة، لكن توافقها مع بعض البرامج القديمة قد يختلف."
+data-en="WebP is a modern image format for the web. It offers efficient compression and supports transparency. It can reduce the size of website images while maintaining suitable quality, although compatibility with some older software may vary.">
+WebP صيغة حديثة للصور على الإنترنت، وتوفر ضغطًا جيدًا مع دعم الشفافية. يمكن أن تساعد في تقليل حجم الصور المستخدمة في المواقع مع الحفاظ على جودة مناسبة، لكن توافقها مع بعض البرامج القديمة قد يختلف.
+</p>
+
+</div>
+
+</section>
+
+<!-- طريقة الاستخدام -->
+
+<section class="content-section">
+
+<h2
+data-ar="كيفية تحويل الصور خطوة بخطوة"
+data-en="How to Convert Images Step by Step">
+كيفية تحويل الصور خطوة بخطوة
+</h2>
+
+<ol>
+
+<li
+data-ar="اضغط على زر اختيار صورة من جهازك."
+data-en="Click the button to choose an image from your device.">
+اضغط على زر اختيار صورة من جهازك.
+</li>
+
+<li
+data-ar="اختر صورة بصيغة JPG أو PNG أو WebP."
+data-en="Select an image in JPG, PNG, or WebP format.">
+اختر صورة بصيغة JPG أو PNG أو WebP.
+</li>
+
+<li
+data-ar="انتظر حتى يتم فتح الصورة وتجهيزها للتحويل."
+data-en="Wait for the image to load and become ready for conversion.">
+انتظر حتى يتم فتح الصورة وتجهيزها للتحويل.
+</li>
+
+<li
+data-ar="حدد الصيغة الجديدة التي تريد تحويل الصورة إليها."
+data-en="Select the output format you want.">
+حدد الصيغة الجديدة التي تريد تحويل الصورة إليها.
+</li>
+
+<li
+data-ar="إذا اخترت JPG أو WebP، يمكنك ضبط جودة الصورة من شريط الجودة."
+data-en="If you choose JPG or WebP, adjust the image quality using the quality slider.">
+إذا اخترت JPG أو WebP، يمكنك ضبط جودة الصورة من شريط الجودة.
+</li>
+
+<li
+data-ar="اضغط على زر تحويل الصورة وانتظر انتهاء المعالجة."
+data-en="Click Convert image and wait for processing to finish.">
+اضغط على زر تحويل الصورة وانتظر انتهاء المعالجة.
+</li>
+
+<li
+data-ar="شاهد معاينة الصورة الجديدة، ثم اضغط على تنزيل الصورة الجديدة لحفظها على جهازك."
+data-en="Preview the converted image, then click Download converted image to save it to your device.">
+شاهد معاينة الصورة الجديدة، ثم اضغط على تنزيل الصورة الجديدة لحفظها على جهازك.
+</li>
+
+</ol>
+
+</section>
+
+<!-- الجودة -->
+
+<section class="content-section">
+
+<h2
+data-ar="كيف تختار جودة الصورة المناسبة؟"
+data-en="How to Choose the Right Image Quality">
+كيف تختار جودة الصورة المناسبة؟
+</h2>
+
+<p
+data-ar="تتيح الأداة ضبط الجودة من 50% إلى 100% عند التحويل إلى JPG أو WebP. اختيار جودة أعلى يساعد على الاحتفاظ بتفاصيل أكثر، لكنه قد ينتج ملفًا أكبر. أما اختيار جودة أقل فقد يقلل حجم الملف، مع احتمال ظهور فقدان في بعض التفاصيل."
+data-en="The tool lets you adjust quality from 50% to 100% when converting to JPG or WebP. Higher quality generally preserves more detail but may produce larger files. Lower quality may reduce file size while introducing some loss of detail.">
+تتيح الأداة ضبط الجودة من 50% إلى 100% عند التحويل إلى JPG أو WebP. اختيار جودة أعلى يساعد على الاحتفاظ بتفاصيل أكثر، لكنه قد ينتج ملفًا أكبر. أما اختيار جودة أقل فقد يقلل حجم الملف، مع احتمال ظهور فقدان في بعض التفاصيل.
+</p>
+
+<ul>
+
+<li
+data-ar="جودة مرتفعة: مناسبة عندما تكون التفاصيل مهمة."
+data-en="High quality: useful when image details are important.">
+جودة مرتفعة: مناسبة عندما تكون التفاصيل مهمة.
+</li>
+
+<li
+data-ar="جودة متوسطة: قد توفر توازنًا جيدًا بين الحجم والجودة."
+data-en="Medium quality: may provide a useful balance between size and quality.">
+جودة متوسطة: قد توفر توازنًا جيدًا بين الحجم والجودة.
+</li>
+
+<li
+data-ar="جودة أقل: قد تكون مناسبة عندما يكون تقليل حجم الملف هو الأولوية."
+data-en="Lower quality: may be useful when reducing file size is the priority.">
+جودة أقل: قد تكون مناسبة عندما يكون تقليل file size هو الأولوية.
+</li>
+
+</ul>
+
+<p
+data-ar="ملاحظة: صيغة PNG لا تستخدم إعداد الجودة الموجود في الأداة؛ لذلك يتم إخفاء شريط الجودة عند اختيار PNG."
+data-en="Note: PNG does not use the quality setting in this tool, so the quality slider is hidden when PNG is selected.">
+ملاحظة: صيغة PNG لا تستخدم إعداد الجودة الموجود في الأداة؛ لذلك يتم إخفاء شريط الجودة عند اختيار PNG.
+</p>
+
+</section>
+
+<!-- الشفافية -->
+
+<section class="content-section">
+
+<h2
+data-ar="ماذا يحدث للخلفية الشفافة عند تحويل الصورة؟"
+data-en="What Happens to Transparent Backgrounds?">
+ماذا يحدث للخلفية الشفافة عند تحويل الصورة؟
+</h2>
+
+<p
+data-ar="تدعم صيغتا PNG وWebP حفظ الشفافية، بينما لا تدعم صيغة JPG الخلفيات الشفافة. لذلك عند تحويل صورة تحتوي على خلفية شفافة إلى JPG، تضيف الأداة خلفية بيضاء حتى تظهر الصورة بشكل صحيح."
+data-en="PNG and WebP support transparency, while JPG does not. When you convert an image with a transparent background to JPG, the tool adds a white background so the image displays correctly.">
+تدعم صيغتا PNG وWebP حفظ الشفافية، بينما لا تدعم صيغة JPG الخلفيات الشفافة. لذلك عند تحويل صورة تحتوي على خلفية شفافة إلى JPG، تضيف الأداة خلفية بيضاء حتى تظهر الصورة بشكل صحيح.
+</p>
+
+<p
+data-ar="إذا كنت تريد الاحتفاظ بالخلفية الشفافة، اختر PNG أو WebP بدلًا من JPG."
+data-en="If you want to preserve a transparent background, choose PNG or WebP instead of JPG.">
+إذا كنت تريد الاحتفاظ بالخلفية الشفافة، اختر PNG أو WebP بدلًا من JPG.
+</p>
+
+</section>
+
+<!-- الاستخدامات -->
+
+<section class="content-section">
+
+<h2
+data-ar="متى تحتاج إلى تحويل صيغة الصورة؟"
+data-en="When Do You Need to Convert an Image?">
+متى تحتاج إلى تحويل صيغة الصورة؟
+</h2>
+
+<ul>
+
+<li
+data-ar="عندما تحتاج إلى صورة JPG لرفعها على موقع أو منصة لا تقبل PNG."
+data-en="When you need a JPG image for a website or platform that does not accept PNG.">
+عندما تحتاج إلى صورة JPG لرفعها على موقع أو منصة لا تقبل PNG.
+</li>
+
+<li
+data-ar="عندما تريد الاحتفاظ بخلفية شفافة لشعار أو تصميم."
+data-en="When you need to preserve a transparent background for a logo or design.">
+عندما تريد الاحتفاظ بخلفية شفافة لشعار أو تصميم.
+</li>
+
+<li
+data-ar="عندما تريد استخدام WebP لتقليل حجم الصور على موقعك."
+data-en="When you want to use WebP to reduce image file sizes on your website.">
+عندما تريد استخدام WebP لتقليل حجم الصور على موقعك.
+</li>
+
+<li
+data-ar="عندما يتطلب برنامج أو تطبيق صيغة معينة للصور."
+data-en="When an application or software requires a specific image format.">
+عندما يتطلب برنامج أو تطبيق صيغة معينة للصور.
+</li>
+
+</ul>
+
+</section>
+
+<!-- القيود -->
+
+<section class="content-section">
+
+<h2
+data-ar="الصيغ المدعومة والقيود"
+data-en="Supported Formats and Limitations">
+الصيغ المدعومة والقيود
+</h2>
+
+<ul>
+
+<li
+data-ar="صيغ الإدخال المدعومة: JPG وJPEG وPNG وWebP."
+data-en="Supported input formats: JPG, JPEG, PNG, and WebP.">
+صيغ الإدخال المدعومة: JPG وJPEG وPNG وWebP.
+</li>
+
+<li
+data-ar="صيغ الإخراج المتاحة: JPG وPNG وWebP."
+data-en="Available output formats: JPG, PNG, and WebP.">
+صيغ الإخراج المتاحة: JPG وPNG وWebP.
+</li>
+
+<li
+data-ar="تعالج الأداة صورة واحدة في كل مرة."
+data-en="The tool processes one image at a time.">
+تعالج الأداة صورة واحدة في كل مرة.
+</li>
+
+<li
+data-ar="لا تدعم الأداة تحويل ملفات GIF المتحركة أو ملفات الفيديو."
+data-en="The tool does not convert animated GIFs or video files.">
+لا تدعم الأداة تحويل ملفات GIF المتحركة أو ملفات الفيديو.
+</li>
+
+<li
+data-ar="قد يختلف حجم الصورة الناتجة حسب الصيغة والجودة ومحتوى الصورة."
+data-en="The output file size may vary depending on the format, quality, and image content.">
+قد يختلف حجم الصورة الناتجة حسب الصيغة والجودة ومحتوى الصورة.
+</li>
+
+<li
+data-ar="تعتمد عملية التحويل على إمكانيات المتصفح والذاكرة المتاحة على جهازك."
+data-en="Conversion depends on your browser capabilities and the memory available on your device.">
+تعتمد عملية التحويل على إمكانيات المتصفح والذاكرة المتاحة على جهازك.
+</li>
+
+</ul>
+
+</section>
+
+<!-- الخصوصية -->
+
+<section class="content-section">
+
+<h2
+data-ar="الخصوصية وأمان الصور"
+data-en="Privacy and Image Security">
+الخصوصية وأمان الصور
+</h2>
+
+<p
+data-ar="تتم معالجة الصورة داخل متصفحك باستخدام تقنيات Canvas، ولا يتطلب تشغيل أداة التحويل إرسال ملف الصورة إلى خادم الموقع. تظل الصورة الأصلية على جهازك أثناء عملية التحويل التي تنفذها الأداة في المتصفح."
+data-en="The image is processed inside your browser using Canvas technology. The conversion tool does not need to upload the image file to the website server. Your original image stays on your device while the browser performs the conversion.">
+تتم معالجة الصورة داخل متصفحك باستخدام تقنيات Canvas، ولا يتطلب تشغيل أداة التحويل إرسال ملف الصورة إلى خادم الموقع. تظل الصورة الأصلية على جهازك أثناء عملية التحويل التي تنفذها الأداة في المتصفح.
+</p>
+
+<p
+data-ar="يستخدم الموقع Google Analytics لفهم استخدام الزوار للموقع وتحسين الخدمات. هذه الإحصائيات منفصلة عن ملف الصورة الذي تختاره للتحويل."
+data-en="The website uses Google Analytics to understand visitor activity and improve its services. This analytics activity is separate from the image file you select for conversion.">
+يستخدم الموقع Google Analytics لفهم استخدام الزوار للموقع وتحسين الخدمات. هذه الإحصائيات منفصلة عن ملف الصورة الذي تختاره للتحويل.
+</p>
+
+</section>
+
+<!-- نصائح -->
+
+<section class="content-section">
+
+<h2
+data-ar="نصائح للحصول على أفضل نتيجة"
+data-en="Tips for the Best Results">
+نصائح للحصول على أفضل نتيجة
+</h2>
+
+<ul>
+
+<li
+data-ar="احتفظ بنسخة من الصورة الأصلية قبل إجراء التحويل."
+data-en="Keep a copy of the original image before converting it.">
+احتفظ بنسخة من الصورة الأصلية قبل إجراء التحويل.
+</li>
+
+<li
+data-ar="استخدم PNG عندما تحتاج إلى خلفية شفافة."
+data-en="Use PNG when you need a transparent background.">
+استخدم PNG عندما تحتاج إلى خلفية شفافة.
+</li>
+
+<li
+data-ar="استخدم JPG للصور الفوتوغرافية التي لا تحتاج إلى شفافية."
+data-en="Use JPG for photographs that do not require transparency.">
+استخدم JPG للصور الفوتوغرافية التي لا تحتاج إلى شفافية.
+</li>
+
+<li
+data-ar="جرّب WebP عندما تريد صيغة مناسبة للاستخدام على الويب."
+data-en="Try WebP when you need a format suitable for web use.">
+جرّب WebP عندما تريد صيغة مناسبة للاستخدام على الويب.
+</li>
+
+<li
+data-ar="راجع معاينة الصورة الناتجة قبل تنزيلها."
+data-en="Check the converted image preview before downloading.">
+راجع معاينة الصورة الناتجة قبل تنزيلها.
+</li>
+
+<li
+data-ar="إذا كانت الصورة كبيرة جدًا، فقد تحتاج إلى الانتظار حتى ينتهي المتصفح من معالجتها."
+data-en="If the image is very large, allow the browser time to finish processing it.">
+إذا كانت الصورة كبيرة جدًا، فقد تحتاج إلى الانتظار حتى ينتهي المتصفح من معالجتها.
+</li>
+
+</ul>
+
+</section>
+
+<!-- الأسئلة الشائعة -->
+
+<section class="content-section">
+
+<h2
+data-ar="الأسئلة الشائعة حول تحويل صيغ الصور"
+data-en="Frequently Asked Questions About Image Conversion">
+الأسئلة الشائعة حول تحويل صيغ الصور
+</h2>
+
+<div class="faq-item">
+
+<h3
+data-ar="1. هل أداة تحويل الصور مجانية؟"
+data-en="1. Is the image converter free?">
+1. هل أداة تحويل الصور مجانية؟
+</h3>
+
+<p
+data-ar="نعم، يمكنك استخدام أداة تحويل صيغ الصور مجانًا دون الحاجة إلى إنشاء حساب أو تثبيت برنامج."
+data-en="Yes. You can use the image converter for free without creating an account or installing software.">
+نعم، يمكنك استخدام أداة تحويل صيغ الصور مجانًا دون الحاجة إلى إنشاء حساب أو تثبيت برنامج.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3
+data-ar="2. ما صيغ الصور التي تدعمها الأداة؟"
+data-en="2. Which image formats does the tool support?">
+2. ما صيغ الصور التي تدعمها الأداة؟
+</h3>
+
+<p
+data-ar="تدعم الأداة اختيار الصور بصيغ JPG وJPEG وPNG وWebP، ويمكنك تحويلها إلى JPG أو PNG أو WebP."
+data-en="The tool accepts JPG, JPEG, PNG, and WebP images. You can convert them to JPG, PNG, or WebP.">
+تدعم الأداة اختيار الصور بصيغ JPG وJPEG وPNG وWebP، ويمكنك تحويلها إلى JPG أو PNG أو WebP.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3
+data-ar="3. هل يمكن تحويل PNG إلى JPG؟"
+data-en="3. Can I convert PNG to JPG?">
+3. هل يمكن تحويل PNG إلى JPG؟
+</h3>
+
+<p
+data-ar="نعم، اختر صورة PNG من جهازك، ثم حدد JPG من قائمة الصيغ واضغط على تحويل الصورة. عند وجود خلفية شفافة، ستظهر بخلفية بيضاء في ملف JPG الناتج."
+data-en="Yes. Select a PNG image, choose JPG from the format list, and click Convert image. Transparent areas will have a white background in the resulting JPG file.">
+نعم، اختر صورة PNG من جهازك، ثم حدد JPG من قائمة الصيغ واضغط على تحويل الصورة. عند وجود خلفية شفافة، ستظهر بخلفية بيضاء في ملف JPG الناتج.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3
+data-ar="4. هل يمكن تحويل JPG إلى PNG؟"
+data-en="4. Can I convert JPG to PNG?">
+4. هل يمكن تحويل JPG إلى PNG؟
+</h3>
+
+<p
+data-ar="نعم، يمكنك اختيار صورة JPG وتحديد PNG كصيغة جديدة. لكن التحويل إلى PNG لا يعيد التفاصيل التي فقدتها الصورة بسبب ضغط JPG السابق."
+data-en="Yes. You can select a JPG image and choose PNG as the output format. However, converting to PNG does not restore details previously lost through JPG compression.">
+نعم، يمكنك اختيار صورة JPG وتحديد PNG كصيغة جديدة. لكن التحويل إلى PNG لا يعيد التفاصيل التي فقدتها الصورة بسبب ضغط JPG السابق.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3
+data-ar="5. هل يمكن الاحتفاظ بالخلفية الشفافة؟"
+data-en="5. Can I preserve a transparent background?">
+5. هل يمكن الاحتفاظ بالخلفية الشفافة؟
+</h3>
+
+<p
+data-ar="نعم، اختر PNG أو WebP للحفاظ على الشفافية. أما JPG فلا يدعم الخلفيات الشفافة."
+data-en="Yes. Choose PNG or WebP to preserve transparency. JPG does not support transparent backgrounds.">
+نعم، اختر PNG أو WebP للحفاظ على الشفافية. أما JPG فلا يدعم الخلفيات الشفافة.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3
+data-ar="6. هل يمكن التحكم في جودة الصورة؟"
+data-en="6. Can I control image quality?">
+6. هل يمكن التحكم في جودة الصورة؟
+</h3>
+
+<p
+data-ar="نعم، يمكنك ضبط الجودة من 50% إلى 100% عند اختيار JPG أو WebP. لا يظهر إعداد الجودة عند اختيار PNG."
+data-en="Yes. You can adjust quality from 50% to 100% when choosing JPG or WebP. The quality setting is not available for PNG.">
+نعم، يمكنك ضبط الجودة من 50% إلى 100% عند اختيار JPG أو WebP. لا يظهر إعداد الجودة عند اختيار PNG.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3
+data-ar="7. هل يتم رفع الصور إلى خادم الموقع؟"
+data-en="7. Are images uploaded to the website server?">
+7. هل يتم رفع الصور إلى خادم الموقع؟
+</h3>
+
+<p
+data-ar="لا تحتاج الأداة إلى رفع ملف الصورة إلى خادم الموقع؛ تتم المعالجة داخل المتصفح باستخدام Canvas."
+data-en="The tool does not need to upload the image file to the website server. Processing takes place inside the browser using Canvas.">
+لا تحتاج الأداة إلى رفع ملف الصورة إلى خادم الموقع؛ تتم المعالجة داخل المتصفح باستخدام Canvas.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3
+data-ar="8. هل يمكن تحويل أكثر من صورة في نفس الوقت؟"
+data-en="8. Can I convert multiple images at once?">
+8. هل يمكن تحويل أكثر من صورة في نفس الوقت؟
+</h3>
+
+<p
+data-ar="الإصدار الحالي يعالج صورة واحدة في كل مرة. يمكنك اختيار صورة جديدة بعد الانتهاء من تحويل الصورة السابقة وتنزيلها."
+data-en="The current version processes one image at a time. You can choose another image after the previous conversion is complete and the file has been downloaded.">
+الإصدار الحالي يعالج صورة واحدة في كل مرة. يمكنك اختيار صورة جديدة بعد الانتهاء من تحويل الصورة السابقة وتنزيلها.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3
+data-ar="9. لماذا قد يختلف حجم الصورة بعد التحويل؟"
+data-en="9. Why might the image size change after conversion?">
+9. لماذا قد يختلف حجم الصورة بعد التحويل؟
+</h3>
+
+<p
+data-ar="يختلف حجم الملف حسب الصيغة الجديدة ومستوى الجودة ومحتوى الصورة. قد تصبح الصورة أصغر أو أكبر بعد التحويل، ولا يعني تغيير الصيغة بالضرورة تقليل الحجم."
+data-en="File size depends on the output format, quality setting, and image content. The converted image may be smaller or larger; changing the format does not always reduce file size.">
+يختلف حجم الملف حسب الصيغة الجديدة ومستوى الجودة ومحتوى الصورة. قد تصبح الصورة أصغر أو أكبر بعد التحويل، ولا يعني تغيير الصيغة بالضرورة تقليل الحجم.
+</p>
+
+</div>
+
+</section>
+
+<!-- أدوات ذات صلة -->
+
+<section class="content-section">
+
+<h2
+data-ar="اكتشف أدوات الصور الأخرى"
+data-en="Explore More Image Tools">
+اكتشف أدوات الصور الأخرى
+</h2>
+
+<p
+data-ar="يمكنك استخدام أدوات أخرى من سوق الأدوات لتعديل صورك وتجهيزها للاستخدام على الإنترنت."
+data-en="Explore other Tools Market utilities to edit your images and prepare them for online use.">
+يمكنك استخدام أدوات أخرى من سوق الأدوات لتعديل صورك وتجهيزها للاستخدام على الإنترنت.
+</p>
+
+<div class="related-links">
+
+<a href="image-compressor.html"
+data-ar="ضغط الصور"
+data-en="Image Compressor">
+ضغط الصور
+</a>
+
+<a href="image-resizer.html"
+data-ar="تغيير حجم الصور"
+data-en="Image Resizer">
+تغيير حجم الصور
+</a>
+
+<a href="image-grayscale.html"
+data-ar="تحويل الصور إلى أبيض وأسود"
+data-en="Grayscale Image">
+تحويل الصور إلى أبيض وأسود
+</a>
+
+</div>
+
+<p>
+<a href="index.html"
+data-ar="العودة إلى الصفحة الرئيسية لسوق الأدوات"
+data-en="Return to Tools Market homepage">
+العودة إلى الصفحة الرئيسية لسوق الأدوات
+</a>
+</p>
+
+</section>
+
+<footer
+data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
 data-en="Tools Market | Free and easy tools for everyone">
 سوق الأدوات | أدوات مجانية وسهلة للجميع
 </footer>
@@ -268,6 +1157,7 @@ let sourceImage = null;
 let originalFile = null;
 let sourceUrl = '';
 let outputUrl = '';
+let imageLoadVersion = 0;
 
 function getLanguage() {
     const params = new URLSearchParams(window.location.search);
@@ -321,11 +1211,16 @@ function formatBytes(bytes) {
 }
 
 function clearOutput() {
-    if (outputUrl) URL.revokeObjectURL(outputUrl);
+    if (outputUrl) {
+        URL.revokeObjectURL(outputUrl);
+    }
 
     outputUrl = '';
+
     previewImage.removeAttribute('src');
     downloadLink.removeAttribute('href');
+
+    resultInfo.textContent = '';
     resultPanel.hidden = true;
 }
 
@@ -352,16 +1247,22 @@ qualityInput.addEventListener('input', function() {
 });
 
 imageInput.addEventListener('change', function() {
+
+    imageLoadVersion++;
+    const currentVersion = imageLoadVersion;
+
     clearOutput();
+
     editor.hidden = true;
     convertButton.disabled = true;
+
     sourceImage = null;
     originalFile = null;
 
-    fileInfo.textContent = t(
-        'جاري فتح الصورة...',
-        'Loading image...'
-    );
+    if (sourceUrl) {
+        URL.revokeObjectURL(sourceUrl);
+        sourceUrl = '';
+    }
 
     const file = imageInput.files[0];
 
@@ -370,11 +1271,21 @@ imageInput.addEventListener('change', function() {
         return;
     }
 
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    fileInfo.textContent = t(
+        'جاري فتح الصورة...',
+        'Loading image...'
+    );
+
+    const allowedTypes = [
+        'image/jpeg',
+        'image/png',
+        'image/webp'
+    ];
 
     if (!allowedTypes.includes(file.type)) {
+
         fileInfo.textContent = t(
-            'من فضلك اختار صورة بصيغة JPG أو PNG أو WebP.',
+            'من فضلك اختر صورة بصيغة JPG أو PNG أو WebP.',
             'Please choose a JPG, PNG, or WebP image.'
         );
 
@@ -382,13 +1293,16 @@ imageInput.addEventListener('change', function() {
         return;
     }
 
-    if (sourceUrl) URL.revokeObjectURL(sourceUrl);
-
     sourceUrl = URL.createObjectURL(file);
 
     const img = new Image();
 
     img.onload = function() {
+
+        if (currentVersion !== imageLoadVersion) {
+            return;
+        }
+
         sourceImage = img;
         originalFile = file;
 
@@ -402,7 +1316,7 @@ imageInput.addEventListener('change', function() {
         convertButton.disabled = false;
 
         message.textContent = t(
-            'اختار الصيغة الجديدة ثم اضغط تحويل الصورة.',
+            'اختر الصيغة الجديدة ثم اضغط تحويل الصورة.',
             'Choose the new format, then click Convert image.'
         );
 
@@ -410,14 +1324,24 @@ imageInput.addEventListener('change', function() {
     };
 
     img.onerror = function() {
+
+        if (currentVersion !== imageLoadVersion) {
+            return;
+        }
+
         fileInfo.textContent = t(
             'تعذّر فتح الصورة. جرّب اختيار صورة أخرى.',
             'Could not open the image. Try choosing another one.'
         );
 
-        if (sourceUrl) URL.revokeObjectURL(sourceUrl);
+        if (sourceUrl) {
+            URL.revokeObjectURL(sourceUrl);
+        }
 
         sourceUrl = '';
+        sourceImage = null;
+        originalFile = null;
+
         imageInput.value = '';
     };
 
@@ -425,9 +1349,10 @@ imageInput.addEventListener('change', function() {
 });
 
 convertButton.addEventListener('click', function() {
+
     if (!sourceImage || !originalFile) {
         message.textContent = t(
-            'اختار صورة أولًا.',
+            'اختر صورة أولًا.',
             'Choose an image first.'
         );
         return;
@@ -437,6 +1362,7 @@ convertButton.addEventListener('click', function() {
     const quality = Number(qualityInput.value) / 100;
 
     const canvas = document.createElement('canvas');
+
     canvas.width = sourceImage.naturalWidth;
     canvas.height = sourceImage.naturalHeight;
 
@@ -455,7 +1381,13 @@ convertButton.addEventListener('click', function() {
         context.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-    context.drawImage(sourceImage, 0, 0, canvas.width, canvas.height);
+    context.drawImage(
+        sourceImage,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
 
     convertButton.disabled = true;
 
@@ -464,87 +1396,126 @@ convertButton.addEventListener('click', function() {
         'Converting image format...'
     );
 
-    canvas.toBlob(function(blob) {
+    try {
+
+        canvas.toBlob(function(blob) {
+
+            convertButton.disabled = false;
+
+            if (!blob) {
+                message.textContent = t(
+                    'لم نتمكن من تحويل الصورة. جرّب صورة أخرى.',
+                    'Could not convert the image. Try another one.'
+                );
+                return;
+            }
+
+            const actualType = blob.type || requestedType;
+
+            let extension = 'jpg';
+            let formatName = 'JPG';
+
+            if (actualType === 'image/png') {
+                extension = 'png';
+                formatName = 'PNG';
+
+            } else if (actualType === 'image/webp') {
+                extension = 'webp';
+                formatName = 'WebP';
+            }
+
+            clearOutput();
+
+            outputUrl = URL.createObjectURL(blob);
+
+            previewImage.src = outputUrl;
+
+            let baseName = originalFile.name;
+            const dotPosition = baseName.lastIndexOf('.');
+
+            if (dotPosition > 0) {
+                baseName = baseName.substring(0, dotPosition);
+            }
+
+            downloadLink.href = outputUrl;
+            downloadLink.download =
+                baseName + '-converted.' + extension;
+
+            resultInfo.textContent =
+                t('الصيغة الناتجة: ', 'Output format: ') +
+                formatName +
+                t('. الأبعاد: ', '. Dimensions: ') +
+                sourceImage.naturalWidth + ' × ' +
+                sourceImage.naturalHeight +
+                t(' بكسل. حجم الملف الأصلي: ', ' pixels. Original file size: ') +
+                formatBytes(originalFile.size) +
+                t('. حجم الملف الجديد: ', '. New file size: ') +
+                formatBytes(blob.size) + '.';
+
+            resultPanel.hidden = false;
+
+            if (actualType !== requestedType) {
+
+                message.textContent =
+                    t(
+                        'تم إنشاء الصورة، لكن المتصفح استخدم صيغة ',
+                        'The image was created, but the browser used '
+                    ) +
+                    formatName +
+                    t(
+                        ' بدل الصيغة المطلوبة.',
+                        ' instead of the requested format.'
+                    );
+
+            } else {
+
+                message.textContent = t(
+                    'تم تحويل الصورة بنجاح. يمكنك مشاهدة النتيجة وتنزيلها.',
+                    'Image converted successfully. You can preview and download it.'
+                );
+            }
+
+            resultPanel.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+        }, requestedType, quality);
+
+    } catch (error) {
+
         convertButton.disabled = false;
 
-        if (!blob) {
-            message.textContent = t(
-                'لم نتمكن من تحويل الصورة. جرّب صورة أخرى.',
-                'Could not convert the image. Try another one.'
-            );
-            return;
-        }
+        message.textContent = t(
+            'حدث خطأ أثناء معالجة الصورة. جرّب صورة أخرى أو متصفحًا مختلفًا.',
+            'An error occurred while processing the image. Try another image or browser.'
+        );
 
-        const actualType = blob.type || requestedType;
-
-        let extension = 'jpg';
-        let formatName = 'JPG';
-
-        if (actualType === 'image/png') {
-            extension = 'png';
-            formatName = 'PNG';
-        } else if (actualType === 'image/webp') {
-            extension = 'webp';
-            formatName = 'WebP';
-        }
-
-        clearOutput();
-
-        outputUrl = URL.createObjectURL(blob);
-        previewImage.src = outputUrl;
-
-        let baseName = originalFile.name;
-        const dotPosition = baseName.lastIndexOf('.');
-
-        if (dotPosition > 0) {
-            baseName = baseName.substring(0, dotPosition);
-        }
-
-        downloadLink.href = outputUrl;
-        downloadLink.download = baseName + '-converted.' + extension;
-
-        resultInfo.textContent =
-            t('الصيغة الناتجة: ', 'Output format: ') + formatName +
-            t('. الأبعاد: ', '. Dimensions: ') +
-            sourceImage.naturalWidth + ' × ' + sourceImage.naturalHeight +
-            t(' بكسل. حجم الملف الأصلي: ', ' pixels. Original file size: ') +
-            formatBytes(originalFile.size) +
-            t('. حجم الملف الجديد: ', '. New file size: ') +
-            formatBytes(blob.size) + '.';
-
-        resultPanel.hidden = false;
-
-        if (actualType !== requestedType) {
-            message.textContent =
-                t(
-                    'تم إنشاء الصورة، لكن المتصفح استخدم صيغة ',
-                    'The image was created, but the browser used '
-                ) +
-                formatName +
-                t(' بدل الصيغة المطلوبة.', ' instead of the requested format.');
-        } else {
-            message.textContent = t(
-                'تم تحويل الصورة بنجاح. تقدر تشوف النتيجة وتنزّلها.',
-                'Image converted successfully. You can preview and download it.'
-            );
-        }
-
-        resultPanel.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-
-    }, requestedType, quality);
+    }
 });
 
 updateLanguageSettings();
 showInitialMessages();
 updateFormatHelp();
 
+window.addEventListener('storage', function(event) {
+    if (event.key === 'toolsMarketLanguage') {
+        updateLanguageSettings();
+    }
+});
+
 window.addEventListener('beforeunload', function() {
-    if (sourceUrl) URL.revokeObjectURL(sourceUrl);
-    if (outputUrl) URL.revokeObjectURL(outputUrl);
+
+    if (sourceUrl) {
+        URL.revokeObjectURL(sourceUrl);
+    }
+
+    if (outputUrl) {
+        URL.revokeObjectURL(outputUrl);
+    }
+
 });
 </script>
+
 </body>
 </html>
