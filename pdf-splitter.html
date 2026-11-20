@@ -1,153 +1,1231 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تقسيم ملفات PDF أونلاين | سوق الأدوات</title>
-<meta name="description" content="قسّم ملفات PDF وحدد الصفحات التي تريد استخراجها باستخدام أداة تقسيم PDF المجانية أونلاين من سوق الأدوات.">
-<meta name="robots" content="index, follow">
+
+<title>تقسيم ملفات PDF أونلاين مجانًا واستخراج صفحات PDF | سوق الأدوات</title>
+
+<meta name="description" content="قسّم ملفات PDF أونلاين مجانًا، واستخرج صفحات محددة أو نطاقات مختلفة، أو احفظ كل صفحة في ملف مستقل باستخدام أداة تقسيم PDF من سوق الأدوات.">
+<meta name="keywords" content="تقسيم PDF, تقسيم ملفات PDF, استخراج صفحات PDF, فصل صفحات PDF, تقسيم ملف بي دي اف, PDF Splitter, Split PDF Online, Extract PDF Pages, Separate PDF Pages">
+<meta name="author" content="Tools Market - سوق الأدوات">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1454a3">
+
 <link rel="canonical" href="https://medosd6666-png.github.io/tools-market/pdf-splitter.html">
-<meta property="og:title" content="تقسيم ملفات PDF أونلاين | سوق الأدوات">
-<meta property="og:description" content="قسّم ملفات PDF وحدد الصفحات التي تريد استخراجها باستخدام أداة تقسيم PDF المجانية أونلاين من سوق الأدوات.">
+
+<meta property="og:title" content="تقسيم ملفات PDF أونلاين مجانًا | سوق الأدوات">
+<meta property="og:description" content="استخرج الصفحات التي تحتاجها من ملفات PDF، أو قسّم المستند إلى ملفات أصغر بسهولة باستخدام أداة تقسيم PDF المجانية.">
 <meta property="og:url" content="https://medosd6666-png.github.io/tools-market/pdf-splitter.html">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Tools Market">
 <meta property="og:locale" content="ar_AR">
 
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="تقسيم ملفات PDF أونلاين مجانًا | سوق الأدوات">
+<meta name="twitter:description" content="قسّم مستندات PDF واستخرج الصفحات التي تحتاجها بسهولة ومجانًا باستخدام سوق الأدوات.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "أداة تقسيم ملفات PDF - سوق الأدوات",
+  "alternateName": "Tools Market PDF Splitter",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web Browser",
+  "description": "أداة مجانية لتقسيم ملفات PDF واستخراج صفحات محددة أو نطاقات صفحات متعددة أو حفظ كل صفحة في ملف مستقل.",
+  "url": "https://medosd6666-png.github.io/tools-market/pdf-splitter.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0; padding: 24px;
+    margin: 0;
+    padding: 24px;
     font-family: Tahoma, Arial, sans-serif;
     background: linear-gradient(135deg, #eaf4ff, #f4f0ff);
-    color: #1f2937; line-height: 1.8;
+    color: #1f2937;
+    line-height: 1.9;
 }
+
 .container {
-    width: 100%; max-width: 800px; margin: 20px auto;
-    padding: 30px; background: #fff;
-    border: 1px solid #dbe7f3; border-radius: 22px;
+    width: 100%;
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #dbe7f3;
+    border-radius: 22px;
     box-shadow: 0 12px 35px rgba(30,64,100,0.12);
 }
-header { text-align: center; margin-bottom: 28px; }
-.back {
-    display: inline-block; margin-bottom: 14px;
-    color: #1454a3; text-decoration: none; font-weight: bold;
+
+header {
+    text-align: center;
+    margin-bottom: 28px;
 }
-h1 { margin: 0 0 8px; color: #1454a3; font-size: 30px; }
-h2 { color: #1454a3; font-size: 22px; }
-.intro { margin: 0; color: #64748b; }
+
+.back {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #1454a3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: #1454a3;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+h2 {
+    color: #1454a3;
+    font-size: 23px;
+    margin-top: 0;
+}
+
+h3 {
+    color: #245b91;
+    font-size: 18px;
+}
+
+.intro {
+    margin: 0;
+    color: #64748b;
+    font-size: 16px;
+}
+
 .panel {
-    padding: 22px; margin-bottom: 22px;
-    border: 1px solid #dbe7f3; border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 22px;
+    border: 1px solid #dbe7f3;
+    border-radius: 16px;
     background: #fff;
 }
-.field-label { display: block; margin-bottom: 8px; font-weight: bold; }
-input[type="file"], input[type="text"], select {
-    display: block; width: 100%; padding: 13px;
-    border: 1px solid #cbd5e1; border-radius: 12px;
-    background: #f8fafc; font: inherit;
+
+.field-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
-input[type="file"] { border-style: dashed; }
-.hint { color: #64748b; font-size: 14px; overflow-wrap: anywhere; }
-.field { margin: 20px 0; }
-#options[hidden], #resultPanel[hidden], [hidden] { display: none; }
-button, .download-link {
-    display: inline-block; padding: 12px 24px;
-    border: 0; border-radius: 11px; background: #1769d2;
-    color: #fff; font: inherit; font-weight: bold;
-    text-align: center; text-decoration: none; cursor: pointer;
+
+input[type="file"],
+input[type="text"],
+select {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    font: inherit;
 }
-button:hover, .download-link:hover { background: #0f4fa8; }
-button:disabled { background: #94a3b8; cursor: not-allowed; }
-.secondary-button { background: #64748b; }
-.secondary-button:hover { background: #475569; }
-.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-#splitButton { flex: 1; min-width: 190px; }
-#message { margin-top: 15px; color: #475569; overflow-wrap: anywhere; }
+
+input[type="file"] {
+    border-style: dashed;
+}
+
+input:disabled,
+select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.hint {
+    color: #64748b;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.field {
+    margin: 20px 0;
+}
+
+#options[hidden],
+#resultPanel[hidden],
+[hidden] {
+    display: none;
+}
+
+button,
+.download-link {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 11px;
+    background: #1769d2;
+    color: #fff;
+    font: inherit;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover,
+.download-link:hover {
+    background: #0f4fa8;
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.secondary-button {
+    background: #64748b;
+}
+
+.secondary-button:hover {
+    background: #475569;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+#splitButton {
+    flex: 1;
+    min-width: 190px;
+}
+
+#message {
+    margin-top: 15px;
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+
 .download-item {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 14px; margin: 12px 0; padding: 14px;
-    border: 1px solid #dbe7f3; border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 12px 0;
+    padding: 14px;
+    border: 1px solid #dbe7f3;
+    border-radius: 12px;
     background: #f8fafc;
 }
-.download-info { flex: 1; min-width: 0; overflow-wrap: anywhere; }
-.download-info strong { display: block; }
-.download-link { white-space: nowrap; }
-.result-info { color: #475569; overflow-wrap: anywhere; }
-footer { text-align: center; color: #64748b; font-size: 13px; }
-@media (max-width: 520px) {
-    body { padding: 12px; }
-    .container { padding: 18px; margin: 8px auto; }
-    .panel { padding: 16px; }
-    h1 { font-size: 25px; }
-    .actions { flex-direction: column; }
-    .actions button { width: 100%; }
-    .download-item { align-items: stretch; flex-direction: column; }
-    .download-link { width: 100%; white-space: normal; }
+
+.download-info {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.download-info strong {
+    display: block;
+}
+
+.download-link {
+    white-space: nowrap;
+}
+
+.result-info {
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+
+.seo-content {
+    margin-top: 30px;
+}
+
+.content-section {
+    padding: 23px;
+    margin-bottom: 20px;
+    background: #fbfdff;
+    border: 1px solid #e0eaf5;
+    border-radius: 15px;
+}
+
+.content-section p {
+    margin: 10px 0;
+    color: #475569;
+}
+
+.content-section ul,
+.content-section ol {
+    padding-inline-start: 25px;
+    color: #475569;
+}
+
+.content-section li {
+    margin-bottom: 10px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.feature-item {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #e0eaf5;
+    border-radius: 12px;
+}
+
+.feature-item strong {
+    display: block;
+    color: #1454a3;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.faq-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+
+.faq-item p {
+    margin: 0;
+    color: #475569;
+}
+
+.more-tools {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 28px auto 10px;
+    padding: 0;
+    background: transparent;
+    color: #1454a3;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0;
+}
+
+.more-tools:hover {
+    background: transparent;
+    color: #0f4fa8;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 22px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 18px;
+        margin: 8px auto;
+    }
+
+    .panel,
+    .content-section {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+
+    .download-item {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .download-link {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NZ00TSPTWC');
-    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
+</script>
+
 </head>
+
 <body>
+
 <main class="container">
+
 <header>
-<a class="back" id="backLink" href="index.html">العودة إلى سوق الأدوات ←</a>
-<h1 data-ar="تقسيم ملفات PDF" data-en="Split PDF Files">تقسيم ملفات PDF</h1>
-<p class="intro" data-ar="قسّم ملف PDF إلى ملفات أصغر حسب الصفحات التي تحتاجها."
-data-en="Split a PDF into smaller files based on the pages you need.">قسّم ملف PDF إلى ملفات أصغر حسب الصفحات التي تحتاجها.</p>
+
+<a class="back" id="backLink" href="index.html?lang=ar"
+data-ar="العودة إلى سوق الأدوات ←"
+data-en="← Back to Tools Market">
+العودة إلى سوق الأدوات ←
+</a>
+
+<h1
+data-ar="تقسيم ملفات PDF أونلاين مجانًا"
+data-en="Split PDF Files Online for Free">
+تقسيم ملفات PDF أونلاين مجانًا
+</h1>
+
+<p class="intro"
+data-ar="استخرج الصفحات التي تحتاجها من مستندات PDF، أو قسّم الملف إلى أجزاء أصغر، أو احفظ كل صفحة في ملف مستقل بسهولة."
+data-en="Extract the pages you need from PDF documents, divide a file into smaller sections, or save every page as a separate PDF.">
+استخرج الصفحات التي تحتاجها من مستندات PDF، أو قسّم الملف إلى أجزاء أصغر، أو احفظ كل صفحة في ملف مستقل بسهولة.
+</p>
+
 </header>
 
 <section class="panel">
-<label class="field-label" for="pdfInput" data-ar="اختار ملف PDF من جهازك"
-data-en="Choose a PDF file from your device">اختار ملف PDF من جهازك</label>
+
+<label class="field-label" for="pdfInput"
+data-ar="اختر ملف PDF من جهازك"
+data-en="Choose a PDF File from Your Device">
+اختر ملف PDF من جهازك
+</label>
+
 <input id="pdfInput" type="file" accept=".pdf,application/pdf">
-<p id="fileInfo" class="hint">لم يتم اختيار ملف PDF بعد.</p>
+
+<p id="fileInfo" class="hint">
+لم يتم اختيار ملف PDF بعد.
+</p>
 
 <div id="options" hidden>
+
 <div class="field">
-<label class="field-label" for="splitMode" data-ar="طريقة التقسيم" data-en="Splitting method">طريقة التقسيم</label>
+
+<label class="field-label" for="splitMode"
+data-ar="طريقة تقسيم الملف"
+data-en="Choose a Splitting Method">
+طريقة تقسيم الملف
+</label>
+
 <select id="splitMode">
-<option value="ranges" data-ar="تقسيم حسب نطاقات الصفحات" data-en="Split by page ranges">تقسيم حسب نطاقات الصفحات</option>
-<option value="each" data-ar="كل صفحة في ملف PDF مستقل" data-en="Each page in a separate PDF">كل صفحة في ملف PDF مستقل</option>
+<option value="ranges"
+data-ar="تقسيم حسب نطاقات الصفحات"
+data-en="Split by Page Ranges">
+تقسيم حسب نطاقات الصفحات
+</option>
+
+<option value="each"
+data-ar="كل صفحة في ملف PDF مستقل"
+data-en="Each Page in a Separate PDF">
+كل صفحة في ملف PDF مستقل
+</option>
 </select>
+
 </div>
 
 <div id="rangeField" class="field">
-<label class="field-label" for="rangesInput" data-ar="أرقام الصفحات أو نطاقاتها"
-data-en="Page numbers or ranges">أرقام الصفحات أو نطاقاتها</label>
-<input id="rangesInput" type="text" placeholder="مثال: 1-3, 4-6, 7">
-<p class="hint" data-ar="كل نطاق ينتج ملفًا مستقلًا. مثال 1-3, 4-6 ينتج ملفين. ويمكن كتابة رقم منفرد مثل 7."
-data-en="Each range creates a separate file. For example, 1-3, 4-6 creates two files. You can also enter a single page, such as 7.">كل نطاق ينتج ملفًا مستقلًا. مثال 1-3, 4-6 ينتج ملفين. ويمكن كتابة رقم منفرد مثل 7.</p>
+
+<label class="field-label" for="rangesInput"
+data-ar="أرقام الصفحات أو نطاقاتها"
+data-en="Page Numbers or Ranges">
+أرقام الصفحات أو نطاقاتها
+</label>
+
+<input id="rangesInput" type="text"
+placeholder="مثال: 1-3, 4-6, 7">
+
+<p class="hint"
+data-ar="اكتب أرقام الصفحات أو النطاقات مفصولة بفاصلة. كل نطاق ينتج ملف PDF مستقلًا. مثال: 1-3, 4-6, 7 ينتج ثلاثة ملفات: الأول للصفحات 1 إلى 3، والثاني للصفحات 4 إلى 6، والثالث للصفحة 7."
+data-en="Enter page numbers or ranges separated by commas. Each range creates a separate PDF. Example: 1-3, 4-6, 7 creates three files: pages 1 to 3, pages 4 to 6, and page 7.">
+اكتب أرقام الصفحات أو النطاقات مفصولة بفاصلة. كل نطاق ينتج ملف PDF مستقلًا. مثال: 1-3, 4-6, 7 ينتج ثلاثة ملفات: الأول للصفحات 1 إلى 3، والثاني للصفحات 4 إلى 6، والثالث للصفحة 7.
+</p>
+
 </div>
 
 <div class="actions">
-<button id="splitButton" type="button" disabled data-ar="تقسيم ملف PDF" data-en="Split PDF">تقسيم ملف PDF</button>
-<button id="clearButton" class="secondary-button" type="button" data-ar="اختيار ملف آخر" data-en="Choose Another File">اختيار ملف آخر</button>
-</div>
+
+<button id="splitButton" type="button" disabled
+data-ar="تقسيم ملف PDF"
+data-en="Split PDF">
+تقسيم ملف PDF
+</button>
+
+<button id="clearButton" class="secondary-button" type="button"
+data-ar="اختيار ملف آخر"
+data-en="Choose Another File">
+اختيار ملف آخر
+</button>
+
 </div>
 
-<p id="message" role="status" aria-live="polite">اختار ملف PDF للبدء.</p>
+</div>
+
+<p id="message" role="status" aria-live="polite">
+اختر ملف PDF للبدء.
+</p>
+
 </section>
 
 <section id="resultPanel" class="panel" hidden>
-<h2 data-ar="تم تقسيم الملف بنجاح" data-en="PDF Split Successfully">تم تقسيم الملف بنجاح</h2>
+
+<h2
+data-ar="تم تقسيم الملف بنجاح"
+data-en="PDF Split Successfully">
+تم تقسيم الملف بنجاح
+</h2>
+
 <p id="resultInfo" class="result-info"></p>
+
 <div id="downloadList"></div>
+
 </section>
 
-<footer data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
-data-en="Tools Market | Free and Easy Tools for Everyone">سوق الأدوات | أدوات مجانية وسهلة للجميع</footer>
+<div class="seo-content">
+
+<section class="content-section">
+
+<h2
+data-ar="ما هي أداة تقسيم ملفات PDF؟"
+data-en="What Is a PDF Splitter Tool?">
+ما هي أداة تقسيم ملفات PDF؟
+</h2>
+
+<p
+data-ar="أداة تقسيم PDF هي وسيلة تساعدك على فصل صفحات مستند PDF واحد إلى ملفات متعددة، بدلًا من الاحتفاظ بكل الصفحات داخل مستند واحد كبير. يمكنك تحديد الصفحات التي تحتاج إليها فقط، واستخراجها في مستندات جديدة يسهل حفظها ومشاركتها."
+data-en="A PDF splitter is a tool that helps you separate pages from a single PDF document into multiple files instead of keeping every page in one large document. You can select the pages you need and extract them into new documents that are easier to save and share.">
+أداة تقسيم PDF هي وسيلة تساعدك على فصل صفحات مستند PDF واحد إلى ملفات متعددة، بدلًا من الاحتفاظ بكل الصفحات داخل مستند واحد كبير. يمكنك تحديد الصفحات التي تحتاج إليها فقط، واستخراجها في مستندات جديدة يسهل حفظها ومشاركتها.
+</p>
+
+<p
+data-ar="من خلال أداة تقسيم ملفات PDF المجانية من سوق الأدوات، يمكنك اختيار مستند من جهازك، ثم تحديد طريقة التقسيم المناسبة. تستطيع تقسيم الملف حسب نطاقات الصفحات، مثل استخراج الصفحات من 1 إلى 5 في ملف، والصفحات من 6 إلى 10 في ملف آخر، أو إنشاء ملف مستقل لكل صفحة من صفحات المستند."
+data-en="With the free PDF splitter from Tools Market, you can select a document from your device and choose the splitting method that suits your needs. You can divide the document into page ranges, such as pages 1 to 5 in one file and pages 6 to 10 in another, or create a separate PDF for every page.">
+من خلال أداة تقسيم ملفات PDF المجانية من سوق الأدوات، يمكنك اختيار مستند من جهازك، ثم تحديد طريقة التقسيم المناسبة. تستطيع تقسيم الملف حسب نطاقات الصفحات، مثل استخراج الصفحات من 1 إلى 5 في ملف، والصفحات من 6 إلى 10 في ملف آخر، أو إنشاء ملف مستقل لكل صفحة من صفحات المستند.
+</p>
+
+<p
+data-ar="لا تحتاج إلى تثبيت برنامج خاص أو امتلاك خبرة في التعامل مع ملفات PDF. تم تصميم الصفحة لتكون سهلة الاستخدام من متصفح الكمبيوتر أو الهاتف، مع خطوات واضحة لاختيار الملف وتحديد الصفحات وتنزيل النتائج."
+data-en="You do not need to install special software or have experience working with PDF documents. The page is designed to be easy to use from a computer or mobile browser, with clear steps for selecting a file, choosing pages, and downloading the results.">
+لا تحتاج إلى تثبيت برنامج خاص أو امتلاك خبرة في التعامل مع ملفات PDF. تم تصميم الصفحة لتكون سهلة الاستخدام من متصفح الكمبيوتر أو الهاتف، مع خطوات واضحة لاختيار الملف وتحديد الصفحات وتنزيل النتائج.
+</p>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="ما الذي يمكنك فعله باستخدام أداة تقسيم PDF؟"
+data-en="What Can You Do with the PDF Splitter?">
+ما الذي يمكنك فعله باستخدام أداة تقسيم PDF؟
+</h2>
+
+<p
+data-ar="تتيح لك الأداة طريقتين مختلفتين للتعامل مع صفحات المستند، حتى تختار الطريقة التي تناسب طبيعة الملف والنتيجة التي تريد الحصول عليها."
+data-en="The tool offers two different ways to handle document pages, allowing you to choose the method that best suits your file and the result you want.">
+تتيح لك الأداة طريقتين مختلفتين للتعامل مع صفحات المستند، حتى تختار الطريقة التي تناسب طبيعة الملف والنتيجة التي تريد الحصول عليها.
+</p>
+
+<div class="feature-grid">
+
+<div class="feature-item">
+<strong data-ar="التقسيم حسب نطاقات الصفحات"
+data-en="Split by Page Ranges">
+التقسيم حسب نطاقات الصفحات
+</strong>
+<p
+data-ar="حدد مجموعة من الصفحات لتحويلها إلى ملف مستقل، ويمكنك تحديد أكثر من نطاق في العملية نفسها."
+data-en="Select groups of pages to create separate PDF files. You can define multiple ranges in one operation.">
+حدد مجموعة من الصفحات لتحويلها إلى ملف مستقل، ويمكنك تحديد أكثر من نطاق في العملية نفسها.
+</p>
+</div>
+
+<div class="feature-item">
+<strong data-ar="كل صفحة في ملف مستقل"
+data-en="Each Page in a Separate File">
+كل صفحة في ملف مستقل
+</strong>
+<p
+data-ar="حوّل المستند إلى مجموعة ملفات PDF صغيرة، بحيث تحتوي كل نتيجة على صفحة واحدة فقط."
+data-en="Turn the document into a collection of smaller PDF files, with each output containing just one page.">
+حوّل المستند إلى مجموعة ملفات PDF صغيرة، بحيث تحتوي كل نتيجة على صفحة واحدة فقط.
+</p>
+</div>
+
+<div class="feature-item">
+<strong data-ar="استخراج صفحات محددة"
+data-en="Extract Selected Pages">
+استخراج صفحات محددة
+</strong>
+<p
+data-ar="احتفظ بالصفحات التي تحتاج إليها فقط، واترك بقية صفحات المستند خارج الملفات الناتجة."
+data-en="Keep only the pages you need and leave the remaining pages out of the generated files.">
+احتفظ بالصفحات التي تحتاج إليها فقط، واترك بقية صفحات المستند خارج الملفات الناتجة.
+</p>
+</div>
+
+<div class="feature-item">
+<strong data-ar="تنزيل النتائج بشكل منفصل"
+data-en="Download Separate Results">
+تنزيل النتائج بشكل منفصل
+</strong>
+<p
+data-ar="بعد التقسيم يظهر رابط تنزيل لكل ملف جديد، ويمكنك حفظ الملفات التي أنشأتها على جهازك."
+data-en="After splitting, a download link appears for each new file, allowing you to save the generated documents.">
+بعد التقسيم يظهر رابط تنزيل لكل ملف جديد، ويمكنك حفظ الملفات التي أنشأتها على جهازك.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="شرح طريقتي تقسيم ملفات PDF"
+data-en="Understanding the Two PDF Splitting Methods">
+شرح طريقتي تقسيم ملفات PDF
+</h2>
+
+<h3
+data-ar="أولًا: تقسيم الملف حسب نطاقات الصفحات"
+data-en="1. Split a PDF by Page Ranges">
+أولًا: تقسيم الملف حسب نطاقات الصفحات
+</h3>
+
+<p
+data-ar="تسمح لك هذه الطريقة بتحديد الصفحات التي تريد جمعها داخل كل ملف جديد. تكتب أرقام الصفحات أو النطاقات في مربع الإدخال، وتفصل بينها بفواصل."
+data-en="This method allows you to choose which pages should be included in each new file. Enter page numbers or ranges in the input field and separate them with commas.">
+تسمح لك هذه الطريقة بتحديد الصفحات التي تريد جمعها داخل كل ملف جديد. تكتب أرقام الصفحات أو النطاقات في مربع الإدخال، وتفصل بينها بفواصل.
+</p>
+
+<p
+data-ar="على سبيل المثال، إذا كان لديك مستند يحتوي على 20 صفحة، وأدخلت 1-5, 6-10, 15، فستنشئ الأداة ثلاثة ملفات: الملف الأول يحتوي على الصفحات من 1 إلى 5، والثاني يحتوي على الصفحات من 6 إلى 10، والثالث يحتوي على الصفحة رقم 15 فقط."
+data-en="For example, if your document contains 20 pages and you enter 1-5, 6-10, 15, the tool will create three files: the first with pages 1 to 5, the second with pages 6 to 10, and the third with page 15 only.">
+على سبيل المثال، إذا كان لديك مستند يحتوي على 20 صفحة، وأدخلت 1-5, 6-10, 15، فستنشئ الأداة ثلاثة ملفات: الملف الأول يحتوي على الصفحات من 1 إلى 5، والثاني يحتوي على الصفحات من 6 إلى 10، والثالث يحتوي على الصفحة رقم 15 فقط.
+</p>
+
+<h3
+data-ar="ثانيًا: حفظ كل صفحة في ملف PDF مستقل"
+data-en="2. Save Each Page as a Separate PDF">
+ثانيًا: حفظ كل صفحة في ملف PDF مستقل
+</h3>
+
+<p
+data-ar="إذا كنت تريد فصل جميع صفحات المستند عن بعضها، يمكنك اختيار طريقة كل صفحة في ملف مستقل. ستقوم الأداة بإنشاء ملف PDF جديد لكل صفحة، مع تسمية الملفات بأرقام الصفحات لتسهيل التعرف عليها."
+data-en="If you want to separate every page of the document, choose the Each Page in a Separate PDF method. The tool will create a new PDF for every page and include the page number in each filename to make the files easier to identify.">
+إذا كنت تريد فصل جميع صفحات المستند عن بعضها، يمكنك اختيار طريقة كل صفحة في ملف مستقل. ستقوم الأداة بإنشاء ملف PDF جديد لكل صفحة، مع تسمية الملفات بأرقام الصفحات لتسهيل التعرف عليها.
+</p>
+
+<p
+data-ar="هذه الطريقة مفيدة عندما تحتاج إلى إرسال صفحة واحدة فقط من مستند طويل، أو عندما تريد الاحتفاظ بكل صفحة كمستند مستقل. انتبه إلى أن عدد الملفات الناتجة سيكون مساويًا لعدد صفحات المستند الأصلي."
+data-en="This method is useful when you need to send just one page from a long document or keep every page as an independent file. Note that the number of generated files will equal the number of pages in the original document.">
+هذه الطريقة مفيدة عندما تحتاج إلى إرسال صفحة واحدة فقط من مستند طويل، أو عندما تريد الاحتفاظ بكل صفحة كمستند مستقل. انتبه إلى أن عدد الملفات الناتجة سيكون مساويًا لعدد صفحات المستند الأصلي.
+</p>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="كيفية تقسيم ملف PDF خطوة بخطوة"
+data-en="How to Split a PDF File Step by Step">
+كيفية تقسيم ملف PDF خطوة بخطوة
+</h2>
+
+<p
+data-ar="استخدام الأداة بسيط ولا يتطلب خطوات معقدة. اتبع التعليمات التالية للحصول على الملفات التي تحتاج إليها:"
+data-en="Using the tool is simple and does not require complicated steps. Follow these instructions to get the files you need:">
+استخدام الأداة بسيط ولا يتطلب خطوات معقدة. اتبع التعليمات التالية للحصول على الملفات التي تحتاج إليها:
+</p>
+
+<ol>
+<li
+data-ar="اضغط على اختيار ملف PDF وحدد المستند الذي تريد تقسيمه من جهازك."
+data-en="Click Choose PDF File and select the document you want to split from your device.">
+اضغط على اختيار ملف PDF وحدد المستند الذي تريد تقسيمه من جهازك.
+</li>
+
+<li
+data-ar="انتظر حتى تقرأ الأداة الملف وتعرض اسمه وعدد صفحاته وحجمه."
+data-en="Wait for the tool to read the document and display its name, page count, and file size.">
+انتظر حتى تقرأ الأداة الملف وتعرض اسمه وعدد صفحاته وحجمه.
+</li>
+
+<li
+data-ar="اختر طريقة التقسيم المناسبة: نطاقات الصفحات أو صفحة واحدة في كل ملف."
+data-en="Choose the splitting method that suits you: page ranges or one page per file.">
+اختر طريقة التقسيم المناسبة: نطاقات الصفحات أو صفحة واحدة في كل ملف.
+</li>
+
+<li
+data-ar="إذا اخترت نطاقات الصفحات، اكتب أرقام الصفحات المطلوبة. مثال: 1-4, 5-8, 10."
+data-en="If you choose page ranges, enter the required page numbers. Example: 1-4, 5-8, 10.">
+إذا اخترت نطاقات الصفحات، اكتب أرقام الصفحات المطلوبة. مثال: 1-4, 5-8, 10.
+</li>
+
+<li
+data-ar="راجع أرقام الصفحات وتأكد من أنها تقع داخل عدد صفحات المستند."
+data-en="Review the page numbers and make sure they are within the document's page count.">
+راجع أرقام الصفحات وتأكد من أنها تقع داخل عدد صفحات المستند.
+</li>
+
+<li
+data-ar="اضغط على زر تقسيم ملف PDF وانتظر حتى تنتهي الأداة من إنشاء الملفات الجديدة."
+data-en="Click Split PDF and wait for the tool to finish creating the new files.">
+اضغط على زر تقسيم ملف PDF وانتظر حتى تنتهي الأداة من إنشاء الملفات الجديدة.
+</li>
+
+<li
+data-ar="بعد ظهور رسالة نجاح العملية، ستجد رابط تنزيل مستقلًا لكل ملف تم إنشاؤه."
+data-en="When the success message appears, you will find a separate download link for each generated file.">
+بعد ظهور رسالة نجاح العملية، ستجد رابط تنزيل مستقلًا لكل ملف تم إنشاؤه.
+</li>
+
+<li
+data-ar="اضغط على روابط التنزيل واحفظ الملفات في المكان المناسب على جهازك."
+data-en="Click the download links and save the files in a suitable location on your device.">
+اضغط على روابط التنزيل واحفظ الملفات في المكان المناسب على جهازك.
+</li>
+</ol>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="أمثلة عملية على تقسيم ملفات PDF"
+data-en="Practical Examples of PDF Splitting">
+أمثلة عملية على تقسيم ملفات PDF
+</h2>
+
+<p
+data-ar="يمكن استخدام تقسيم PDF في مواقف كثيرة، سواء كنت تتعامل مع مستندات شخصية أو ملفات دراسة أو تقارير عمل. إليك بعض الأمثلة التي توضح كيفية الاستفادة من الأداة:"
+data-en="PDF splitting can be useful in many situations, whether you are working with personal documents, study materials, or business reports. Here are some examples of how the tool can help:">
+يمكن استخدام تقسيم PDF في مواقف كثيرة، سواء كنت تتعامل مع مستندات شخصية أو ملفات دراسة أو تقارير عمل. إليك بعض الأمثلة التي توضح كيفية الاستفادة من الأداة:
+</p>
+
+<ul>
+<li
+data-ar="المحاضرات الدراسية: استخراج محاضرة معينة من ملف يحتوي على عدة محاضرات."
+data-en="Study lectures: Extract a specific lecture from a document containing several lectures.">
+المحاضرات الدراسية: استخراج محاضرة معينة من ملف يحتوي على عدة محاضرات.
+</li>
+
+<li
+data-ar="الكتب الإلكترونية: فصل فصل معين أو مجموعة صفحات تحتاج إلى مراجعتها."
+data-en="E-books: Separate a specific chapter or a group of pages you need to review.">
+الكتب الإلكترونية: فصل فصل معين أو مجموعة صفحات تحتاج إلى مراجعتها.
+</li>
+
+<li
+data-ar="تقارير العمل: فصل الأقسام المختلفة من تقرير كبير إلى ملفات مستقلة."
+data-en="Business reports: Separate different sections of a large report into individual files.">
+تقارير العمل: فصل الأقسام المختلفة من تقرير كبير إلى ملفات مستقلة.
+</li>
+
+<li
+data-ar="المستندات الإدارية: استخراج صفحات محددة من ملف يحتوي على أوراق كثيرة."
+data-en="Administrative documents: Extract specific pages from a file containing many documents.">
+المستندات الإدارية: استخراج صفحات محددة من ملف يحتوي على أوراق كثيرة.
+</li>
+
+<li
+data-ar="الفواتير والإيصالات: فصل فاتورة أو إيصال معين من ملف مجمع."
+data-en="Invoices and receipts: Separate a particular invoice or receipt from a combined document.">
+الفواتير والإيصالات: فصل فاتورة أو إيصال معين من ملف مجمع.
+</li>
+
+<li
+data-ar="إرسال المرفقات: استخراج الصفحات المطلوبة فقط بدلًا من إرسال المستند الكامل."
+data-en="Sharing attachments: Extract only the required pages instead of sending the entire document.">
+إرسال المرفقات: استخراج only the required pages instead of sending the entire document.
+</li>
+
+<li
+data-ar="الأرشفة والتنظيم: تقسيم المستندات الكبيرة إلى ملفات أصغر يسهل تصنيفها والرجوع إليها."
+data-en="Archiving and organization: Divide large documents into smaller files that are easier to classify and access.">
+الأرشفة والتنظيم: تقسيم المستندات الكبيرة إلى ملفات أصغر يسهل تصنيفها والرجوع إليها.
+</li>
+</ul>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="قواعد مهمة عند كتابة أرقام الصفحات"
+data-en="Important Rules for Entering Page Numbers">
+قواعد مهمة عند كتابة أرقام الصفحات
+</h2>
+
+<p
+data-ar="للحصول على نتيجة صحيحة عند استخدام طريقة نطاقات الصفحات، اكتب الأرقام بالترتيب الصحيح واستخدم الفاصلة للفصل بين كل مجموعة وأخرى."
+data-en="To get the correct result when using page ranges, enter the numbers in the correct format and use commas to separate each group.">
+للحصول على نتيجة صحيحة عند استخدام طريقة نطاقات الصفحات، اكتب الأرقام بالترتيب الصحيح واستخدم الفاصلة للفصل بين كل مجموعة وأخرى.
+</p>
+
+<ul>
+<li
+data-ar="استخدم الشرطة للفصل بين بداية النطاق ونهايته، مثل 1-5."
+data-en="Use a hyphen between the beginning and end of a range, such as 1-5.">
+استخدم الشرطة للفصل بين بداية النطاق ونهايته، مثل 1-5.
+</li>
+
+<li
+data-ar="استخدم الفاصلة للفصل بين المجموعات المختلفة، مثل 1-3, 5-8."
+data-en="Use commas to separate different groups, such as 1-3, 5-8.">
+استخدم الفاصلة للفصل بين المجموعات المختلفة، مثل 1-3, 5-8.
+</li>
+
+<li
+data-ar="يمكنك كتابة رقم صفحة منفرد، مثل 7، لاستخراج الصفحة السابعة في ملف مستقل."
+data-en="You can enter a single page number, such as 7, to extract the seventh page into a separate file.">
+يمكنك كتابة رقم صفحة منفرد، مثل 7، لاستخراج الصفحة السابعة في ملف مستقل.
+</li>
+
+<li
+data-ar="يجب أن تكون أرقام الصفحات بين الصفحة الأولى وآخر صفحة في المستند."
+data-en="Page numbers must be between the first page and the last page of the document.">
+يجب أن تكون أرقام الصفحات بين الصفحة الأولى وآخر صفحة في المستند.
+</li>
+
+<li
+data-ar="لا تكرر الصفحة نفسها في أكثر من نطاق، ولا تستخدم نطاقات متداخلة."
+data-en="Do not include the same page in more than one range or use overlapping ranges.">
+لا تكرر الصفحة نفسها في أكثر من نطاق، ولا تستخدم نطاقات متداخلة.
+</li>
+
+<li
+data-ar="يجب أن يكون رقم بداية النطاق أصغر من أو مساويًا لرقم نهايته."
+data-en="The starting page number must be less than or equal to the ending page number.">
+يجب أن يكون رقم بداية النطاق أصغر من أو مساويًا لرقم نهايته.
+</li>
+</ul>
+
+<p
+data-ar="مثال صحيح: 1-3, 5-8, 12. مثال غير صحيح: 1-5, 4-8، لأن الصفحات من 4 إلى 5 مكررة داخل النطاقين."
+data-en="Valid example: 1-3, 5-8, 12. Invalid example: 1-5, 4-8, because pages 4 and 5 are repeated in both ranges.">
+مثال صحيح: 1-3, 5-8, 12. مثال غير صحيح: 1-5, 4-8، لأن الصفحات من 4 إلى 5 مكررة داخل النطاقين.
+</p>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="مميزات أداة تقسيم PDF من سوق الأدوات"
+data-en="Features of the Tools Market PDF Splitter">
+مميزات أداة تقسيم PDF من سوق الأدوات
+</h2>
+
+<ul>
+<li
+data-ar="مجانية الاستخدام: يمكنك تقسيم ملفات PDF دون الحاجة إلى شراء اشتراك داخل الأداة."
+data-en="Free to use: Split PDF files without purchasing a subscription within the tool.">
+مجانية الاستخدام: يمكنك تقسيم ملفات PDF دون الحاجة إلى شراء اشتراك داخل الأداة.
+</li>
+
+<li
+data-ar="اختيار طريقة التقسيم: حدد نطاقات الصفحات أو أنشئ ملفًا مستقلًا لكل صفحة."
+data-en="Flexible splitting: Choose page ranges or create a separate file for every page.">
+اختيار طريقة التقسيم: حدد نطاقات الصفحات أو أنشئ ملفًا مستقلًا لكل صفحة.
+</li>
+
+<li
+data-ar="عرض معلومات الملف: تعرف على اسم المستند وعدد صفحاته وحجمه قبل التقسيم."
+data-en="File information: View the document name, page count, and size before splitting.">
+عرض معلومات الملف: تعرف على اسم المستند وعدد صفحاته وحجمه قبل التقسيم.
+</li>
+
+<li
+data-ar="روابط تنزيل منفصلة: احصل على رابط مستقل لكل ملف جديد."
+data-en="Separate download links: Get an individual link for each new PDF file.">
+روابط تنزيل منفصلة: احصل على رابط مستقل لكل ملف جديد.
+</li>
+
+<li
+data-ar="سهولة الاستخدام: واجهة واضحة لا تتطلب خبرة تقنية."
+data-en="Easy to use: A clear interface that does not require technical experience.">
+سهولة الاستخدام: واجهة واضحة لا تتطلب خبرة تقنية.
+</li>
+
+<li
+data-ar="دعم الأجهزة المختلفة: يمكنك استخدام الأداة من متصفح الكمبيوتر أو الهاتف."
+data-en="Device compatibility: Use the tool from a computer or mobile browser.">
+دعم الأجهزة المختلفة: يمكنك استخدام الأداة من متصفح الكمبيوتر أو الهاتف.
+</li>
+
+<li
+data-ar="الحفاظ على الملف الأصلي: تنشئ الأداة ملفات جديدة ولا تحذف المستند الأصلي من جهازك."
+data-en="Original file preservation: The tool creates new files without deleting the original document from your device.">
+الحفاظ على الملف الأصلي: تنشئ الأداة ملفات جديدة ولا تحذف المستند الأصلي من جهازك.
+</li>
+</ul>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="هل تتغير جودة صفحات PDF بعد التقسيم؟"
+data-en="Does Splitting Affect PDF Page Quality?">
+هل تتغير جودة صفحات PDF بعد التقسيم؟
+</h2>
+
+<p
+data-ar="تعتمد الأداة على نسخ الصفحات المحددة من ملف PDF الأصلي إلى مستندات PDF جديدة، ولا تقوم بتحويل الصفحات إلى صور أثناء عملية التقسيم. لذلك فهي لا تنفذ عملية ضغط أو إعادة تصوير للصفحات."
+data-en="The tool copies the selected pages from the original PDF into new PDF documents. It does not convert the pages into images during splitting, and it does not perform image compression or page re-rendering.">
+تعتمد الأداة على نسخ الصفحات المحددة من ملف PDF الأصلي إلى مستندات PDF جديدة، ولا تقوم بتحويل الصفحات إلى صور أثناء عملية التقسيم. لذلك فهي لا تنفذ عملية ضغط أو إعادة تصوير للصفحات.
+</p>
+
+<p
+data-ar="مع ذلك، قد تختلف بعض الخصائص المتقدمة في الملفات الناتجة عن الملف الأصلي. على سبيل المثال، قد لا تنتقل بعض الإشارات المرجعية أو النماذج التفاعلية أو التوقيعات الرقمية أو المرفقات المضمنة بالطريقة نفسها."
+data-en="However, some advanced features in the output may differ from the original document. For example, certain bookmarks, interactive forms, digital signatures, or embedded attachments may not be preserved in exactly the same way.">
+مع ذلك، قد تختلف بعض الخصائص المتقدمة في الملفات الناتجة عن الملف الأصلي. على سبيل المثال، قد لا تنتقل بعض الإشارات المرجعية أو النماذج التفاعلية أو التوقيعات الرقمية أو المرفقات المضمنة بالطريقة نفسها.
+</p>
+
+<p
+data-ar="إذا كان المستند يحتوي على عناصر مهمة أو توقيعات رقمية، احتفظ بنسخة من الملف الأصلي وراجع الملفات الناتجة بعناية قبل الاعتماد عليها."
+data-en="If the document contains important elements or digital signatures, keep a copy of the original file and carefully review the output files before relying on them.">
+إذا كان المستند يحتوي على عناصر مهمة أو توقيعات رقمية، احتفظ بنسخة من الملف الأصلي وراجع الملفات الناتجة بعناية قبل الاعتماد عليها.
+</p>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="الخصوصية وطريقة معالجة الملفات"
+data-en="Privacy and File Processing">
+الخصوصية وطريقة معالجة الملفات
+</h2>
+
+<p
+data-ar="تستخدم الأداة مكتبة معالجة PDF داخل صفحة المتصفح لقراءة المستند وإنشاء الملفات الجديدة. ووفقًا لطريقة تنفيذ الأداة الحالية، تتم معالجة الملف الذي تختاره داخل المتصفح، ولا يتضمن كود التقسيم إرسال مستنداتك إلى خادم خارجي مخصص لتنفيذ العملية."
+data-en="The tool uses a PDF processing library inside the browser to read the document and create new files. According to the current implementation, the selected document is processed in the browser, and the splitting code does not send your documents to an external server for processing.">
+تستخدم الأداة مكتبة معالجة PDF داخل صفحة المتصفح لقراءة المستند وإنشاء الملفات الجديدة. ووفقًا لطريقة تنفيذ الأداة الحالية، تتم معالجة الملف الذي تختاره داخل المتصفح، ولا يتضمن كود التقسيم إرسال مستنداتك إلى خادم خارجي مخصص لتنفيذ العملية.
+</p>
+
+<p
+data-ar="تحتاج الصفحة إلى اتصال بالإنترنت لتحميل مكتبة معالجة PDF عند فتح الأداة. بعد تحميل المكتبة، تتم معالجة الملف باستخدام إمكانيات المتصفح والجهاز."
+data-en="The page requires an internet connection to load the PDF processing library when you open the tool. Once the library is loaded, the document is processed using your browser and device resources.">
+تحتاج الصفحة إلى اتصال بالإنترنت لتحميل مكتبة معالجة PDF عند فتح الأداة. بعد تحميل المكتبة، تتم معالجة الملف باستخدام إمكانيات المتصفح والجهاز.
+</p>
+
+<p
+data-ar="احرص دائمًا على الاحتفاظ بنسخة من مستنداتك المهمة، واستخدم جهازًا موثوقًا، ولا تشارك الملفات الناتجة إلا مع الأشخاص الذين تسمح لهم بالاطلاع عليها."
+data-en="Always keep a copy of important documents, use a trusted device, and share the resulting files only with people who are authorized to access them.">
+احرص دائمًا على الاحتفاظ بنسخة من مستنداتك المهمة، واستخدم جهازًا موثوقًا، ولا تشارك الملفات الناتجة إلا مع الأشخاص الذين تسمح لهم بالاطلاع عليها.
+</p>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="نصائح للحصول على أفضل نتيجة"
+data-en="Tips for the Best Results">
+نصائح للحصول على أفضل نتيجة
+</h2>
+
+<ul>
+<li
+data-ar="تأكد من اختيار ملف PDF سليم ويمكن فتحه بصورة طبيعية."
+data-en="Make sure the selected PDF is valid and can be opened normally.">
+تأكد من اختيار ملف PDF سليم ويمكن فتحه بصورة طبيعية.
+</li>
+
+<li
+data-ar="راجع عدد الصفحات المعروض قبل كتابة النطاقات حتى لا تدخل أرقامًا خارج حدود المستند."
+data-en="Check the displayed page count before entering ranges so you do not use page numbers outside the document.">
+راجع عدد الصفحات المعروض قبل كتابة النطاقات حتى لا تدخل أرقامًا خارج حدود المستند.
+</li>
+
+<li
+data-ar="استخدم الفواصل والشرطات بطريقة صحيحة عند تحديد الصفحات."
+data-en="Use commas and hyphens correctly when specifying pages.">
+استخدم الفواصل والشرطات بطريقة صحيحة عند تحديد الصفحات.
+</li>
+
+<li
+data-ar="احتفظ بنسخة من المستند الأصلي قبل بدء التقسيم."
+data-en="Keep a copy of the original document before splitting it.">
+احتفظ بنسخة من المستند الأصلي قبل بدء التقسيم.
+</li>
+
+<li
+data-ar="لا تغلق الصفحة أثناء معالجة المستند، حتى تكتمل عملية إنشاء الملفات."
+data-en="Do not close the page while the document is being processed. Allow the file creation process to finish.">
+لا تغلق الصفحة أثناء معالجة المستند، حتى تكتمل عملية إنشاء الملفات.
+</li>
+
+<li
+data-ar="إذا كان الملف كبيرًا جدًا أو يحتوي على عدد ضخم من الصفحات، فقد تحتاج العملية إلى وقت وذاكرة أكبر."
+data-en="If the document is very large or contains many pages, processing may require more time and memory.">
+إذا كان الملف كبيرًا جدًا أو يحتوي على عدد ضخم من الصفحات، فقد تحتاج العملية إلى وقت وذاكرة أكبر.
+</li>
+
+<li
+data-ar="عند اختيار تقسيم كل صفحة بشكل مستقل، تأكد من توفر مساحة كافية لحفظ الملفات الناتجة."
+data-en="When splitting every page separately, make sure you have enough storage space for the generated files.">
+عند اختيار تقسيم كل صفحة بشكل مستقل، تأكد من توفر مساحة كافية لحفظ الملفات الناتجة.
+</li>
+</ul>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="المشكلات الشائعة عند تقسيم ملفات PDF وحلولها"
+data-en="Common PDF Splitting Problems and Solutions">
+المشكلات الشائعة عند تقسيم ملفات PDF وحلولها
+</h2>
+
+<div class="faq-item">
+<h3
+data-ar="لماذا لا يتم تحميل ملف PDF؟"
+data-en="Why Is the PDF File Not Loading?">
+لماذا لا يتم تحميل ملف PDF؟
+</h3>
+<p
+data-ar="تأكد من اختيار ملف بصيغة PDF، وأن الملف غير تالف أو غير مكتمل. إذا استمرت المشكلة، جرّب فتح الملف باستخدام قارئ PDF للتأكد من أنه يعمل بشكل طبيعي."
+data-en="Make sure you selected a PDF file and that it is not damaged or incomplete. If the problem continues, try opening the document with a PDF reader to confirm that it works normally.">
+تأكد من اختيار ملف بصيغة PDF، وأن الملف غير تالف أو غير مكتمل. إذا استمرت المشكلة، جرّب فتح الملف باستخدام قارئ PDF للتأكد من أنه يعمل بشكل طبيعي.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="لماذا لا يظهر زر تقسيم ملف PDF؟"
+data-en="Why Is the Split PDF Button Not Available?">
+لماذا لا يظهر زر تقسيم ملف PDF؟
+</h3>
+<p
+data-ar="يتم تفعيل زر التقسيم بعد اختيار ملف PDF صالح ونجاح الأداة في قراءة عدد صفحاته. انتظر انتهاء قراءة الملف، ثم جرّب مرة أخرى."
+data-en="The split button becomes available after selecting a valid PDF and successfully reading its page count. Wait for the file to finish loading, then try again.">
+يتم تفعيل زر التقسيم بعد اختيار ملف PDF صالح ونجاح الأداة في قراءة عدد صفحاته. انتظر انتهاء قراءة الملف، ثم جرّب مرة أخرى.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="لماذا تظهر رسالة أن صيغة الصفحات غير صحيحة؟"
+data-en="Why Does the Tool Say the Page Format Is Invalid?">
+لماذا تظهر رسالة أن صيغة الصفحات غير صحيحة؟
+</h3>
+<p
+data-ar="اكتب أرقام الصفحات باستخدام الأرقام والشرطة والفاصلة فقط. مثال صحيح: 1-5, 6-10, 12. لا تكتب كلمات أو رموزًا إضافية داخل مربع الصفحات."
+data-en="Enter page numbers using numbers, hyphens, and commas only. Valid example: 1-5, 6-10, 12. Do not enter words or additional symbols in the page field.">
+اكتب أرقام الصفحات باستخدام الأرقام والشرطة والفاصلة فقط. مثال صحيح: 1-5, 6-10, 12. لا تكتب كلمات أو رموزًا إضافية داخل مربع الصفحات.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="لماذا تظهر رسالة أن رقم الصفحة خارج النطاق؟"
+data-en="Why Is a Page Number Outside the Valid Range?">
+لماذا تظهر رسالة أن رقم الصفحة خارج النطاق؟
+</h3>
+<p
+data-ar="يجب أن تكون جميع الأرقام بين 1 وآخر صفحة في المستند. إذا كان الملف يحتوي على 15 صفحة، فلا يمكنك استخراج الصفحة رقم 16. راجع عدد الصفحات الظاهر بجوار اسم الملف."
+data-en="All page numbers must be between 1 and the last page of the document. If the file contains 15 pages, you cannot extract page 16. Check the page count displayed beside the file name.">
+يجب أن تكون جميع الأرقام بين 1 وآخر صفحة في المستند. إذا كان الملف يحتوي على 15 صفحة، فلا يمكنك استخراج الصفحة رقم 16. راجع عدد الصفحات الظاهر بجوار اسم الملف.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="هل يمكن استخراج صفحة واحدة فقط؟"
+data-en="Can I Extract Just One Page?">
+هل يمكن استخراج صفحة واحدة فقط؟
+</h3>
+<p
+data-ar="نعم، اختر طريقة نطاقات الصفحات واكتب رقم الصفحة المطلوبة وحده، مثل 7. ستنشئ الأداة ملف PDF مستقلًا يحتوي على الصفحة السابعة."
+data-en="Yes. Choose the page ranges method and enter the required page number by itself, such as 7. The tool will create a separate PDF containing page 7.">
+نعم، اختر طريقة نطاقات الصفحات واكتب رقم الصفحة المطلوبة وحده، مثل 7. ستنشئ الأداة ملف PDF مستقلًا يحتوي على الصفحة السابعة.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="هل يمكن تقسيم الملف إلى عدة أجزاء؟"
+data-en="Can I Split a PDF into Several Parts?">
+هل يمكن تقسيم الملف إلى عدة أجزاء؟
+</h3>
+<p
+data-ar="نعم، اكتب عدة نطاقات مفصولة بفواصل. على سبيل المثال، 1-4, 5-8, 9-12 ينشئ ثلاثة ملفات مستقلة، يحتوي كل ملف منها على نطاق الصفحات المحدد."
+data-en="Yes. Enter multiple ranges separated by commas. For example, 1-4, 5-8, 9-12 creates three separate files, each containing its specified page range.">
+نعم، اكتب عدة نطاقات مفصولة بفواصل. على سبيل المثال، 1-4, 5-8, 9-12 ينشئ ثلاثة ملفات مستقلة، يحتوي كل ملف منها على نطاق الصفحات المحدد.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="هل يمكن أن أكرر الصفحة نفسها في أكثر من نطاق؟"
+data-en="Can I Include the Same Page in More Than One Range?">
+هل يمكن أن أكرر الصفحة نفسها في أكثر من نطاق؟
+</h3>
+<p
+data-ar="لا، تمنع الأداة تكرار الصفحة نفسها أو استخدام نطاقات متداخلة في العملية الواحدة. إذا كنت تحتاج إلى الصفحة نفسها في أكثر من ملف، يمكنك تنفيذ العملية مرة أخرى باستخدام نطاق مختلف."
+data-en="No. The tool prevents duplicate pages and overlapping ranges in a single operation. If you need the same page in more than one file, you can run the process again with a different range.">
+لا، تمنع الأداة تكرار الصفحة نفسها أو استخدام نطاقات متداخلة في العملية الواحدة. إذا كنت تحتاج إلى الصفحة نفسها في أكثر من ملف، يمكنك تنفيذ العملية مرة أخرى باستخدام نطاق مختلف.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="هل يتم حذف الملف الأصلي بعد التقسيم؟"
+data-en="Is the Original File Deleted After Splitting?">
+هل يتم حذف الملف الأصلي بعد التقسيم؟
+</h3>
+<p
+data-ar="لا، الأداة تنشئ ملفات PDF جديدة ولا تحذف الملف الأصلي من جهازك. يمكنك الاحتفاظ بالمستند الأصلي واستخدام الملفات الجديدة بشكل منفصل."
+data-en="No. The tool creates new PDF files and does not delete the original document from your device. You can keep the original and use the new files separately.">
+لا، الأداة تنشئ ملفات PDF جديدة ولا تحذف الملف الأصلي من جهازك. يمكنك الاحتفاظ بالمستند الأصلي واستخدام الملفات الجديدة بشكل منفصل.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="هل يمكن تقسيم ملفات PDF المحمية بكلمة مرور؟"
+data-en="Can I Split Password-Protected PDF Files?">
+هل يمكن تقسيم ملفات PDF المحمية بكلمة مرور؟
+</h3>
+<p
+data-ar="قد لا تتمكن الأداة من قراءة بعض الملفات المحمية بكلمة مرور. إذا تعذرت قراءة المستند، استخدم نسخة مسموحًا لك بفتحها وغير محمية، ثم حاول تقسيمها."
+data-en="The tool may not be able to read some password-protected files. If the document cannot be loaded, use a version you are authorized to open that is not password-protected, then try splitting it.">
+قد لا تتمكن الأداة من قراءة بعض الملفات المحمية بكلمة مرور. إذا تعذرت قراءة المستند، استخدم نسخة مسموحًا لك بفتحها وغير محمية، ثم حاول تقسيمها.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="هل تعمل الأداة على الهاتف؟"
+data-en="Does the Tool Work on Mobile Phones?">
+هل تعمل الأداة على الهاتف؟
+</h3>
+<p
+data-ar="نعم، يمكنك استخدام الأداة من متصفح الهاتف واختيار ملف PDF من الملفات المحفوظة على جهازك. وقد يختلف وقت المعالجة حسب حجم الملف وإمكانيات الهاتف."
+data-en="Yes. You can use the tool from your mobile browser and select a PDF from your device. Processing time may vary depending on file size and your phone's capabilities.">
+نعم، يمكنك استخدام الأداة من متصفح الهاتف واختيار ملف PDF من الملفات المحفوظة على جهازك. وقد يختلف وقت المعالجة حسب حجم الملف وإمكانيات الهاتف.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="لماذا يستغرق تقسيم الملف الكبير وقتًا أطول؟"
+data-en="Why Does Splitting a Large PDF Take Longer?">
+لماذا يستغرق تقسيم الملف الكبير وقتًا أطول؟
+</h3>
+<p
+data-ar="تعتمد سرعة المعالجة على حجم المستند وعدد صفحاته وذاكرة الجهاز. عند تقسيم ملف يحتوي على صفحات كثيرة إلى ملفات منفصلة، تحتاج الأداة إلى إنشاء عدد كبير من المستندات، وقد يستغرق ذلك وقتًا أطول."
+data-en="Processing speed depends on document size, page count, and available device memory. When splitting a document with many pages into separate files, the tool must create many documents, which may take longer.">
+تعتمد سرعة المعالجة على حجم المستند وعدد صفحاته وذاكرة الجهاز. عند تقسيم ملف يحتوي على صفحات كثيرة إلى ملفات منفصلة، تحتاج الأداة إلى إنشاء عدد كبير من المستندات، وقد يستغرق ذلك وقتًا أطول.
+</p>
+</div>
+
+<div class="faq-item">
+<h3
+data-ar="هل تقل جودة الصفحات بعد تقسيم PDF؟"
+data-en="Does PDF Splitting Reduce Page Quality?">
+هل تقل جودة الصفحات بعد تقسيم PDF؟
+</h3>
+<p
+data-ar="الأداة تنسخ صفحات PDF إلى ملفات جديدة بدلًا من تحويلها إلى صور. ومع ذلك، يُنصح بمراجعة الملفات الناتجة، خاصة إذا كان المستند يحتوي على خصائص متقدمة مثل النماذج التفاعلية أو التوقيعات الرقمية."
+data-en="The tool copies PDF pages into new files instead of converting them into images. However, you should review the generated files, especially if the document contains advanced features such as interactive forms or digital signatures.">
+الأداة تنسخ صفحات PDF إلى ملفات جديدة بدلًا من تحويلها إلى صور. ومع ذلك، يُنصح بمراجعة الملفات الناتجة، خاصة إذا كان المستند يحتوي على خصائص متقدمة مثل النماذج التفاعلية أو التوقيعات الرقمية.
+</p>
+</div>
+
+</section>
+
+<section class="content-section">
+
+<h2
+data-ar="ابدأ تقسيم ملفات PDF الآن"
+data-en="Start Splitting Your PDF Files Now">
+ابدأ تقسيم ملفات PDF الآن
+</h2>
+
+<p
+data-ar="إذا كان لديك مستند PDF طويل وتحتاج إلى استخراج صفحات معينة أو فصل كل صفحة في ملف مستقل، يمكنك استخدام الأداة الموجودة أعلى هذه الصفحة. اختر الملف، وحدد طريقة التقسيم، ثم نزّل الملفات الناتجة بعد اكتمال العملية."
+data-en="If you have a long PDF document and need to extract specific pages or save every page as a separate file, use the tool at the top of this page. Select your document, choose the splitting method, and download the resulting files when processing is complete.">
+إذا كان لديك مستند PDF طويل وتحتاج إلى استخراج صفحات معينة أو فصل كل صفحة في ملف مستقل، يمكنك استخدام الأداة الموجودة أعلى هذه الصفحة. اختر الملف، وحدد طريقة التقسيم، ثم نزّل الملفات الناتجة بعد اكتمال العملية.
+</p>
+
+<p
+data-ar="سوق الأدوات يقدم مجموعة من الأدوات المجانية عبر الإنترنت لمساعدتك في التعامل مع ملفات PDF والصور وإنجاز المهام اليومية بسهولة من خلال المتصفح."
+data-en="Tools Market offers a collection of free online tools to help you work with PDF files and images and complete everyday tasks easily through your browser.">
+سوق الأدوات يقدم مجموعة من الأدوات المجانية عبر الإنترنت لمساعدتك في التعامل مع ملفات PDF والصور وإنجاز المهام اليومية بسهولة من خلال المتصفح.
+</p>
+
+</section>
+
+</div>
+
+<footer
+data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+data-en="Tools Market | Free and Easy Tools for Everyone">
+سوق الأدوات | أدوات مجانية وسهلة للجميع
+</footer>
+
+<a class="more-tools" id="homeLink" href="index.html?lang=ar"
+data-ar="المزيد من الأدوات المجانية | سوق الأدوات الرئيسي"
+data-en="Explore More Free Tools | Tools Market Homepage">
+المزيد من الأدوات المجانية | سوق الأدوات الرئيسي
+</a>
+
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="language.js"></script>
+
 <script>
 const pdfInput = document.getElementById('pdfInput');
 const fileInfo = document.getElementById('fileInfo');
@@ -183,6 +1261,7 @@ function setPageLanguage() {
     }
 
     language = selected === 'en' ? 'en' : 'ar';
+
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'en' ? 'ltr' : 'rtl';
 
@@ -190,24 +1269,65 @@ function setPageLanguage() {
         el.textContent = el.getAttribute('data-' + language);
     });
 
-    rangesInput.placeholder = t('مثال: 1-3, 4-6, 7', 'Example: 1-3, 4-6, 7');
+    rangesInput.placeholder = t(
+        'مثال: 1-3, 4-6, 7',
+        'Example: 1-3, 4-6, 7'
+    );
+
     document.getElementById('backLink').href = 'index.html?lang=' + language;
+    document.getElementById('homeLink').href = 'index.html?lang=' + language;
+
+    document.title = t(
+        'تقسيم ملفات PDF أونلاين مجانًا واستخراج صفحات PDF | سوق الأدوات',
+        'Split PDF Files Online for Free and Extract PDF Pages | Tools Market'
+    );
+
+    const description = t(
+        'قسّم ملفات PDF أونلاين مجانًا، واستخرج صفحات محددة أو نطاقات مختلفة، أو احفظ كل صفحة في ملف مستقل باستخدام أداة تقسيم PDF من سوق الأدوات.',
+        'Split PDF files online for free. Extract selected pages or page ranges, or save every page as a separate file with the Tools Market PDF Splitter.'
+    );
+
+    document.querySelector('meta[name="description"]').setAttribute('content', description);
+    document.querySelector('meta[property="og:description"]').setAttribute('content', description);
+    document.querySelector('meta[name="twitter:description"]').setAttribute('content', description);
+
+    document.querySelector('meta[property="og:title"]').setAttribute(
+        'content',
+        document.title
+    );
+
+    document.querySelector('meta[name="twitter:title"]').setAttribute(
+        'content',
+        document.title
+    );
+
+    document.querySelector('meta[property="og:locale"]').setAttribute(
+        'content',
+        language === 'ar' ? 'ar_AR' : 'en_US'
+    );
 }
 
 function formatBytes(bytes) {
     if (language === 'en') {
         if (bytes < 1024) return bytes + ' bytes';
         if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+
         return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
     }
+
     if (bytes < 1024) return bytes + ' بايت';
     if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' كيلوبايت';
+
     return (bytes / (1024 * 1024)).toFixed(2) + ' ميجابايت';
 }
 
 function clearResults() {
-    outputUrls.forEach(function(url) { URL.revokeObjectURL(url); });
+    outputUrls.forEach(function(url) {
+        URL.revokeObjectURL(url);
+    });
+
     outputUrls = [];
+
     downloadList.replaceChildren();
     resultInfo.textContent = '';
     resultPanel.hidden = true;
@@ -215,17 +1335,25 @@ function clearResults() {
 
 function updateMode() {
     rangeField.hidden = splitMode.value === 'each';
+
     clearResults();
 
     if (currentFile) {
         message.textContent = splitMode.value === 'each'
-            ? t('سيتم إنشاء ملف PDF مستقل لكل صفحة.', 'A separate PDF will be created for each page.')
-            : t('اكتب نطاقات الصفحات التي تريد فصلها.', 'Enter the page ranges you want to split.');
+            ? t(
+                'سيتم إنشاء ملف PDF مستقل لكل صفحة.',
+                'A separate PDF will be created for each page.'
+            )
+            : t(
+                'اكتب نطاقات الصفحات التي تريد فصلها.',
+                'Enter the page ranges you want to split.'
+            );
     }
 }
 
 function setBusy(busy) {
     isSplitting = busy;
+
     splitButton.disabled = busy || !currentFile;
     clearButton.disabled = busy;
     pdfInput.disabled = busy;
@@ -235,7 +1363,10 @@ function setBusy(busy) {
 
 function parseRanges(value, pageCount) {
     if (!value.trim()) {
-        throw new Error(t('اكتب أرقام الصفحات أو نطاقاتها أولًا.', 'Enter page numbers or ranges first.'));
+        throw new Error(t(
+            'اكتب أرقام الصفحات أو نطاقاتها أولًا.',
+            'Enter page numbers or ranges first.'
+        ));
     }
 
     const groups = [];
@@ -243,6 +1374,7 @@ function parseRanges(value, pageCount) {
 
     for (const part of value.split(',')) {
         const token = part.trim();
+
         const match = token.match(/^(\d+)(?:\s*-\s*(\d+))?$/);
 
         if (!match) {
@@ -255,7 +1387,13 @@ function parseRanges(value, pageCount) {
         const start = Number(match[1]);
         const end = match[2] ? Number(match[2]) : start;
 
-        if (start < 1 || end < start || end > pageCount) {
+        if (
+            !Number.isSafeInteger(start) ||
+            !Number.isSafeInteger(end) ||
+            start < 1 ||
+            end < start ||
+            end > pageCount
+        ) {
             throw new Error(t(
                 'تأكد أن أرقام الصفحات بين 1 و' + pageCount + '، وأن البداية لا تتجاوز النهاية.',
                 'Page numbers must be between 1 and ' + pageCount + ', and the start must not exceed the end.'
@@ -271,11 +1409,16 @@ function parseRanges(value, pageCount) {
                     'Duplicate pages or overlapping ranges found. Check the page numbers.'
                 ));
             }
+
             usedPages.add(page);
             pages.push(page - 1);
         }
 
-        groups.push({ pages: pages, start: start, end: end });
+        groups.push({
+            pages: pages,
+            start: start,
+            end: end
+        });
     }
 
     return groups;
@@ -283,11 +1426,15 @@ function parseRanges(value, pageCount) {
 
 function getBaseName(name) {
     const dot = name.lastIndexOf('.');
-    return dot > 0 ? name.substring(0, dot) : name;
+
+    return dot > 0
+        ? name.substring(0, dot)
+        : name;
 }
 
 function addDownload(blob, filename, label) {
     const url = URL.createObjectURL(blob);
+
     outputUrls.push(url);
 
     const item = document.createElement('div');
@@ -311,8 +1458,10 @@ function addDownload(blob, filename, label) {
 
     info.appendChild(title);
     info.appendChild(size);
+
     item.appendChild(info);
     item.appendChild(link);
+
     downloadList.appendChild(item);
 }
 
@@ -320,22 +1469,33 @@ pdfInput.addEventListener('change', async function() {
     if (isSplitting) return;
 
     clearResults();
+
     currentFile = null;
     totalPages = 0;
+
     options.hidden = true;
     splitButton.disabled = true;
 
     const file = pdfInput.files[0];
 
     if (!file) {
-        fileInfo.textContent = t('لم يتم اختيار ملف PDF بعد.', 'No PDF file selected yet.');
+        fileInfo.textContent = t(
+            'لم يتم اختيار ملف PDF بعد.',
+            'No PDF file selected yet.'
+        );
+
         return;
     }
 
-    const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+    const isPdf = file.type === 'application/pdf' ||
+        file.name.toLowerCase().endsWith('.pdf');
 
     if (!isPdf) {
-        fileInfo.textContent = t('من فضلك اختار ملفًا بصيغة PDF.', 'Please choose a PDF file.');
+        fileInfo.textContent = t(
+            'من فضلك اختر ملفًا بصيغة PDF.',
+            'Please choose a PDF file.'
+        );
+
         pdfInput.value = '';
         return;
     }
@@ -345,21 +1505,34 @@ pdfInput.addEventListener('change', async function() {
             'تعذّر تحميل مكتبة PDF. تأكد من اتصال الإنترنت وحدّث الصفحة.',
             'Could not load the PDF library. Check your internet connection and refresh the page.'
         );
+
         return;
     }
 
-    fileInfo.textContent = t('جاري قراءة ملف PDF...', 'Reading PDF file...');
-    message.textContent = t('جاري التحقق من الملف...', 'Checking the file...');
+    fileInfo.textContent = t(
+        'جاري قراءة ملف PDF...',
+        'Reading PDF file...'
+    );
+
+    message.textContent = t(
+        'جاري التحقق من الملف...',
+        'Checking the file...'
+    );
 
     try {
         const bytes = await file.arrayBuffer();
+
         const pdf = await PDFLib.PDFDocument.load(bytes);
+
         const pages = pdf.getPageCount();
 
-        if (pages < 1) throw new Error('empty');
+        if (pages < 1) {
+            throw new Error('empty');
+        }
 
         currentFile = file;
         totalPages = pages;
+
         fileInfo.textContent = t(
             'الملف: ' + file.name + ' | عدد الصفحات: ' + totalPages + ' | الحجم: ' + formatBytes(file.size),
             'File: ' + file.name + ' | Pages: ' + totalPages + ' | Size: ' + formatBytes(file.size)
@@ -367,18 +1540,27 @@ pdfInput.addEventListener('change', async function() {
 
         options.hidden = false;
         splitButton.disabled = false;
+
         updateMode();
+
         message.textContent = t(
-            'اختار طريقة التقسيم، ثم اكتب أرقام الصفحات إذا لزم الأمر.',
+            'اختر طريقة التقسيم، ثم اكتب أرقام الصفحات إذا لزم الأمر.',
             'Choose a splitting method, then enter page numbers if needed.'
         );
+
     } catch (error) {
         console.error(error);
+
         fileInfo.textContent = t(
             'تعذّر قراءة الملف. تأكد أنه PDF سليم وغير محمي بكلمة مرور.',
             'Could not read the file. Make sure it is a valid PDF and is not password-protected.'
         );
-        message.textContent = t('اختار ملف PDF آخر وجرب مرة ثانية.', 'Choose another PDF file and try again.');
+
+        message.textContent = t(
+            'اختر ملف PDF آخر وجرب مرة ثانية.',
+            'Choose another PDF file and try again.'
+        );
+
         pdfInput.value = '';
         currentFile = null;
         totalPages = 0;
@@ -392,19 +1574,34 @@ clearButton.addEventListener('click', function() {
     if (isSplitting) return;
 
     clearResults();
+
     currentFile = null;
     totalPages = 0;
+
     pdfInput.value = '';
     rangesInput.value = '';
-    fileInfo.textContent = t('لم يتم اختيار ملف PDF بعد.', 'No PDF file selected yet.');
+
+    fileInfo.textContent = t(
+        'لم يتم اختيار ملف PDF بعد.',
+        'No PDF file selected yet.'
+    );
+
     options.hidden = true;
     splitButton.disabled = true;
-    message.textContent = t('اختار ملف PDF للبدء.', 'Choose a PDF file to begin.');
+
+    message.textContent = t(
+        'اختر ملف PDF للبدء.',
+        'Choose a PDF file to begin.'
+    );
 });
 
 splitButton.addEventListener('click', async function() {
     if (!currentFile || totalPages < 1) {
-        message.textContent = t('اختار ملف PDF صالحًا أولًا.', 'Choose a valid PDF file first.');
+        message.textContent = t(
+            'اختر ملف PDF صالحًا أولًا.',
+            'Choose a valid PDF file first.'
+        );
+
         return;
     }
 
@@ -413,6 +1610,7 @@ splitButton.addEventListener('click', async function() {
             'تعذّر تحميل مكتبة PDF. تأكد من اتصال الإنترنت وحدّث الصفحة.',
             'Could not load the PDF library. Check your internet connection and refresh the page.'
         );
+
         return;
     }
 
@@ -420,12 +1618,20 @@ splitButton.addEventListener('click', async function() {
 
     try {
         if (splitMode.value === 'each') {
-            groups = Array.from({ length: totalPages }, function(_, index) {
-                return { pages: [index], start: index + 1, end: index + 1 };
-            });
+            groups = Array.from(
+                { length: totalPages },
+                function(_, index) {
+                    return {
+                        pages: [index],
+                        start: index + 1,
+                        end: index + 1
+                    };
+                }
+            );
         } else {
             groups = parseRanges(rangesInput.value, totalPages);
         }
+
     } catch (error) {
         message.textContent = error.message;
         return;
@@ -436,22 +1642,38 @@ splitButton.addEventListener('click', async function() {
 
     try {
         const bytes = await currentFile.arrayBuffer();
+
         const sourcePdf = await PDFLib.PDFDocument.load(bytes);
+
         const baseName = getBaseName(currentFile.name);
+
         let selectedPageCount = 0;
 
         for (let i = 0; i < groups.length; i++) {
             const group = groups[i];
-            message.textContent = t('جاري إنشاء الملف ', 'Creating file ') +
-                (i + 1) + t(' من ', ' of ') + groups.length + '...';
+
+            message.textContent = t(
+                'جاري إنشاء الملف ',
+                'Creating file '
+            ) + (i + 1) + t(' من ', ' of ') + groups.length + '...';
 
             const newPdf = await PDFLib.PDFDocument.create();
-            const copiedPages = await newPdf.copyPages(sourcePdf, group.pages);
 
-            copiedPages.forEach(function(page) { newPdf.addPage(page); });
+            const copiedPages = await newPdf.copyPages(
+                sourcePdf,
+                group.pages
+            );
+
+            copiedPages.forEach(function(page) {
+                newPdf.addPage(page);
+            });
 
             const outputBytes = await newPdf.save();
-            const blob = new Blob([outputBytes], { type: 'application/pdf' });
+
+            const blob = new Blob(
+                [outputBytes],
+                { type: 'application/pdf' }
+            );
 
             const rangeLabel = group.start === group.end
                 ? t('الصفحة ', 'Page ') + group.start
@@ -462,6 +1684,7 @@ splitButton.addEventListener('click', async function() {
                 : baseName + '-pages-' + group.start + '-' + group.end + '.pdf';
 
             addDownload(blob, filename, rangeLabel);
+
             selectedPageCount += group.pages.length;
         }
 
@@ -471,25 +1694,36 @@ splitButton.addEventListener('click', async function() {
         );
 
         resultPanel.hidden = false;
+
         message.textContent = t(
             'تم التقسيم بنجاح. نزّل الملفات الناتجة من الروابط أدناه.',
             'Splitting completed successfully. Download the files using the links below.'
         );
-        resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        resultPanel.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
     } catch (error) {
         console.error(error);
+
         clearResults();
+
         message.textContent = t(
             'تعذّر تقسيم الملف. تأكد أن ملف PDF سليم وغير محمي بكلمة مرور، ثم حاول مرة أخرى.',
             'Could not split the PDF. Make sure it is valid and not password-protected, then try again.'
         );
+
     } finally {
         setBusy(false);
     }
 });
 
 window.addEventListener('beforeunload', function() {
-    outputUrls.forEach(function(url) { URL.revokeObjectURL(url); });
+    outputUrls.forEach(function(url) {
+        URL.revokeObjectURL(url);
+    });
 });
 
 setPageLanguage();
@@ -501,5 +1735,6 @@ if (typeof PDFLib === 'undefined') {
     );
 }
 </script>
+
 </body>
 </html>
