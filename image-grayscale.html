@@ -1,22 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تحويل الصور إلى أبيض وأسود | سوق الأدوات</title>
-<meta name="description" content="حوّل الصور إلى أبيض وأسود أونلاين بسهولة باستخدام أداة تحويل الصور إلى تدرجات الرمادي المجانية من سوق الأدوات.">
+
+<title>تحويل الصور إلى أبيض وأسود أونلاين مجانًا | سوق الأدوات</title>
+
+<meta name="description" content="حوّل الصور الملونة إلى أبيض وأسود وتدرجات الرمادي أونلاين مجانًا. أداة سهلة لتحويل صور JPG وPNG وWebP مع معاينة النتيجة وتنزيلها مباشرة.">
+
+<meta name="keywords" content="تحويل الصور إلى أبيض وأسود, تحويل الصور إلى تدرج الرمادي, أبيض وأسود أونلاين, grayscale image converter, black and white photo, تحويل الصور, أدوات الصور المجانية">
+
 <meta name="robots" content="index, follow">
+<meta name="author" content="Tools Market">
+<meta name="theme-color" content="#1769d2">
+
 <link rel="canonical" href="https://medosd6666-png.github.io/tools-market/image-grayscale.html">
-<meta property="og:title" content="تحويل الصور إلى أبيض وأسود | سوق الأدوات">
-<meta property="og:description" content="حوّل الصور إلى أبيض وأسود أونلاين بسهولة باستخدام أداة تحويل الصور إلى تدرجات الرمادي المجانية من سوق الأدوات.">
+
+<meta property="og:title" content="تحويل الصور إلى أبيض وأسود أونلاين مجانًا | سوق الأدوات">
+<meta property="og:description" content="حوّل صورك الملونة إلى أبيض وأسود بسهولة. أداة مجانية تدعم JPG وPNG وWebP مع معاينة وتنزيل الصورة بعد التحويل.">
 <meta property="og:url" content="https://medosd6666-png.github.io/tools-market/image-grayscale.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
+<meta property="og:site_name" content="سوق الأدوات">
 
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="تحويل الصور إلى أبيض وأسود | سوق الأدوات">
+<meta name="twitter:description" content="حوّل الصور إلى تدرجات الرمادي أونلاين مجانًا باستخدام أداة سهلة وسريعة.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "أداة تحويل الصور إلى أبيض وأسود",
+  "alternateName": "Image Grayscale Converter",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires a modern browser with JavaScript and Canvas support",
+  "description": "أداة مجانية لتحويل الصور الملونة إلى الأبيض والأسود وتدرجات الرمادي مباشرة داخل المتصفح.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "تحويل الصور الملونة إلى تدرجات الرمادي",
+    "دعم JPG وPNG وWebP",
+    "معاينة الصورة بعد التحويل",
+    "تنزيل الصورة الناتجة",
+    "معالجة الصور محليًا داخل المتصفح"
+  ]
+}
+</script>
 
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -24,12 +63,12 @@ body {
     font-family: Tahoma, Arial, sans-serif;
     background: linear-gradient(135deg, #eaf4ff, #f4f0ff);
     color: #1f2937;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto;
     padding: 30px;
     background: #fff;
@@ -38,7 +77,10 @@ body {
     box-shadow: 0 12px 35px rgba(30,64,100,0.12);
 }
 
-header { text-align: center; margin-bottom: 28px; }
+header {
+    text-align: center;
+    margin-bottom: 28px;
+}
 
 .back {
     display: inline-block;
@@ -48,9 +90,39 @@ header { text-align: center; margin-bottom: 28px; }
     font-weight: bold;
 }
 
-h1 { margin: 0 0 8px; color: #1454a3; font-size: 30px; }
-h2 { color: #1454a3; font-size: 22px; }
-.intro { margin: 0; color: #64748b; }
+.back:hover,
+.content-links a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: #1454a3;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+h2 {
+    color: #1454a3;
+    font-size: 23px;
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+h3 {
+    color: #245b91;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-top: 8px;
+}
+
+.intro {
+    margin: 0;
+    color: #64748b;
+}
 
 .panel {
     padding: 22px;
@@ -60,7 +132,16 @@ h2 { color: #1454a3; font-size: 22px; }
     background: #fff;
 }
 
-.field-label { display: block; margin-bottom: 8px; font-weight: bold; }
+.tool-panel {
+    border: 2px solid #d5e6fb;
+    background: #fbfdff;
+}
+
+.field-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
 
 input[type="file"] {
     display: block;
@@ -72,9 +153,14 @@ input[type="file"] {
     font: inherit;
 }
 
-.hint { color: #64748b; font-size: 14px; overflow-wrap: anywhere; }
+.hint {
+    color: #64748b;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
 
-button, .download-link {
+button,
+.download-link {
     display: inline-block;
     padding: 12px 24px;
     border: 0;
@@ -86,13 +172,36 @@ button, .download-link {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-button:hover, .download-link:hover { background: #0f4fa8; }
-button:disabled { background: #94a3b8; cursor: not-allowed; }
-#message { margin-top: 15px; color: #475569; overflow-wrap: anywhere; }
+button:hover,
+.download-link:hover {
+    background: #0f4fa8;
+}
 
-#resultPanel[hidden], #editor[hidden] { display: none; }
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+#message {
+    margin-top: 15px;
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+
+#resultPanel[hidden],
+#editor[hidden] {
+    display: none;
+}
 
 .preview {
     display: block;
@@ -104,48 +213,149 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
     background: #f1f5f9;
 }
 
-.result-info { color: #475569; overflow-wrap: anywhere; }
-footer { text-align: center; color: #64748b; font-size: 13px; }
+.result-info {
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+
+.content-section {
+    margin-bottom: 28px;
+}
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+.content-section ul,
+.content-section ol {
+    padding-right: 24px;
+}
+
+.content-section li {
+    margin-bottom: 9px;
+}
+
+.note {
+    padding: 14px 16px;
+    margin: 16px 0;
+    background: #f1f7ff;
+    border-right: 4px solid #1769d2;
+    border-radius: 10px;
+}
+
+.faq-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-item:last-child {
+    border-bottom: 0;
+}
+
+.faq-item h3 {
+    margin-top: 0;
+}
+
+.faq-item p {
+    margin-bottom: 0;
+    color: #475569;
+}
+
+.content-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.content-links a {
+    color: #1454a3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    padding-top: 10px;
+}
 
 @media (max-width: 520px) {
-    body { padding: 12px; }
-    .container { padding: 18px; margin: 8px auto; }
-    .panel { padding: 16px; }
-    h1 { font-size: 25px; }
-    button, .download-link { width: 100%; }
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 18px;
+        margin: 8px auto;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    button,
+    .download-link {
+        width: 100%;
+    }
 }
 </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NZ00TSPTWC');
-    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
+</script>
+
 </head>
 
 <body>
+
 <main class="container">
 
 <header>
+
 <a class="back" href="index.html"
 data-ar="العودة إلى سوق الأدوات ←"
 data-en="← Back to Tools Market">العودة إلى سوق الأدوات ←</a>
 
-<h1 data-ar="تحويل الصور إلى أبيض وأسود"
-data-en="Convert Images to Black and White">
-تحويل الصور إلى أبيض وأسود
+<h1 data-ar="تحويل الصور إلى أبيض وأسود أونلاين"
+data-en="Convert Images to Black and White Online">
+تحويل الصور إلى أبيض وأسود أونلاين
 </h1>
 
 <p class="intro"
-data-ar="حوّل صورك الملونة إلى أبيض وأسود بسهولة ومجانًا."
-data-en="Convert your color photos to black and white easily and for free.">
-حوّل صورك الملونة إلى أبيض وأسود بسهولة ومجانًا.
+data-ar="حوّل صورك الملونة إلى الأبيض والأسود وتدرجات الرمادي بسهولة ومجانًا، مع إمكانية معاينة الصورة الجديدة وتنزيلها."
+data-en="Convert your color photos to black and white and grayscale easily and for free, then preview and download the result.">
+حوّل صورك الملونة إلى الأبيض والأسود وتدرجات الرمادي بسهولة ومجانًا، مع إمكانية معاينة الصورة الجديدة وتنزيلها.
 </p>
+
 </header>
 
-<section class="panel">
+<!-- أداة تحويل الصور -->
+
+<section class="panel tool-panel">
+
+<h2 data-ar="أداة تحويل الصور إلى أبيض وأسود"
+data-en="Black and White Image Converter">
+أداة تحويل الصور إلى أبيض وأسود
+</h2>
+
+<p data-ar="اختار صورة من جهازك، ثم اضغط على زر التحويل للحصول على نسخة بالأبيض والأسود."
+data-en="Choose an image from your device, then click the conversion button to create a black and white version.">
+اختار صورة من جهازك، ثم اضغط على زر التحويل للحصول على نسخة بالأبيض والأسود.
+</p>
 
 <label class="field-label" for="imageInput"
 data-ar="اختار صورة من جهازك"
@@ -154,11 +364,13 @@ data-en="Choose an image from your device">
 </label>
 
 <input id="imageInput" type="file"
-accept="image/jpeg,image/png,image/webp">
+accept="image/jpeg,image/png,image/webp"
+aria-describedby="fileInfo">
 
 <p id="fileInfo" class="hint"></p>
 
 <div id="editor" hidden>
+
 <button id="convertButton" type="button"
 data-ar="تحويل الصورة إلى أبيض وأسود"
 data-en="Convert to Black and White">
@@ -166,8 +378,12 @@ data-en="Convert to Black and White">
 </button>
 
 <p id="message" role="status" aria-live="polite"></p>
+
 </div>
+
 </section>
+
+<!-- نتيجة التحويل -->
 
 <section id="resultPanel" class="panel" hidden>
 
@@ -186,6 +402,433 @@ data-ar="تنزيل الصورة الجديدة"
 data-en="Download New Image">
 تنزيل الصورة الجديدة
 </a>
+
+</section>
+
+<!-- شرح الأداة -->
+
+<section class="panel content-section">
+
+<h2 data-ar="ما هي أداة تحويل الصور إلى أبيض وأسود؟"
+data-en="What Is a Black and White Image Converter?">
+ما هي أداة تحويل الصور إلى أبيض وأسود؟
+</h2>
+
+<p data-ar="أداة تحويل الصور إلى أبيض وأسود هي وسيلة بسيطة لتحويل الصور الملونة إلى صور بتدرجات الرمادي، بحيث تختفي الألوان الأصلية وتظهر درجات مختلفة من الأسود والرمادي والأبيض. تساعدك الأداة على الحصول على مظهر كلاسيكي للصورة دون الحاجة إلى برامج تحرير صور معقدة."
+data-en="A black and white image converter is a simple tool that transforms colored photos into grayscale images. The original colors are replaced with different shades of black, gray, and white, giving your photos a classic appearance without requiring complex photo editing software.">
+أداة تحويل الصور إلى أبيض وأسود هي وسيلة بسيطة لتحويل الصور الملونة إلى صور بتدرجات الرمادي، بحيث تختفي الألوان الأصلية وتظهر درجات مختلفة من الأسود والرمادي والأبيض. تساعدك الأداة على الحصول على مظهر كلاسيكي للصورة دون الحاجة إلى برامج تحرير صور معقدة.
+</p>
+
+<p data-ar="يمكنك استخدام الأداة مباشرة من المتصفح، سواء كنت تستخدم جهاز كمبيوتر أو هاتفًا محمولًا. اختر الصورة، نفّذ التحويل، ثم شاهد النتيجة واحفظها على جهازك."
+data-en="You can use the tool directly in your browser on a computer or mobile device. Select your image, convert it, preview the result, and save it to your device.">
+يمكنك استخدام الأداة مباشرة من المتصفح، سواء كنت تستخدم جهاز كمبيوتر أو هاتفًا محمولًا. اختر الصورة، نفّذ التحويل، ثم شاهد النتيجة واحفظها على جهازك.
+</p>
+
+</section>
+
+<!-- المميزات -->
+
+<section class="panel content-section">
+
+<h2 data-ar="مميزات أداة تحويل الصور"
+data-en="Image Converter Features">
+مميزات أداة تحويل الصور
+</h2>
+
+<ul>
+<li data-ar="مجانية وسهلة الاستخدام دون الحاجة إلى إنشاء حساب."
+data-en="Free and easy to use without creating an account.">
+مجانية وسهلة الاستخدام دون الحاجة إلى إنشاء حساب.
+</li>
+
+<li data-ar="تحويل الصور الملونة إلى تدرجات الرمادي بسرعة."
+data-en="Quickly convert color images into grayscale.">
+تحويل الصور الملونة إلى تدرجات الرمادي بسرعة.
+</li>
+
+<li data-ar="دعم الصور بصيغ JPG وPNG وWebP."
+data-en="Supports JPG, PNG, and WebP image formats.">
+دعم الصور بصيغ JPG وPNG وWebP.
+</li>
+
+<li data-ar="عرض أبعاد الصورة وحجم الملف الأصلي والجديد."
+data-en="Displays image dimensions and original and converted file sizes.">
+عرض أبعاد الصورة وحجم الملف الأصلي والجديد.
+</li>
+
+<li data-ar="معاينة الصورة الناتجة قبل تنزيلها."
+data-en="Preview the converted image before downloading it.">
+معاينة الصورة الناتجة قبل تنزيلها.
+</li>
+
+<li data-ar="لا تحتاج إلى تثبيت برامج إضافية."
+data-en="No additional software installation is required.">
+لا تحتاج إلى تثبيت برامج إضافية.
+</li>
+
+<li data-ar="تعمل على المتصفحات الحديثة في الكمبيوتر والهواتف."
+data-en="Works in modern browsers on computers and mobile devices.">
+تعمل على المتصفحات الحديثة في الكمبيوتر والهواتف.
+</li>
+</ul>
+
+</section>
+
+<!-- طريقة الاستخدام -->
+
+<section class="panel content-section">
+
+<h2 data-ar="كيفية تحويل الصورة إلى أبيض وأسود"
+data-en="How to Convert an Image to Black and White">
+كيفية تحويل الصورة إلى أبيض وأسود
+</h2>
+
+<ol>
+<li data-ar="اضغط على اختيار صورة من جهازك."
+data-en="Click the image selection field.">
+اضغط على اختيار صورة من جهازك.
+</li>
+
+<li data-ar="حدد الصورة التي تريد تحويلها من ملفات جهازك."
+data-en="Select the image you want to convert from your device.">
+حدد الصورة التي تريد تحويلها من ملفات جهازك.
+</li>
+
+<li data-ar="انتظر حتى يتم فتح الصورة وتجهيزها."
+data-en="Wait for the image to load and become ready.">
+انتظر حتى يتم فتح الصورة وتجهيزها.
+</li>
+
+<li data-ar="اضغط على زر تحويل الصورة إلى أبيض وأسود."
+data-en="Click the Convert to Black and White button.">
+اضغط على زر تحويل الصورة إلى أبيض وأسود.
+</li>
+
+<li data-ar="انتظر انتهاء المعالجة حتى تظهر الصورة الجديدة."
+data-en="Wait for processing to finish and the new image to appear.">
+انتظر انتهاء المعالجة حتى تظهر الصورة الجديدة.
+</li>
+
+<li data-ar="راجع المعاينة ومعلومات الصورة، ثم اضغط على تنزيل الصورة الجديدة."
+data-en="Review the preview and image details, then click Download New Image.">
+راجع المعاينة ومعلومات الصورة، ثم اضغط على تنزيل الصورة الجديدة.
+</li>
+</ol>
+
+<div class="note">
+<p data-ar="نصيحة: احتفظ بنسخة من الصورة الملونة الأصلية إذا كنت تريد استخدامها مرة أخرى؛ لأن الصورة التي يتم تنزيلها هي نسخة جديدة بالأبيض والأسود."
+data-en="Tip: Keep a copy of your original color image if you may need it later. The downloaded file is a new black and white version.">
+نصيحة: احتفظ بنسخة من الصورة الملونة الأصلية إذا كنت تريد استخدامها مرة أخرى؛ لأن الصورة التي يتم تنزيلها هي نسخة جديدة بالأبيض والأسود.
+</p>
+</div>
+
+</section>
+
+<!-- الصيغ المدعومة -->
+
+<section class="panel content-section">
+
+<h2 data-ar="ما صيغ الصور المدعومة؟"
+data-en="Which Image Formats Are Supported?">
+ما صيغ الصور المدعومة؟
+</h2>
+
+<h3>JPG / JPEG</h3>
+<p data-ar="صيغة شائعة للصور الفوتوغرافية، وتناسب الصور التي تريد مشاركتها أو استخدامها على المواقع والتطبيقات."
+data-en="A common format for photographs, suitable for sharing and use on websites and applications.">
+صيغة شائعة للصور الفوتوغرافية، وتناسب الصور التي تريد مشاركتها أو استخدامها على المواقع والتطبيقات.
+</p>
+
+<h3>PNG</h3>
+<p data-ar="صيغة مناسبة للرسومات والصور التي تحتاج إلى الاحتفاظ بالشفافية. تحافظ الأداة على معلومات الشفافية أثناء تحويل درجات الألوان."
+data-en="A suitable format for graphics and images that need transparency. The tool preserves transparency information while converting the color channels to grayscale.">
+صيغة مناسبة للرسومات والصور التي تحتاج إلى الاحتفاظ بالشفافية. تحافظ الأداة على معلومات الشفافية أثناء تحويل درجات الألوان.
+</p>
+
+<h3>WebP</h3>
+<p data-ar="صيغة حديثة تستخدم كثيرًا على مواقع الويب، ويمكن تحويلها إلى أبيض وأسود مع الاحتفاظ بصيغة WebP عندما يدعم المتصفح ذلك."
+data-en="A modern format commonly used on websites. It can be converted to grayscale while retaining WebP format when supported by the browser.">
+صيغة حديثة تستخدم كثيرًا على مواقع الويب، ويمكن تحويلها إلى أبيض وأسود مع الاحتفاظ بصيغة WebP عندما يدعم المتصفح ذلك.
+</p>
+
+</section>
+
+<!-- الاستخدامات -->
+
+<section class="panel content-section">
+
+<h2 data-ar="متى تحتاج إلى تحويل الصور إلى أبيض وأسود؟"
+data-en="When Should You Convert Images to Black and White?">
+متى تحتاج إلى تحويل الصور إلى أبيض وأسود؟
+</h2>
+
+<ul>
+<li data-ar="إنشاء صور بطابع كلاسيكي أو فني."
+data-en="Creating classic or artistic-looking photos.">
+إنشاء صور بطابع كلاسيكي أو فني.
+</li>
+
+<li data-ar="تجهيز صور مناسبة للتصميمات والمطبوعات."
+data-en="Preparing images for designs and print projects.">
+تجهيز صور مناسبة للتصميمات والمطبوعات.
+</li>
+
+<li data-ar="إبراز التفاصيل والظلال في بعض الصور."
+data-en="Emphasizing details and shadows in certain images.">
+إبراز التفاصيل والظلال في بعض الصور.
+</li>
+
+<li data-ar="إنشاء صور شخصية أو صور فنية بالأبيض والأسود."
+data-en="Creating black and white portraits or artistic images.">
+إنشاء black and white portraits أو صور فنية بالأبيض والأسود.
+</li>
+
+<li data-ar="تجهيز صور لمشروعات مدرسية أو عروض تقديمية."
+data-en="Preparing images for school projects or presentations.">
+تجهيز صور لمشروعات مدرسية أو عروض تقديمية.
+</li>
+</ul>
+
+</section>
+
+<!-- طريقة العمل والخصوصية -->
+
+<section class="panel content-section">
+
+<h2 data-ar="كيف تعمل أداة تحويل الصور؟"
+data-en="How Does the Image Converter Work?">
+كيف تعمل أداة تحويل الصور؟
+</h2>
+
+<p data-ar="تعتمد الأداة على تقنيات JavaScript وCanvas الموجودة في المتصفحات الحديثة. بعد اختيار الصورة، يقرأ المتصفح الملف ويعرضه داخل مساحة معالجة مؤقتة، ثم تُحسب درجة الرمادي لكل بكسل باستخدام قيم الألوان الأساسية."
+data-en="The tool uses JavaScript and the Canvas technology available in modern browsers. After you select an image, the browser loads it into a temporary processing area and calculates a grayscale value for each pixel using the original color values.">
+تعتمد الأداة على تقنيات JavaScript وCanvas الموجودة في المتصفحات الحديثة. بعد اختيار الصورة، يقرأ المتصفح الملف ويعرضه داخل مساحة معالجة مؤقتة، ثم تُحسب درجة الرمادي لكل بكسل باستخدام قيم الألوان الأساسية.
+</p>
+
+<p data-ar="تستخدم الأداة معادلة شائعة لتحويل الألوان إلى درجات رمادية، وتعطي وزنًا مختلفًا للأحمر والأخضر والأزرق بما يتناسب مع مساهمة كل لون في السطوع الظاهري. بعد ذلك تُنشأ صورة جديدة وتُجهّز للتنزيل."
+data-en="The tool uses a common grayscale conversion formula that assigns different weights to red, green, and blue according to their contribution to perceived brightness. A new image is then created and prepared for download.">
+تستخدم الأداة معادلة شائعة لتحويل الألوان إلى درجات رمادية، وتعطي وزنًا مختلفًا للأحمر والأخضر والأزرق بما يتناسب مع مساهمة كل لون في السطوع الظاهري. بعد ذلك تُنشأ صورة جديدة وتُجهّز للتنزيل.
+</p>
+
+<h3 data-ar="خصوصية الصور"
+data-en="Image Privacy">
+خصوصية الصور
+</h3>
+
+<p data-ar="تتم معالجة الصورة داخل متصفحك باستخدام إمكانيات جهازك، ولا يتطلب تنفيذ التحويل رفع ملف الصورة إلى خادم الموقع. تظل النسخة الأصلية على جهازك، وتُنشأ نسخة جديدة لتنزيلها بعد التحويل."
+data-en="Image processing takes place in your browser using your device's capabilities. The conversion does not require uploading the image file to the website's server. Your original file remains on your device, and a new version is created for download.">
+تتم معالجة الصورة داخل متصفحك باستخدام إمكانيات جهازك، ولا يتطلب تنفيذ التحويل رفع ملف الصورة إلى خادم الموقع. تظل النسخة الأصلية على جهازك، وتُنشأ نسخة جديدة لتنزيلها بعد التحويل.
+</p>
+
+<p data-ar="قد تستخدم خدمات التحليلات مثل Google Analytics بيانات استخدام الموقع، لكنها منفصلة عن عملية معالجة الصورة نفسها."
+data-en="Website analytics services such as Google Analytics may collect website usage data, separately from the image processing itself.">
+قد تستخدم خدمات التحليلات مثل Google Analytics بيانات استخدام الموقع، لكنها منفصلة عن عملية معالجة الصورة نفسها.
+</p>
+
+</section>
+
+<!-- نصائح وقيود -->
+
+<section class="panel content-section">
+
+<h2 data-ar="نصائح للحصول على نتيجة أفضل"
+data-en="Tips for Better Results">
+نصائح للحصول على نتيجة أفضل
+</h2>
+
+<ul>
+<li data-ar="استخدم صورة واضحة وعالية الجودة للحصول على تفاصيل أفضل."
+data-en="Use a clear, high-quality image for better detail.">
+استخدم صورة واضحة وعالية الجودة للحصول على تفاصيل أفضل.
+</li>
+
+<li data-ar="اختر الصورة الأصلية بدلًا من نسخة منخفضة الجودة كلما أمكن."
+data-en="Choose the original image rather than a low-quality copy whenever possible.">
+اختر الصورة الأصلية بدلًا من نسخة منخفضة الجودة كلما أمكن.
+</li>
+
+<li data-ar="راجع الصورة بعد التحويل للتأكد من ظهور التفاصيل المهمة."
+data-en="Review the converted image to make sure important details remain visible.">
+راجع الصورة بعد التحويل للتأكد من ظهور التفاصيل المهمة.
+</li>
+
+<li data-ar="احتفظ بالنسخة الملونة إذا كنت قد تحتاج إلى تعديلها لاحقًا."
+data-en="Keep the color version if you may want to edit it later.">
+احتفظ بالنسخة الملونة إذا كنت قد تحتاج إلى تعديلها لاحقًا.
+</li>
+</ul>
+
+<h3 data-ar="قيود يجب معرفتها"
+data-en="Limitations to Know">
+قيود يجب معرفتها
+</h3>
+
+<ul>
+<li data-ar="تدعم الأداة ملفات JPG وPNG وWebP فقط."
+data-en="The tool supports JPG, PNG, and WebP files only.">
+تدعم الأداة ملفات JPG وPNG وWebP فقط.
+</li>
+
+<li data-ar="تعالج الأداة صورة واحدة في كل مرة."
+data-en="The tool processes one image at a time.">
+تعالج الأداة صورة واحدة في كل مرة.
+</li>
+
+<li data-ar="قد تستغرق الصور الكبيرة وقتًا أطول حسب سرعة جهازك وذاكرته."
+data-en="Large images may take longer depending on your device speed and available memory.">
+قد تستغرق الصور الكبيرة وقتًا أطول حسب سرعة جهازك وذاكرته.
+</li>
+
+<li data-ar="قد تختلف صيغة الملف الناتج في بعض الحالات حسب دعم المتصفح لصيغ الصور."
+data-en="The output format may differ in some cases depending on browser format support.">
+قد تختلف صيغة الملف الناتج في بعض الحالات حسب دعم المتصفح لصيغ الصور.
+</li>
+
+<li data-ar="التحويل إلى تدرجات الرمادي يزيل الألوان من النسخة الجديدة، ولا يوفر إعدادات منفصلة للتحكم في التباين أو السطوع."
+data-en="Grayscale conversion removes color from the new version and does not provide separate contrast or brightness controls.">
+التحويل إلى تدرجات الرمادي يزيل الألوان من النسخة الجديدة، ولا يوفر إعدادات منفصلة للتحكم في التباين أو السطوع.
+</li>
+</ul>
+
+</section>
+
+<!-- الأسئلة الشائعة -->
+
+<section class="panel content-section">
+
+<h2 data-ar="الأسئلة الشائعة حول تحويل الصور إلى أبيض وأسود"
+data-en="Frequently Asked Questions">
+الأسئلة الشائعة حول تحويل الصور إلى أبيض وأسود
+</h2>
+
+<div class="faq-item">
+<h3 data-ar="1. هل أداة تحويل الصور إلى أبيض وأسود مجانية؟"
+data-en="1. Is the black and white image converter free?">
+1. هل أداة تحويل الصور إلى أبيض وأسود مجانية؟
+</h3>
+<p data-ar="نعم، يمكنك استخدام الأداة مجانًا لتحويل الصور إلى تدرجات الرمادي وتنزيل النتيجة دون الحاجة إلى إنشاء حساب."
+data-en="Yes. You can use the tool for free to convert images to grayscale and download the result without creating an account.">
+نعم، يمكنك استخدام الأداة مجانًا لتحويل الصور إلى تدرجات الرمادي وتنزيل النتيجة دون الحاجة إلى إنشاء حساب.
+</p>
+</div>
+
+<div class="faq-item">
+<h3 data-ar="2. ما صيغ الصور التي يمكن تحويلها؟"
+data-en="2. Which image formats can I convert?">
+2. ما صيغ الصور التي يمكن تحويلها؟
+</h3>
+<p data-ar="تدعم الأداة صيغ JPG وJPEG وPNG وWebP."
+data-en="The tool supports JPG, JPEG, PNG, and WebP formats.">
+تدعم الأداة صيغ JPG وJPEG وPNG وWebP.
+</p>
+</div>
+
+<div class="faq-item">
+<h3 data-ar="3. هل أحتاج إلى تثبيت برنامج؟"
+data-en="3. Do I need to install software?">
+3. هل أحتاج إلى تثبيت برنامج؟
+</h3>
+<p data-ar="لا، تعمل الأداة مباشرة داخل متصفح الإنترنت ولا تحتاج إلى تثبيت برنامج إضافي."
+data-en="No. The tool works directly in your web browser and does not require additional software.">
+لا، تعمل الأداة مباشرة داخل متصفح الإنترنت ولا تحتاج إلى تثبيت برنامج إضافي.
+</p>
+</div>
+
+<div class="faq-item">
+<h3 data-ar="4. هل يتم رفع صوري إلى الموقع؟"
+data-en="4. Are my images uploaded to the website?">
+4. هل يتم رفع صوري إلى الموقع؟
+</h3>
+<p data-ar="لا يتطلب التحويل رفع الصورة إلى خادم الموقع؛ تتم معالجتها داخل المتصفح على جهازك."
+data-en="The conversion does not require uploading your image to the website's server. Processing takes place locally in your browser.">
+لا يتطلب التحويل رفع الصورة إلى خادم الموقع؛ تتم معالجتها داخل المتصفح على جهازك.
+</p>
+</div>
+
+<div class="faq-item">
+<h3 data-ar="5. هل يمكنني استخدام الأداة على الهاتف؟"
+data-en="5. Can I use the tool on my phone?">
+5. هل يمكنني استخدام الأداة على الهاتف؟
+</h3>
+<p data-ar="نعم، يمكنك استخدامها على الهواتف والأجهزة اللوحية التي تعمل بمتصفح حديث يدعم JavaScript وCanvas."
+data-en="Yes. You can use it on phones and tablets with a modern browser that supports JavaScript and Canvas.">
+نعم، يمكنك استخدامها على الهواتف والأجهزة اللوحية التي تعمل بمتصفح حديث يدعم JavaScript وCanvas.
+</p>
+</div>
+
+<div class="faq-item">
+<h3 data-ar="6. هل تحتفظ الصورة الجديدة بالشفافية؟"
+data-en="6. Does the converted image preserve transparency?">
+6. هل تحتفظ الصورة الجديدة بالشفافية؟
+</h3>
+<p data-ar="عند تحويل صور PNG وWebP، تحافظ المعالجة على قناة الشفافية الموجودة في الصورة الأصلية. أما JPG فلا يدعم الشفافية."
+data-en="When converting PNG and WebP images, the processing preserves the original transparency channel. JPG does not support transparency.">
+عند تحويل صور PNG وWebP، تحافظ المعالجة على قناة الشفافية الموجودة في الصورة الأصلية. أما JPG فلا يدعم الشفافية.
+</p>
+</div>
+
+<div class="faq-item">
+<h3 data-ar="7. هل تتغير أبعاد الصورة بعد التحويل؟"
+data-en="7. Do image dimensions change after conversion?">
+7. هل تتغير أبعاد الصورة بعد التحويل؟
+</h3>
+<p data-ar="لا، تحافظ الأداة على عرض الصورة وارتفاعها الأصليين، وتغيّر الألوان فقط إلى تدرجات الرمادي."
+data-en="No. The tool keeps the original image width and height and changes only the colors to grayscale.">
+لا، تحافظ الأداة على عرض الصورة وارتفاعها الأصليين، وتغيّر الألوان فقط إلى تدرجات الرمادي.
+</p>
+</div>
+
+<div class="faq-item">
+<h3 data-ar="8. لماذا قد يستغرق تحويل بعض الصور وقتًا أطول؟"
+data-en="8. Why do some images take longer to convert?">
+8. لماذا قد يستغرق تحويل بعض الصور وقتًا أطول؟
+</h3>
+<p data-ar="الصور ذات الأبعاد الكبيرة تحتوي على عدد أكبر من البكسلات، ولذلك قد تحتاج إلى وقت وذاكرة أكبر أثناء المعالجة. يعتمد ذلك على إمكانيات جهازك والمتصفح."
+data-en="Images with large dimensions contain more pixels and may require more processing time and memory. This depends on your device and browser capabilities.">
+الصور ذات الأبعاد الكبيرة تحتوي على عدد أكبر من البكسلات، ولذلك قد تحتاج إلى وقت وذاكرة أكبر أثناء المعالجة. يعتمد ذلك على إمكانيات جهازك والمتصفح.
+</p>
+</div>
+
+</section>
+
+<!-- أدوات ذات صلة -->
+
+<section class="panel content-section">
+
+<h2 data-ar="اكتشف أدوات الصور الأخرى"
+data-en="Explore More Image Tools">
+اكتشف أدوات الصور الأخرى
+</h2>
+
+<p data-ar="يمكنك استخدام أدوات أخرى من سوق الأدوات لتجهيز صورك وتعديلها حسب احتياجاتك."
+data-en="Explore other Tools Market utilities to prepare and edit your images according to your needs.">
+يمكنك استخدام أدوات أخرى من سوق الأدوات لتجهيز صورك وتعديلها حسب احتياجاتك.
+</p>
+
+<div class="content-links">
+
+<a href="image-compressor.html"
+data-ar="ضغط الصور"
+data-en="Image Compressor">ضغط الصور</a>
+
+<a href="image-resizer.html"
+data-ar="تغيير حجم الصور"
+data-en="Image Resizer">تغيير حجم الصور</a>
+
+<a href="image-converter.html"
+data-ar="تحويل صيغ الصور"
+data-en="Image Format Converter">تحويل صيغ الصور</a>
+
+<a href="image-to-pdf.html"
+data-ar="تحويل الصور إلى PDF"
+data-en="Image to PDF">تحويل الصور إلى PDF</a>
+
+<a href="index.html"
+data-ar="الصفحة الرئيسية"
+data-en="Home Page">الصفحة الرئيسية</a>
+
+</div>
+
 </section>
 
 <footer
@@ -254,7 +897,9 @@ function updatePageLanguage() {
 }
 
 function formatBytes(bytes) {
-    if (bytes < 1024) return bytes + t(' بايت', ' bytes');
+    if (bytes < 1024) {
+        return bytes + t(' بايت', ' bytes');
+    }
 
     if (bytes < 1024 * 1024) {
         return (bytes / 1024).toFixed(2) + t(' كيلوبايت', ' KB');
@@ -264,20 +909,30 @@ function formatBytes(bytes) {
 }
 
 function clearOutput() {
-    if (outputUrl) URL.revokeObjectURL(outputUrl);
+    if (outputUrl) {
+        URL.revokeObjectURL(outputUrl);
+    }
 
     outputUrl = '';
     previewImage.removeAttribute('src');
     downloadLink.removeAttribute('href');
+    downloadLink.removeAttribute('download');
+    resultInfo.textContent = '';
     resultPanel.hidden = true;
 }
 
 imageInput.addEventListener('change', function() {
     clearOutput();
+
     editor.hidden = true;
     convertButton.disabled = true;
     sourceImage = null;
     originalFile = null;
+
+    if (sourceUrl) {
+        URL.revokeObjectURL(sourceUrl);
+        sourceUrl = '';
+    }
 
     const file = imageInput.files[0];
 
@@ -289,7 +944,11 @@ imageInput.addEventListener('change', function() {
         return;
     }
 
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    const allowedTypes = [
+        'image/jpeg',
+        'image/png',
+        'image/webp'
+    ];
 
     if (!allowedTypes.includes(file.type)) {
         fileInfo.textContent = t(
@@ -305,8 +964,6 @@ imageInput.addEventListener('change', function() {
         'جاري فتح الصورة...',
         'Loading image...'
     );
-
-    if (sourceUrl) URL.revokeObjectURL(sourceUrl);
 
     sourceUrl = URL.createObjectURL(file);
 
@@ -337,9 +994,13 @@ imageInput.addEventListener('change', function() {
             'Could not open the image. Try choosing another image.'
         );
 
-        if (sourceUrl) URL.revokeObjectURL(sourceUrl);
+        if (sourceUrl) {
+            URL.revokeObjectURL(sourceUrl);
+        }
 
         sourceUrl = '';
+        sourceImage = null;
+        originalFile = null;
         imageInput.value = '';
     };
 
@@ -370,12 +1031,17 @@ convertButton.addEventListener('click', function() {
 
         const context = canvas.getContext('2d');
 
-        if (!context) throw new Error('canvas');
+        if (!context) {
+            throw new Error('Canvas context unavailable');
+        }
 
         context.drawImage(sourceImage, 0, 0);
 
         const imageData = context.getImageData(
-            0, 0, canvas.width, canvas.height
+            0,
+            0,
+            canvas.width,
+            canvas.height
         );
 
         const pixels = imageData.data;
@@ -390,15 +1056,24 @@ convertButton.addEventListener('click', function() {
             pixels[i] = gray;
             pixels[i + 1] = gray;
             pixels[i + 2] = gray;
+
+            // يتم الاحتفاظ بقيمة الشفافية الأصلية في pixels[i + 3].
         }
 
         context.putImageData(imageData, 0, 0);
 
         let outputType = originalFile.type;
 
-        if (!['image/jpeg', 'image/png', 'image/webp'].includes(outputType)) {
+        if (![
+            'image/jpeg',
+            'image/png',
+            'image/webp'
+        ].includes(outputType)) {
             outputType = 'image/png';
         }
+
+        const currentImage = sourceImage;
+        const currentFile = originalFile;
 
         canvas.toBlob(function(blob) {
             convertButton.disabled = false;
@@ -411,17 +1086,22 @@ convertButton.addEventListener('click', function() {
                 return;
             }
 
+            const actualType = blob.type || outputType;
+
             let extension = 'jpg';
 
-            if (blob.type === 'image/png') extension = 'png';
-            if (blob.type === 'image/webp') extension = 'webp';
+            if (actualType === 'image/png') {
+                extension = 'png';
+            } else if (actualType === 'image/webp') {
+                extension = 'webp';
+            }
 
             clearOutput();
 
             outputUrl = URL.createObjectURL(blob);
             previewImage.src = outputUrl;
 
-            let baseName = originalFile.name;
+            let baseName = currentFile.name;
             const dotPosition = baseName.lastIndexOf('.');
 
             if (dotPosition > 0) {
@@ -433,10 +1113,10 @@ convertButton.addEventListener('click', function() {
 
             resultInfo.textContent =
                 t('الأبعاد: ', 'Dimensions: ') +
-                sourceImage.naturalWidth + ' × ' +
-                sourceImage.naturalHeight +
+                currentImage.naturalWidth + ' × ' +
+                currentImage.naturalHeight +
                 t(' بكسل. حجم الصورة الأصلية: ', ' pixels. Original image size: ') +
-                formatBytes(originalFile.size) +
+                formatBytes(currentFile.size) +
                 t('. حجم الصورة الجديدة: ', '. New image size: ') +
                 formatBytes(blob.size) + '.';
 
@@ -471,15 +1151,16 @@ fileInfo.textContent = t(
     'Supported formats: JPG, PNG, and WebP.'
 );
 
-message.textContent = t(
-    'اضغط الزر لتحويل الصورة إلى أبيض وأسود.',
-    'Click the button to convert the image to black and white.'
-);
-
 window.addEventListener('beforeunload', function() {
-    if (sourceUrl) URL.revokeObjectURL(sourceUrl);
-    if (outputUrl) URL.revokeObjectURL(outputUrl);
+    if (sourceUrl) {
+        URL.revokeObjectURL(sourceUrl);
+    }
+
+    if (outputUrl) {
+        URL.revokeObjectURL(outputUrl);
+    }
 });
 </script>
+
 </body>
 </html>
