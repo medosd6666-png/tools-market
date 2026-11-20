@@ -465,6 +465,37 @@ body {
     text-align: center;
 }
 
+/* روابط الصفحات التعريفية أسفل الموقع */
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 12px auto 14px;
+    padding: 0 10px;
+}
+
+.footer-links a {
+    color: #475569;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer-links a:focus-visible {
+    outline: 2px solid #0284c7;
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
 /* تنسيق الموبايل */
 @media (max-width: 600px) {
     body {
@@ -535,6 +566,15 @@ body {
 
     .seo-content h2 {
         font-size: 19px;
+    }
+
+    .footer-links {
+        gap: 9px 16px;
+        margin: 10px auto 12px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
     }
 }
 </style>
@@ -801,6 +841,25 @@ gtag('config', 'G-NZ00TSPTWC');
        data-en="Tools Market | Free and Easy Tools for Everyone">
         سوق الأدوات | أدوات مجانية وسهلة للجميع
     </p>
+
+    <!-- روابط الصفحات التعريفية -->
+    <nav class="footer-links" aria-label="روابط الموقع">
+        <a href="about-us.html"
+           data-ar="من نحن"
+           data-en="About Us">من نحن</a>
+
+        <a href="contact-us.html"
+           data-ar="اتصل بنا"
+           data-en="Contact Us">اتصل بنا</a>
+
+        <a href="privacy-policy.html"
+           data-ar="سياسة الخصوصية"
+           data-en="Privacy Policy">سياسة الخصوصية</a>
+
+        <a href="terms-of-use.html"
+           data-ar="شروط الاستخدام"
+           data-en="Terms of Use">شروط الاستخدام</a>
+    </nav>
 </footer>
 
 </div>
