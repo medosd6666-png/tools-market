@@ -455,29 +455,45 @@ body {
     margin-bottom: 5px;
 }
 
-/* تذييل الصفحة */
+/* الشريط الأسود السفلي */
 .site-footer {
-    margin: 25px auto 5px;
-    padding: 18px 10px;
-    color: #64748b;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    margin-top: 35px;
+    margin-bottom: -24px;
+    padding: 28px 16px 22px;
+    background: #111827;
+    color: #ffffff;
     font-size: 13px;
     line-height: 1.8;
     text-align: center;
+    border-top: 3px solid #334155;
 }
 
-/* روابط الصفحات التعريفية أسفل الموقع */
+/* اسم الموقع داخل الشريط */
+.footer-brand {
+    margin: 0 0 15px;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+/* روابط الصفحات الأربع */
 .footer-links {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px 22px;
-    margin: 12px auto 14px;
+    gap: 10px 24px;
+    margin: 0 auto 16px;
     padding: 0 10px;
 }
 
 .footer-links a {
-    color: #475569;
+    color: #e2e8f0;
     text-decoration: none;
     font-size: 13px;
     font-weight: 600;
@@ -485,15 +501,24 @@ body {
 }
 
 .footer-links a:hover {
-    color: #0284c7;
+    color: #38bdf8;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
 
 .footer-links a:focus-visible {
-    outline: 2px solid #0284c7;
+    outline: 2px solid #38bdf8;
     outline-offset: 4px;
     border-radius: 3px;
+}
+
+/* حقوق النشر */
+.footer-copyright {
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+    font-size: 12px;
 }
 
 /* تنسيق الموبايل */
@@ -568,13 +593,28 @@ body {
         font-size: 19px;
     }
 
+    .site-footer {
+        padding: 24px 12px 18px;
+        margin-top: 28px;
+        margin-bottom: -10px;
+    }
+
+    .footer-brand {
+        font-size: 19px;
+        margin-bottom: 13px;
+    }
+
     .footer-links {
-        gap: 9px 16px;
-        margin: 10px auto 12px;
+        gap: 12px 16px;
+        margin-bottom: 14px;
     }
 
     .footer-links a {
         font-size: 12px;
+    }
+
+    .footer-copyright {
+        font-size: 11px;
     }
 }
 </style>
@@ -836,13 +876,15 @@ gtag('config', 'G-NZ00TSPTWC');
 
 </section>
 
+<!-- الشريط الأسود السفلي -->
 <footer class="site-footer">
-    <p data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
-       data-en="Tools Market | Free and Easy Tools for Everyone">
-        سوق الأدوات | أدوات مجانية وسهلة للجميع
+
+    <p class="footer-brand"
+       data-ar="سوق الأدوات | Tools Market"
+       data-en="Tools Market | سوق الأدوات">
+        سوق الأدوات | Tools Market
     </p>
 
-    <!-- روابط الصفحات التعريفية -->
     <nav class="footer-links" aria-label="روابط الموقع">
         <a href="about-us.html"
            data-ar="من نحن"
@@ -860,6 +902,13 @@ gtag('config', 'G-NZ00TSPTWC');
            data-ar="شروط الاستخدام"
            data-en="Terms of Use">شروط الاستخدام</a>
     </nav>
+
+    <p class="footer-copyright"
+       data-ar="© 2026 سوق الأدوات. جميع الحقوق محفوظة."
+       data-en="© 2026 Tools Market. All rights reserved.">
+        © 2026 سوق الأدوات. جميع الحقوق محفوظة.
+    </p>
+
 </footer>
 
 </div>
