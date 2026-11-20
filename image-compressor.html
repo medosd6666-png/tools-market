@@ -1,41 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ضغط الصور أونلاين مجانًا | سوق الأدوات</title>
-<meta name="description" content="اضغط الصور أونلاين وقلّل حجم ملفات الصور بسهولة قبل إرسالها أو رفعها، باستخدام أداة ضغط الصور المجانية من سوق الأدوات.">
+
+<title>ضغط الصور أونلاين مجانًا وتقليل حجمها | سوق الأدوات</title>
+<meta name="description" content="اضغط الصور أونلاين مجانًا وقلل حجم JPG وPNG وWebP بسهولة. استخدم أداة ضغط الصور لتقليل حجم الصور قبل رفعها أو مشاركتها مع إمكانية تنزيل النتيجة.">
+<meta name="keywords" content="ضغط الصور, ضغط الصور أونلاين, تقليل حجم الصور, تصغير حجم الصورة, image compressor, compress images online, reduce image size, JPG compressor, PNG compressor">
 <meta name="robots" content="index, follow">
+<meta name="author" content="سوق الأدوات">
+<meta name="theme-color" content="#1769d2">
+
 <link rel="canonical" href="https://medosd6666-png.github.io/tools-market/image-compressor.html">
+
 <meta property="og:title" content="ضغط الصور أونلاين مجانًا | سوق الأدوات">
-<meta property="og:description" content="اضغط الصور أونلاين وقلّل حجم ملفات الصور بسهولة قبل إرسالها أو رفعها، باستخدام أداة ضغط الصور المجانية من سوق الأدوات.">
+<meta property="og:description" content="قلل حجم صورك بسهولة باستخدام أداة ضغط الصور المجانية. اختر الصورة واضغطها ثم نزّل النتيجة مباشرة.">
 <meta property="og:url" content="https://medosd6666-png.github.io/tools-market/image-compressor.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="سوق الأدوات">
 
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ضغط الصور أونلاين مجانًا | سوق الأدوات">
+<meta name="twitter:description" content="أداة مجانية لتقليل حجم الصور بسهولة من المتصفح.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "أداة ضغط الصور - Image Compressor",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript and a modern web browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "أداة مجانية لضغط الصور وتقليل حجمها باستخدام المتصفح، مع إمكانية تنزيل الصورة الناتجة بصيغة JPEG.",
+  "url": "https://medosd6666-png.github.io/tools-market/image-compressor.html",
+  "isAccessibleForFree": true
+}
+</script>
 
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 html {
     min-height: 100%;
     background: linear-gradient(135deg, #eaf4ff, #f4f0ff);
+    scroll-behavior: smooth;
 }
 
 body {
     width: 92%;
-    max-width: 700px;
-    margin: 45px auto;
-    padding: 34px;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 30px;
     background: #ffffff;
     border: 1px solid #dbe7f3;
     border-radius: 22px;
     box-shadow: 0 12px 35px rgba(30, 64, 100, 0.12);
     font-family: Tahoma, Arial, sans-serif;
     color: #1f2937;
+    line-height: 1.9;
+}
+
+.tool-header {
     text-align: center;
-    line-height: 1.8;
+    margin-bottom: 28px;
 }
 
 h1 {
@@ -44,17 +80,33 @@ h1 {
     font-size: 32px;
 }
 
-p {
+.tool-intro {
     font-size: 17px;
     color: #4b5563;
+    margin: 0;
+}
+
+.tool-box {
+    padding: 25px;
+    margin: 25px 0 40px;
+    background: #f8fbff;
+    border: 1px solid #dbe7f3;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.tool-box h2 {
+    margin-top: 0;
+    color: #1454a3;
+    font-size: 23px;
 }
 
 input[type="file"] {
     display: block;
     width: 100%;
-    margin: 24px auto;
+    margin: 22px auto;
     padding: 14px;
-    background: #f8fafc;
+    background: #ffffff;
     border: 1px dashed #94a3b8;
     border-radius: 12px;
     font: inherit;
@@ -69,6 +121,7 @@ button {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
 button:hover {
@@ -84,6 +137,7 @@ button:disabled {
     margin-top: 22px;
     font-weight: bold;
     overflow-wrap: anywhere;
+    color: #334155;
 }
 
 #result a {
@@ -101,59 +155,537 @@ button:disabled {
     background: #bae6fd;
 }
 
-.home {
-    display: inline-block;
-    margin-top: 24px;
-    color: #1769aa;
-    text-decoration: none;
+.result-details {
+    margin-top: 15px;
+    padding: 14px;
+    background: #ffffff;
+    border: 1px solid #dbe7f3;
+    border-radius: 12px;
+    font-weight: normal;
+    text-align: start;
 }
 
-@media (max-width: 480px) {
+.result-details p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.home {
+    display: inline-block;
+    margin-top: 22px;
+    color: #1769aa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home:hover {
+    text-decoration: underline;
+}
+
+.content-section {
+    margin-top: 38px;
+    text-align: start;
+}
+
+.content-section h2 {
+    color: #1454a3;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.content-section h3 {
+    color: #245b91;
+    font-size: 19px;
+    margin-top: 22px;
+}
+
+.content-section p,
+.content-section li {
+    font-size: 16px;
+    color: #4b5563;
+}
+
+.content-section ul,
+.content-section ol {
+    padding-inline-start: 25px;
+}
+
+.content-section li {
+    margin-bottom: 8px;
+}
+
+.faq-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-item h3 {
+    margin: 0 0 7px;
+    font-size: 17px;
+}
+
+.faq-item p {
+    margin: 0;
+}
+
+.related-links a {
+    color: #1769aa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.related-links a:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
     body {
-        margin: 18px auto;
-        padding: 22px 16px;
+        width: 94%;
+        margin: 15px auto;
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .tool-box {
+        padding: 18px 13px;
     }
 
     button {
         width: 100%;
     }
+
+    .content-section h2 {
+        font-size: 21px;
+    }
 }
 </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NZ00TSPTWC');
-    </script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
+</script>
+
 </head>
 
 <body>
 
-<h1 data-ar="أداة ضغط الصور" data-en="Image Compressor">
-أداة ضغط الصور
-</h1>
+<header class="tool-header">
+    <h1 data-ar="أداة ضغط الصور أونلاين مجانًا"
+        data-en="Free Online Image Compressor">
+        أداة ضغط الصور أونلاين مجانًا
+    </h1>
 
-<p data-ar="قلل حجم صورك بسهولة." data-en="Reduce your image file sizes easily.">
-قلل حجم صورك بسهولة.
-</p>
+    <p class="tool-intro"
+       data-ar="قلل حجم صورك بسهولة قبل رفعها أو مشاركتها، واحصل على نسخة مضغوطة يمكنك تنزيلها مباشرة."
+       data-en="Reduce your image file sizes before uploading or sharing them, and download a compressed copy directly.">
+       قلل حجم صورك بسهولة قبل رفعها أو مشاركتها، واحصل على نسخة مضغوطة يمكنك تنزيلها مباشرة.
+    </p>
+</header>
 
-<input type="file" id="fileInput" accept="image/*">
+<main>
 
-<button id="compressButton"
-        data-ar="ضغط الصور"
-        data-en="Compress Images">
-ضغط الصور
-</button>
+<section class="tool-box">
+    <h2 data-ar="اضغط صورتك الآن"
+        data-en="Compress Your Image Now">
+        اضغط صورتك الآن
+    </h2>
 
-<p id="result" aria-live="polite"></p>
+    <p data-ar="اختر صورة من جهازك لبدء عملية الضغط."
+       data-en="Choose an image from your device to start compression.">
+       اختر صورة من جهازك لبدء عملية الضغط.
+    </p>
 
-<a class="home" id="homeLink" href="index.html"
-   data-ar="العودة إلى الصفحة الرئيسية"
-   data-en="Back to Home">
-العودة إلى الصفحة الرئيسية
-</a>
+    <input type="file" id="fileInput" accept="image/*"
+           aria-label="Choose an image">
+
+    <button id="compressButton"
+            data-ar="ضغط الصور"
+            data-en="Compress Image">
+        ضغط الصور
+    </button>
+
+    <div id="result" aria-live="polite" aria-atomic="true"></div>
+
+    <a class="home" id="homeLink" href="index.html">
+        العودة إلى الصفحة الرئيسية
+    </a>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="ما هي أداة ضغط الصور؟"
+        data-en="What Is an Image Compressor?">
+        ما هي أداة ضغط الصور؟
+    </h2>
+
+    <p data-ar="أداة ضغط الصور من سوق الأدوات هي أداة مجانية تساعدك على تقليل حجم ملفات الصور لتصبح أسهل في التخزين والإرسال والرفع إلى المواقع. يمكنك اختيار صورة من جهازك، ثم تقوم الأداة بمعالجتها داخل المتصفح وإنشاء نسخة مضغوطة قابلة للتنزيل."
+       data-en="The Image Compressor from Tools Market is a free tool that helps reduce image file sizes, making them easier to store, send, and upload to websites. Choose an image from your device, and the tool processes it in your browser to create a downloadable compressed copy.">
+       أداة ضغط الصور من سوق الأدوات هي أداة مجانية تساعدك على تقليل حجم ملفات الصور لتصبح أسهل في التخزين والإرسال والرفع إلى المواقع. يمكنك اختيار صورة من جهازك، ثم تقوم الأداة بمعالجتها داخل المتصفح وإنشاء نسخة مضغوطة قابلة للتنزيل.
+    </p>
+
+    <p data-ar="تستخدم الأداة صيغة JPEG عند إنشاء الصورة الناتجة، مع تطبيق مستوى ضغط محدد لتقليل حجم الملف. لذلك قد تختلف النتيجة حسب أبعاد الصورة الأصلية وصيغتها ومحتواها."
+       data-en="The tool uses JPEG when creating the output image, applying a fixed compression level to reduce file size. Results vary depending on the original image dimensions, format, and content.">
+       تستخدم الأداة صيغة JPEG عند إنشاء الصورة الناتجة، مع تطبيق مستوى ضغط محدد لتقليل حجم الملف. لذلك قد تختلف النتيجة حسب أبعاد الصورة الأصلية وصيغتها ومحتواها.
+    </p>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="لماذا تحتاج إلى ضغط الصور؟"
+        data-en="Why Do You Need to Compress Images?">
+        لماذا تحتاج إلى ضغط الصور؟
+    </h2>
+
+    <p data-ar="الصور كبيرة الحجم قد تستغرق وقتًا أطول في الرفع والإرسال، كما تستهلك مساحة تخزين أكبر. يساعد ضغط الصور على تقليل حجم الملفات، وهو أمر مفيد في الاستخدام اليومي وإدارة محتوى المواقع."
+       data-en="Large images may take longer to upload and send, and they use more storage space. Image compression helps reduce file sizes, which is useful for everyday tasks and website content management.">
+       الصور كبيرة الحجم قد تستغرق وقتًا أطول في الرفع والإرسال، كما تستهلك مساحة تخزين أكبر. يساعد ضغط الصور على تقليل حجم الملفات، وهو أمر مفيد في الاستخدام اليومي وإدارة محتوى المواقع.
+    </p>
+
+    <ul>
+        <li data-ar="تقليل مساحة التخزين التي تشغلها الصور."
+            data-en="Reduce the storage space used by images.">
+            تقليل مساحة التخزين التي تشغلها الصور.
+        </li>
+
+        <li data-ar="تسهيل إرسال الصور عبر البريد الإلكتروني وتطبيقات المحادثة."
+            data-en="Make images easier to send through email and messaging apps.">
+            تسهيل إرسال الصور عبر البريد الإلكتروني وتطبيقات المحادثة.
+        </li>
+
+        <li data-ar="تقليل حجم الصور قبل إضافتها إلى المواقع والمدونات."
+            data-en="Reduce image sizes before adding them to websites and blogs.">
+            تقليل حجم الصور قبل إضافتها إلى المواقع والمدونات.
+        </li>
+
+        <li data-ar="تجهيز نسخ أصغر من الصور للاستخدام والمشاركة."
+            data-en="Create smaller image copies for sharing and everyday use.">
+            تجهيز نسخ أصغر من الصور للاستخدام والمشاركة.
+        </li>
+    </ul>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="مميزات أداة ضغط الصور"
+        data-en="Image Compressor Features">
+        مميزات أداة ضغط الصور
+    </h2>
+
+    <ul>
+        <li data-ar="مجانية الاستخدام دون رسوم."
+            data-en="Free to use with no fees.">
+            مجانية الاستخدام دون رسوم.
+        </li>
+
+        <li data-ar="واجهة بسيطة وسهلة للمبتدئين."
+            data-en="A simple interface for beginners.">
+            واجهة بسيطة وسهلة للمبتدئين.
+        </li>
+
+        <li data-ar="معالجة الصور مباشرة داخل المتصفح."
+            data-en="Process images directly in the browser.">
+            معالجة الصور مباشرة داخل المتصفح.
+        </li>
+
+        <li data-ar="إظهار حجم الملف الأصلي وحجم الملف الناتج."
+            data-en="Show the original and compressed file sizes.">
+            إظهار حجم الملف الأصلي وحجم الملف الناتج.
+        </li>
+
+        <li data-ar="تنزيل الصورة المضغوطة بصيغة JPG."
+            data-en="Download the compressed image in JPG format.">
+            تنزيل الصورة المضغوطة بصيغة JPG.
+        </li>
+
+        <li data-ar="دعم الاستخدام من الهاتف والكمبيوتر."
+            data-en="Works on phones and computers.">
+            دعم الاستخدام من الهاتف والكمبيوتر.
+        </li>
+
+        <li data-ar="واجهة عربية وإنجليزية."
+            data-en="Arabic and English interface.">
+            واجهة عربية وإنجليزية.
+        </li>
+    </ul>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="كيفية استخدام أداة ضغط الصور"
+        data-en="How to Use the Image Compressor">
+        كيفية استخدام أداة ضغط الصور
+    </h2>
+
+    <ol>
+        <li data-ar="افتح أداة ضغط الصور من سوق الأدوات."
+            data-en="Open the Image Compressor on Tools Market.">
+            افتح أداة ضغط الصور من سوق الأدوات.
+        </li>
+
+        <li data-ar="اضغط على اختيار ملف وحدد الصورة من جهازك."
+            data-en="Select the file input and choose an image from your device.">
+            اضغط على اختيار ملف وحدد الصورة من جهازك.
+        </li>
+
+        <li data-ar="اضغط على زر ضغط الصور."
+            data-en="Click the Compress Image button.">
+            اضغط على زر ضغط الصور.
+        </li>
+
+        <li data-ar="انتظر حتى تنتهي معالجة الصورة."
+            data-en="Wait for the image processing to finish.">
+            انتظر حتى تنتهي معالجة الصورة.
+        </li>
+
+        <li data-ar="راجع حجم الصورة قبل الضغط وبعده ونسبة التوفير."
+            data-en="Review the original size, compressed size, and savings percentage.">
+            راجع حجم الصورة قبل الضغط وبعده ونسبة التوفير.
+        </li>
+
+        <li data-ar="اضغط على رابط تنزيل الصورة المضغوطة لحفظ النتيجة."
+            data-en="Click the download link to save the compressed image.">
+            اضغط على رابط تنزيل الصورة المضغوطة لحفظ النتيجة.
+        </li>
+    </ol>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="ما صيغ الصور التي يمكن استخدامها؟"
+        data-en="Which Image Formats Can You Use?">
+        ما صيغ الصور التي يمكن استخدامها؟
+    </h2>
+
+    <p data-ar="يقبل مربع اختيار الملفات الصور التي يتعرف عليها المتصفح من خلال أنواع الصور الشائعة. تقوم الأداة بتحويل الصورة الناتجة إلى JPEG، حتى إذا كانت الصورة الأصلية بصيغة PNG أو WebP أو صيغة صورة أخرى مدعومة من المتصفح."
+       data-en="The file picker accepts image types recognized by the browser, including common image formats. The output is converted to JPEG, even if the original image is PNG, WebP, or another browser-supported image format.">
+       يقبل مربع اختيار الملفات الصور التي يتعرف عليها المتصفح من خلال أنواع الصور الشائعة. تقوم الأداة بتحويل الصورة الناتجة إلى JPEG، حتى إذا كانت الصورة الأصلية بصيغة PNG أو WebP أو صيغة صورة أخرى مدعومة من المتصفح.
+    </p>
+
+    <h3 data-ar="ملاحظة حول الصور الشفافة"
+        data-en="Note About Transparent Images">
+        ملاحظة حول الصور الشفافة
+    </h3>
+
+    <p data-ar="عند تحويل صورة تحتوي على خلفية شفافة إلى JPEG، لا يمكن الاحتفاظ بالشفافية لأن صيغة JPEG لا تدعمها. لذلك تضع الأداة خلفية بيضاء للصورة الناتجة."
+       data-en="When a transparent image is converted to JPEG, transparency cannot be preserved because JPEG does not support it. The tool therefore uses a white background for the output image.">
+       عند تحويل صورة تحتوي على خلفية شفافة إلى JPEG، لا يمكن الاحتفاظ بالشفافية لأن صيغة JPEG لا تدعمها. لذلك تضع الأداة خلفية بيضاء للصورة الناتجة.
+    </p>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="هل ضغط الصور يقلل الجودة؟"
+        data-en="Does Image Compression Reduce Quality?">
+        هل ضغط الصور يقلل الجودة؟
+    </h2>
+
+    <p data-ar="نعم، قد يؤدي ضغط الصور بصيغة JPEG إلى فقدان جزء من التفاصيل، لأن هذه الصيغة تستخدم ضغطًا مع فقدان بعض البيانات. تعتمد النتيجة على الصورة الأصلية ومستوى الضغط المستخدم. إذا كنت تحتاج إلى الاحتفاظ بأعلى جودة ممكنة، فمن الأفضل الاحتفاظ بنسخة من الصورة الأصلية."
+       data-en="Yes. JPEG compression may remove some image details because it uses lossy compression. The result depends on the original image and the compression level. If you need the highest possible quality, keep a copy of the original image.">
+       نعم، قد يؤدي ضغط الصور بصيغة JPEG إلى فقدان جزء من التفاصيل، لأن هذه الصيغة تستخدم ضغطًا مع فقدان بعض البيانات. تعتمد النتيجة على الصورة الأصلية ومستوى الضغط المستخدم. إذا كنت تحتاج إلى الاحتفاظ بأعلى جودة ممكنة، فمن الأفضل الاحتفاظ بنسخة من الصورة الأصلية.
+    </p>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="نصائح للحصول على أفضل نتيجة"
+        data-en="Tips for Better Results">
+        نصائح للحصول على أفضل نتيجة
+    </h2>
+
+    <ul>
+        <li data-ar="احتفظ بنسخة من الصورة الأصلية قبل الضغط."
+            data-en="Keep a copy of the original image before compression.">
+            احتفظ بنسخة من الصورة الأصلية قبل الضغط.
+        </li>
+
+        <li data-ar="قارن بين الصورة الأصلية والنسخة المضغوطة قبل استخدامها."
+            data-en="Compare the original and compressed images before using the result.">
+            قارن بين الصورة الأصلية والنسخة المضغوطة قبل استخدامها.
+        </li>
+
+        <li data-ar="إذا كانت الصورة شفافة، تذكر أن النسخة الناتجة ستكون بخلفية بيضاء."
+            data-en="If the image is transparent, remember that the output will have a white background.">
+            إذا كانت الصورة شفافة، تذكر أن النسخة الناتجة ستكون بخلفية بيضاء.
+        </li>
+
+        <li data-ar="استخدم اتصالًا مستقرًا بالإنترنت لتحميل صفحة الأداة ومكتباتها عند الحاجة."
+            data-en="Use a stable internet connection to load the tool page and its required resources.">
+            استخدم اتصالًا مستقرًا بالإنترنت لتحميل صفحة الأداة ومكتباتها عند الحاجة.
+        </li>
+
+        <li data-ar="الصور الكبيرة جدًا قد تحتاج إلى ذاكرة ومساحة إضافية أثناء المعالجة."
+            data-en="Very large images may require additional memory and processing space.">
+            الصور الكبيرة جدًا قد تحتاج إلى ذاكرة ومساحة إضافية أثناء المعالجة.
+        </li>
+    </ul>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="الخصوصية وأمان الصور"
+        data-en="Image Privacy and Security">
+        الخصوصية وأمان الصور
+    </h2>
+
+    <p data-ar="تتم معالجة الصورة باستخدام JavaScript وواجهة Canvas داخل متصفحك. لا يتضمن كود أداة الضغط إرسال ملف الصورة إلى خادم خارجي لمعالجته، ويتم إنشاء النسخة المضغوطة داخل المتصفح."
+       data-en="The image is processed using JavaScript and the Canvas API in your browser. The compressor code does not send the image file to an external server for processing. The compressed copy is created locally in your browser.">
+       تتم معالجة الصورة باستخدام JavaScript وواجهة Canvas داخل متصفحك. لا يتضمن كود أداة الضغط إرسال ملف الصورة إلى خادم خارجي لمعالجته، ويتم إنشاء النسخة المضغوطة داخل المتصفح.
+    </p>
+
+    <p data-ar="يستخدم الموقع Google Analytics لقياس استخدام الموقع بصورة إحصائية. لا يعني ذلك أن ملف الصورة نفسه يتم رفعه إلى Google Analytics."
+       data-en="The website uses Google Analytics to measure site usage. This does not mean that the image file itself is uploaded to Google Analytics.">
+       يستخدم الموقع Google Analytics لقياس استخدام الموقع بصورة إحصائية. لا يعني ذلك أن ملف الصورة نفسه يتم رفعه إلى Google Analytics.
+    </p>
+</section>
+
+<section class="content-section">
+    <h2 data-ar="الأسئلة الشائعة حول ضغط الصور"
+        data-en="Frequently Asked Questions About Image Compression">
+        الأسئلة الشائعة حول ضغط الصور
+    </h2>
+
+    <div class="faq-item">
+        <h3 data-ar="1. هل أداة ضغط الصور مجانية؟"
+            data-en="1. Is the image compressor free?">
+            1. هل أداة ضغط الصور مجانية؟
+        </h3>
+        <p data-ar="نعم، يمكنك استخدام أداة ضغط الصور من سوق الأدوات مجانًا من خلال المتصفح."
+           data-en="Yes. You can use the Tools Market Image Compressor for free in your browser.">
+           نعم، يمكنك استخدام أداة ضغط الصور من سوق الأدوات مجانًا من خلال المتصفح.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="2. هل يمكن ضغط الصور من الهاتف؟"
+            data-en="2. Can I compress images on my phone?">
+            2. هل يمكن ضغط الصور من الهاتف؟
+        </h3>
+        <p data-ar="نعم، يمكنك فتح الأداة من متصفح الهاتف واختيار صورة من جهازك، ويعتمد الأداء على إمكانيات الهاتف وحجم الصورة."
+           data-en="Yes. Open the tool in your mobile browser and choose an image. Performance depends on your device and image size.">
+           نعم، يمكنك فتح الأداة من متصفح الهاتف واختيار صورة من جهازك، ويعتمد الأداء على إمكانيات الهاتف وحجم الصورة.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="3. هل تحتفظ الأداة بالصورة الأصلية؟"
+            data-en="3. Does the tool keep the original image?">
+            3. هل تحتفظ الأداة بالصورة الأصلية؟
+        </h3>
+        <p data-ar="لا تقوم الأداة بتعديل الملف الأصلي الموجود على جهازك. بل تنشئ نسخة مضغوطة جديدة يمكنك تنزيلها."
+           data-en="The tool does not modify the original file on your device. It creates a new compressed copy for you to download.">
+           لا تقوم الأداة بتعديل الملف الأصلي الموجود على جهازك. بل تنشئ نسخة مضغوطة جديدة يمكنك تنزيلها.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="4. ما صيغة الصورة بعد الضغط؟"
+            data-en="4. What is the output image format?">
+            4. ما صيغة الصورة بعد الضغط؟
+        </h3>
+        <p data-ar="يتم تنزيل الصورة الناتجة بصيغة JPEG، ويكون اسم الملف compressed-image.jpg."
+           data-en="The output image is downloaded in JPEG format with the filename compressed-image.jpg.">
+           يتم تنزيل الصورة الناتجة بصيغة JPEG، ويكون اسم الملف compressed-image.jpg.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="5. هل يمكن الاحتفاظ بخلفية PNG الشفافة؟"
+            data-en="5. Can transparent PNG backgrounds be preserved?">
+            5. هل يمكن الاحتفاظ بخلفية PNG الشفافة؟
+        </h3>
+        <p data-ar="لا، لأن الأداة تحول الصورة إلى JPEG، وهذه الصيغة لا تدعم الشفافية. تستخدم الأداة خلفية بيضاء في الصورة الناتجة."
+           data-en="No. The tool converts images to JPEG, which does not support transparency. A white background is used in the output.">
+           لا، لأن الأداة تحول الصورة إلى JPEG، وهذه الصيغة لا تدعم الشفافية. تستخدم الأداة خلفية بيضاء في الصورة الناتجة.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="6. لماذا قد يصبح حجم الصورة أكبر بعد الضغط؟"
+            data-en="6. Why might the compressed image be larger?">
+            6. لماذا قد يصبح حجم الصورة أكبر بعد الضغط؟
+        </h3>
+        <p data-ar="قد يحدث ذلك إذا كانت الصورة الأصلية مضغوطة بالفعل بكفاءة، أو إذا كانت صيغة التحويل الجديدة لا تناسب محتواها. لذلك تعرض الأداة مقارنة الحجمين حتى تتمكن من معرفة النتيجة."
+           data-en="This may happen if the original image is already efficiently compressed or if the new format is less suitable for its content. The tool shows both file sizes so you can review the result.">
+           قد يحدث ذلك إذا كانت الصورة الأصلية مضغوطة بالفعل بكفاءة، أو إذا كانت صيغة التحويل الجديدة لا تناسب محتواها. لذلك تعرض الأداة مقارنة الحجمين حتى تتمكن من معرفة النتيجة.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="7. هل يتم رفع الصور إلى خادم خارجي؟"
+            data-en="7. Are images uploaded to an external server?">
+            7. هل يتم رفع الصور إلى خادم خارجي؟
+        </h3>
+        <p data-ar="لا يتضمن كود أداة الضغط رفع الصورة إلى خادم لمعالجتها. تتم المعالجة داخل متصفحك."
+           data-en="The compressor code does not upload images to a server for processing. Images are processed in your browser.">
+           لا يتضمن كود أداة الضغط رفع الصورة إلى خادم لمعالجتها. تتم المعالجة داخل متصفحك.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="8. هل يمكن ضغط عدد كبير من الصور مرة واحدة؟"
+            data-en="8. Can I compress multiple images at once?">
+            8. هل يمكن ضغط عدد كبير من الصور مرة واحدة؟
+        </h3>
+        <p data-ar="الإصدار الحالي يعالج صورة واحدة في كل مرة. يمكنك اختيار صورة جديدة بعد الانتهاء من ضغط الصورة السابقة."
+           data-en="The current version processes one image at a time. You can choose another image after the previous one has finished.">
+           الإصدار الحالي يعالج صورة واحدة في كل مرة. يمكنك اختيار صورة جديدة بعد the previous one has finished.
+        </p>
+    </div>
+</section>
+
+<section class="content-section related-links">
+    <h2 data-ar="اكتشف أدوات أخرى من سوق الأدوات"
+        data-en="Explore More Tools from Tools Market">
+        اكتشف أدوات أخرى من سوق الأدوات
+    </h2>
+
+    <p data-ar="يمكنك زيارة الصفحة الرئيسية لاكتشاف أدوات أخرى تساعدك في تعديل الصور ومعالجة الملفات."
+       data-en="Visit the homepage to discover other tools for editing images and processing files.">
+       يمكنك زيارة الصفحة الرئيسية لاكتشاف أدوات أخرى تساعدك في تعديل الصور ومعالجة الملفات.
+    </p>
+
+    <ul>
+        <li>
+            <a href="image-resizer.html"
+               data-ar="أداة تغيير حجم الصور"
+               data-en="Image Resizer">
+                أداة تغيير حجم الصور
+            </a>
+        </li>
+        <li>
+            <a href="image-converter.html"
+               data-ar="أداة تحويل صيغ الصور"
+               data-en="Image Converter">
+                أداة تحويل صيغ الصور
+            </a>
+        </li>
+        <li>
+            <a href="image-grayscale.html"
+               data-ar="أداة تحويل الصور إلى أبيض وأسود"
+               data-en="Image Grayscale Tool">
+                أداة تحويل الصور إلى أبيض وأسود
+            </a>
+        </li>
+    </ul>
+</section>
+
+</main>
+
+<footer class="site-footer">
+    <a class="home" href="index.html"
+       data-ar="سوق الأدوات | جميع الأدوات المجانية"
+       data-en="Tools Market | All Free Tools">
+       سوق الأدوات | جميع الأدوات المجانية
+    </a>
+</footer>
 
 <script src="language.js"></script>
 
@@ -162,6 +694,8 @@ const fileInput = document.getElementById("fileInput");
 const compressButton = document.getElementById("compressButton");
 const result = document.getElementById("result");
 const homeLink = document.getElementById("homeLink");
+
+let downloadURL = null;
 
 function getToolLanguage() {
     const params = new URLSearchParams(window.location.search);
@@ -188,14 +722,99 @@ function setResult(message) {
     result.textContent = message;
 }
 
+function formatFileSize(bytes) {
+    if (bytes < 1024) {
+        return bytes + " " + t("بايت", "Bytes");
+    }
+
+    if (bytes < 1024 * 1024) {
+        return (bytes / 1024).toFixed(2) + " KB";
+    }
+
+    return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+}
+
+function releaseDownloadURL() {
+    if (downloadURL) {
+        URL.revokeObjectURL(downloadURL);
+        downloadURL = null;
+    }
+}
+
+function showCompressionResult(originalSize, compressedSize, link) {
+    const details = document.createElement("div");
+    details.className = "result-details";
+
+    const original = document.createElement("p");
+    original.textContent = t("الحجم الأصلي: ", "Original size: ")
+        + formatFileSize(originalSize);
+
+    const compressed = document.createElement("p");
+    compressed.textContent = t("الحجم بعد الضغط: ", "Compressed size: ")
+        + formatFileSize(compressedSize);
+
+    const difference = originalSize - compressedSize;
+    const savings = originalSize > 0
+        ? (difference / originalSize) * 100
+        : 0;
+
+    const savingText = document.createElement("p");
+
+    if (difference > 0) {
+        savingText.textContent =
+            t("نسبة تقليل الحجم: ", "Size reduction: ")
+            + savings.toFixed(1) + "%";
+    } else if (difference < 0) {
+        savingText.textContent =
+            t("زاد حجم الملف بنسبة: ", "File size increased by: ")
+            + Math.abs(savings).toFixed(1) + "%";
+    } else {
+        savingText.textContent =
+            t("لم يتغير حجم الملف تقريبًا.", "The file size is almost unchanged.");
+    }
+
+    details.appendChild(original);
+    details.appendChild(compressed);
+    details.appendChild(savingText);
+
+    result.appendChild(details);
+    result.appendChild(document.createElement("br"));
+    result.appendChild(link);
+}
+
 applyPageLanguage();
 
 homeLink.href = "index.html?lang=" + getToolLanguage();
+
+fileInput.addEventListener("change", function() {
+    releaseDownloadURL();
+    result.replaceChildren();
+
+    compressButton.disabled = false;
+
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+
+        if (!file.type.startsWith("image/")) {
+            setResult(t(
+                "الرجاء اختيار ملف صورة صالح.",
+                "Please select a valid image file."
+            ));
+            fileInput.value = "";
+            return;
+        }
+
+        setResult(
+            t("تم اختيار الصورة: ", "Selected image: ") + file.name
+        );
+    }
+});
 
 compressButton.addEventListener("click", function() {
     const file = fileInput.files[0];
 
     result.replaceChildren();
+    releaseDownloadURL();
 
     if (!file) {
         setResult(t(
@@ -205,11 +824,19 @@ compressButton.addEventListener("click", function() {
         return;
     }
 
+    if (!file.type.startsWith("image/")) {
+        setResult(t(
+            "الملف المحدد ليس صورة صالحة.",
+            "The selected file is not a valid image."
+        ));
+        return;
+    }
+
     compressButton.disabled = true;
 
     setResult(t(
-        "جاري تجهيز الصورة...",
-        "Preparing the image..."
+        "جاري تجهيز الصورة وضغطها...",
+        "Preparing and compressing the image..."
     ));
 
     const canvas = document.createElement("canvas");
@@ -217,48 +844,73 @@ compressButton.addEventListener("click", function() {
     const image = new Image();
     const imageURL = URL.createObjectURL(file);
 
-    image.onload = function() {
-        canvas.width = image.width;
-        canvas.height = image.height;
-        ctx.drawImage(image, 0, 0);
+    if (!ctx) {
+        URL.revokeObjectURL(imageURL);
+        compressButton.disabled = false;
 
-        canvas.toBlob(function(blob) {
+        setResult(t(
+            "متصفحك لا يدعم معالجة الصور المطلوبة.",
+            "Your browser does not support the required image processing."
+        ));
+        return;
+    }
+
+    image.onload = function() {
+        try {
+            canvas.width = image.naturalWidth || image.width;
+            canvas.height = image.naturalHeight || image.height;
+
+            if (!canvas.width || !canvas.height) {
+                throw new Error("Invalid image dimensions");
+            }
+
+            // JPEG لا يدعم الشفافية، لذلك نستخدم خلفية بيضاء.
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.drawImage(image, 0, 0);
+
+            canvas.toBlob(function(blob) {
+                URL.revokeObjectURL(imageURL);
+
+                compressButton.disabled = false;
+
+                if (!blob) {
+                    setResult(t(
+                        "فشل ضغط الصورة. حاول استخدام صورة أخرى.",
+                        "Image compression failed. Try another image."
+                    ));
+                    return;
+                }
+
+                downloadURL = URL.createObjectURL(blob);
+
+                const link = document.createElement("a");
+                link.href = downloadURL;
+                link.download = "compressed-image.jpg";
+                link.textContent = t(
+                    "تنزيل الصورة المضغوطة",
+                    "Download Compressed Image"
+                );
+
+                setResult(t(
+                    "تم ضغط الصورة بنجاح.",
+                    "Image compressed successfully."
+                ));
+
+                showCompressionResult(file.size, blob.size, link);
+
+            }, "image/jpeg", 0.6);
+
+        } catch (error) {
             URL.revokeObjectURL(imageURL);
             compressButton.disabled = false;
 
-            if (!blob) {
-                setResult(t(
-                    "فشل ضغط الصورة.",
-                    "Image compression failed."
-                ));
-                return;
-            }
-
-            const link = document.createElement("a");
-            const downloadURL = URL.createObjectURL(blob);
-
-            link.href = downloadURL;
-            link.download = "compressed-image.jpg";
-            link.textContent = t(
-                "تنزيل الصورة المضغوطة",
-                "Download Compressed Image"
-            );
-
             setResult(t(
-                "تم ضغط الصورة بنجاح.",
-                "Image compressed successfully."
+                "حدث خطأ أثناء معالجة الصورة.",
+                "An error occurred while processing the image."
             ));
-
-            result.appendChild(document.createElement("br"));
-            result.appendChild(link);
-
-            link.addEventListener("click", function() {
-                setTimeout(function() {
-                    URL.revokeObjectURL(downloadURL);
-                }, 60000);
-            }, { once: true });
-
-        }, "image/jpeg", 0.6);
+        }
     };
 
     image.onerror = function() {
@@ -266,8 +918,8 @@ compressButton.addEventListener("click", function() {
         compressButton.disabled = false;
 
         setResult(t(
-            "تعذر فتح الصورة.",
-            "Could not open the image."
+            "تعذر فتح الصورة. حاول اختيار ملف صورة آخر.",
+            "Could not open the image. Please try another image file."
         ));
     };
 
