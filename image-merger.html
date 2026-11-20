@@ -3,331 +3,1288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دمج الصور | سوق الأدوات</title>
+
+<title>دمج الصور أونلاين في صورة واحدة مجانًا | سوق الأدوات</title>
+
+<meta name="description" content="ادمج صورتين أو أكثر في صورة واحدة أونلاين مجانًا. اختر الدمج الأفقي أو الرأسي وتحكم في المسافات وحمّل النتيجة بصيغة PNG بسهولة.">
+
+<meta name="keywords" content="دمج الصور, دمج الصور اون لاين, دمج صورتين, دمج عدة صور, جمع الصور في صورة واحدة, دمج الصور جنب بعض, دمج الصور فوق بعض, أداة دمج الصور, image merger, merge images online, combine images, join photos, merge pictures">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Tools Market">
+<meta name="theme-color" content="#f4f7fb">
+
+<link rel="canonical" href="https://medosd6666-png.github.io/tools-market/image-merger.html">
+
+<meta property="og:title" content="دمج الصور أونلاين في صورة واحدة مجانًا | سوق الأدوات">
+<meta property="og:description" content="ادمج صورتين أو أكثر بسهولة في صورة واحدة. اختر الاتجاه والمسافات وحمّل الصورة النهائية مجانًا.">
+<meta property="og:url" content="https://medosd6666-png.github.io/tools-market/image-merger.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:site_name" content="سوق الأدوات">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="دمج الصور أونلاين | سوق الأدوات">
+<meta name="twitter:description" content="أداة مجانية لدمج صورتين أو أكثر في صورة واحدة أونلاين.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "أداة دمج الصور - سوق الأدوات",
+  "alternateName": "Image Merger",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Web Browser",
+  "description": "أداة مجانية لدمج صورتين أو أكثر في صورة واحدة، مع اختيار الاتجاه الأفقي أو الرأسي والتحكم في المسافات بين الصور.",
+  "url": "https://medosd6666-png.github.io/tools-market/image-merger.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "دمج صورتين أو أكثر",
+    "الدمج الأفقي والرأسي",
+    "التحكم في المسافات بين الصور",
+    "معاينة الصورة الناتجة",
+    "تنزيل النتيجة بصيغة PNG",
+    "معالجة الصور داخل المتصفح"
+  ]
+}
+</script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
 <script>
-window.dataLayer=window.dataLayer||[];
+window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-NZ00TSPTWC');
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
 </script>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;padding:16px;font-family:Arial,Tahoma,sans-serif;background:#f4f7fb;color:#202938}
-.container{max-width:900px;margin:auto}
+* {
+    box-sizing: border-box;
+}
 
-/* هيدر الموقع الموحد */
-.site-header{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:15px 20px;margin-bottom:16px;box-shadow:0 4px 16px #14284608}
-.site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:20px;font-weight:bold;color:#1769d2}
-.site-logo span{font-size:24px}
+body {
+    margin: 0;
+    padding: 16px;
+    font-family: Arial, Tahoma, sans-serif;
+    background: #f4f7fb;
+    color: #202938;
+    line-height: 1.8;
+}
 
-.panel{background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:20px;margin-bottom:16px;box-shadow:0 4px 16px #14284608}
-h1{font-size:25px;margin:0 0 10px}
-h2{font-size:21px}
-p{line-height:1.7;color:#64748b}
-.pick{display:block;text-align:center;padding:25px 12px;border:2px dashed #9bb7d8;border-radius:12px;background:#f8fbff;cursor:pointer;transition:background 0.2s}
-.pick:hover{background:#f1f6ff}
-.pick strong{display:block;font-size:18px;margin-bottom:8px;color:#1769d2}
-input[type=file]{display:none}
-.settings{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px}
-.setting{flex:1 1 220px;min-width:0}
-.setting-title{display:block;font-weight:bold;margin-bottom:10px;color:#243449}
-.choices{display:flex;flex-wrap:wrap;gap:10px}
-.choice{padding:10px 15px;border:1px solid #d6deea;border-radius:10px;cursor:pointer;background:#fff;display:flex;align-items:center;gap:6px}
-input[type=radio]{accent-color:#1769d2}
-input[type=range]{width:100%;accent-color:#1769d2}
-.image-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:12px;margin-top:16px}
-.image-card{border:1px solid #e2e8f0;border-radius:12px;padding:8px;min-width:0;background:#fff}
-.image-card img{display:block;width:100%;height:105px;object-fit:contain;background:#f1f5f9;border-radius:8px}
-.image-name{font-size:12px;overflow-wrap:anywhere;margin:8px 0;min-height:28px;color:#475569}
-button{border:0;border-radius:10px;padding:12px 17px;font:inherit;font-weight:bold;cursor:pointer;transition:opacity 0.2s}
-button:hover{opacity:0.9}
-button:disabled{opacity:.45;cursor:not-allowed}
-.remove{background:#fee2e2;color:#b91c1c;width:100%;padding:8px;font-size:13px;border-radius:8px}
-.primary{background:#1769d2;color:white}
-.secondary{background:#e8eef6;color:#243449}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.status{line-height:1.7;color:#475569;margin-top:12px;font-weight:500}
-.preview{overflow:auto;background:#f1f5f9;border-radius:12px;padding:12px;margin-top:14px;text-align:center}
-#resultPreview{display:block;max-width:100%;height:auto;margin:auto;border-radius:8px}
-.hidden{display:none!important}
-@media(max-width:600px){body{padding:10px}.panel{padding:15px}h1{font-size:22px}.actions button{flex:1 1 100%}}
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 16px #14284608;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1769d2;
+}
+
+.site-logo span:first-child {
+    font-size: 24px;
+}
+
+.home-link {
+    display: inline-block;
+    background: #e8eef6;
+    color: #243449;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 16px #14284608;
+}
+
+h1 {
+    font-size: 27px;
+    margin: 0 0 10px;
+    color: #1454a3;
+}
+
+h2 {
+    font-size: 22px;
+    color: #1454a3;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 18px;
+    color: #243449;
+    margin-bottom: 6px;
+}
+
+p {
+    line-height: 1.9;
+    color: #64748b;
+}
+
+.intro {
+    margin-top: 0;
+}
+
+.pick {
+    display: block;
+    text-align: center;
+    padding: 25px 12px;
+    border: 2px dashed #9bb7d8;
+    border-radius: 12px;
+    background: #f8fbff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pick:hover {
+    background: #f1f6ff;
+}
+
+.pick strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #1769d2;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.setting {
+    flex: 1 1 220px;
+    min-width: 0;
+}
+
+.setting-title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #243449;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.choice {
+    padding: 10px 15px;
+    border: 1px solid #d6deea;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+input[type=radio] {
+    accent-color: #1769d2;
+}
+
+input[type=range] {
+    width: 100%;
+    accent-color: #1769d2;
+}
+
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.image-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 0;
+    background: #fff;
+}
+
+.image-card img {
+    display: block;
+    width: 100%;
+    height: 105px;
+    object-fit: contain;
+    background: #f1f5f9;
+    border-radius: 8px;
+}
+
+.image-name {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+    margin: 8px 0;
+    min-height: 28px;
+    color: #475569;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 17px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.remove {
+    background: #fee2e2;
+    color: #b91c1c;
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+    border-radius: 8px;
+}
+
+.primary {
+    background: #1769d2;
+    color: white;
+}
+
+.secondary {
+    background: #e8eef6;
+    color: #243449;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.status {
+    line-height: 1.7;
+    color: #475569;
+    margin-top: 12px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+.preview {
+    overflow: auto;
+    background: #f1f5f9;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 14px;
+    text-align: center;
+}
+
+#resultPreview {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.info-section {
+    margin-bottom: 22px;
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+}
+
+.info-section p {
+    margin-top: 6px;
+}
+
+.info-section ul,
+.info-section ol {
+    padding-right: 24px;
+    padding-left: 24px;
+    color: #475569;
+    line-height: 2;
+}
+
+.info-section li {
+    margin-bottom: 5px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 14px 0;
+}
+
+.faq-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.faq-item h3 {
+    margin-top: 0;
+}
+
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.related-links a {
+    display: inline-block;
+    background: #f1f6ff;
+    color: #1454a3;
+    padding: 9px 13px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #dbe7f3;
+}
+
+.related-links a:hover {
+    background: #e5efff;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    padding: 15px 5px;
+}
+
+footer a {
+    color: #1769d2;
+    text-decoration: none;
+}
+
+@media(max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+
+    .site-header {
+        padding: 12px;
+    }
+
+    .site-logo {
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .actions button {
+        flex: 1 1 100%;
+    }
+
+    .related-links a {
+        width: 100%;
+        text-align: center;
+    }
+}
 </style>
 </head>
 
 <body>
+
 <main class="container">
 
-<!-- هيدر الموقع -->
 <header class="site-header">
-<a href="../" class="site-logo">
+<a href="index.html" class="site-logo">
 <span>🧰</span>
-<span>سوق الأدوات</span>
+<span data-t="siteName">سوق الأدوات</span>
 </a>
-<a href="../" class="secondary" style="text-decoration:none;padding:8px 14px;border-radius:8px;font-size:14px;">الرئيسية</a>
+
+<a href="index.html" class="home-link" data-t="home">
+الرئيسية
+</a>
 </header>
 
 <section class="panel">
-<h1 data-t="title">دمج الصور في صورة واحدة</h1>
-<p data-t="intro">اختار صورتين أو أكثر، وحدد اتجاه الدمج، ثم حمّل الصورة النهائية. تتم المعالجة داخل المتصفح دون رفع صورك إلى أي موقع.</p>
+
+<h1 data-t="title">دمج الصور في صورة واحدة أونلاين</h1>
+
+<p class="intro" data-t="intro">
+ادمج صورتين أو أكثر في صورة واحدة بسهولة ومجانًا. اختر اتجاه الدمج الأفقي أو الرأسي، وتحكم في المسافة بين الصور، ثم حمّل النتيجة النهائية بصيغة PNG.
+</p>
 
 <label class="pick" for="imageInput">
 <strong data-t="pick">＋ اختار الصور من جهازك</strong>
-<span data-t="pickHint">يمكنك اختيار أكثر من صورة</span>
+<span data-t="pickHint">يمكنك اختيار صورتين أو أكثر</span>
 </label>
+
 <input id="imageInput" type="file" accept="image/*" multiple>
 
 <div class="settings">
+
 <div class="setting">
 <span class="setting-title" data-t="direction">اتجاه الدمج</span>
+
 <div class="choices">
-<label class="choice"><input type="radio" name="direction" value="horizontal" checked> <span data-t="horizontal">جنب بعض</span></label>
-<label class="choice"><input type="radio" name="direction" value="vertical"> <span data-t="vertical">فوق بعض</span></label>
+
+<label class="choice">
+<input type="radio" name="direction" value="horizontal" checked>
+<span data-t="horizontal">جنب بعض</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="direction" value="vertical">
+<span data-t="vertical">فوق بعض</span>
+</label>
+
 </div>
 </div>
+
 <div class="setting">
-<label class="setting-title" for="spacing"><span data-t="spacing">المسافة بين الصور:</span> <span id="spacingValue">10</span> <span data-t="pixels">بكسل</span></label>
+<label class="setting-title" for="spacing">
+<span data-t="spacing">المسافة بين الصور:</span>
+<span id="spacingValue">10</span>
+<span data-t="pixels">بكسل</span>
+</label>
+
 <input id="spacing" type="range" min="0" max="100" value="10">
 </div>
+
 </div>
 
 <div id="imageList" class="image-list"></div>
-<p id="status" class="status">لم يتم اختيار صور بعد.</p>
+
+<p id="status" class="status" role="status" aria-live="polite">
+لم يتم اختيار صور بعد.
+</p>
+
 <div class="actions">
-<button id="mergeButton" class="primary" disabled data-t="merge">دمج الصور</button>
-<button id="clearButton" class="secondary" disabled data-t="clear">مسح الصور المختارة</button>
+<button id="mergeButton" class="primary" disabled data-t="merge">
+دمج الصور
+</button>
+
+<button id="clearButton" class="secondary" disabled data-t="clear">
+مسح الصور المختارة
+</button>
 </div>
+
 </section>
 
 <section id="resultPanel" class="panel hidden">
+
 <h2 data-t="resultTitle">الصورة الناتجة</h2>
+
 <p id="resultInfo"></p>
-<div class="preview"><img id="resultPreview" alt="معاينة الصورة المدمجة"></div>
-<div class="actions">
-<button id="downloadButton" class="primary" data-t="download">تحميل الصورة بصيغة PNG</button>
+
+<div class="preview">
+<img id="resultPreview" alt="معاينة الصورة المدمجة">
 </div>
+
+<div class="actions">
+<button id="downloadButton" class="primary" data-t="download">
+تحميل الصورة بصيغة PNG
+</button>
+</div>
+
 </section>
+
+<section class="panel">
+
+<div class="info-section">
+<h2 data-t="aboutTitle">ما هي أداة دمج الصور؟</h2>
+
+<p data-t="aboutText">
+أداة دمج الصور من سوق الأدوات هي أداة مجانية عبر الإنترنت تتيح لك جمع صورتين أو مجموعة من الصور في صورة واحدة. يمكنك ترتيب الصور بجانب بعضها أفقيًا أو وضعها فوق بعضها رأسيًا، مع تحديد المسافة الفاصلة بينها حسب الشكل الذي تريده.
+</p>
+
+<p data-t="aboutText2">
+تساعدك الأداة على إنشاء صورة مجمعة بسرعة دون الحاجة إلى تثبيت برامج تصميم أو امتلاك خبرة في تعديل الصور. بعد الانتهاء يمكنك معاينة الصورة الناتجة وتنزيلها مباشرة بصيغة PNG.
+</p>
+</div>
+
+<div class="info-section">
+<h2 data-t="featuresTitle">مميزات أداة دمج الصور</h2>
+
+<ul>
+<li data-t="feature1">دمج صورتين أو أكثر في صورة واحدة.</li>
+<li data-t="feature2">اختيار الدمج الأفقي لترتيب الصور جنبًا إلى جنب.</li>
+<li data-t="feature3">اختيار الدمج الرأسي لوضع الصور فوق بعضها.</li>
+<li data-t="feature4">التحكم في المسافة بين الصور من صفر إلى 100 بكسل.</li>
+<li data-t="feature5">عرض الصور المختارة قبل تنفيذ عملية الدمج.</li>
+<li data-t="feature6">إمكانية حذف صورة محددة من المجموعة قبل الدمج.</li>
+<li data-t="feature7">معاينة الصورة النهائية قبل تنزيلها.</li>
+<li data-t="feature8">تنزيل الصورة المدمجة بصيغة PNG.</li>
+<li data-t="feature9">لا تحتاج إلى إنشاء حساب أو تثبيت برنامج.</li>
+<li data-t="feature10">تعمل من خلال المتصفح على الكمبيوتر والهاتف.</li>
+</ul>
+</div>
+
+<div class="info-section">
+<h2 data-t="howTitle">كيف تعمل أداة دمج الصور؟</h2>
+
+<p data-t="howText">
+تعتمد الأداة على تقنيات معالجة الصور الموجودة في متصفحك. عند اختيار الصور، يقوم المتصفح بقراءتها وتجهيزها، ثم يرسمها على مساحة عمل واحدة باستخدام Canvas. بعد ذلك يتم إنشاء ملف صورة جديد بصيغة PNG يمكن معاينته وتنزيله.
+</p>
+
+<p data-t="privacyText">
+تتم عملية دمج الصور داخل المتصفح على جهازك، ولا يحتاج تنفيذ الدمج إلى إرسال الصور إلى خادم الموقع. لذلك لا تحتاج إلى رفع صورك إلى خدمة خارجية لإتمام العملية.
+</p>
+</div>
+
+<div class="info-section">
+<h2 data-t="stepsTitle">طريقة دمج الصور خطوة بخطوة</h2>
+
+<ol>
+<li data-t="step1">اضغط على زر اختيار الصور من جهازك.</li>
+<li data-t="step2">حدد صورتين أو أكثر تريد جمعها في صورة واحدة.</li>
+<li data-t="step3">راجع الصور التي اخترتها في قائمة المعاينة.</li>
+<li data-t="step4">احذف أي صورة لا تريد استخدامها إذا لزم الأمر.</li>
+<li data-t="step5">اختر اتجاه الدمج: أفقيًا أو رأسيًا.</li>
+<li data-t="step6">حرّك شريط المسافة لتحديد الفراغ بين الصور.</li>
+<li data-t="step7">اضغط على زر دمج الصور وانتظر تجهيز النتيجة.</li>
+<li data-t="step8">راجع الصورة الناتجة ثم اضغط على زر التحميل لتنزيلها.</li>
+</ol>
+</div>
+
+<div class="info-section">
+<h2 data-t="directionTitle">ما الفرق بين الدمج الأفقي والرأسي؟</h2>
+
+<h3 data-t="horizontalTitle">الدمج الأفقي</h3>
+<p data-t="horizontalText">
+يرتب الصور بجانب بعضها في صف واحد. يناسب هذا الاختيار مقارنة الصور جنبًا إلى جنب، أو جمع لقطات متعددة في صورة عريضة.
+</p>
+
+<h3 data-t="verticalTitle">الدمج الرأسي</h3>
+<p data-t="verticalText">
+يرتب الصور فوق بعضها في عمود واحد. يناسب هذا الاختيار إنشاء صورة طويلة أو جمع لقطات شاشة متتابعة في صورة واحدة.
+</p>
+</div>
+
+<div class="info-section">
+<h2 data-t="formatsTitle">الصيغ المدعومة وحفظ الصورة</h2>
+
+<p data-t="formatsText">
+تقبل الأداة ملفات الصور التي يستطيع المتصفح فتحها، مثل JPG وJPEG وPNG وWebP وغيرها من الصيغ المدعومة في المتصفح. يتم حفظ الصورة الناتجة بصيغة PNG بغض النظر عن صيغ الصور الأصلية.
+</p>
+
+<p data-t="formatsText2">
+تستخدم الأداة خلفية بيضاء للمساحة النهائية، ولذلك تظهر المناطق الشفافة في الصور الأصلية على خلفية بيضاء في الصورة المدمجة.
+</p>
+</div>
+
+<div class="info-section">
+<h2 data-t="tipsTitle">نصائح للحصول على نتيجة أفضل</h2>
+
+<ul>
+<li data-t="tip1">اختر صورًا واضحة وبجودة مناسبة للنتيجة التي تحتاج إليها.</li>
+<li data-t="tip2">استخدم الصور ذات الارتفاع المتقارب عند الدمج الأفقي للحصول على شكل متناسق.</li>
+<li data-t="tip3">استخدم الصور ذات العرض المتقارب عند الدمج الرأسي.</li>
+<li data-t="tip4">جرّب تقليل المسافة بين الصور إذا كنت تريد نتيجة متصلة.</li>
+<li data-t="tip5">استخدم مسافة أكبر إذا كنت تريد فصلًا واضحًا بين الصور.</li>
+<li data-t="tip6">تجنب اختيار عدد كبير جدًا من الصور أو صور ضخمة إذا كان جهازك محدود الإمكانيات.</li>
+<li data-t="tip7">راجع معاينة النتيجة قبل تنزيل الملف النهائي.</li>
+</ul>
+</div>
+
+<div class="info-section">
+<h2 data-t="limitsTitle">حدود استخدام الأداة</h2>
+
+<ul>
+<li data-t="limit1">تحتاج إلى اختيار صورتين على الأقل حتى تتمكن من الدمج.</li>
+<li data-t="limit2">تعتمد سرعة المعالجة على عدد الصور وأبعادها وإمكانيات جهازك.</li>
+<li data-t="limit3">قد تستغرق الصور الكبيرة وقتًا أطول أو تتجاوز ذاكرة المتصفح المتاحة.</li>
+<li data-t="limit4">تُحفظ النتيجة النهائية بصيغة PNG فقط.</li>
+<li data-t="limit5">تُستخدم خلفية بيضاء للمساحات الناتجة، ولا يتم الاحتفاظ بشفافية الخلفية الأصلية.</li>
+<li data-t="limit6">تقوم الأداة بترتيب الصور ودمجها، ولا توفر قصًا متقدمًا أو تعديلًا منفصلًا لكل صورة.</li>
+</ul>
+</div>
+
+<div class="info-section">
+<h2 data-t="faqTitle">الأسئلة الشائعة حول دمج الصور</h2>
+
+<div class="faq-item">
+<h3 data-t="q1">كيف أدمج صورتين في صورة واحدة؟</h3>
+<p data-t="a1">اختر الصورتين من جهازك، وحدد اتجاه الدمج، ثم اضغط على زر دمج الصور. بعد ظهور النتيجة يمكنك تنزيلها بصيغة PNG.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q2">هل يمكن دمج أكثر من صورتين؟</h3>
+<p data-t="a2">نعم، يمكنك اختيار صورتين أو أكثر ودمجها في صورة واحدة، مع مراعاة إمكانيات جهازك وحجم الصور.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q3">هل يمكن وضع الصور بجانب بعضها؟</h3>
+<p data-t="a3">نعم، اختر اتجاه الدمج الأفقي حتى تظهر الصور بجانب بعضها في صف واحد.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q4">هل يمكن وضع الصور فوق بعضها؟</h3>
+<p data-t="a4">نعم، اختر اتجاه الدمج الرأسي حتى تظهر الصور واحدة فوق الأخرى.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q5">هل أستطيع التحكم في المسافة بين الصور؟</h3>
+<p data-t="a5">نعم، يمكنك استخدام شريط المسافة لتحديد المسافة بين الصور من صفر إلى 100 بكسل.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q6">ما صيغة الصورة بعد الدمج؟</h3>
+<p data-t="a6">يتم إنشاء الصورة النهائية بصيغة PNG، ويمكنك تنزيلها مباشرة إلى جهازك.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q7">هل يتم رفع صوري إلى الموقع؟</h3>
+<p data-t="a7">لا يحتاج الدمج إلى رفع الصور إلى خادم الموقع؛ تتم المعالجة باستخدام إمكانيات المتصفح على جهازك.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q8">هل يمكن استخدام الأداة من الهاتف؟</h3>
+<p data-t="a8">نعم، يمكنك فتح الأداة من متصفح الهاتف واختيار الصور ودمجها وتنزيل النتيجة.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q9">لماذا قد يستغرق دمج الصور الكبيرة وقتًا؟</h3>
+<p data-t="a9">لأن المتصفح يحتاج إلى قراءة الصور وتجهيز مساحة العمل ورسم الصور عليها. كلما زاد عدد الصور أو أبعادها زادت الموارد المطلوبة.</p>
+</div>
+
+<div class="faq-item">
+<h3 data-t="q10">هل أحتاج إلى تثبيت برنامج لدمج الصور؟</h3>
+<p data-t="a10">لا، تعمل الأداة مباشرة من المتصفح دون الحاجة إلى تثبيت برنامج أو إنشاء حساب.</p>
+</div>
+</div>
+
+<div class="info-section">
+<h2 data-t="relatedTitle">أدوات أخرى قد تحتاج إليها</h2>
+
+<p data-t="relatedText">
+يمكنك استخدام أدوات أخرى من سوق الأدوات لتعديل الصور وتجهيزها قبل الدمج أو بعده.
+</p>
+
+<div class="related-links">
+<a href="image-compressor.html" data-t="related1">ضغط الصور</a>
+<a href="image-resizer.html" data-t="related2">تغيير حجم الصور</a>
+<a href="image-converter.html" data-t="related3">تحويل صيغ الصور</a>
+<a href="image-grayscale.html" data-t="related4">تحويل الصور إلى أبيض وأسود</a>
+</div>
+</div>
+
+</section>
+
+<footer>
+<span data-t="footer">سوق الأدوات | أدوات مجانية وسهلة للجميع</span>
+<br>
+<a href="index.html" data-t="footerHome">العودة إلى الصفحة الرئيسية</a>
+</footer>
+
 </main>
+
+<script src="language.js"></script>
 
 <script>
 (function(){
-const text={
-ar:{
-title:'دمج الصور في صورة واحدة',
-intro:'اختار صورتين أو أكثر، وحدد اتجاه الدمج، ثم حمّل الصورة النهائية. تتم المعالجة داخل المتصفح دون رفع صورك إلى أي موقع.',
-pick:'＋ اختار الصور من جهازك',pickHint:'يمكنك اختيار أكثر من صورة',
-direction:'اتجاه الدمج',horizontal:'جنب بعض',vertical:'فوق بعض',
-spacing:'المسافة بين الصور:',pixels:'بكسل',merge:'دمج الصور',clear:'مسح الصور المختارة',
-resultTitle:'الصورة الناتجة',download:'تحميل الصورة بصيغة PNG',
-remove:'حذف الصورة',none:'لم يتم اختيار صور بعد.',
+
+const text = {
+ar: {
+siteName:'سوق الأدوات',
+home:'الرئيسية',
+title:'دمج الصور في صورة واحدة أونلاين',
+intro:'ادمج صورتين أو أكثر في صورة واحدة بسهولة ومجانًا. اختر اتجاه الدمج الأفقي أو الرأسي، وتحكم في المسافة بين الصور، ثم حمّل النتيجة النهائية بصيغة PNG.',
+pick:'＋ اختار الصور من جهازك',
+pickHint:'يمكنك اختيار صورتين أو أكثر',
+direction:'اتجاه الدمج',
+horizontal:'جنب بعض',
+vertical:'فوق بعض',
+spacing:'المسافة بين الصور:',
+pixels:'بكسل',
+merge:'دمج الصور',
+clear:'مسح الصور المختارة',
+resultTitle:'الصورة الناتجة',
+download:'تحميل الصورة بصيغة PNG',
+remove:'حذف الصورة',
+none:'لم يتم اختيار صور بعد.',
 chosen:n=>`تم اختيار ${n} صورة. تحتاج إلى صورتين على الأقل للدمج.`,
-notImages:'الملفات المختارة ليست صورًا.',cleared:'تم مسح الصور المختارة.',
-processing:'جاري تجهيز الصور ودمجها...',imageError:'تعذر فتح إحدى الصور. جرّب صورة أخرى.',
-canvasError:'المتصفح لم يتمكن من تجهيز الصورة.',outputError:'تعذر إنشاء الصورة الناتجة.',
+notImages:'الملفات المختارة ليست صورًا مدعومة.',
+cleared:'تم مسح الصور المختارة.',
+processing:'جاري تجهيز الصور ودمجها...',
+imageError:'تعذر فتح إحدى الصور. جرّب صورة أخرى.',
+canvasError:'المتصفح لم يتمكن من تجهيز الصورة.',
+outputError:'تعذر إنشاء الصورة الناتجة.',
 success:(n,w,h)=>`تم دمج ${n} صور بنجاح. الأبعاد: ${w} × ${h} بكسل.`,
 ready:'تم الدمج بنجاح. يمكنك تحميل الصورة الناتجة.',
-fail:'حدث خطأ أثناء الدمج. جرّب صورًا أخرى.',preview:'معاينة الصورة المدمجة'
+fail:'حدث خطأ أثناء الدمج. جرّب صورًا أخرى.',
+preview:'معاينة الصورة المدمجة',
+aboutTitle:'ما هي أداة دمج الصور؟',
+aboutText:'أداة دمج الصور من سوق الأدوات هي أداة مجانية عبر الإنترنت تتيح لك جمع صورتين أو مجموعة من الصور في صورة واحدة. يمكنك ترتيب الصور بجانب بعضها أفقيًا أو وضعها فوق بعضها رأسيًا، مع تحديد المسافة الفاصلة بينها حسب الشكل الذي تريده.',
+aboutText2:'تساعدك الأداة على إنشاء صورة مجمعة بسرعة دون الحاجة إلى تثبيت برامج تصميم أو امتلاك خبرة في تعديل الصور. بعد الانتهاء يمكنك معاينة الصورة الناتجة وتنزيلها مباشرة بصيغة PNG.',
+featuresTitle:'مميزات أداة دمج الصور',
+feature1:'دمج صورتين أو أكثر في صورة واحدة.',
+feature2:'اختيار الدمج الأفقي لترتيب الصور جنبًا إلى جنب.',
+feature3:'اختيار الدمج الرأسي لوضع الصور فوق بعضها.',
+feature4:'التحكم في المسافة بين الصور من صفر إلى 100 بكسل.',
+feature5:'عرض الصور المختارة قبل تنفيذ عملية الدمج.',
+feature6:'إمكانية حذف صورة محددة من المجموعة قبل الدمج.',
+feature7:'معاينة الصورة النهائية قبل تنزيلها.',
+feature8:'تنزيل الصورة المدمجة بصيغة PNG.',
+feature9:'لا تحتاج إلى إنشاء حساب أو تثبيت برنامج.',
+feature10:'تعمل من خلال المتصفح على الكمبيوتر والهاتف.',
+howTitle:'كيف تعمل أداة دمج الصور؟',
+howText:'تعتمد الأداة على تقنيات معالجة الصور الموجودة في متصفحك. عند اختيار الصور، يقوم المتصفح بقراءتها وتجهيزها، ثم يرسمها على مساحة عمل واحدة باستخدام Canvas. بعد ذلك يتم إنشاء ملف صورة جديد بصيغة PNG يمكن معاينته وتنزيله.',
+privacyText:'تتم عملية دمج الصور داخل المتصفح على جهازك، ولا يحتاج تنفيذ الدمج إلى إرسال الصور إلى خادم الموقع. لذلك لا تحتاج إلى رفع صورك إلى خدمة خارجية لإتمام العملية.',
+stepsTitle:'طريقة دمج الصور خطوة بخطوة',
+step1:'اضغط على زر اختيار الصور من جهازك.',
+step2:'حدد صورتين أو أكثر تريد جمعها في صورة واحدة.',
+step3:'راجع الصور التي اخترتها في قائمة المعاينة.',
+step4:'احذف أي صورة لا تريد استخدامها إذا لزم الأمر.',
+step5:'اختر اتجاه الدمج: أفقيًا أو رأسيًا.',
+step6:'حرّك شريط المسافة لتحديد الفراغ بين الصور.',
+step7:'اضغط على زر دمج الصور وانتظر تجهيز النتيجة.',
+step8:'راجع الصورة الناتجة ثم اضغط على زر التحميل لتنزيلها.',
+directionTitle:'ما الفرق بين الدمج الأفقي والرأسي؟',
+horizontalTitle:'الدمج الأفقي',
+horizontalText:'يرتب الصور بجانب بعضها في صف واحد. يناسب هذا الاختيار مقارنة الصور جنبًا إلى جنب، أو جمع لقطات متعددة في صورة عريضة.',
+verticalTitle:'الدمج الرأسي',
+verticalText:'يرتب الصور فوق بعضها في عمود واحد. يناسب هذا الاختيار إنشاء صورة طويلة أو جمع لقطات شاشة متتابعة في صورة واحدة.',
+formatsTitle:'الصيغ المدعومة وحفظ الصورة',
+formatsText:'تقبل الأداة ملفات الصور التي يستطيع المتصفح فتحها، مثل JPG وJPEG وPNG وWebP وغيرها من الصيغ المدعومة في المتصفح. يتم حفظ الصورة الناتجة بصيغة PNG بغض النظر عن صيغ الصور الأصلية.',
+formatsText2:'تستخدم الأداة خلفية بيضاء للمساحة النهائية، ولذلك تظهر المناطق الشفافة في الصور الأصلية على خلفية بيضاء في الصورة المدمجة.',
+tipsTitle:'نصائح للحصول على نتيجة أفضل',
+tip1:'اختر صورًا واضحة وبجودة مناسبة للنتيجة التي تحتاج إليها.',
+tip2:'استخدم الصور ذات الارتفاع المتقارب عند الدمج الأفقي للحصول على شكل متناسق.',
+tip3:'استخدم الصور ذات العرض المتقارب عند الدمج الرأسي.',
+tip4:'جرّب تقليل المسافة بين الصور إذا كنت تريد نتيجة متصلة.',
+tip5:'استخدم مسافة أكبر إذا كنت تريد فصلًا واضحًا بين الصور.',
+tip6:'تجنب اختيار عدد كبير جدًا من الصور أو صور ضخمة إذا كان جهازك محدود الإمكانيات.',
+tip7:'راجع معاينة النتيجة قبل تنزيل الملف النهائي.',
+limitsTitle:'حدود استخدام الأداة',
+limit1:'تحتاج إلى اختيار صورتين على الأقل حتى تتمكن من الدمج.',
+limit2:'تعتمد سرعة المعالجة على عدد الصور وأبعادها وإمكانيات جهازك.',
+limit3:'قد تستغرق الصور الكبيرة وقتًا أطول أو تتجاوز ذاكرة المتصفح المتاحة.',
+limit4:'تُحفظ النتيجة النهائية بصيغة PNG فقط.',
+limit5:'تُستخدم خلفية بيضاء للمساحات الناتجة، ولا يتم الاحتفاظ بشفافية الخلفية الأصلية.',
+limit6:'تقوم الأداة بترتيب الصور ودمجها، ولا توفر قصًا متقدمًا أو تعديلًا منفصلًا لكل صورة.',
+faqTitle:'الأسئلة الشائعة حول دمج الصور',
+q1:'كيف أدمج صورتين في صورة واحدة؟',
+a1:'اختر الصورتين من جهازك، وحدد اتجاه الدمج، ثم اضغط على زر دمج الصور. بعد ظهور النتيجة يمكنك تنزيلها بصيغة PNG.',
+q2:'هل يمكن دمج أكثر من صورتين؟',
+a2:'نعم، يمكنك اختيار صورتين أو أكثر ودمجها في صورة واحدة، مع مراعاة إمكانيات جهازك وحجم الصور.',
+q3:'هل يمكن وضع الصور بجانب بعضها؟',
+a3:'نعم، اختر اتجاه الدمج الأفقي حتى تظهر الصور بجانب بعضها في صف واحد.',
+q4:'هل يمكن وضع الصور فوق بعضها؟',
+a4:'نعم، اختر اتجاه الدمج الرأسي حتى تظهر الصور واحدة فوق الأخرى.',
+q5:'هل أستطيع التحكم في المسافة بين الصور؟',
+a5:'نعم، يمكنك استخدام شريط المسافة لتحديد المسافة بين الصور من صفر إلى 100 بكسل.',
+q6:'ما صيغة الصورة بعد الدمج؟',
+a6:'يتم إنشاء الصورة النهائية بصيغة PNG، ويمكنك تنزيلها مباشرة إلى جهازك.',
+q7:'هل يتم رفع صوري إلى الموقع؟',
+a7:'لا يحتاج الدمج إلى رفع الصور إلى خادم الموقع؛ تتم المعالجة باستخدام إمكانيات المتصفح على جهازك.',
+q8:'هل يمكن استخدام الأداة من الهاتف؟',
+a8:'نعم، يمكنك فتح الأداة من متصفح الهاتف واختيار الصور ودمجها وتنزيل النتيجة.',
+q9:'لماذا قد يستغرق دمج الصور الكبيرة وقتًا؟',
+a9:'لأن المتصفح يحتاج إلى قراءة الصور وتجهيز مساحة العمل ورسم الصور عليها. كلما زاد عدد الصور أو أبعادها زادت الموارد المطلوبة.',
+q10:'هل أحتاج إلى تثبيت برنامج لدمج الصور؟',
+a10:'لا، تعمل الأداة مباشرة من المتصفح دون الحاجة إلى تثبيت برنامج أو إنشاء حساب.',
+relatedTitle:'أدوات أخرى قد تحتاج إليها',
+relatedText:'يمكنك استخدام أدوات أخرى من سوق الأدوات لتعديل الصور وتجهيزها قبل الدمج أو بعده.',
+related1:'ضغط الصور',
+related2:'تغيير حجم الصور',
+related3:'تحويل صيغ الصور',
+related4:'تحويل الصور إلى أبيض وأسود',
+footer:'سوق الأدوات | أدوات مجانية وسهلة للجميع',
+footerHome:'العودة إلى الصفحة الرئيسية'
 },
-en:{
-title:'Merge Images into One',
-intro:'Choose two or more images, select the layout, then download the result. Processing happens in your browser; your images are not uploaded.',
-pick:'＋ Choose images from your device',pickHint:'You can select multiple images',
-direction:'Merge direction',horizontal:'Side by side',vertical:'Top to bottom',
-spacing:'Spacing between images:',pixels:'px',merge:'Merge images',clear:'Clear selected images',
-resultTitle:'Merged image',download:'Download PNG image',
-remove:'Remove image',none:'No images selected yet.',
+
+en: {
+siteName:'Tools Market',
+home:'Home',
+title:'Merge Images into One Online',
+intro:'Combine two or more images into one image easily and for free. Choose horizontal or vertical merging, adjust the spacing between images, and download the final result as a PNG file.',
+pick:'＋ Choose images from your device',
+pickHint:'You can select two or more images',
+direction:'Merge direction',
+horizontal:'Side by side',
+vertical:'Top to bottom',
+spacing:'Spacing between images:',
+pixels:'px',
+merge:'Merge images',
+clear:'Clear selected images',
+resultTitle:'Merged image',
+download:'Download PNG image',
+remove:'Remove image',
+none:'No images selected yet.',
 chosen:n=>`${n} image(s) selected. At least two images are needed.`,
-notImages:'The selected files are not images.',cleared:'Selected images cleared.',
-processing:'Preparing and merging images...',imageError:'Could not open one of the images. Try another.',
-canvasError:'Your browser could not prepare the image.',outputError:'Could not create the resulting image.',
+notImages:'The selected files are not supported images.',
+cleared:'Selected images cleared.',
+processing:'Preparing and merging images...',
+imageError:'Could not open one of the images. Try another image.',
+canvasError:'Your browser could not prepare the image.',
+outputError:'Could not create the resulting image.',
 success:(n,w,h)=>`Successfully merged ${n} images. Dimensions: ${w} × ${h} pixels.`,
 ready:'Merge completed. You can download the resulting image.',
-fail:'An error occurred while merging. Try different images.',preview:'Merged image preview'
+fail:'An error occurred while merging. Try different images.',
+preview:'Merged image preview',
+aboutTitle:'What Is an Image Merger?',
+aboutText:'The Image Merger from Tools Market is a free online tool that lets you combine two or more pictures into a single image. You can arrange images side by side horizontally or stack them vertically, while adjusting the spacing between them.',
+aboutText2:'Create a combined image without installing design software or having advanced photo-editing skills. Preview your result and download it directly as a PNG file.',
+featuresTitle:'Features of the Image Merger',
+feature1:'Combine two or more images into one.',
+feature2:'Arrange images side by side with horizontal merging.',
+feature3:'Stack images vertically.',
+feature4:'Adjust the spacing between images from 0 to 100 pixels.',
+feature5:'Preview selected images before merging.',
+feature6:'Remove individual images before merging.',
+feature7:'Preview the final image before downloading.',
+feature8:'Download the merged image in PNG format.',
+feature9:'No account or software installation required.',
+feature10:'Works in your browser on computers and mobile devices.',
+howTitle:'How Does the Image Merger Work?',
+howText:'The tool uses image-processing features available in your browser. After you select images, the browser reads them and draws them onto a single canvas. A new PNG image is then created for preview and download.',
+privacyText:'Images are processed inside your browser on your device. The merging process does not require sending your images to the website server or uploading them to an external service.',
+stepsTitle:'How to Merge Images Step by Step',
+step1:'Click the image selection area.',
+step2:'Choose two or more images from your device.',
+step3:'Review your selected images in the preview list.',
+step4:'Remove any image you do not want to include.',
+step5:'Choose horizontal or vertical merging.',
+step6:'Adjust the spacing slider to set the gap between images.',
+step7:'Click Merge images and wait for processing to finish.',
+step8:'Preview the result and click the download button.',
+directionTitle:'Horizontal vs. Vertical Image Merging',
+horizontalTitle:'Horizontal Merging',
+horizontalText:'Places images next to each other in a single row. This is useful for side-by-side comparisons and creating wide combined images.',
+verticalTitle:'Vertical Merging',
+verticalText:'Stacks images on top of each other in a single column. This is useful for creating tall images or combining consecutive screenshots.',
+formatsTitle:'Supported Formats and Image Output',
+formatsText:'The tool accepts image files that your browser can open, including JPG, JPEG, PNG, WebP, and other browser-supported image formats. The final merged image is saved as PNG regardless of the original file formats.',
+formatsText2:'The tool uses a white background for the final canvas. Transparent areas in the original images therefore appear white in the merged image.',
+tipsTitle:'Tips for Better Results',
+tip1:'Choose clear images with suitable quality.',
+tip2:'For horizontal merging, images with similar heights can create a more consistent result.',
+tip3:'For vertical merging, images with similar widths can create a more consistent result.',
+tip4:'Reduce the spacing if you want images to appear connected.',
+tip5:'Increase the spacing if you want a clearer separation.',
+tip6:'Avoid selecting too many very large images on devices with limited resources.',
+tip7:'Preview the final image before downloading it.',
+limitsTitle:'Tool Limitations',
+limit1:'At least two images are required for merging.',
+limit2:'Processing speed depends on the number and dimensions of images and your device capabilities.',
+limit3:'Large images may take longer to process or exceed available browser memory.',
+limit4:'The final result is saved in PNG format only.',
+limit5:'The output uses a white background, so original transparent areas are not preserved.',
+limit6:'The tool arranges and combines images; it does not provide advanced cropping or separate editing for each image.',
+faqTitle:'Frequently Asked Questions About Image Merging',
+q1:'How can I merge two images into one?',
+a1:'Select both images, choose the merge direction, and click Merge images. You can download the result as a PNG file.',
+q2:'Can I merge more than two images?',
+a2:'Yes. You can select two or more images and combine them, depending on your device capabilities and image sizes.',
+q3:'Can I place images side by side?',
+a3:'Yes. Select the horizontal direction to arrange the images in one row.',
+q4:'Can I stack images on top of each other?',
+a4:'Yes. Select the vertical direction to arrange images in one column.',
+q5:'Can I control the spacing between images?',
+a5:'Yes. Use the spacing slider to set a gap from 0 to 100 pixels.',
+q6:'What format is the merged image?',
+a6:'The final image is created as a PNG file that you can download directly.',
+q7:'Are my images uploaded to the website?',
+a7:'The merging process does not require uploading images to the website server. Processing takes place in your browser.',
+q8:'Can I use the tool on my phone?',
+a8:'Yes. Open the tool in your mobile browser, select your images, merge them, and download the result.',
+q9:'Why can large images take longer to merge?',
+a9:'The browser needs to read the images, prepare the canvas, and draw each image. More images and larger dimensions require more resources.',
+q10:'Do I need to install software?',
+a10:'No. The tool works directly in your browser without installing software or creating an account.',
+relatedTitle:'Other Tools You May Find Useful',
+relatedText:'Explore other Tools Market utilities to prepare or edit your images before or after merging.',
+related1:'Image Compressor',
+related2:'Image Resizer',
+related3:'Image Converter',
+related4:'Black and White Image Converter',
+footer:'Tools Market | Free and easy tools for everyone',
+footerHome:'Back to homepage'
 }
 };
 
-let lang='ar';
-try{
-const saved=localStorage.getItem('toolsMarketLanguage');
-const query=new URLSearchParams(location.search).get('lang');
-if(query==='en'||query==='ar')lang=query;
-else if(saved==='en'||saved==='ar')lang=saved;
-}catch(e){}
+let lang = 'ar';
 
-const t=text[lang];
-document.documentElement.lang=lang;
-document.documentElement.dir=lang==='ar'?'rtl':'ltr';
-document.title=t.title+' | Tools Market';
-document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t[el.dataset.t]);
+try {
+    const saved = localStorage.getItem('toolsMarketLanguage');
+    const query = new URLSearchParams(location.search).get('lang');
 
-const input=document.getElementById('imageInput');
-const list=document.getElementById('imageList');
-const status=document.getElementById('status');
-const merge=document.getElementById('mergeButton');
-const clear=document.getElementById('clearButton');
-const spacing=document.getElementById('spacing');
-const spacingValue=document.getElementById('spacingValue');
-const resultPanel=document.getElementById('resultPanel');
-const resultPreview=document.getElementById('resultPreview');
-const resultInfo=document.getElementById('resultInfo');
-const download=document.getElementById('downloadButton');
-let images=[];
-let resultUrl=null;
+    if (query === 'en' || query === 'ar') {
+        lang = query;
+    } else if (saved === 'en' || saved === 'ar') {
+        lang = saved;
+    }
+} catch(e) {}
 
-function updateStatus(message){
-status.textContent=message;
-merge.disabled=images.length<2;
-clear.disabled=images.length===0;
+const t = text[lang];
+
+document.documentElement.lang = lang;
+document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+document.title = lang === 'ar'
+    ? 'دمج الصور أونلاين في صورة واحدة مجانًا | سوق الأدوات'
+    : 'Merge Images Online into One Image for Free | Tools Market';
+
+document.querySelector('meta[name="description"]').content = lang === 'ar'
+    ? 'ادمج صورتين أو أكثر في صورة واحدة أونلاين مجانًا. اختر الدمج الأفقي أو الرأسي وتحكم في المسافات وحمّل النتيجة بصيغة PNG بسهولة.'
+    : 'Merge two or more images into one online for free. Choose horizontal or vertical layouts, adjust spacing, and download your result as PNG.';
+
+document.querySelectorAll('[data-t]').forEach(function(el) {
+    const key = el.dataset.t;
+    if (t[key] !== undefined && typeof t[key] === 'string') {
+        el.textContent = t[key];
+    }
+});
+
+const input = document.getElementById('imageInput');
+const list = document.getElementById('imageList');
+const status = document.getElementById('status');
+const merge = document.getElementById('mergeButton');
+const clear = document.getElementById('clearButton');
+const spacing = document.getElementById('spacing');
+const spacingValue = document.getElementById('spacingValue');
+const resultPanel = document.getElementById('resultPanel');
+const resultPreview = document.getElementById('resultPreview');
+const resultInfo = document.getElementById('resultInfo');
+const download = document.getElementById('downloadButton');
+
+let images = [];
+let resultUrl = null;
+
+function clearResult() {
+    if (resultUrl) {
+        URL.revokeObjectURL(resultUrl);
+        resultUrl = null;
+    }
+
+    resultPreview.removeAttribute('src');
+    resultInfo.textContent = '';
+    resultPanel.classList.add('hidden');
 }
 
-function render(){
-list.replaceChildren();
-images.forEach((item,index)=>{
-const card=document.createElement('div');
-card.className='image-card';
-const img=document.createElement('img');
-img.src=item.url;
-img.alt=item.file.name;
-const name=document.createElement('div');
-name.className='image-name';
-name.textContent=item.file.name;
-const remove=document.createElement('button');
-remove.className='remove';
-remove.type='button';
-remove.textContent=t.remove;
-remove.addEventListener('click',()=>{
-URL.revokeObjectURL(item.url);
-images.splice(index,1);
-render();
-if(images.length<2)resultPanel.classList.add('hidden');
-});
-card.append(img,name,remove);
-list.append(card);
-});
-updateStatus(images.length?t.chosen(images.length):t.none);
+function updateStatus(message) {
+    status.textContent = message;
+    merge.disabled = images.length < 2;
+    clear.disabled = images.length === 0;
 }
 
-input.addEventListener('change',()=>{
-const files=Array.from(input.files||[]);
-let added=0;
-for(const file of files){
-if(file.type.startsWith('image/')){
-images.push({file,url:URL.createObjectURL(file)});
-added++;
-}
-}
-input.value='';
-resultPanel.classList.add('hidden');
-render();
-if(!added&&files.length)updateStatus(t.notImages);
-});
+function render() {
+    list.replaceChildren();
 
-spacing.addEventListener('input',()=>spacingValue.textContent=spacing.value);
+    images.forEach(function(item, index) {
+        const card = document.createElement('div');
+        card.className = 'image-card';
 
-clear.addEventListener('click',()=>{
-images.forEach(item=>URL.revokeObjectURL(item.url));
-images=[];
-render();
-resultPanel.classList.add('hidden');
-updateStatus(t.cleared);
-});
+        const img = document.createElement('img');
+        img.src = item.url;
+        img.alt = item.file.name;
 
-merge.addEventListener('click',async()=>{
-if(images.length<2)return;
-merge.disabled=true;
-status.textContent=t.processing;
-try{
-const loaded=await Promise.all(images.map(item=>new Promise((resolve,reject)=>{
-const img=new Image();
-img.onload=()=>resolve({img,file:item.file});
-img.onerror=()=>reject(new Error(t.imageError));
-img.src=item.url;
-})));
+        const name = document.createElement('div');
+        name.className = 'image-name';
+        name.textContent = item.file.name;
 
-const horizontal=document.querySelector('input[name="direction"]:checked').value==='horizontal';
-const gap=Number(spacing.value);
+        const remove = document.createElement('button');
+        remove.className = 'remove';
+        remove.type = 'button';
+        remove.textContent = t.remove;
 
-const targetHeight=loaded[0].img.naturalHeight;
-const targetWidth=loaded[0].img.naturalWidth;
+        remove.addEventListener('click', function() {
+            clearResult();
 
-const resizedImages=loaded.map(item=>{
-if(horizontal){
-const ratio=item.img.naturalWidth/item.img.naturalHeight;
-return {img:item.img,width:targetHeight*ratio,height:targetHeight};
-}else{
-const ratio=item.img.naturalWidth/item.img.naturalHeight;
-return {img:item.img,width:targetWidth,height:targetWidth/ratio};
-}
-});
+            URL.revokeObjectURL(item.url);
+            images.splice(index, 1);
 
-const gapTotal=gap*(resizedImages.length-1);
-const totalWidth=horizontal
-?resizedImages.reduce((sum,x)=>sum+x.width,0)+gapTotal
-:Math.max(...resizedImages.map(x=>x.width));
+            render();
+        });
 
-const totalHeight=horizontal
-?targetHeight
-:resizedImages.reduce((sum,x)=>sum+x.height,0)+gapTotal;
+        card.append(img, name, remove);
+        list.append(card);
+    });
 
-const maxDimension=12000;
-const scale=Math.min(1,maxDimension/totalWidth,maxDimension/totalHeight);
-const canvas=document.createElement('canvas');
-canvas.width=Math.max(1,Math.round(totalWidth*scale));
-canvas.height=Math.max(1,Math.round(totalHeight*scale));
-const ctx=canvas.getContext('2d');
-if(!ctx)throw new Error(t.canvasError);
-
-ctx.fillStyle='#fff';
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-let cursor=0;
-for(const item of resizedImages){
-const w=item.width*scale;
-const h=item.height*scale;
-if(horizontal){
-ctx.drawImage(item.img,cursor,0,w,h);
-cursor+=w+gap*scale;
-}else{
-ctx.drawImage(item.img,(canvas.width-w)/2,cursor,w,h);
-cursor+=h+gap*scale;
-}
+    updateStatus(
+        images.length ? t.chosen(images.length) : t.none
+    );
 }
 
-const blob=await new Promise((resolve,reject)=>{
-canvas.toBlob(b=>b?resolve(b):reject(new Error(t.outputError)),'image/png');
-});
-if(resultUrl)URL.revokeObjectURL(resultUrl);
-resultUrl=URL.createObjectURL(blob);
-resultPreview.src=resultUrl;
-resultPreview.alt=t.preview;
-resultInfo.textContent=t.success(loaded.length,canvas.width,canvas.height);
-resultPanel.classList.remove('hidden');
-status.textContent=t.ready;
-}catch(error){
-status.textContent=error.message||t.fail;
-}finally{
-merge.disabled=images.length<2;
-}
+input.addEventListener('change', function() {
+    const files = Array.from(input.files || []);
+    let added = 0;
+
+    clearResult();
+
+    for (const file of files) {
+        if (file.type.startsWith('image/')) {
+            images.push({
+                file: file,
+                url: URL.createObjectURL(file)
+            });
+
+            added++;
+        }
+    }
+
+    input.value = '';
+
+    render();
+
+    if (!added && files.length) {
+        updateStatus(t.notImages);
+    }
 });
 
-download.addEventListener('click',()=>{
-if(!resultUrl)return;
-const link=document.createElement('a');
-link.href=resultUrl;
-link.download='merged-image.png';
-document.body.append(link);
-link.click();
-link.remove();
+spacing.addEventListener('input', function() {
+    spacingValue.textContent = spacing.value;
 });
 
-window.addEventListener('beforeunload',()=>{
-images.forEach(item=>URL.revokeObjectURL(item.url));
-if(resultUrl)URL.revokeObjectURL(resultUrl);
+clear.addEventListener('click', function() {
+    images.forEach(function(item) {
+        URL.revokeObjectURL(item.url);
+    });
+
+    images = [];
+
+    clearResult();
+    render();
+    updateStatus(t.cleared);
 });
+
+merge.addEventListener('click', async function() {
+    if (images.length < 2) return;
+
+    clearResult();
+
+    merge.disabled = true;
+    status.textContent = t.processing;
+
+    try {
+        const loaded = await Promise.all(
+            images.map(function(item) {
+                return new Promise(function(resolve, reject) {
+                    const img = new Image();
+
+                    img.onload = function() {
+                        resolve({
+                            img: img,
+                            file: item.file
+                        });
+                    };
+
+                    img.onerror = function() {
+                        reject(new Error(t.imageError));
+                    };
+
+                    img.src = item.url;
+                });
+            })
+        );
+
+        const direction = document.querySelector(
+            'input[name="direction"]:checked'
+        ).value;
+
+        const horizontal = direction === 'horizontal';
+        const gap = Number(spacing.value);
+
+        const targetHeight = loaded[0].img.naturalHeight;
+        const targetWidth = loaded[0].img.naturalWidth;
+
+        const resizedImages = loaded.map(function(item) {
+            if (horizontal) {
+                const ratio =
+                    item.img.naturalWidth / item.img.naturalHeight;
+
+                return {
+                    img: item.img,
+                    width: targetHeight * ratio,
+                    height: targetHeight
+                };
+            }
+
+            const ratio =
+                item.img.naturalWidth / item.img.naturalHeight;
+
+            return {
+                img: item.img,
+                width: targetWidth,
+                height: targetWidth / ratio
+            };
+        });
+
+        const gapTotal = gap * (resizedImages.length - 1);
+
+        const totalWidth = horizontal
+            ? resizedImages.reduce(function(sum, item) {
+                return sum + item.width;
+            }, 0) + gapTotal
+            : Math.max(...resizedImages.map(function(item) {
+                return item.width;
+            }));
+
+        const totalHeight = horizontal
+            ? targetHeight
+            : resizedImages.reduce(function(sum, item) {
+                return sum + item.height;
+            }, 0) + gapTotal;
+
+        const maxDimension = 12000;
+
+        const scale = Math.min(
+            1,
+            maxDimension / totalWidth,
+            maxDimension / totalHeight
+        );
+
+        const canvas = document.createElement('canvas');
+
+        canvas.width = Math.max(1, Math.round(totalWidth * scale));
+        canvas.height = Math.max(1, Math.round(totalHeight * scale));
+
+        const ctx = canvas.getContext('2d');
+
+        if (!ctx) {
+            throw new Error(t.canvasError);
+        }
+
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        let cursor = 0;
+
+        for (const item of resizedImages) {
+            const w = item.width * scale;
+            const h = item.height * scale;
+
+            if (horizontal) {
+                ctx.drawImage(item.img, cursor, 0, w, h);
+                cursor += w + gap * scale;
+            } else {
+                ctx.drawImage(
+                    item.img,
+                    (canvas.width - w) / 2,
+                    cursor,
+                    w,
+                    h
+                );
+
+                cursor += h + gap * scale;
+            }
+        }
+
+        const blob = await new Promise(function(resolve, reject) {
+            canvas.toBlob(function(result) {
+                if (result) {
+                    resolve(result);
+                } else {
+                    reject(new Error(t.outputError));
+                }
+            }, 'image/png');
+        });
+
+        if (resultUrl) {
+            URL.revokeObjectURL(resultUrl);
+        }
+
+        resultUrl = URL.createObjectURL(blob);
+
+        resultPreview.src = resultUrl;
+        resultPreview.alt = t.preview;
+
+        resultInfo.textContent = t.success(
+            loaded.length,
+            canvas.width,
+            canvas.height
+        );
+
+        resultPanel.classList.remove('hidden');
+        status.textContent = t.ready;
+
+        resultPanel.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+    } catch(error) {
+        status.textContent = error.message || t.fail;
+
+    } finally {
+        merge.disabled = images.length < 2;
+    }
+});
+
+download.addEventListener('click', function() {
+    if (!resultUrl) return;
+
+    const link = document.createElement('a');
+
+    link.href = resultUrl;
+    link.download = 'merged-image.png';
+
+    document.body.append(link);
+    link.click();
+    link.remove();
+});
+
+updateStatus(t.none);
+
+window.addEventListener('beforeunload', function() {
+    images.forEach(function(item) {
+        URL.revokeObjectURL(item.url);
+    });
+
+    if (resultUrl) {
+        URL.revokeObjectURL(resultUrl);
+    }
+});
+
 })();
 </script>
+
 </body>
 </html>
