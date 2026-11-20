@@ -455,69 +455,74 @@ body {
     margin-bottom: 5px;
 }
 
-/* الشريط الأسود السفلي */
+/* التذييل: لون فحمي هادئ وعرض كامل الشاشة */
 .site-footer {
     width: 100vw;
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
+    margin-inline: calc(50% - 50vw);
     margin-top: 35px;
     margin-bottom: -24px;
-    padding: 28px 16px 22px;
-    background: #111827;
+    padding: 30px 20px 22px;
+    background: #344454;
     color: #ffffff;
     font-size: 13px;
     line-height: 1.8;
     text-align: center;
-    border-top: 3px solid #334155;
+    border-top: 3px solid #526579;
 }
 
-/* اسم الموقع داخل الشريط */
+/* اسم الموقع */
 .footer-brand {
-    margin: 0 0 15px;
+    margin: 0 0 16px;
     color: #ffffff;
     font-size: 21px;
     font-weight: 800;
     letter-spacing: 0.2px;
 }
 
-/* روابط الصفحات الأربع */
+/* روابط الصفحات */
 .footer-links {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px 24px;
-    margin: 0 auto 16px;
+    gap: 12px 18px;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 18px;
     padding: 0 10px;
 }
 
 .footer-links a {
-    color: #e2e8f0;
+    display: inline-block;
+    padding: 8px 14px;
+    color: #f1f5f9;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
     text-decoration: none;
     font-size: 13px;
     font-weight: 600;
-    transition: color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .footer-links a:hover {
-    color: #38bdf8;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
     text-decoration: underline;
     text-underline-offset: 4px;
 }
 
 .footer-links a:focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid #bae6fd;
     outline-offset: 4px;
-    border-radius: 3px;
 }
 
-/* حقوق النشر */
 .footer-copyright {
-    margin: 0;
-    padding-top: 12px;
-    border-top: 1px solid #374151;
-    color: #9ca3af;
+    max-width: 750px;
+    margin: 0 auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e2e8f0;
     font-size: 12px;
 }
 
@@ -605,12 +610,19 @@ body {
     }
 
     .footer-links {
-        gap: 12px 16px;
-        margin-bottom: 14px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        max-width: 420px;
+        padding: 0 8px;
+        margin-bottom: 15px;
     }
 
     .footer-links a {
+        width: 100%;
+        padding: 9px 5px;
         font-size: 12px;
+        text-align: center;
     }
 
     .footer-copyright {
@@ -748,7 +760,7 @@ gtag('config', 'G-NZ00TSPTWC');
     </form>
 </section>
 
-<!-- محتوى تعريفي إضافي لمحركات البحث -->
+<!-- محتوى SEO أسفل الصفحة -->
 <section class="seo-content" aria-label="معلومات عن أدوات سوق الأدوات">
 
     <h2 data-ar="اكتشف أدوات مجانية أونلاين في مكان واحد"
@@ -876,7 +888,7 @@ gtag('config', 'G-NZ00TSPTWC');
 
 </section>
 
-<!-- الشريط الأسود السفلي -->
+<!-- التذييل السفلي -->
 <footer class="site-footer">
 
     <p class="footer-brand"
@@ -1042,7 +1054,6 @@ document.addEventListener("DOMContentLoaded", function () {
         submitButton.disabled = true;
 
         try {
-            /* تحويل بيانات النموذج إلى JSON */
             const formData = new FormData(feedbackForm);
             const data = Object.fromEntries(formData.entries());
 
@@ -1058,7 +1069,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
-            /* قراءة الرد بطريقة آمنة */
             const responseText = await response.text();
 
             let result = {};
@@ -1088,8 +1098,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     : "Comment sent successfully. Thank you!";
 
                 feedbackForm.reset();
-
-                /* إعادة ضبط اتجاه اللغة والنصوص بعد تفريغ النموذج */
                 applyLanguage(currentLanguage);
 
             } else {
