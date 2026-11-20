@@ -1,21 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title data-ar="تحويل الصور إلى PDF أونلاين | سوق الأدوات"
-         data-en="Convert Images to PDF Online | Tools Market">تحويل الصور إلى PDF أونلاين | سوق الأدوات</title>
-<meta name="description" content="حوّل الصور إلى ملف PDF بسهولة باستخدام أداة تحويل الصور إلى PDF المجانية أونلاين من سوق الأدوات.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://medosd6666-png.github.io/tools-market/image-to-pdf.html">
-<meta property="og:title" content="تحويل الصور إلى PDF أونلاين | سوق الأدوات">
-<meta property="og:description" content="حوّل الصور إلى ملف PDF بسهولة باستخدام أداة تحويل الصور إلى PDF المجانية أونلاين من سوق الأدوات.">
-<meta property="og:url" content="https://medosd6666-png.github.io/tools-market/image-to-pdf.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ar_AR">
+  <title>تحويل الصور إلى PDF أونلاين مجانًا | سوق الأدوات</title>
+  <meta name="description" content="حوّل صور JPG وPNG وWebP إلى ملف PDF واحد أونلاين مجانًا. اختر عدة صور، رتّب صفحاتك حسب ترتيب الاختيار، ونزّل ملف PDF بسهولة من سوق الأدوات.">
+  <meta name="keywords" content="تحويل الصور إلى PDF, تحويل صورة إلى PDF, صور إلى PDF, تحويل JPG إلى PDF, تحويل PNG إلى PDF, image to PDF, convert images to PDF, JPG to PDF">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#176b57">
 
+  <link rel="canonical" href="https://medosd6666-png.github.io/tools-market/image-to-pdf.html">
+
+  <meta property="og:title" content="تحويل الصور إلى PDF أونلاين مجانًا | سوق الأدوات">
+  <meta property="og:description" content="حوّل صورة واحدة أو عدة صور إلى ملف PDF واحد بسهولة ومجانًا، مباشرة من متصفحك.">
+  <meta property="og:url" content="https://medosd6666-png.github.io/tools-market/image-to-pdf.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="سوق الأدوات | Tools Market">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="تحويل الصور إلى PDF أونلاين | سوق الأدوات">
+  <meta name="twitter:description" content="حوّل صورك إلى ملف PDF واحد مجانًا وبسهولة باستخدام أداة سوق الأدوات.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Image to PDF Converter - Tools Market",
+    "alternateName": "تحويل الصور إلى PDF",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "inLanguage": ["ar", "en"],
+    "description": "A free online tool to convert one or multiple images into a single PDF document directly in the browser."
+  }
+  </script>
 
   <style>
     * {
@@ -25,14 +47,15 @@
     body {
       margin: 0;
       padding: 20px;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Tahoma, sans-serif;
       background: #f3f6fa;
       color: #263238;
       text-align: center;
+      line-height: 1.8;
     }
 
     .container {
-      max-width: 760px;
+      max-width: 800px;
       margin: 30px auto;
       padding: 25px;
       background: white;
@@ -43,6 +66,20 @@
     h1 {
       color: #176b57;
       font-size: 27px;
+      line-height: 1.5;
+    }
+
+    h2 {
+      color: #176b57;
+      font-size: 22px;
+      line-height: 1.5;
+      text-align: start;
+    }
+
+    h3 {
+      color: #245b4d;
+      font-size: 18px;
+      text-align: start;
     }
 
     .description {
@@ -54,10 +91,12 @@
       display: block;
       margin: 25px auto 12px;
       padding: 13px;
+      width: 100%;
       max-width: 100%;
       border: 2px dashed #176b57;
       border-radius: 10px;
       background: #f8fffc;
+      font: inherit;
     }
 
     button {
@@ -66,12 +105,17 @@
       padding: 13px 22px;
       margin: 8px 4px;
       font-size: 16px;
+      font-family: inherit;
       cursor: pointer;
     }
 
     #convertBtn {
       background: #176b57;
       color: white;
+    }
+
+    #convertBtn:hover:not(:disabled) {
+      background: #105442;
     }
 
     #convertBtn:disabled {
@@ -84,6 +128,12 @@
       margin-top: 20px;
       color: #176b57;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    .home:hover,
+    .related-links a:hover {
+      text-decoration: underline;
     }
 
     #status {
@@ -100,6 +150,7 @@
     }
 
     .photo {
+      min-width: 0;
       padding: 8px;
       border: 1px solid #ddd;
       border-radius: 10px;
@@ -110,6 +161,7 @@
       width: 100%;
       height: 130px;
       object-fit: contain;
+      background: #f8fafc;
     }
 
     .photo p {
@@ -123,16 +175,87 @@
       margin: 15px auto;
       padding: 13px 22px;
       width: fit-content;
+      max-width: 100%;
       background: #176b57;
       color: white;
       border-radius: 8px;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    #downloadLink:hover {
+      background: #105442;
     }
 
     .note {
       color: #666;
       font-size: 13px;
       line-height: 1.8;
+    }
+
+    .info-section {
+      margin-top: 28px;
+      padding: 22px;
+      border: 1px solid #e1e9e6;
+      border-radius: 12px;
+      background: #fbfdfc;
+      text-align: start;
+    }
+
+    .info-section p {
+      color: #4b5563;
+      margin: 10px 0;
+    }
+
+    .info-section ul,
+    .info-section ol {
+      padding-inline-start: 25px;
+      color: #4b5563;
+    }
+
+    .info-section li {
+      margin-bottom: 8px;
+    }
+
+    .faq-item {
+      padding: 13px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 6px;
+    }
+
+    .faq-item p {
+      margin: 0;
+    }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .related-links a {
+      color: #176b57;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 25px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     @media (max-width: 480px) {
@@ -148,72 +271,312 @@
       h1 {
         font-size: 23px;
       }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .info-section {
+        padding: 16px;
+      }
+
+      #downloadLink {
+        width: 100%;
+      }
     }
   </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NZ00TSPTWC');
-    </script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ00TSPTWC');
+  </script>
 </head>
 
 <body>
   <main class="container">
 
-    <h1 data-ar="تحويل الصور إلى PDF"
-        data-en="Convert Images to PDF">
-      تحويل الصور إلى PDF
-    </h1>
+    <header>
+      <h1
+        data-ar="تحويل الصور إلى PDF أونلاين"
+        data-en="Convert Images to PDF Online">
+        تحويل الصور إلى PDF أونلاين
+      </h1>
 
-    <p class="description"
-       data-ar="اختر صورة واحدة أو عدة صور، وحوّلها إلى ملف PDF واحد يمكنك تنزيله على جهازك."
-       data-en="Choose one or more images and convert them into a single PDF file you can download.">
-      اختر صورة واحدة أو عدة صور، وحوّلها إلى ملف PDF واحد يمكنك تنزيله على جهازك.
-    </p>
+      <p class="description"
+         data-ar="حوّل صورة واحدة أو عدة صور إلى ملف PDF واحد يمكنك تنزيله والاحتفاظ به على جهازك. اختر صورك وابدأ التحويل مجانًا."
+         data-en="Convert one or multiple images into a single PDF file that you can download and save on your device. Choose your images and start converting for free.">
+        حوّل صورة واحدة أو عدة صور إلى ملف PDF واحد يمكنك تنزيله والاحتفاظ به على جهازك. اختر صورك وابدأ التحويل مجانًا.
+      </p>
+    </header>
 
-    <input
-      class="choose"
-      type="file"
-      id="imageInput"
-      accept="image/*"
-      multiple
-      aria-label="اختيار الصور"
-    >
+    <!-- أداة التحويل -->
+    <section aria-label="Image to PDF converter">
 
-    <p class="note"
-       data-ar="يمكنك اختيار عدة صور معًا. ترتيب الصفحات سيكون حسب ترتيب الصور المختارة."
-       data-en="You can select multiple images. Pages will follow the order of the selected images.">
-      يمكنك اختيار عدة صور معًا. ترتيب الصفحات سيكون حسب ترتيب الصور المختارة.
-    </p>
+      <input
+        class="choose"
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        multiple
+        aria-label="اختيار الصور"
+      >
 
-    <button id="convertBtn" disabled
-            data-ar="تحويل الصور إلى PDF"
-            data-en="Convert Images to PDF">
-      تحويل الصور إلى PDF
-    </button>
+      <p class="note"
+         data-ar="يمكنك اختيار عدة صور معًا. ترتيب صفحات ملف PDF سيكون حسب ترتيب الصور المختارة."
+         data-en="You can select multiple images. PDF pages will follow the order of the selected images.">
+        يمكنك اختيار عدة صور معًا. ترتيب صفحات ملف PDF سيكون حسب ترتيب الصور المختارة.
+      </p>
 
-    <p id="status" aria-live="polite"
-       data-ar="اختر الصور للبدء."
-       data-en="Choose images to get started.">
-      اختر الصور للبدء.
-    </p>
+      <button id="convertBtn" disabled
+              data-ar="تحويل الصور إلى PDF"
+              data-en="Convert Images to PDF">
+        تحويل الصور إلى PDF
+      </button>
 
-    <div id="preview"></div>
+      <p id="status" role="status" aria-live="polite"
+         data-ar="اختر الصور للبدء."
+         data-en="Choose images to get started.">
+        اختر الصور للبدء.
+      </p>
 
-    <a id="downloadLink" href="#" download="images-to-pdf.pdf"
-       data-ar="تنزيل ملف PDF"
-       data-en="Download PDF">
-      تنزيل ملف PDF
-    </a>
+      <div id="preview" aria-label="معاينة الصور المختارة"></div>
+
+      <a id="downloadLink" href="#" download="images-to-pdf.pdf"
+         data-ar="تنزيل ملف PDF"
+         data-en="Download PDF">
+        تنزيل ملف PDF
+      </a>
+
+    </section>
+
+    <!-- شرح الأداة -->
+    <section class="info-section">
+      <h2 data-ar="ما هي أداة تحويل الصور إلى PDF؟"
+          data-en="What Is an Image to PDF Converter?">
+        ما هي أداة تحويل الصور إلى PDF؟
+      </h2>
+
+      <p data-ar="أداة تحويل الصور إلى PDF من سوق الأدوات تساعدك على جمع صورة واحدة أو مجموعة من الصور في مستند PDF واحد. بدلًا من إرسال الصور كملفات منفصلة، يمكنك تحويلها إلى صفحات مرتبة داخل ملف يسهل حفظه ومشاركته وطباعته."
+         data-en="The Image to PDF tool from Tools Market helps you combine one image or a collection of images into a single PDF document. Instead of sending separate image files, you can turn them into ordered pages in a document that is easy to save, share, and print.">
+        أداة تحويل الصور إلى PDF من سوق الأدوات تساعدك على جمع صورة واحدة أو مجموعة من الصور في مستند PDF واحد. بدلًا من إرسال الصور كملفات منفصلة، يمكنك تحويلها إلى صفحات مرتبة داخل ملف يسهل حفظه ومشاركته وطباعته.
+      </p>
+
+      <p data-ar="تعمل الأداة من خلال المتصفح، وتُجهّز الصور ثم تنشئ ملف PDF قابلًا للتنزيل دون الحاجة إلى تثبيت برنامج إضافي على جهازك."
+         data-en="The tool works in your browser, prepares your images, and creates a downloadable PDF without requiring you to install additional software.">
+        تعمل الأداة من خلال المتصفح، وتُجهّز الصور ثم تنشئ ملف PDF قابلًا للتنزيل دون الحاجة إلى تثبيت برنامج إضافي على جهازك.
+      </p>
+    </section>
+
+    <section class="info-section">
+      <h2 data-ar="مميزات تحويل الصور إلى PDF"
+          data-en="Image to PDF Converter Features">
+        مميزات تحويل الصور إلى PDF
+      </h2>
+
+      <ul>
+        <li data-ar="تحويل صورة واحدة أو عدة صور إلى ملف PDF واحد."
+            data-en="Convert one image or multiple images into a single PDF file.">
+          تحويل صورة واحدة أو عدة صور إلى ملف PDF واحد.
+        </li>
+
+        <li data-ar="إنشاء صفحة مستقلة لكل صورة داخل ملف PDF."
+            data-en="Create a separate page for each image in the PDF.">
+          إنشاء صفحة مستقلة لكل صورة داخل ملف PDF.
+        </li>
+
+        <li data-ar="الحفاظ على ترتيب الصور حسب ترتيب اختيارها."
+            data-en="Keep images in the same order in which they were selected.">
+          الحفاظ على ترتيب الصور حسب ترتيب اختيارها.
+        </li>
+
+        <li data-ar="ملاءمة الصورة داخل صفحة PDF مع الحفاظ على تناسب أبعادها."
+            data-en="Fit each image inside a PDF page while preserving its aspect ratio.">
+          ملاءمة الصورة داخل صفحة PDF مع الحفاظ على تناسب أبعادها.
+        </li>
+
+        <li data-ar="تنزيل الملف الناتج مباشرة على جهازك."
+            data-en="Download the resulting PDF directly to your device.">
+          تنزيل الملف الناتج مباشرة على جهازك.
+        </li>
+
+        <li data-ar="استخدام الأداة مجانًا من المتصفح دون تثبيت برنامج."
+            data-en="Use the tool for free in your browser without installing software.">
+          استخدام الأداة مجانًا من المتصفح دون تثبيت برنامج.
+        </li>
+      </ul>
+    </section>
+
+    <section class="info-section">
+      <h2 data-ar="كيفية تحويل الصور إلى PDF؟"
+          data-en="How to Convert Images to PDF">
+        كيفية تحويل الصور إلى PDF؟
+      </h2>
+
+      <ol>
+        <li data-ar="اضغط على زر اختيار الملفات وحدد صورة واحدة أو عدة صور من جهازك."
+            data-en="Click the file picker and choose one or more images from your device.">
+          اضغط على زر اختيار الملفات وحدد صورة واحدة أو عدة صور من جهازك.
+        </li>
+
+        <li data-ar="راجع معاينة الصور وأسماء الملفات التي اخترتها."
+            data-en="Review the preview and filenames of the selected images.">
+          راجع معاينة الصور وأسماء الملفات التي اخترتها.
+        </li>
+
+        <li data-ar="اضغط على زر تحويل الصور إلى PDF لبدء المعالجة."
+            data-en="Click Convert Images to PDF to start processing.">
+          اضغط على زر تحويل الصور إلى PDF لبدء المعالجة.
+        </li>
+
+        <li data-ar="انتظر حتى يكتمل إنشاء الملف وتظهر رسالة نجاح التحويل."
+            data-en="Wait for the file to be created and the success message to appear.">
+          انتظر حتى يكتمل إنشاء الملف وتظهر رسالة نجاح التحويل.
+        </li>
+
+        <li data-ar="اضغط على تنزيل ملف PDF لحفظ المستند على جهازك."
+            data-en="Click Download PDF to save the document to your device.">
+          اضغط على تنزيل ملف PDF لحفظ المستند على جهازك.
+        </li>
+      </ol>
+    </section>
+
+    <section class="info-section">
+      <h2 data-ar="ما أنواع الصور التي يمكن تحويلها؟"
+          data-en="Which Image Formats Can Be Converted?">
+        ما أنواع الصور التي يمكن تحويلها؟
+      </h2>
+
+      <p data-ar="تقبل الأداة ملفات الصور التي يستطيع المتصفح فتحها، مثل JPG وJPEG وPNG وWebP وغيرها من صيغ الصور المدعومة في المتصفح. قد تختلف الصيغ التي يمكن فتحها حسب المتصفح والجهاز."
+         data-en="The tool accepts image files that your browser can open, such as JPG, JPEG, PNG, WebP, and other browser-supported image formats. Available formats may vary depending on your browser and device.">
+        تقبل الأداة ملفات الصور التي يستطيع المتصفح فتحها، مثل JPG وJPEG وPNG وWebP وغيرها من صيغ الصور المدعومة في المتصفح. قد تختلف الصيغ التي يمكن فتحها حسب المتصفح والجهاز.
+      </p>
+
+      <p data-ar="تُضاف كل صورة إلى صفحة مستقلة بمقاس A4، مع ملاءمتها داخل الصفحة والحفاظ على تناسب أبعادها. تُحوّل الصور أثناء التجهيز إلى صيغة JPEG؛ لذلك قد تظهر المناطق الشفافة بخلفية بيضاء في ملف PDF."
+         data-en="Each image is placed on a separate A4 page and fitted while preserving its aspect ratio. Images are converted to JPEG during preparation, so transparent areas may appear with a white background in the PDF.">
+        تُضاف كل صورة إلى صفحة مستقلة بمقاس A4، مع ملاءمتها داخل الصفحة والحفاظ على تناسب أبعادها. تُحوّل الصور أثناء التجهيز إلى صيغة JPEG؛ لذلك قد تظهر المناطق الشفافة بخلفية بيضاء في ملف PDF.
+      </p>
+    </section>
+
+    <section class="info-section">
+      <h2 data-ar="هل الصور آمنة أثناء التحويل؟"
+          data-en="Are Your Images Safe During Conversion?">
+        هل الصور آمنة أثناء التحويل؟
+      </h2>
+
+      <p data-ar="تتم معالجة الصور وإنشاء ملف PDF داخل متصفحك باستخدام JavaScript، ولا يتطلب التحويل إرسال الصور إلى خادم الأداة. ومع ذلك، يستخدم الموقع Google Analytics لقياس الزيارات وتحسين الموقع؛ وهذا يختلف عن رفع ملفات الصور نفسها."
+         data-en="Images are processed and the PDF is created in your browser using JavaScript. The conversion does not require uploading your images to the tool's server. However, the website uses Google Analytics to measure visits and improve the site; this is separate from uploading image files.">
+        تتم معالجة الصور وإنشاء ملف PDF داخل متصفحك باستخدام JavaScript، ولا يتطلب التحويل إرسال الصور إلى خادم الأداة. ومع ذلك، يستخدم الموقع Google Analytics لقياس الزيارات وتحسين الموقع؛ وهذا يختلف عن رفع ملفات الصور نفسها.
+      </p>
+    </section>
+
+    <section class="info-section">
+      <h2 data-ar="الأسئلة الشائعة حول تحويل الصور إلى PDF"
+          data-en="Frequently Asked Questions About Image to PDF">
+        الأسئلة الشائعة حول تحويل الصور إلى PDF
+      </h2>
+
+      <div class="faq-item">
+        <h3 data-ar="هل يمكن تحويل أكثر من صورة إلى ملف PDF واحد؟"
+            data-en="Can I convert multiple images into one PDF?">
+          هل يمكن تحويل أكثر من صورة إلى ملف PDF واحد؟
+        </h3>
+        <p data-ar="نعم، يمكنك اختيار عدة صور معًا، وستُضاف كل صورة إلى صفحة مستقلة داخل ملف PDF واحد."
+           data-en="Yes. You can select multiple images, and each image will be added to a separate page in one PDF file.">
+          نعم، يمكنك اختيار عدة صور معًا، وستُضاف كل صورة إلى صفحة مستقلة داخل ملف PDF واحد.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 data-ar="هل يمكنني التحكم في ترتيب صفحات PDF؟"
+            data-en="Can I control the order of PDF pages?">
+          هل يمكنني التحكم في ترتيب صفحات PDF؟
+        </h3>
+        <p data-ar="يكون ترتيب الصفحات حسب ترتيب الصور في الملفات التي تختارها من جهازك. راجع ترتيب الاختيار قبل بدء التحويل."
+           data-en="Pages follow the order of the images in the files you select from your device. Review your selection order before converting.">
+          يكون ترتيب الصفحات حسب ترتيب الصور في الملفات التي تختارها من جهازك. راجع ترتيب الاختيار قبل بدء التحويل.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 data-ar="هل الأداة مجانية؟"
+            data-en="Is the tool free?">
+          هل الأداة مجانية؟
+        </h3>
+        <p data-ar="نعم، يمكنك استخدام أداة تحويل الصور إلى PDF مجانًا من خلال متصفحك."
+           data-en="Yes. You can use the Image to PDF tool for free in your browser.">
+          نعم، يمكنك استخدام أداة تحويل الصور إلى PDF مجانًا من خلال متصفحك.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 data-ar="هل أحتاج إلى تثبيت برنامج؟"
+            data-en="Do I need to install any software?">
+          هل أحتاج إلى تثبيت برنامج؟
+        </h3>
+        <p data-ar="لا، لا تحتاج إلى تثبيت برنامج تحويل على جهازك. افتح الصفحة واختر الصور وابدأ التحويل، مع ضرورة توفر اتصال بالإنترنت لتحميل مكتبة إنشاء PDF عند فتح الصفحة."
+           data-en="No. You do not need to install a converter on your device. Open the page, select your images, and start converting. An internet connection is required when the page loads the PDF creation library.">
+          لا، لا تحتاج إلى تثبيت برنامج تحويل على جهازك. افتح الصفحة واختر الصور وابدأ التحويل، مع ضرورة توفر اتصال بالإنترنت لتحميل مكتبة إنشاء PDF عند فتح الصفحة.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 data-ar="لماذا تظهر بعض المناطق الشفافة باللون الأبيض؟"
+            data-en="Why do transparent areas appear white?">
+          لماذا تظهر بعض المناطق الشفافة باللون الأبيض؟
+        </h3>
+        <p data-ar="لأن الأداة تجهز الصور بصيغة JPEG قبل إضافتها إلى ملف PDF، وتُعرض المناطق الشفافة على خلفية بيضاء."
+           data-en="The tool prepares images as JPEG before adding them to the PDF, so transparent areas are displayed against a white background.">
+          لأن الأداة تجهز الصور بصيغة JPEG قبل إضافتها إلى ملف PDF، وتُعرض المناطق الشفافة على خلفية بيضاء.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 data-ar="ماذا أفعل إذا فشل التحويل؟"
+            data-en="What should I do if conversion fails?">
+          ماذا أفعل إذا فشل التحويل؟
+        </h3>
+        <p data-ar="جرّب صورًا أخرى أو قلّل عدد الصور وحجمها، وتأكد من اتصال الإنترنت حتى يتم تحميل مكتبة إنشاء PDF."
+           data-en="Try different images or reduce the number and size of the images. Also make sure you have an internet connection so the PDF library can load.">
+          جرّب صورًا أخرى أو قلّل عدد الصور وحجمها، وتأكد من اتصال الإنترنت حتى يتم تحميل مكتبة إنشاء PDF.
+        </p>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2 data-ar="اكتشف أدوات أخرى من سوق الأدوات"
+          data-en="Explore More Tools from Tools Market">
+        اكتشف أدوات أخرى من سوق الأدوات
+      </h2>
+
+      <p data-ar="يمكنك استخدام أدوات أخرى لتعديل صورك وتجهيزها قبل مشاركتها أو حفظها."
+         data-en="Explore other tools to edit and prepare your images before sharing or saving them.">
+        يمكنك استخدام أدوات أخرى لتعديل صورك وتجهيزها قبل مشاركتها أو حفظها.
+      </p>
+
+      <ul class="related-links">
+        <li><a href="image-compressor.html" data-ar="ضغط الصور" data-en="Image Compressor">ضغط الصور</a></li>
+        <li><a href="image-resizer.html" data-ar="تغيير حجم الصور" data-en="Image Resizer">تغيير حجم الصور</a></li>
+        <li><a href="image-converter.html" data-ar="تحويل صيغ الصور" data-en="Image Converter">تحويل صيغ الصور</a></li>
+        <li><a href="image-grayscale.html" data-ar="تحويل الصور إلى أبيض وأسود" data-en="Grayscale Images">تحويل الصور إلى أبيض وأسود</a></li>
+        <li><a href="index.html" data-ar="كل الأدوات" data-en="All Tools">كل الأدوات</a></li>
+      </ul>
+    </section>
 
     <a class="home" id="homeLink" href="index.html"
-       data-ar="العودة إلى الصفحة الرئيسية"
-       data-en="Back to Homepage">
-      العودة إلى الصفحة الرئيسية
+       data-ar="العودة إلى سوق الأدوات"
+       data-en="Back to Tools Market">
+      العودة إلى سوق الأدوات
     </a>
+
+    <footer
+      data-ar="سوق الأدوات | أدوات مجانية وسهلة للجميع"
+      data-en="Tools Market | Free and easy tools for everyone">
+      سوق الأدوات | أدوات مجانية وسهلة للجميع
+    </footer>
 
   </main>
 
@@ -227,6 +590,16 @@
     const preview = document.getElementById("preview");
     const downloadLink = document.getElementById("downloadLink");
     const homeLink = document.getElementById("homeLink");
+
+    const pageDescriptions = {
+      ar: "حوّل صور JPG وPNG وWebP إلى ملف PDF واحد أونلاين مجانًا. اختر عدة صور، رتّب صفحاتك حسب ترتيب الاختيار، ونزّل ملف PDF بسهولة من سوق الأدوات.",
+      en: "Convert JPG, PNG, and WebP images into a single PDF online for free. Select multiple images, keep their selected order, and download your PDF easily with Tools Market."
+    };
+
+    const pageTitles = {
+      ar: "تحويل الصور إلى PDF أونلاين مجانًا | سوق الأدوات",
+      en: "Convert Images to PDF Online Free | Tools Market"
+    };
 
     function getLanguage() {
       const params = new URLSearchParams(window.location.search);
@@ -253,50 +626,78 @@
       status.textContent = t(ar, en);
     }
 
-    if (typeof applyPageLanguage === "function") {
-      applyPageLanguage();
-    } else {
+    function applyLanguage() {
       const language = getLanguage();
+      const isArabic = language === "ar";
 
       document.documentElement.lang = language;
-      document.documentElement.dir =
-        language === "ar" ? "rtl" : "ltr";
+      document.documentElement.dir = isArabic ? "rtl" : "ltr";
+      document.title = pageTitles[language];
 
       document.querySelectorAll("[data-ar][data-en]").forEach(function(element) {
         element.textContent = element.getAttribute(
-          language === "en" ? "data-en" : "data-ar"
+          isArabic ? "data-ar" : "data-en"
         );
       });
+
+      const description = document.querySelector('meta[name="description"]');
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+
+      if (description) description.content = pageDescriptions[language];
+      if (ogTitle) ogTitle.content = pageTitles[language];
+      if (ogDescription) ogDescription.content = pageDescriptions[language];
+      if (ogLocale) ogLocale.content = isArabic ? "ar_AR" : "en_US";
+      if (twitterTitle) twitterTitle.content = pageTitles[language];
+      if (twitterDescription) twitterDescription.content = pageDescriptions[language];
+
+      homeLink.href = "index.html?lang=" + language;
     }
 
-    homeLink.href = "index.html?lang=" + getLanguage();
+    if (typeof applyPageLanguage === "function") {
+      applyPageLanguage();
+    }
+
+    applyLanguage();
 
     let selectedImages = [];
     let downloadUrl = null;
     let previewUrls = [];
+
+    function clearPreviousDownload() {
+      if (downloadUrl) {
+        URL.revokeObjectURL(downloadUrl);
+        downloadUrl = null;
+      }
+
+      downloadLink.removeAttribute("href");
+      downloadLink.style.display = "none";
+    }
+
+    function clearPreviewUrls() {
+      previewUrls.forEach(function(url) {
+        URL.revokeObjectURL(url);
+      });
+
+      previewUrls = [];
+    }
 
     imageInput.addEventListener("change", function() {
       selectedImages = Array.from(imageInput.files || []).filter(function(file) {
         return file.type.startsWith("image/");
       });
 
-      previewUrls.forEach(function(url) {
-        URL.revokeObjectURL(url);
-      });
-
-      previewUrls = [];
+      clearPreviewUrls();
+      clearPreviousDownload();
       preview.innerHTML = "";
-      downloadLink.style.display = "none";
-
-      if (downloadUrl) {
-        URL.revokeObjectURL(downloadUrl);
-        downloadUrl = null;
-      }
 
       if (selectedImages.length === 0) {
         setStatus(
-          "لم يتم اختيار صور. اختر صورة أو أكثر.",
-          "No images selected. Choose one or more images."
+          "لم يتم اختيار صور صالحة. اختر صورة واحدة أو أكثر.",
+          "No valid images selected. Choose one or more images."
         );
 
         convertBtn.disabled = true;
@@ -344,6 +745,12 @@
             canvas.height = img.naturalHeight;
 
             const context = canvas.getContext("2d");
+
+            if (!context) {
+              reject(new Error("Canvas is not available"));
+              return;
+            }
+
             context.fillStyle = "#ffffff";
             context.fillRect(0, 0, canvas.width, canvas.height);
             context.drawImage(img, 0, 0);
@@ -388,7 +795,7 @@
 
       convertBtn.disabled = true;
       imageInput.disabled = true;
-      downloadLink.style.display = "none";
+      clearPreviousDownload();
 
       try {
         setStatus(
@@ -467,9 +874,11 @@
 
         const blob = pdf.output("blob");
 
-        if (downloadUrl) {
-          URL.revokeObjectURL(downloadUrl);
+        if (!blob || blob.size === 0) {
+          throw new Error("The generated PDF is empty");
         }
+
+        clearPreviousDownload();
 
         downloadUrl = URL.createObjectURL(blob);
         downloadLink.href = downloadUrl;
@@ -488,15 +897,21 @@
 
       } catch (error) {
         console.error(error);
+        clearPreviousDownload();
 
         setStatus(
-          "لم يكتمل التحويل. جرّب صورة أخرى أو صورًا أقل حجمًا.",
-          "Conversion failed. Try another image or use fewer or smaller images."
+          "لم يكتمل التحويل. جرّب صورة أخرى أو صورًا أقل حجمًا، وتأكد من اتصال الإنترنت.",
+          "Conversion failed. Try another image or fewer or smaller images, and check your internet connection."
         );
       } finally {
         convertBtn.disabled = selectedImages.length === 0;
         imageInput.disabled = false;
       }
+    });
+
+    window.addEventListener("beforeunload", function() {
+      clearPreviewUrls();
+      clearPreviousDownload();
     });
   </script>
 </body>
