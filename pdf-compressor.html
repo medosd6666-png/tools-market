@@ -1,21 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title data-ar="ضغط ملفات PDF أونلاين | سوق الأدوات"
-       data-en="Compress PDF Files Online | Tools Market">ضغط ملفات PDF أونلاين | سوق الأدوات</title>
-<meta name="description" content="جرّب تقليل حجم ملفات PDF باستخدام أداة ضغط ملفات PDF أونلاين من سوق الأدوات لتسهيل مشاركة الملفات ورفعها.">
+<title data-ar="ضغط ملفات PDF أونلاين مجانًا | سوق الأدوات"
+       data-en="Compress PDF Files Online Free | Tools Market">ضغط ملفات PDF أونلاين مجانًا | سوق الأدوات</title>
+
+<meta name="description" id="metaDescription"
+      content="استخدم أداة ضغط ملفات PDF أونلاين من سوق الأدوات لمحاولة تقليل حجم ملفات PDF وتسهيل مشاركتها ورفعها، مع اختيار مستوى الجودة المناسب.">
+
+<meta name="keywords" content="ضغط PDF, تقليل حجم PDF, ضغط ملفات PDF أونلاين, تصغير ملفات PDF, PDF Compressor, Compress PDF Online, Tools Market">
+
+<meta name="author" content="Tools Market">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f3f6fa">
+
 <link rel="canonical" href="https://medosd6666-png.github.io/tools-market/pdf-compressor.html">
-<meta property="og:title" content="ضغط ملفات PDF أونلاين | سوق الأدوات">
-<meta property="og:description" content="جرّب تقليل حجم ملفات PDF باستخدام أداة ضغط ملفات PDF أونلاين من سوق الأدوات لتسهيل مشاركة الملفات ورفعها.">
+
+<meta property="og:title" id="ogTitle" content="ضغط ملفات PDF أونلاين مجانًا | سوق الأدوات">
+<meta property="og:description" id="ogDescription" content="استخدم أداة ضغط ملفات PDF أونلاين لمحاولة تقليل حجم ملفاتك وتسهيل مشاركتها.">
 <meta property="og:url" content="https://medosd6666-png.github.io/tools-market/pdf-compressor.html">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Tools Market">
 <meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
 
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" id="twitterTitle" content="ضغط ملفات PDF أونلاين مجانًا | سوق الأدوات">
+<meta name="twitter:description" id="twitterDescription" content="استخدم أداة ضغط ملفات PDF أونلاين لمحاولة تقليل حجم ملفاتك وتسهيل مشاركتها.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PDF Compressor - Tools Market",
+  "alternateName": "أداة ضغط ملفات PDF",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "description": "أداة مجانية عبر الإنترنت لتحويل صفحات ملفات PDF إلى صور وإعادة تجميعها في ملف PDF جديد مع إمكانية اختيار مستوى جودة الصور.",
+  "url": "https://medosd6666-png.github.io/tools-market/pdf-compressor.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tools Market",
+    "url": "https://medosd6666-png.github.io/tools-market/"
+  }
+}
+</script>
 
 <style>
 * {
@@ -32,7 +69,7 @@ body {
 }
 
 .container {
-    max-width: 650px;
+    max-width: 760px;
     margin: 30px auto;
     padding: 25px;
     background: white;
@@ -42,17 +79,40 @@ body {
 
 h1 {
     color: #1769aa;
+    line-height: 1.5;
+}
+
+h2, h3 {
+    color: #1769aa;
+    line-height: 1.5;
 }
 
 p {
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 input, select {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 15px 0;
+    border: 1px solid #d5dfe9;
+    border-radius: 8px;
+    background: #fff;
+    color: #243447;
+    font-size: 15px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #1769aa;
+    outline-offset: 2px;
+}
+
+label {
+    display: block;
+    text-align: start;
+    font-weight: bold;
+    margin-top: 18px;
 }
 
 button {
@@ -63,6 +123,11 @@ button {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background: #10558d;
 }
 
 button:disabled {
@@ -82,6 +147,7 @@ button:disabled {
     border-radius: 10px;
     margin-top: 20px;
     overflow-wrap: anywhere;
+    border: 1px solid #e1eaf2;
 }
 
 .download {
@@ -94,34 +160,120 @@ button:disabled {
     margin-top: 15px;
 }
 
+.download:hover {
+    background: #146c43;
+}
+
 .home {
     display: block;
     margin-top: 25px;
     color: #1769aa;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.home:hover {
+    text-decoration: underline;
 }
 
 .note {
     color: #667788;
     font-size: 13px;
+    background: #fff8e8;
+    border: 1px solid #f1e2bd;
+    border-radius: 9px;
+    padding: 12px;
+    text-align: start;
+}
+
+.seo-content {
+    max-width: 760px;
+    margin: 25px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #0000000c;
+    text-align: start;
+}
+
+.seo-content h2 {
+    margin-top: 0;
+    font-size: 23px;
+}
+
+.seo-content h3 {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.seo-content p {
+    color: #435466;
+}
+
+.seo-content ul {
+    padding-inline-start: 25px;
+    line-height: 2;
+    color: #435466;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e6edf3;
+    padding: 12px 0;
+}
+
+.faq-item:last-child {
+    border-bottom: 0;
+}
+
+.faq-item h3 {
+    margin: 5px 0;
+}
+
+.faq-item p {
+    margin: 5px 0;
 }
 
 footer {
     margin-top: 30px;
     color: #667788;
     line-height: 1.8;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .container,
+    .seo-content {
+        padding: 18px;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    button {
+        width: 100%;
+    }
 }
 </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NZ00TSPTWC');
-    </script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
+</script>
+
 </head>
 
 <body>
+
 <div class="container">
 
     <h1 data-ar="ضغط ملفات PDF"
@@ -129,16 +281,22 @@ footer {
         ضغط ملفات PDF
     </h1>
 
-    <p data-ar="اختر ملف PDF وحدد مستوى الضغط لمحاولة تقليل حجمه."
-       data-en="Choose a PDF file and select a compression level to try to reduce its size.">
-        اختر ملف PDF وحدد مستوى الضغط لمحاولة تقليل حجمه.
+    <p data-ar="اختر ملف PDF وحدد مستوى الضغط لمحاولة تقليل حجمه، ثم قم بتنزيل النسخة الناتجة."
+       data-en="Choose a PDF file and select a compression level to try to reduce its size, then download the resulting file.">
+        اختر ملف PDF وحدد مستوى الضغط لمحاولة تقليل حجمه، ثم قم بتنزيل النسخة الناتجة.
     </p>
 
     <p class="note"
-       data-ar="تنبيه: الأداة تحول صفحات PDF إلى صور؛ قد تفقد النص القابل للتحديد والبحث، وقد تتغير جودة الصفحات. وقد يصبح الملف أكبر بعد المعالجة."
-       data-en="Note: This tool converts PDF pages into images. Selectable and searchable text may be lost, page quality may change, and the output file may become larger.">
-        تنبيه: الأداة تحول صفحات PDF إلى صور؛ قد تفقد النص القابل للتحديد والبحث، وقد تتغير جودة الصفحات. وقد يصبح الملف أكبر بعد المعالجة.
+       data-ar="تنبيه مهم: تعتمد هذه الأداة على تحويل صفحات PDF إلى صور ثم إعادة تجميعها في ملف جديد. لذلك قد تفقد النصوص القابلة للتحديد والبحث، وقد تتغير جودة الصفحات أو أبعادها، كما قد يصبح الملف الناتج أكبر من الأصلي. احتفظ بنسخة من الملف الأصلي."
+       data-en="Important: This tool converts PDF pages into images and then rebuilds them into a new file. Selectable and searchable text may be lost, page quality or dimensions may change, and the resulting file may be larger than the original. Keep a copy of your original file.">
+        تنبيه مهم: تعتمد هذه الأداة على تحويل صفحات PDF إلى صور ثم إعادة تجميعها في ملف جديد. لذلك قد تفقد النصوص القابلة للتحديد والبحث، وقد تتغير جودة الصفحات أو أبعادها، كما قد يصبح الملف الناتج أكبر من الأصلي. احتفظ بنسخة من الملف الأصلي.
     </p>
+
+    <label for="pdfFile"
+           data-ar="اختر ملف PDF"
+           data-en="Choose a PDF File">
+        اختر ملف PDF
+    </label>
 
     <input type="file" id="pdfFile" accept=".pdf,application/pdf">
 
@@ -169,18 +327,19 @@ footer {
     </select>
 
     <button id="compressBtn"
+            type="button"
             data-ar="ضغط ملف PDF"
             data-en="Compress PDF">
         ضغط ملف PDF
     </button>
 
-    <div id="status" aria-live="polite"></div>
+    <div id="status" role="status" aria-live="polite"></div>
     <div id="result" class="result" hidden></div>
 
-    <a class="home" id="homeLink" href="index.html"
-       data-ar="العودة إلى الصفحة الرئيسية"
-       data-en="Back to Homepage">
-        العودة إلى الصفحة الرئيسية
+    <a class="home" id="homeLink" href="index.html?lang=ar"
+       data-ar="العودة إلى سوق الأدوات الرئيسي"
+       data-en="Back to Tools Market Homepage">
+        العودة إلى سوق الأدوات الرئيسي
     </a>
 
     <footer
@@ -190,6 +349,153 @@ footer {
     </footer>
 
 </div>
+
+<section class="seo-content">
+
+    <h2 data-ar="أداة ضغط ملفات PDF أونلاين"
+        data-en="Online PDF Compression Tool">
+        أداة ضغط ملفات PDF أونلاين
+    </h2>
+
+    <p
+        data-ar="تساعدك أداة ضغط ملفات PDF من سوق الأدوات على إنشاء نسخة جديدة من ملف PDF مع إمكانية التحكم في جودة الصور المستخدمة داخل الملف. يمكنك تجربة مستويات مختلفة للوصول إلى حجم مناسب يسهل مشاركته أو رفعه عبر الإنترنت."
+        data-en="The PDF compression tool from Tools Market helps you create a new version of a PDF file with control over the quality of the images used in the document. Try different quality levels to get a file that is easier to share or upload online.">
+        تساعدك أداة ضغط ملفات PDF من سوق الأدوات على إنشاء نسخة جديدة من ملف PDF مع إمكانية التحكم في جودة الصور المستخدمة داخل الملف. يمكنك تجربة مستويات مختلفة للوصول إلى حجم مناسب يسهل مشاركته أو رفعه عبر الإنترنت.
+    </p>
+
+    <h3 data-ar="كيف تستخدم أداة ضغط PDF؟"
+        data-en="How to Use the PDF Compressor">
+        كيف تستخدم أداة ضغط PDF؟
+    </h3>
+
+    <ul>
+        <li data-ar="اختر ملف PDF من جهازك."
+            data-en="Choose a PDF file from your device.">
+            اختر ملف PDF من جهازك.
+        </li>
+
+        <li data-ar="حدد مستوى الجودة والضغط المناسب لك."
+            data-en="Select the quality and compression level you prefer.">
+            حدد مستوى الجودة والضغط المناسب لك.
+        </li>
+
+        <li data-ar="اضغط على زر ضغط ملف PDF وانتظر انتهاء المعالجة."
+            data-en="Click Compress PDF and wait for processing to finish.">
+            اضغط على زر ضغط ملف PDF وانتظر انتهاء المعالجة.
+        </li>
+
+        <li data-ar="راجع حجم الملف الناتج وعدد الصفحات."
+            data-en="Review the resulting file size and page count.">
+            راجع حجم الملف الناتج وعدد الصفحات.
+        </li>
+
+        <li data-ar="اضغط على زر التنزيل لحفظ النسخة الجديدة."
+            data-en="Click the download link to save the new file.">
+            اضغط على زر التنزيل لحفظ النسخة الجديدة.
+        </li>
+    </ul>
+
+    <h3 data-ar="مميزات أداة ضغط ملفات PDF"
+        data-en="PDF Compressor Features">
+        مميزات أداة ضغط ملفات PDF
+    </h3>
+
+    <ul>
+        <li data-ar="استخدام الأداة مباشرة من متصفح الإنترنت."
+            data-en="Use the tool directly in your web browser.">
+            استخدام الأداة مباشرة من متصفح الإنترنت.
+        </li>
+
+        <li data-ar="ثلاثة مستويات مختلفة لجودة الصور."
+            data-en="Three different image quality levels.">
+            ثلاثة مستويات مختلفة لجودة الصور.
+        </li>
+
+        <li data-ar="عرض الحجم الأصلي والحجم الناتج بعد المعالجة."
+            data-en="View the original and resulting file sizes.">
+            عرض الحجم الأصلي والحجم الناتج بعد المعالجة.
+        </li>
+
+        <li data-ar="إمكانية تنزيل الملف الجديد مباشرة."
+            data-en="Download the new file directly.">
+            إمكانية تنزيل الملف الجديد مباشرة.
+        </li>
+
+        <li data-ar="واجهة سهلة تدعم العربية والإنجليزية."
+            data-en="An easy-to-use interface supporting Arabic and English.">
+            واجهة سهلة تدعم العربية والإنجليزية.
+        </li>
+    </ul>
+
+    <h3 data-ar="معلومات مهمة قبل ضغط ملف PDF"
+        data-en="Important Information Before Compressing a PDF">
+        معلومات مهمة قبل ضغط ملف PDF
+    </h3>
+
+    <p
+        data-ar="لأن الأداة تحول صفحات المستند إلى صور، فإن النسخة الجديدة قد لا تحتفظ بإمكانية تحديد النص أو البحث داخله. كما أن نتيجة الضغط تختلف حسب محتوى الملف والإعداد المختار؛ فقد يكون الملف الناتج أصغر أو أكبر من الملف الأصلي. يُنصح بمقارنة النسختين والتأكد من وضوح جميع الصفحات قبل مشاركة الملف."
+        data-en="Because the tool converts document pages into images, the new file may not preserve text selection or search functionality. Results also depend on the document content and selected settings; the output may be smaller or larger than the original. Compare both files and check that all pages are clear before sharing.">
+        لأن الأداة تحول صفحات المستند إلى صور، فإن النسخة الجديدة قد لا تحتفظ بإمكانية تحديد النص أو البحث داخله. كما أن نتيجة الضغط تختلف حسب محتوى الملف والإعداد المختار؛ فقد يكون الملف الناتج أصغر أو أكبر من الملف الأصلي. يُنصح بمقارنة النسختين والتأكد من وضوح جميع الصفحات قبل مشاركة الملف.
+    </p>
+
+    <h2 data-ar="الأسئلة الشائعة حول ضغط PDF"
+        data-en="Frequently Asked Questions About PDF Compression">
+        الأسئلة الشائعة حول ضغط PDF
+    </h2>
+
+    <div class="faq-item">
+        <h3 data-ar="هل أداة ضغط PDF مجانية؟"
+            data-en="Is the PDF compressor free?">
+            هل أداة ضغط PDF مجانية؟
+        </h3>
+
+        <p
+            data-ar="نعم، يمكنك استخدام الأداة مجانًا من خلال موقع سوق الأدوات."
+            data-en="Yes, you can use the tool for free through the Tools Market website.">
+            نعم، يمكنك استخدام الأداة مجانًا من خلال موقع سوق الأدوات.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="هل يضمن ضغط PDF تقليل حجم الملف؟"
+            data-en="Does PDF compression always reduce file size?">
+            هل يضمن ضغط PDF تقليل حجم الملف؟
+        </h3>
+
+        <p
+            data-ar="لا، تختلف النتيجة حسب الملف ومستوى الجودة. قد يصبح الملف الجديد أصغر أو أكبر من الملف الأصلي."
+            data-en="No. Results depend on the file and selected quality level. The new file may be smaller or larger than the original.">
+            لا، تختلف النتيجة حسب الملف ومستوى الجودة. قد يصبح الملف الجديد أصغر أو أكبر من الملف الأصلي.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="هل يمكن البحث عن النص داخل الملف الناتج؟"
+            data-en="Can I search for text in the resulting file?">
+            هل يمكن البحث عن النص داخل الملف الناتج؟
+        </h3>
+
+        <p
+            data-ar="قد لا يكون ذلك ممكنًا؛ لأن الأداة تحول صفحات PDF إلى صور، وبالتالي قد تفقد النصوص قابليتها للتحديد والبحث."
+            data-en="This may not be possible because the tool converts PDF pages into images, so text may no longer be selectable or searchable.">
+            قد لا يكون ذلك ممكنًا؛ لأن الأداة تحول صفحات PDF إلى صور، وبالتالي قد تفقد النصوص قابليتها للتحديد والبحث.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3 data-ar="هل تعمل الأداة على الهاتف؟"
+            data-en="Does the tool work on mobile devices?">
+            هل تعمل الأداة على الهاتف؟
+        </h3>
+
+        <p
+            data-ar="يمكن استخدام الأداة من متصفحات الهواتف والأجهزة اللوحية وأجهزة الكمبيوتر، وقد يختلف الأداء حسب إمكانيات الجهاز وحجم ملف PDF."
+            data-en="The tool can be used in mobile, tablet, and desktop browsers. Performance may vary depending on your device and PDF file size.">
+            يمكن استخدام الأداة من متصفحات الهواتف والأجهزة اللوحية وأجهزة الكمبيوتر، وقد يختلف الأداء حسب إمكانيات الجهاز وحجم ملف PDF.
+        </p>
+    </div>
+
+</section>
 
 <script src="language.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -228,6 +534,45 @@ function setStatus(ar, en) {
     statusBox.textContent = t(ar, en);
 }
 
+function updateSeoMetadata() {
+    const isEnglish = getLanguage() === "en";
+
+    const metadata = {
+        title: isEnglish
+            ? "Compress PDF Files Online Free | Tools Market"
+            : "ضغط ملفات PDF أونلاين مجانًا | سوق الأدوات",
+
+        description: isEnglish
+            ? "Use the free online PDF compressor from Tools Market to try reducing PDF file size and make documents easier to share and upload."
+            : "استخدم أداة ضغط ملفات PDF أونلاين من سوق الأدوات لمحاولة تقليل حجم الملفات وتسهيل مشاركتها ورفعها.",
+
+        ogTitle: isEnglish
+            ? "Compress PDF Files Online Free | Tools Market"
+            : "ضغط ملفات PDF أونلاين مجانًا | سوق الأدوات",
+
+        twitterDescription: isEnglish
+            ? "Try reducing PDF file size with the free online PDF compressor from Tools Market."
+            : "جرّب تقليل حجم ملفات PDF باستخدام أداة ضغط PDF المجانية من سوق الأدوات."
+    };
+
+    document.title = metadata.title;
+
+    document.getElementById("metaDescription").content =
+        metadata.description;
+
+    document.getElementById("ogTitle").content =
+        metadata.ogTitle;
+
+    document.getElementById("ogDescription").content =
+        metadata.description;
+
+    document.getElementById("twitterTitle").content =
+        metadata.ogTitle;
+
+    document.getElementById("twitterDescription").content =
+        metadata.twitterDescription;
+}
+
 if (typeof applyPageLanguage === "function") {
     applyPageLanguage();
 } else {
@@ -242,6 +587,8 @@ if (typeof applyPageLanguage === "function") {
         );
     });
 }
+
+updateSeoMetadata();
 
 homeLink.href = "index.html?lang=" + getLanguage();
 
@@ -434,6 +781,10 @@ button.addEventListener("click", async function() {
             canvas.width = 1;
             canvas.height = 1;
 
+            if (typeof page.cleanup === "function") {
+                page.cleanup();
+            }
+
             completed++;
         }
 
@@ -530,5 +881,6 @@ button.addEventListener("click", async function() {
     }
 });
 </script>
+
 </body>
 </html>
