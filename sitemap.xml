@@ -1,74 +1,67 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/</loc>
   </url>
 
+  <!-- Image Tools -->
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/image-compressor.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/image-resizer.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/image-converter.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/image-grayscale.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/image-merger.html</loc>
   </url>
 
+  <!-- PDF Tools -->
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/pdf-merger.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/pdf-splitter.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/pdf-compressor.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/image-to-pdf.html</loc>
   </url>
 
+  <!-- File Tools -->
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/archive-repair.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/rar-to-zip.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/image-to-text.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/qr-generator.html</loc>
   </url>
 
+  <!-- Essential Pages -->
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/about-us.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/contact-us.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/privacy-policy.html</loc>
   </url>
-
   <url>
     <loc>https://medosd6666-png.github.io/tools-market/terms-of-use.html</loc>
   </url>
